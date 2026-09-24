@@ -47,7 +47,7 @@
     if (opts.image) {
       return '<img class="media-img" src="' + Site.escape(opts.image) + '" alt="' + Site.escape(opts.alt || opts.label) + '" loading="lazy">';
     }
-    var cls = "ph ph--" + (opts.color || "pink") + (opts.shape ? " ph--" + opts.shape : "");
+    var cls = "ph ph--" + (opts.color || "blush") + (opts.shape ? " ph--" + opts.shape : "");
     return '<div class="' + cls + '" role="img" aria-label="' + Site.escape(label) + '">' + Site.escape(label) + "</div>";
   };
 
@@ -176,11 +176,16 @@
   /* ---------- Fill in config values anywhere on a page ----------
      Any element with data-config="contact.email" gets that value as its text.
      Add data-config-link="mailto" or "tel" to also make it a clickable link. */
+  function configValue(path) {
+    return path.split(".").reduce(function (obj, key) { return obj ? obj[key] : undefined; }, CONFIG);
+  }
   function fillConfigValues() {
+    // Hide things like the phone row when that setting is left empty
+    document.querySelectorAll("[data-hide-if-empty]").forEach(function (el) {
+      if (!configValue(el.getAttribute("data-hide-if-empty"))) el.hidden = true;
+    });
     document.querySelectorAll("[data-config]").forEach(function (el) {
-      var value = el.getAttribute("data-config").split(".").reduce(function (obj, key) {
-        return obj ? obj[key] : undefined;
-      }, CONFIG);
+      var value = configValue(el.getAttribute("data-config"));
       if (value == null) return;
       el.textContent = value;
       var linkType = el.getAttribute("data-config-link");

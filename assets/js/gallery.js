@@ -11,7 +11,7 @@
      image    – path to your photo, e.g. "assets/images/gallery/jacket-1.jpg"
                 Leave "" to show a placeholder box.
      label    – what the placeholder says (the photo you need to add)
-     color    – placeholder color: pink, teal, yellow, purple, orange
+     color    – placeholder color: blush, blue, lime, navy, orange
    ===================================================================== */
 
 window.GALLERY_FILTERS = [
@@ -25,22 +25,22 @@ window.GALLERY_FILTERS = [
 ];
 
 window.GALLERY_ITEMS = [
-  { category: "shoes",   caption: "Hand-painted floral sneakers",         image: "", label: "hand-painted floral sneakers",        color: "pink" },
-  { category: "apparel", caption: "Hand-painted jean jacket",             image: "", label: "custom painted jean jacket",          color: "teal" },
-  { category: "team",    caption: "Appliqué team crewnecks",              image: "", label: "appliqué team crewneck sweatshirts",  color: "yellow" },
-  { category: "pets",    caption: "Pet portrait sweatshirt",              image: "", label: "sweatshirt with embroidered pet portrait", color: "purple" },
-  { category: "wedding", caption: "Bridal party robes & tees",            image: "", label: "bridal party robes",                  color: "pink" },
+  { category: "shoes",   caption: "Hand-painted floral sneakers",         image: "", label: "hand-painted floral sneakers",        color: "blush" },
+  { category: "apparel", caption: "Hand-painted jean jacket",             image: "", label: "custom painted jean jacket",          color: "blue" },
+  { category: "team",    caption: "Appliqué team crewnecks",              image: "", label: "appliqué team crewneck sweatshirts",  color: "lime" },
+  { category: "pets",    caption: "Pet portrait sweatshirt",              image: "", label: "sweatshirt with embroidered pet portrait", color: "navy" },
+  { category: "wedding", caption: "Bridal party robes & tees",            image: "", label: "bridal party robes",                  color: "blush" },
   { category: "gifts",   caption: "Personalized tumbler set",             image: "", label: "set of personalized tumblers",        color: "orange" },
-  { category: "shoes",   caption: "Team colors custom high-tops",         image: "", label: "custom team color high-top sneakers", color: "teal" },
-  { category: "apparel", caption: "Embroidered monogram hoodie",          image: "", label: "embroidered monogram hoodie",         color: "yellow" },
-  { category: "team",    caption: "Company quarter-zips",                 image: "", label: "embroidered company quarter-zip pullovers", color: "purple" },
-  { category: "wedding", caption: "\"Mrs.\" jean jacket",                 image: "", label: "bride jean jacket with painted back",  color: "teal" },
+  { category: "shoes",   caption: "Team colors custom high-tops",         image: "", label: "custom team color high-top sneakers", color: "blue" },
+  { category: "apparel", caption: "Embroidered monogram hoodie",          image: "", label: "embroidered monogram hoodie",         color: "lime" },
+  { category: "team",    caption: "Company quarter-zips",                 image: "", label: "embroidered company quarter-zip pullovers", color: "navy" },
+  { category: "wedding", caption: "\"Mrs.\" jean jacket",                 image: "", label: "bride jean jacket with painted back",  color: "blue" },
   { category: "gifts",   caption: "Holiday stockings for the whole family", image: "", label: "row of personalized holiday stockings", color: "orange" },
-  { category: "pets",    caption: "Matching pet & owner sweatshirts",     image: "", label: "matching pet and owner sweatshirts",  color: "pink" },
-  { category: "team",    caption: "Softball team bag tags",               image: "", label: "softball team bag tags",              color: "teal" },
+  { category: "pets",    caption: "Matching pet & owner sweatshirts",     image: "", label: "matching pet and owner sweatshirts",  color: "blush" },
+  { category: "team",    caption: "Softball team bag tags",               image: "", label: "softball team bag tags",              color: "blue" },
   { category: "apparel", caption: "HTV graphic tees",                     image: "", label: "HTV vinyl graphic t-shirts",          color: "orange" },
-  { category: "shoes",   caption: "Wedding sneakers for the bride",       image: "", label: "white bridal sneakers with pearls",   color: "purple" },
-  { category: "gifts",   caption: "Custom sherpa blanket",                image: "", label: "personalized sherpa blanket",         color: "yellow" }
+  { category: "shoes",   caption: "Wedding sneakers for the bride",       image: "", label: "white bridal sneakers with pearls",   color: "navy" },
+  { category: "gifts",   caption: "Custom sherpa blanket",                image: "", label: "personalized sherpa blanket",         color: "lime" }
 ];
 
 (function () {
