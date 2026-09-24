@@ -28,13 +28,13 @@ window.SITE_CONFIG = {
 
   /* ---------- Contact info (shown in footer + Contact page) ---------- */
   contact: {
-    email: "hello@todyeforandmore.com",   // placeholder
-    phone: "(555) 123-4567",              // placeholder
-    location: "Your Town, ST",            // placeholder — city/area you serve
+    email: "todyeformi@gmail.com",
+    phone: "",                            // add a phone number here to show it on the site (leave "" to hide)
+    location: "Metro Detroit, MI",
     pickupNote: "Local pickup available by appointment."
   },
 
-  /* ---------- Business hours ---------- */
+  /* ---------- Business hours (placeholder: update to your real hours) ---------- */
   hours: [
     { days: "Monday – Friday", time: "10:00 AM – 6:00 PM" },
     { days: "Saturday",        time: "10:00 AM – 3:00 PM" },
@@ -44,10 +44,10 @@ window.SITE_CONFIG = {
   /* ---------- Social links ----------
      Paste your full profile URLs. Leave a link empty ("") to hide that icon. */
   social: {
-    instagram: "https://instagram.com/yourhandle",
-    facebook:  "https://facebook.com/yourpage",
-    tiktok:    "https://tiktok.com/@yourhandle",
-    pinterest: "https://pinterest.com/yourhandle"
+    instagram: "https://www.instagram.com/_shoptodyefor",
+    facebook:  "https://www.facebook.com/SH0Ptodyefor",
+    tiktok:    "https://www.tiktok.com/@_shoptodyefor",
+    pinterest: ""   // no Pinterest yet: paste a link here to show the icon
   },
 
   /* ---------- Form delivery (BACKEND HOOK) ----------

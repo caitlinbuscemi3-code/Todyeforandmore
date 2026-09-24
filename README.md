@@ -25,7 +25,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Shop products & prices** | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
 | **Shipping cost, tax, deposit %** | `assets/js/config.js` |
-| **Page wording** | The page's `.html` file. Text marked `[Placeholder]` is waiting for your real content |
+| **Page wording** | The page's `.html` file |
 | **Browser-tab title / Google description** | `<title>` and `<meta name="description">` at the top of each `.html` file |
 
 ### Swapping placeholder photos

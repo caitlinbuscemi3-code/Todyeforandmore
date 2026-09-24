@@ -16,7 +16,7 @@
      image     – path to a real photo, e.g. "assets/images/mug.jpg".
                  Leave as "" to show a placeholder box.
      label     – what the placeholder box says (describes the photo to take)
-     color     – placeholder box color: pink, teal, yellow, purple, orange
+     color     – placeholder box color: blush, blue, lime, navy, orange
      featured  – true = also show on the Home page "Best Sellers" section
      badge     – optional little tag like "Best Seller" or "New" ("" for none)
    ===================================================================== */
@@ -38,7 +38,7 @@ window.PRODUCTS = [
     desc: "11 oz ceramic mug with a bright, dishwasher-safe design.",
     image: "",
     label: "monogram coffee mug",
-    color: "pink",
+    color: "blush",
     featured: true,
     badge: "Best Seller"
   },
@@ -50,7 +50,7 @@ window.PRODUCTS = [
     desc: "Insulated tumbler with lid & straw. Keeps drinks cold for hours.",
     image: "",
     label: "glitter tumbler with straw",
-    color: "purple",
+    color: "navy",
     featured: true,
     badge: ""
   },
@@ -62,7 +62,7 @@ window.PRODUCTS = [
     desc: "Game-day tumbler in your team's colors.",
     image: "",
     label: "team colors tumbler",
-    color: "teal",
+    color: "blue",
     featured: false,
     badge: ""
   },
@@ -74,7 +74,7 @@ window.PRODUCTS = [
     desc: "Sturdy everyday tote with a fun printed design.",
     image: "",
     label: "canvas tote bag",
-    color: "yellow",
+    color: "lime",
     featured: true,
     badge: ""
   },
@@ -98,7 +98,7 @@ window.PRODUCTS = [
     desc: "Super-soft 50\" × 60\" throw — the ultimate snuggly gift.",
     image: "",
     label: "sherpa throw blanket",
-    color: "teal",
+    color: "blue",
     featured: true,
     badge: "Best Seller"
   },
@@ -110,7 +110,7 @@ window.PRODUCTS = [
     desc: "Oversized, colorful towel for pool days & beach trips.",
     image: "",
     label: "colorful beach towel",
-    color: "pink",
+    color: "blush",
     featured: false,
     badge: ""
   },
@@ -122,7 +122,7 @@ window.PRODUCTS = [
     desc: "Set of 2 decorative hand towels — great hostess gift.",
     image: "",
     label: "hand towel set",
-    color: "purple",
+    color: "navy",
     featured: false,
     badge: ""
   },
@@ -146,7 +146,7 @@ window.PRODUCTS = [
     desc: "Festive mug made for hot cocoa season.",
     image: "",
     label: "holiday cocoa mug",
-    color: "yellow",
+    color: "lime",
     featured: false,
     badge: ""
   }
