@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team &amp; Bulk Orders | To Dye For and More</title>
+  <meta name="description" content="Custom team gear and bulk orders for sports teams, schools, companies, and groups: crewnecks, quarter zips, tees, bags, and more.">
+  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- PAGE BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="background:#fff">Teams · Schools · Companies · Groups</span>
+        <h1>Team &amp; Bulk Orders</h1>
+        <p>Matching gear that makes your crew look (and feel) like a team. Tell us about your group and we'll design options that fit your colors, style, and budget.</p>
+        <p style="margin-top:24px"><a class="btn btn--primary" href="#team-form">Get a Team Quote</a></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXAMPLE USE CASES: ideas to inspire groups
+         ============================================================ -->
+    <section class="section" aria-labelledby="ideas-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Popular Picks</span>
+          <h2 id="ideas-title">Ideas for your group</h2>
+          <p>Every design can be adapted to your team's name, colors, and mascot.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card service-card">
+            <div class="ph ph--pink ph--square" role="img" aria-label="[Photo: themed appliqué crewneck in team colors]">[Photo: themed appliqué crewneck in team colors]</div>
+            <span class="tag">Fan Favorite</span>
+            <h3>Themed appliqué crewnecks</h3>
+            <p>Stitched fabric-letter crewnecks with a themed design, easily adapted to any team, sport, or mascot.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--teal ph--square" role="img" aria-label="[Photo: embroidered quarter zip pullovers]">[Photo: embroidered quarter zip pullovers]</div>
+            <span class="tag">Coaches &amp; Staff</span>
+            <h3>Quarter zips</h3>
+            <p>Polished embroidered quarter zips for coaches, staff, and company teams. Sharp on the sidelines or at the office.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--yellow ph--square" role="img" aria-label="[Photo: team t-shirts and hoodies stack]">[Photo: team t-shirts and hoodies stack]</div>
+            <span class="tag">Game Day</span>
+            <h3>Tees &amp; hoodies</h3>
+            <p>Team shirts, spirit wear, and warm-up hoodies with names and numbers. Perfect for players and fans alike.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--purple ph--square" role="img" aria-label="[Photo: personalized sports bag tags]">[Photo: personalized sports bag tags]</div>
+            <span class="tag">Team Gifts</span>
+            <h3>Bag tags &amp; accessories</h3>
+            <p>Personalized bag tags, tumblers, and totes that make great end-of-season gifts.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--orange ph--square" role="img" aria-label="[Photo: matching family reunion or event shirts]">[Photo: matching family reunion or event shirts]</div>
+            <span class="tag">Events</span>
+            <h3>Events &amp; reunions</h3>
+            <p>Family reunions, fundraisers, 5Ks, church groups, and bachelorette trips. If it's a group, we've got you.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--teal ph--square" role="img" aria-label="[Photo: company logo embroidered on polo shirts]">[Photo: company logo embroidered on polo shirts]</div>
+            <span class="tag">Business</span>
+            <h3>Company apparel</h3>
+            <p>Logo polos, tees, and outerwear for your staff. Great for uniforms, trade shows, and team-building swag.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOW TEAM ORDERS WORK
+         ============================================================ -->
+    <section class="section section--teal" aria-labelledby="team-how-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">The Process</span>
+          <h2 id="team-how-title">How team orders work</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <div class="step__icon" aria-hidden="true">📋</div>
+            <h3>Tell us about your team</h3>
+            <p>Share your team info, rough quantity, design ideas, and deadline.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <div class="step__icon" aria-hidden="true">🎨</div>
+            <h3>Get mockups &amp; a quote</h3>
+            <p>We send design options with per-item and bulk pricing. We'll help you collect sizes, too!</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <div class="step__icon" aria-hidden="true">✅</div>
+            <h3>Approve &amp; pay deposit</h3>
+            <p>Approve the final design, pay a <span data-config="depositPercent">50</span>% deposit, and we get to work.</p>
+          </li>
+        </ol>
+        <div class="callout" style="max-width:760px;margin:36px auto 0">
+          <span class="callout__icon" aria-hidden="true">⏰</span>
+          <p><strong>Plan ahead!</strong> Bulk orders typically need <strong>2–4 weeks</strong> from design approval (placeholder, update to your real turnaround). Rush options may be available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TEAM / BULK ORDER FORM
+         Checks: assets/js/forms.js
+         📬 BACKEND HOOK: to receive these by email, paste your form
+         service URL into assets/js/config.js → forms.teamOrder
+         ============================================================ -->
+    <section id="team-form" class="section section--purple" aria-labelledby="team-form-title">
+      <div class="container" style="max-width:860px">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">Get a Quote</span>
+          <h2 id="team-form-title">Team &amp; bulk order request</h2>
+          <p>No commitment. We'll get back to you within 2–3 business days with mockups and pricing.</p>
+        </div>
+
+        <form id="team-order-form" class="form-card" data-validate data-form="teamOrder"
+              action="#" method="post" enctype="multipart/form-data" novalidate>
+          <div class="form-alert" role="alert" hidden></div>
+          <input type="hidden" name="_subject" value="New team / bulk order request">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="t-name">Contact name <span class="req">*</span></label>
+              <input id="t-name" name="contact_name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="t-email">Email <span class="req">*</span></label>
+              <input id="t-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="t-phone">Phone <span class="req">*</span></label>
+              <input id="t-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" required>
+            </div>
+            <div class="field">
+              <label for="t-team">Team / group name <span class="req">*</span></label>
+              <input id="t-team" name="team_name" type="text" placeholder="e.g. Riverside Lightning 12U" required>
+            </div>
+            <div class="field">
+              <label for="t-sport">Sport or group type <span class="req">*</span></label>
+              <select id="t-sport" name="sport" required>
+                <option value="">Choose one…</option>
+                <option>Baseball</option>
+                <option>Softball</option>
+                <option>Basketball</option>
+                <option>Soccer</option>
+                <option>Football</option>
+                <option>Volleyball</option>
+                <option>Cheer / Dance</option>
+                <option>Hockey</option>
+                <option>Swim / Track / Cross Country</option>
+                <option>School / Club</option>
+                <option>Company / Business</option>
+                <option>Event / Reunion / Other group</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="t-qty">Estimated quantity <span class="req">*</span></label>
+              <input id="t-qty" name="quantity" type="number" inputmode="numeric" min="6" max="5000" step="1" placeholder="e.g. 25" required
+                     data-error-min="Team orders start at 6 pieces. For fewer, use our Custom Orders form.">
+              <p class="hint">A rough number is fine. Minimum 6 pieces.</p>
+            </div>
+
+            <fieldset class="field full" data-required-group data-error="Please pick at least one item you're interested in.">
+              <legend>Items you're interested in <span class="req">*</span></legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="items" value="T-shirts"> T-shirts</label>
+                <label class="check"><input type="checkbox" name="items" value="Crewnecks"> Crewnecks</label>
+                <label class="check"><input type="checkbox" name="items" value="Hoodies"> Hoodies</label>
+                <label class="check"><input type="checkbox" name="items" value="Quarter zips"> Quarter zips</label>
+                <label class="check"><input type="checkbox" name="items" value="Hats"> Hats</label>
+                <label class="check"><input type="checkbox" name="items" value="Bag tags"> Bag tags</label>
+                <label class="check"><input type="checkbox" name="items" value="Tumblers"> Tumblers</label>
+                <label class="check"><input type="checkbox" name="items" value="Other"> Other</label>
+              </div>
+            </fieldset>
+
+            <div class="field full">
+              <label for="t-ideas">Design ideas <span class="req">*</span></label>
+              <p class="hint">Team colors, logo/mascot, names &amp; numbers, style you like, what it's for.</p>
+              <textarea id="t-ideas" name="design_ideas" minlength="20" required
+                        placeholder="Example: Navy crewnecks with gold appliqué letters spelling LIGHTNING and a lightning bolt. Player numbers on the sleeve. Also want quarter zips for 3 coaches."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="t-files">Logo or inspiration files <span class="muted">(optional)</span></label>
+              <div class="upload">
+                <div class="upload__icon" aria-hidden="true">🏆</div>
+                <p class="upload__text">Drag your logo or photos here, or tap to upload</p>
+                <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
+                <input id="t-files" name="logo_files" type="file" multiple
+                       accept="image/*,.heic,.heif,.pdf" data-max-files="5" data-max-mb="10">
+                <ul class="upload__list"></ul>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="t-deadline">Deadline (need it by) <span class="req">*</span></label>
+              <input id="t-deadline" name="deadline" type="date" required data-min-days="7"
+                     data-error-date="Bulk orders need at least 1 week. For rush requests, please call us!">
+            </div>
+            <div class="field">
+              <label for="t-budget">Budget per item <span class="muted">(optional)</span></label>
+              <select id="t-budget" name="budget_per_item">
+                <option value="">Choose a range…</option>
+                <option>Under $20</option>
+                <option>$20 – $35</option>
+                <option>$35 – $50</option>
+                <option>$50+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="full callout">
+              <span class="callout__icon" aria-hidden="true">💬</span>
+              <div>
+                <p><strong>No payment today.</strong> Once you approve your design and final quantities, a <strong><span data-config="depositPercent">50</span>% deposit</strong> starts production. The balance is due at pickup or delivery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Request My Team Quote</button>
+            <p class="form-note">We'll reply within 2–3 business days.</p>
+          </div>
+        </form>
+
+        <!-- Thank-you message (shown after a successful submit) -->
+        <div class="form-card form-success" data-success-for="team-order-form" tabindex="-1" hidden>
+          <div class="form-success__icon" aria-hidden="true">🏆</div>
+          <h3 style="font-size:1.6rem">Your team request is in!</h3>
+          <p class="muted">Thanks for thinking of us! We'll email you within 2–3 business days with mockups and a quote for your group.</p>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn btn--outline" type="button" data-form-again>Send another request</button>
+            <a class="btn btn--primary" href="gallery.html">See Past Team Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: built by assets/js/layout.js -->
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

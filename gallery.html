@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | To Dye For and More</title>
+  <meta name="description" content="Browse past custom work: hand-painted shoes, custom apparel, team gear, wedding pieces, pet sweatshirts, and gifts.">
+  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- PAGE BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="background:#fff">Past Projects</span>
+        <h1>The Gallery</h1>
+        <p>A peek at some of our favorite custom pieces. Tap any photo for a closer look, and get inspired for your own!</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY GRID
+         Photos come from assets/js/gallery.js. Add new work there.
+         ============================================================ -->
+    <section class="section" aria-label="Gallery of past work">
+      <div class="container">
+        <div class="filters" data-gallery-filters role="toolbar" aria-label="Filter gallery by category"></div>
+        <div class="gallery-grid" data-gallery-grid aria-live="polite"></div>
+        <noscript><p class="text-center">Please turn on JavaScript to view the gallery.</p></noscript>
+
+        <!-- Call to action at the bottom of the gallery -->
+        <div class="cta-band" style="margin-top:64px">
+          <h2>See something you love?</h2>
+          <p>Let's create your own one-of-a-kind piece. Tell us your idea and we'll send mockups with pricing.</p>
+          <div class="btn-row">
+            <a class="btn btn--light" href="custom-orders.html#request-form">Start a Custom Request</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pop-up "lightbox" for viewing a photo larger -->
+    <dialog class="lightbox" data-lightbox aria-label="Enlarged photo">
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close">×</button>
+      <div class="lightbox__inner">
+        <div data-lightbox-media></div>
+        <p class="lightbox__caption" data-lightbox-caption></p>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER: built by assets/js/layout.js -->
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>
