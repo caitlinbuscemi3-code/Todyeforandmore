@@ -59,10 +59,10 @@ window.PRODUCTS = [
   {
     id: "tote-bookish",
     name: "Bookish Tote",
-    price: 22.00,
+    price: 30.00,
     buyable: true,
     category: "bags",
-    desc: "Our standard bookish design on a sturdy canvas tote. Want a name or initial tote instead? Same price!",
+    desc: "Our standard embroidered bookish design on a sturdy canvas tote. Want an embroidered name or initial tote instead? Same price!",
     image: "",
     label: "bookish design canvas tote bag",
     color: "lime",
@@ -70,19 +70,6 @@ window.PRODUCTS = [
     badge: "",
     customLabel: "Personalize It",
     customItem: "Name or Initial Tote"
-  },
-  {
-    id: "mug-holiday",
-    name: "Holiday Cocoa Mug",
-    price: 18.00,
-    buyable: true,
-    category: "holiday",
-    desc: "Festive mug made for hot cocoa season.",
-    image: "",
-    label: "holiday cocoa mug",
-    color: "lime",
-    featured: false,
-    badge: ""
   },
 
   /* ---------------- CUSTOM ONLY ---------------- */

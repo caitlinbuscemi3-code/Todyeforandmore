@@ -690,6 +690,21 @@ fieldset.field { border: none; padding: 0; margin: 0; }
 .lightbox__caption { margin: 0; font-weight: 700; }
 .lightbox__counter { margin: 0; font-size: 0.88rem; color: var(--color-text-muted); }
 
+/* Starting prices ("Starting at $55") under a heading */
+.price-note { margin: 0 0 16px; color: var(--color-text-muted); }
+.price-note strong { color: var(--color-secondary); font-family: var(--font-heading); font-size: 1.2rem; }
+.service-card .price-note { margin: 0; }
+
+/* Pricing guide (Custom Orders page) */
+.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+@media (max-width: 760px) { .price-grid { grid-template-columns: 1fr; } }
+.price-card h3 { margin-bottom: 8px; }
+.price-list { margin: 0; }
+.price-list > div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--color-border); }
+.price-list > div:last-child { border-bottom: none; }
+.price-list dt { margin: 0; }
+.price-list dd { margin: 0; font-weight: 700; color: var(--color-secondary); white-space: nowrap; }
+
 /* CTA band + "Not sure what to create?" box side by side */
 .cta-split { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: stretch; }
 @media (max-width: 860px) { .cta-split { grid-template-columns: 1fr; } }
