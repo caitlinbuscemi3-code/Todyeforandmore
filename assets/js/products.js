@@ -160,10 +160,10 @@ window.PRODUCTS = [
   {
     id: "lucky-crew",
     name: "Lucky Crewneck",
-    price: 45.00,
+    price: 40.00,
     buyable: true,
     category: "apparel",
-    desc: "Green “Lucky” crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
+    desc: "Green “Lucky” vinyl (HTV) crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
     image: "assets/photos/lucky-sweatshirt.jpg",
     label: "Lucky crewneck",
     color: "lime",
