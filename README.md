@@ -7,22 +7,22 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | File | Page |
 |---|---|
 | `index.html` | Home: hero, shop-by-category, best sellers, "how custom orders work" |
-| `shop.html` | Ready-made gifts with Add to Cart + "Make This Custom" |
+| `shop.html` | Gifts: ready-to-buy items (Add to Cart) and custom-only items (Request Custom) |
 | `cart.html` | Cart → checkout → confirmation (payment is in demo mode) |
-| `custom-orders.html` | Shoes & apparel info + custom request form |
+| `custom-orders.html` | Shoes, apparel, baby sweaters & baby boxes + custom request form |
 | `team-orders.html` | Team/bulk use cases + team quote form |
-| `gallery.html` | Filterable gallery of past work + "Start a Custom Request" |
+| `gallery.html` | Filterable gallery of past work with "See more" slideshows |
 | `about.html` | Brand story, mission, meet the maker |
-| `contact.html` | Contact form, hours, social links |
+| `contact.html` | Contact form, contact info, social links |
 
-## ✏️ Where to change things
+## Where to change things
 
 | I want to change… | Edit this file |
 |---|---|
 | **Colors & fonts** | `assets/css/styles.css`, the **BRAND SETTINGS** block at the top |
 | **Logo** | Put your file in `assets/images/`, then set `logo.src` in `assets/js/config.js` |
-| **Business name, email, phone, hours, social links** | `assets/js/config.js` |
-| **Shop products & prices** | `assets/js/products.js` |
+| **Business name, tagline, email, phone, social links** | `assets/js/config.js` |
+| **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
 | **Shipping cost, tax, deposit %** | `assets/js/config.js` |
 | **Page wording** | The page's `.html` file |
@@ -31,7 +31,8 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 ### Swapping placeholder photos
 Every photo spot shows a label like **[Photo: custom painted jean jacket]** that tells you what to put there.
 
-- **Shop products & gallery**: set the `image` field to your photo path, e.g. `image: "assets/images/tumbler.jpg"`.
+- **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/images/mug.jpg"`.
+- **Gallery**: each tile has a `photos` list. Set each photo's `image` field, and add more lines to a tile's list to grow its "See more" slideshow.
 - **Photos written directly in a page**: replace the placeholder
   ```html
   <div class="ph ph--teal ph--square" role="img" aria-label="[Photo: custom painted jean jacket]">[Photo: custom painted jean jacket]</div>
@@ -41,7 +42,7 @@ Every photo spot shows a label like **[Photo: custom painted jean jacket]** that
   <img class="media-img" src="assets/images/jean-jacket.jpg" alt="Hand-painted floral jean jacket">
   ```
 
-## 🔌 Things to connect later
+## Things to connect later
 
 1. **Form emails.** All forms validate input and show a thank-you message. To actually receive submissions, sign up for a form service such as [Formspree](https://formspree.io) (pick one that supports file uploads) and paste each form's URL into `forms` in `assets/js/config.js`.
 2. **Payments.** Checkout runs in demo mode, and no card is charged. See the **PAYMENT PROCESSOR HOOK** comment in `assets/js/cart.js` for how Stripe, Square, or PayPal plugs in. Set `payments.demoMode` to `false` in `config.js` once it's live, which hides the "demo" banner.

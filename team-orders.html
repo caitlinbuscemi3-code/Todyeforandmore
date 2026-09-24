@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Team &amp; Bulk Orders | To Dye For and More</title>
-  <meta name="description" content="Custom team gear and bulk orders for sports teams, schools, companies, and groups: crewnecks, quarter zips, tees, bags, and more.">
+  <meta name="description" content="Custom team gear and bulk orders for teams, schools, companies, groups, and events: hoodies, t-shirts, quarter zips, hand-painted shoes, bridal party gear, and more.">
   <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
   <header id="site-header"></header>
 
   <main id="main">
@@ -19,7 +19,7 @@
     <!-- PAGE BANNER -->
     <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" style="background:#fff">Teams · Schools · Companies · Groups</span>
+        <span class="eyebrow" style="background:#fff">Teams · Schools · Companies · Groups · Events</span>
         <h1>Team &amp; Bulk Orders</h1>
         <p>Matching gear that makes your crew look (and feel) like a team. Tell us about your group and we'll design options that fit your colors, style, and budget.</p>
         <p style="margin-top:24px"><a class="btn btn--primary" href="#team-form">Get a Team Quote</a></p>
@@ -37,12 +37,24 @@
           <p>Every design can be adapted to your team's name, colors, and mascot.</p>
         </div>
 
-        <div class="grid grid--3">
+        <div class="grid grid--4">
           <article class="card service-card">
-            <div class="ph ph--blush ph--square" role="img" aria-label="[Photo: themed appliqué crewneck in team colors]">[Photo: themed appliqué crewneck in team colors]</div>
+            <div class="ph ph--blush ph--square" role="img" aria-label="[Photo: themed hoodie in team colors]">[Photo: themed hoodie in team colors]</div>
             <span class="tag">Fan Favorite</span>
-            <h3>Themed appliqué crewnecks</h3>
-            <p>Stitched fabric-letter crewnecks with a themed design, easily adapted to any team, sport, or mascot.</p>
+            <h3>Themed hoodies</h3>
+            <p>Cozy hoodies with a themed design, easily adapted to any team, sport, or mascot.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--lime ph--square" role="img" aria-label="[Photo: stack of team t-shirts]">[Photo: stack of team t-shirts]</div>
+            <span class="tag">Game Day</span>
+            <h3>T-shirts</h3>
+            <p>Team shirts and spirit wear with names and numbers. Perfect for players and fans alike.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--orange ph--square" role="img" aria-label="[Photo: hand-painted sneakers in team colors]">[Photo: hand-painted sneakers in team colors]</div>
+            <span class="tag">Hand-Painted</span>
+            <h3>Hand-painted shoes</h3>
+            <p>Matching hand-painted sneakers in your team colors, with logos, mascots, or player numbers.</p>
           </article>
           <article class="card service-card">
             <div class="ph ph--blue ph--square" role="img" aria-label="[Photo: embroidered quarter zip pullovers]">[Photo: embroidered quarter zip pullovers]</div>
@@ -51,10 +63,10 @@
             <p>Polished embroidered quarter zips for coaches, staff, and company teams. Sharp on the sidelines or at the office.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--lime ph--square" role="img" aria-label="[Photo: team t-shirts and hoodies stack]">[Photo: team t-shirts and hoodies stack]</div>
-            <span class="tag">Game Day</span>
-            <h3>Tees &amp; hoodies</h3>
-            <p>Team shirts, spirit wear, and warm-up hoodies with names and numbers. Perfect for players and fans alike.</p>
+            <div class="ph ph--blush ph--square" role="img" aria-label="[Photo: bridal party shirts, makeup bags, and koozies]">[Photo: bridal party shirts, makeup bags, and koozies]</div>
+            <span class="tag">Wedding</span>
+            <h3>Wedding &amp; bridal party</h3>
+            <p>Bridal party shirts, makeup bags, bridal party accessories, and koozies, all made to match.</p>
           </article>
           <article class="card service-card">
             <div class="ph ph--navy ph--square" role="img" aria-label="[Photo: personalized sports bag tags]">[Photo: personalized sports bag tags]</div>
@@ -90,25 +102,25 @@
         <ol class="steps">
           <li class="step">
             <span class="step__num">1</span>
-            <div class="step__icon" aria-hidden="true">📋</div>
+            <div class="step__icon" data-icon="clipboard"></div>
             <h3>Tell us about your team</h3>
             <p>Share your team info, rough quantity, design ideas, and deadline.</p>
           </li>
           <li class="step">
             <span class="step__num">2</span>
-            <div class="step__icon" aria-hidden="true">🎨</div>
+            <div class="step__icon" data-icon="palette"></div>
             <h3>Get mockups &amp; a quote</h3>
             <p>We send design options with per-item and bulk pricing. We'll help you collect sizes, too!</p>
           </li>
           <li class="step">
             <span class="step__num">3</span>
-            <div class="step__icon" aria-hidden="true">✅</div>
+            <div class="step__icon" data-icon="check"></div>
             <h3>Approve &amp; pay deposit</h3>
             <p>Approve the final design, pay a <span data-config="depositPercent">50</span>% deposit, and we get to work.</p>
           </li>
         </ol>
         <div class="callout" style="max-width:760px;margin:36px auto 0">
-          <span class="callout__icon" aria-hidden="true">⏰</span>
+          <span class="callout__icon" data-icon="clock"></span>
           <p><strong>Plan ahead!</strong> Bulk orders typically need <strong>2–4 weeks</strong> from design approval (placeholder, update to your real turnaround). Rush options may be available.</p>
         </div>
       </div>
@@ -117,7 +129,7 @@
     <!-- ============================================================
          TEAM / BULK ORDER FORM
          Checks: assets/js/forms.js
-         📬 BACKEND HOOK: to receive these by email, paste your form
+         BACKEND HOOK: to receive these by email, paste your form
          service URL into assets/js/config.js → forms.teamOrder
          ============================================================ -->
     <section id="team-form" class="section section--navy" aria-labelledby="team-form-title">
@@ -166,6 +178,7 @@
                 <option>Swim / Track / Cross Country</option>
                 <option>School / Club</option>
                 <option>Company / Business</option>
+                <option>Wedding / Bridal party</option>
                 <option>Event / Reunion / Other group</option>
                 <option>Other</option>
               </select>
@@ -184,9 +197,11 @@
                 <label class="check"><input type="checkbox" name="items" value="Crewnecks"> Crewnecks</label>
                 <label class="check"><input type="checkbox" name="items" value="Hoodies"> Hoodies</label>
                 <label class="check"><input type="checkbox" name="items" value="Quarter zips"> Quarter zips</label>
-                <label class="check"><input type="checkbox" name="items" value="Hats"> Hats</label>
+                <label class="check"><input type="checkbox" name="items" value="Hand-painted shoes"> Hand-painted shoes</label>
                 <label class="check"><input type="checkbox" name="items" value="Bag tags"> Bag tags</label>
                 <label class="check"><input type="checkbox" name="items" value="Tumblers"> Tumblers</label>
+                <label class="check"><input type="checkbox" name="items" value="Makeup bags"> Makeup bags</label>
+                <label class="check"><input type="checkbox" name="items" value="Koozies"> Koozies</label>
                 <label class="check"><input type="checkbox" name="items" value="Other"> Other</label>
               </div>
             </fieldset>
@@ -195,13 +210,13 @@
               <label for="t-ideas">Design ideas <span class="req">*</span></label>
               <p class="hint">Team colors, logo/mascot, names &amp; numbers, style you like, what it's for.</p>
               <textarea id="t-ideas" name="design_ideas" minlength="20" required
-                        placeholder="Example: Navy crewnecks with gold appliqué letters spelling LIGHTNING and a lightning bolt. Player numbers on the sleeve. Also want quarter zips for 3 coaches."></textarea>
+                        placeholder="Example: Navy hoodies with gold letters spelling LIGHTNING and a lightning bolt. Player numbers on the sleeve. Also want quarter zips for 3 coaches."></textarea>
             </div>
 
             <div class="field full">
               <label for="t-files">Logo or inspiration files <span class="muted">(optional)</span></label>
               <div class="upload">
-                <div class="upload__icon" aria-hidden="true">🏆</div>
+                <div class="upload__icon" data-icon="trophy"></div>
                 <p class="upload__text">Drag your logo or photos here, or tap to upload</p>
                 <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
                 <input id="t-files" name="logo_files" type="file" multiple
@@ -228,9 +243,9 @@
             </div>
 
             <div class="full callout">
-              <span class="callout__icon" aria-hidden="true">💬</span>
+              <span class="callout__icon" data-icon="chat"></span>
               <div>
-                <p><strong>No payment today.</strong> Once you approve your design and final quantities, a <strong><span data-config="depositPercent">50</span>% deposit</strong> starts production. The balance is due at pickup or delivery.</p>
+                <p><strong>No payment today.</strong> Once you approve your design and final quantities, a <strong><span data-config="depositPercent">50</span>% deposit</strong> starts production. The balance is due when your order is ready.</p>
               </div>
             </div>
           </div>
@@ -243,7 +258,7 @@
 
         <!-- Thank-you message (shown after a successful submit) -->
         <div class="form-card form-success" data-success-for="team-order-form" tabindex="-1" hidden>
-          <div class="form-success__icon" aria-hidden="true">🏆</div>
+          <div class="form-success__icon" data-icon="trophy"></div>
           <h3 style="font-size:1.6rem">Your team request is in!</h3>
           <p class="muted">Thanks for thinking of us! We'll email you within 2–3 business days with mockups and a quote for your group.</p>
           <div class="btn-row" style="justify-content:center">

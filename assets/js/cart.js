@@ -20,6 +20,12 @@
   var PRODUCTS = window.PRODUCTS || [];
   var STORAGE_KEY = "tdfm-cart-v1";
 
+  // Only "buyable" products can go in the cart (custom-only items can't)
+  function findBuyable(id) {
+    var p = findProduct(id);
+    return p && p.buyable ? p : null;
+  }
+
   function findProduct(id) {
     for (var i = 0; i < PRODUCTS.length; i++) if (PRODUCTS[i].id === id) return PRODUCTS[i];
     return null;
@@ -35,7 +41,7 @@
       try {
         var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
         // Drop anything that's no longer in products.js
-        return Array.isArray(saved) ? saved.filter(function (i) { return findProduct(i.id) && i.qty > 0; }) : [];
+        return Array.isArray(saved) ? saved.filter(function (i) { return findBuyable(i.id) && i.qty > 0; }) : [];
       } catch (e) { return memoryCart; }
     },
     save: function (items) {
@@ -61,11 +67,11 @@
     subtotal: function () {
       return Cart.items().reduce(function (sum, i) { return sum + findProduct(i.id).price * i.qty; }, 0);
     },
-    // Works out shipping, tax and total. fulfillment = "ship" or "pickup"
-    totals: function (fulfillment) {
+    // Works out shipping, tax and total
+    totals: function () {
       var subtotal = Cart.subtotal();
       var shipping = 0;
-      if (fulfillment !== "pickup" && subtotal > 0) {
+      if (subtotal > 0) {
         var freeOver = Number(SHOP.freeShippingOver || 0);
         shipping = freeOver && subtotal >= freeOver ? 0 : Number(SHOP.shippingFlatRate || 0);
       }
@@ -90,8 +96,17 @@
      2. PRODUCT CARDS (Shop page + Home "Best Sellers")
      ================================================================= */
   function productCardHTML(p) {
-    // "Make This Custom" sends shoppers to the Custom Orders form with this product pre-filled
-    var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.name) + "#request-form";
+    // The custom button sends shoppers to the Custom Orders form with this product pre-filled
+    var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) + "#request-form";
+    var actions = p.buyable
+      // READY TO BUY: Add to Cart + optional customizing
+      ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
+        '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Make This Custom") + "</a>"
+      // CUSTOM ONLY: request button instead of Add to Cart
+      : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";
+    var price = p.buyable
+      ? Site.money(p.price)
+      : '<span class="product-card__from">Starting at</span> ' + Site.money(p.price);
     return (
       '<article class="product-card" data-category="' + Site.escape(p.category) + '">' +
         '<div class="product-card__media">' +
@@ -101,11 +116,9 @@
         '<div class="product-card__body">' +
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
-          '<p class="product-card__price">' + Site.money(p.price) + "</p>" +
-          '<div class="product-card__actions">' +
-            '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
-            '<a class="btn btn--outline btn--small" href="' + customUrl + '">✨ Make This Custom</a>' +
-          "</div>" +
+          '<p class="product-card__price">' + price + "</p>" +
+          (p.buyable ? "" : '<p class="product-card__note">Custom only. Made to order after mockup approval.</p>') +
+          '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
       "</article>"
     );
@@ -143,10 +156,10 @@
   document.addEventListener("click", function (e) {
     var btn = e.target.closest("[data-add-to-cart]");
     if (!btn) return;
-    var product = findProduct(btn.getAttribute("data-add-to-cart"));
+    var product = findBuyable(btn.getAttribute("data-add-to-cart"));
     if (!product) return;
     Cart.add(product.id, 1);
-    Site.toast("🎉 " + Site.escape(product.name) + ' added! <a href="cart.html">View cart →</a>');
+    Site.toast(Site.escape(product.name) + ' added to your cart. <a href="cart.html">View cart</a>');
   });
 
   /* =================================================================
@@ -161,28 +174,20 @@
     done: cartPage.querySelector("#confirm-view")
   };
   var checkoutForm = cartPage.querySelector("#checkout-form");
-  var shipFields = cartPage.querySelector("#shipping-fields");
-  var pickupNote = cartPage.querySelector("#pickup-note");
 
   function show(name) {
     Object.keys(views).forEach(function (k) { views[k].hidden = k !== name; });
     window.scrollTo({ top: 0 });
   }
 
-  function fulfillment() {
-    var checked = checkoutForm.querySelector('input[name="fulfillment"]:checked');
-    return checked ? checked.value : "ship";
-  }
-
-  function summaryHTML(mode) {
-    var t = Cart.totals(mode);
+  function summaryHTML() {
+    var t = Cart.totals();
     var freeOver = Number(SHOP.freeShippingOver || 0);
-    var shipLabel = mode === "pickup" ? "Local pickup" : "Shipping";
-    var nudge = mode !== "pickup" && freeOver && t.subtotal < freeOver
+    var nudge = freeOver && t.subtotal < freeOver
       ? '<p class="muted" style="font-size:.88rem;margin:6px 0 0">Add ' + Site.money(freeOver - t.subtotal) + " more for free shipping!</p>" : "";
     return (
       '<div class="summary__row"><span>Subtotal</span><span>' + Site.money(t.subtotal) + "</span></div>" +
-      '<div class="summary__row"><span>' + shipLabel + "</span><span>" + (t.shipping ? Site.money(t.shipping) : "FREE") + "</span></div>" +
+      '<div class="summary__row"><span>Shipping</span><span>' + (t.shipping ? Site.money(t.shipping) : "FREE") + "</span></div>" +
       (t.tax ? '<div class="summary__row"><span>Estimated tax</span><span>' + Site.money(t.tax) + "</span></div>" : "") +
       '<div class="summary__row summary__row--total"><span>Total</span><span>' + Site.money(t.total) + "</span></div>" + nudge
     );
@@ -219,7 +224,7 @@
       );
     }).join("");
 
-    views.cart.querySelector("[data-cart-summary]").innerHTML = summaryHTML("ship");
+    views.cart.querySelector("[data-cart-summary]").innerHTML = summaryHTML();
     renderCheckoutSummary();
   }
 
@@ -230,7 +235,7 @@
       var p = findProduct(line.id);
       return '<div class="summary__row"><span>' + Site.escape(p.name) + " × " + line.qty + "</span><span>" + Site.money(p.price * line.qty) + "</span></div>";
     }).join("");
-    box.innerHTML = lines + '<hr style="border:none;border-top:1px solid var(--color-border);margin:8px 0">' + summaryHTML(fulfillment());
+    box.innerHTML = lines + '<hr style="border:none;border-top:1px solid var(--color-border);margin:8px 0">' + summaryHTML();
   }
 
   // Quantity +/- and Remove buttons
@@ -246,29 +251,11 @@
   });
   document.addEventListener("cart:updated", renderCart);
 
-  // Buttons that switch between cart → checkout
+  // Buttons that switch between cart and checkout
   cartPage.addEventListener("click", function (e) {
     if (e.target.closest("[data-go-checkout]")) { renderCheckoutSummary(); show("checkout"); }
     if (e.target.closest("[data-go-cart]")) show("cart");
   });
-
-  // Shipping vs. local pickup toggle
-  if (!SHOP.allowLocalPickup) {
-    var pickupOption = checkoutForm.querySelector("[data-pickup-option]");
-    if (pickupOption) pickupOption.remove();
-  }
-  function syncFulfillment() {
-    var isPickup = fulfillment() === "pickup";
-    shipFields.hidden = isPickup;
-    pickupNote.hidden = !isPickup;
-    // Address fields are only required when shipping
-    shipFields.querySelectorAll("[data-ship-required]").forEach(function (f) { f.required = !isPickup; });
-    renderCheckoutSummary();
-  }
-  checkoutForm.addEventListener("change", function (e) {
-    if (e.target.name === "fulfillment") syncFulfillment();
-  });
-  syncFulfillment();
 
   // Demo-mode note
   var demoBanner = cartPage.querySelector("[data-demo-banner]");
@@ -282,12 +269,12 @@
 
     var order = {
       items: Cart.items().map(function (l) { var p = findProduct(l.id); return { id: p.id, name: p.name, price: p.price, qty: l.qty }; }),
-      totals: Cart.totals(fulfillment()),
+      totals: Cart.totals(),
       customer: Object.fromEntries(new FormData(checkoutForm).entries())
     };
 
     /* ============================================================
-       💳 PAYMENT PROCESSOR HOOK
+       PAYMENT PROCESSOR HOOK
        ------------------------------------------------------------
        This is where a real payment happens. Right now it's DEMO MODE:
        no card is charged, the order just shows a confirmation.
@@ -307,7 +294,7 @@
          Square "Checkout Link" for each product and use those links
          instead of this cart.
 
-       ⚠️ Never put secret API keys in these website files — they're
+       IMPORTANT: Never put secret API keys in these website files — they're
        visible to anyone. Secret keys go only in server functions.
        ============================================================ */
     var btn = checkoutForm.querySelector('[type="submit"]');
@@ -323,7 +310,6 @@
       checkoutForm.reset();
       btn.disabled = false;
       btn.textContent = "Place Order";
-      syncFulfillment();
       show("done");
     }, 900);
   });

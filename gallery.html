@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery | To Dye For and More</title>
-  <meta name="description" content="Browse past custom work: hand-painted shoes, custom apparel, team gear, wedding pieces, pet sweatshirts, and gifts.">
+  <meta name="description" content="Browse past custom work: hand-painted shoes, jean jackets, beaded embroidery, team gear, wedding pieces, baby boxes, hand-knit baby sweaters, and gifts.">
   <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
   <header id="site-header"></header>
 
   <main id="main">
@@ -21,7 +21,7 @@
       <div class="container">
         <span class="eyebrow" style="background:#fff">Past Projects</span>
         <h1>The Gallery</h1>
-        <p>A peek at some of our favorite custom pieces. Tap any photo for a closer look, and get inspired for your own!</p>
+        <p>A peek at some of our favorite custom pieces. Tap any photo for a closer look, or "See more" to flip through every photo of a project.</p>
       </div>
     </section>
 
@@ -35,23 +35,38 @@
         <div class="gallery-grid" data-gallery-grid aria-live="polite"></div>
         <noscript><p class="text-center">Please turn on JavaScript to view the gallery.</p></noscript>
 
-        <!-- Call to action at the bottom of the gallery -->
-        <div class="cta-band" style="margin-top:64px">
-          <h2>See something you love?</h2>
-          <p>Let's create your own one-of-a-kind piece. Tell us your idea and we'll send mockups with pricing.</p>
-          <div class="btn-row">
-            <a class="btn btn--light" href="custom-orders.html#request-form">Start a Custom Request</a>
+        <!-- Call to action at the bottom of the gallery, with a "not sure?" box beside it -->
+        <div class="cta-split" style="margin-top:64px">
+          <div class="cta-band">
+            <h2>See something you love?</h2>
+            <p>Let's create your own one-of-a-kind piece. Tell us your idea and we'll send mockups with pricing.</p>
+            <div class="btn-row">
+              <a class="btn btn--light" href="custom-orders.html#request-form">Start a Custom Request</a>
+            </div>
           </div>
+          <aside class="help-box">
+            <span class="help-box__icon" data-icon="chat"></span>
+            <h3>Not sure what to create?</h3>
+            <p>Reach out and let's discuss.</p>
+            <a class="btn btn--primary btn--small" href="contact.html">Contact Me</a>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Pop-up "lightbox" for viewing a photo larger -->
-    <dialog class="lightbox" data-lightbox aria-label="Enlarged photo">
+    <!-- Pop-up slideshow for viewing photos larger (arrow keys work too) -->
+    <dialog class="lightbox" data-lightbox aria-label="Photo slideshow">
       <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close">×</button>
       <div class="lightbox__inner">
-        <div data-lightbox-media></div>
-        <p class="lightbox__caption" data-lightbox-caption></p>
+        <div class="lightbox__stage">
+          <div data-lightbox-media></div>
+          <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous photo"></button>
+          <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Next photo"></button>
+        </div>
+        <div class="lightbox__footer">
+          <p class="lightbox__caption" data-lightbox-caption></p>
+          <p class="lightbox__counter" data-lightbox-counter aria-live="polite"></p>
+        </div>
       </div>
     </dialog>
 
