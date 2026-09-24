@@ -31,7 +31,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 ### Swapping placeholder photos
 Every photo spot shows a label like **[Photo: custom painted jean jacket]** that tells you what to put there.
 
-- **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/images/mug.jpg"`.
+- **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/images/tumbler.jpg"`.
 - **Gallery**: each tile has a `photos` list. Set each photo's `image` field, and add more lines to a tile's list to grow its "See more" slideshow.
 - **Photos written directly in a page**: replace the placeholder
   ```html

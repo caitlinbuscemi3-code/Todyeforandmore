@@ -36,7 +36,7 @@
      ================================================================= */
   var memoryCart = []; // backup if the browser blocks saving
   var Cart = (window.Cart = {
-    // Read the saved cart: a list like [{ id: "mug-classic", qty: 2 }]
+    // Read the saved cart: a list like [{ id: "tumbler-ready", qty: 2 }]
     items: function () {
       try {
         var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
@@ -97,11 +97,13 @@
      ================================================================= */
   function productCardHTML(p) {
     // The custom button sends shoppers to the Custom Orders form with this product pre-filled
-    var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) + "#request-form";
+    // (ready-made items add &mode=customize so the form asks what to change about the design)
+    var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
+      (p.buyable && !p.customItem ? "&mode=customize" : "") + "#request-form";
     var actions = p.buyable
-      // READY TO BUY: Add to Cart + optional customizing
+      // READY TO BUY: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
-        '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Make This Custom") + "</a>"
+        '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Customize This Design") + "</a>"
       // CUSTOM ONLY: request button instead of Add to Cart
       : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";
     var price = p.buyable
@@ -114,10 +116,13 @@
           (p.badge ? '<span class="product-card__badge">' + Site.escape(p.badge) + "</span>" : "") +
         "</div>" +
         '<div class="product-card__body">' +
+          // Little label so shoppers can tell ready-made from made-to-order at a glance
+          '<p class="product-card__type product-card__type--' + (p.buyable ? "ready" : "custom") + '">' +
+            (p.buyable ? "Ready to ship" : "Made to order") + "</p>" +
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
           '<p class="product-card__price">' + price + "</p>" +
-          (p.buyable ? "" : '<p class="product-card__note">Custom only. Made to order after mockup approval.</p>') +
+          (p.buyable ? "" : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
           '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
       "</article>"

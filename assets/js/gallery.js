@@ -166,9 +166,9 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "gifts", caption: "Personalized Sherpa Blanket", color: "lime",
+    category: "gifts", caption: "Personalized Blanket", color: "lime",
     photos: [
-      { image: "", label: "personalized sherpa blanket" }
+      { image: "", label: "personalized blanket" }
     ]
   }
 ];

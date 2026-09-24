@@ -22,7 +22,7 @@
      buyable     – true = can be added to the cart, false = custom only
      category    – must match one of SHOP_CATEGORIES below
      desc        – short description (one sentence is best)
-     image       – path to a real photo, e.g. "assets/images/mug.jpg".
+     image       – path to a real photo, e.g. "assets/images/tumbler.jpg".
                    Leave as "" to show a placeholder box.
      label       – what the placeholder box says (describes the photo to take)
      color       – placeholder box color: blush, blue, lime, navy, orange
@@ -35,32 +35,75 @@
 
 window.SHOP_CATEGORIES = [
   { id: "all",     label: "All Gifts" },
-  { id: "drink",   label: "Mugs" },
+  { id: "beaded",  label: "Beaded Embroidery" },
+  { id: "drink",   label: "Tumblers" },
   { id: "bags",    label: "Totes, Bags & Tags" },
-  { id: "home",    label: "Blankets, Towels & Napkins" },
-  { id: "holiday", label: "Holiday" }
+  { id: "home",    label: "Blankets & Stockings" }
 ];
 
 window.PRODUCTS = [
-  /* ---------------- READY TO BUY ---------------- */
+  /* ================= BEADED EMBROIDERY ================= */
   {
-    id: "mug-engraved",
-    name: "Engraved Mug",
-    price: 18.00,
-    buyable: true,
-    category: "drink",
-    desc: "Ceramic mug with a crisp engraved design.",
+    id: "beaded-detroit",
+    name: "Detroit Beaded Embroidery",
+    price: 40.00,
+    buyable: true,                       // READY TO BUY
+    category: "beaded",
+    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or word? Customize it!",
     image: "",
-    label: "engraved coffee mug",
-    color: "blush",
+    label: "Detroit beaded embroidery design",
+    color: "navy",
     featured: true,
-    badge: "Best Seller"
+    badge: "Detroit Made"
   },
+  {
+    id: "beaded-custom",
+    name: "Custom Beaded Embroidery",
+    price: 35.00,
+    buyable: false,                      // CUSTOM ONLY
+    category: "beaded",
+    desc: "Your name, team, city, or design in sparkly hand-sewn beaded embroidery.",
+    image: "",
+    label: "custom beaded embroidery piece",
+    color: "orange",
+    featured: false,
+    badge: ""
+  },
+
+  /* ================= TUMBLERS ================= */
+  {
+    id: "tumbler-ready",
+    name: "Tumbler",
+    price: 25.00,
+    buyable: true,                       // READY TO BUY
+    category: "drink",
+    desc: "Insulated tumbler with one of our ready-made designs.",
+    image: "",
+    label: "ready-made design tumbler",
+    color: "blue",
+    featured: true,
+    badge: ""
+  },
+  {
+    id: "tumbler-custom",
+    name: "Custom Tumbler",
+    price: 25.00,
+    buyable: false,                      // CUSTOM ONLY
+    category: "drink",
+    desc: "Personalized with a name, team, or design of your choice.",
+    image: "",
+    label: "personalized tumbler",
+    color: "lime",
+    featured: false,
+    badge: ""
+  },
+
+  /* ================= TOTES, BAGS & TAGS ================= */
   {
     id: "tote-bookish",
     name: "Bookish Tote",
     price: 30.00,
-    buyable: true,
+    buyable: true,                       // READY TO BUY
     category: "bags",
     desc: "Our standard embroidered bookish design on a sturdy canvas tote. Want an embroidered name or initial tote instead? Same price!",
     image: "",
@@ -71,78 +114,24 @@ window.PRODUCTS = [
     customLabel: "Personalize It",
     customItem: "Name or Initial Tote"
   },
-
-  /* ---------------- CUSTOM ONLY ---------------- */
-  {
-    id: "blanket-sherpa",
-    name: "Personalized Sherpa Blanket",
-    price: 55.00,
-    buyable: false,
-    category: "home",
-    desc: "Super-soft throw personalized with a name, photo, or design. The ultimate snuggly gift.",
-    image: "",
-    label: "personalized sherpa throw blanket",
-    color: "blue",
-    featured: true,
-    badge: "Best Seller"
-  },
-  {
-    id: "towel-beach",
-    name: "Custom Beach Towel",
-    price: 34.00,
-    buyable: false,
-    category: "home",
-    desc: "Oversized, colorful towel with a name or design for pool days and beach trips.",
-    image: "",
-    label: "personalized beach towel",
-    color: "blush",
-    featured: false,
-    badge: ""
-  },
-  {
-    id: "towel-hand",
-    name: "Custom Hand Towel Set",
-    price: 20.00,
-    buyable: false,
-    category: "home",
-    desc: "Set of 2 decorative hand towels designed for your kitchen or bath. A great hostess gift.",
-    image: "",
-    label: "custom hand towel set",
-    color: "navy",
-    featured: false,
-    badge: ""
-  },
-  {
-    id: "napkins-cocktail",
-    name: "Custom Cocktail Napkins",
-    price: 24.00,
-    buyable: false,
-    category: "home",
-    desc: "Personalized cocktail napkins for weddings, showers, parties, and hosting.",
-    image: "",
-    label: "stack of personalized cocktail napkins",
-    color: "orange",
-    featured: false,
-    badge: "New"
-  },
   {
     id: "makeup-bag",
     name: "Custom Makeup Bag",
     price: 20.00,
-    buyable: false,
+    buyable: false,                      // CUSTOM ONLY
     category: "bags",
     desc: "Personalized zip pouch, perfect for bridesmaids, travel, and gifting.",
     image: "",
     label: "personalized makeup bag",
     color: "blush",
-    featured: true,
-    badge: "New"
+    featured: false,
+    badge: ""
   },
   {
     id: "bag-tag",
     name: "Personalized Bag Tag",
     price: 12.00,
-    buyable: false,
+    buyable: false,                      // CUSTOM ONLY
     category: "bags",
     desc: "Custom tags for sports bags, backpacks, and luggage.",
     image: "",
@@ -151,12 +140,27 @@ window.PRODUCTS = [
     featured: false,
     badge: "Team Favorite"
   },
+
+  /* ================= BLANKETS & STOCKINGS ================= */
+  {
+    id: "blanket",
+    name: "Personalized Blanket",
+    price: 45.00,
+    buyable: false,                      // CUSTOM ONLY
+    category: "home",
+    desc: "A super-soft throw personalized with a name, photo, or design. The ultimate snuggly gift.",
+    image: "",
+    label: "personalized blanket",
+    color: "blue",
+    featured: true,
+    badge: "Best Seller"
+  },
   {
     id: "stocking",
     name: "Personalized Holiday Stocking",
-    price: 28.00,
-    buyable: false,
-    category: "holiday",
+    price: 25.00,
+    buyable: false,                      // CUSTOM ONLY
+    category: "home",
     desc: "Plush stocking personalized with a name or design. Hang it with care!",
     image: "",
     label: "personalized holiday stocking",
