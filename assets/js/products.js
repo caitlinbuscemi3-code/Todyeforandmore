@@ -22,8 +22,8 @@
      buyable     – true = can be added to the cart, false = custom only
      category    – must match one of SHOP_CATEGORIES below
      desc        – short description (one sentence is best)
-     image       – path to a real photo, e.g. "assets/images/tumbler.jpg".
-                   Leave as "" to show a placeholder box.
+     image       – path to a real photo, e.g. "assets/photos/booked-tote-bag.jpg".
+                   Leave as "" to show a "Coming soon" placeholder.
      label       – what the placeholder box says (describes the photo to take)
      color       – placeholder box color: blush, blue, lime, navy, orange
      featured    – a number (1, 2, 3, 4) = show on the Home page "Best Sellers"
@@ -58,15 +58,15 @@ window.SHOP_CATEGORIES = [
 ];
 
 window.PRODUCTS = [
-  /* ================= APPAREL ================= */
+  /* ================= APPAREL (ready-made) ================= */
   {
     id: "lions-applique",
     name: "Lions Appliqué Crewneck",
     price: 45.00,
-    buyable: true,                       // READY-MADE
+    buyable: true,
     category: "apparel",
     desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
-    image: "",
+    image: "assets/photos/lions-applique-crew-custom-team.jpg",
     label: "Lions appliqué crewneck",
     color: "blue",
     featured: 1,
@@ -77,14 +77,112 @@ window.PRODUCTS = [
     id: "lions-tee-blue",
     name: "Blue Lions Tee",
     price: 25.00,
-    buyable: true,                       // READY-MADE
+    buyable: true,
     category: "apparel",
     desc: "Our blue Lions tee, ready for game day. Want it for a different team? Customize it!",
-    image: "",
+    image: "assets/photos/lions-tee-blue-2.jpg",
     label: "blue Lions t-shirt",
     color: "navy",
     featured: 4,
     badge: "Game Day",
+    sizes: true
+  },
+  {
+    id: "lions-graphic-tee",
+    name: "Vintage Detroit Graphic Tee",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Vintage-style Detroit football graphic tee.",
+    image: "assets/photos/lions-graphic-tee-vintage.jpg",
+    label: "vintage Detroit graphic tee",
+    color: "navy",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "detroit-football-tee",
+    name: "Detroit Embroidered Football Tee",
+    price: 30.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Embroidered Detroit football design on a soft black tee.",
+    image: "assets/photos/detroit-embroidered-football-tee.jpg",
+    label: "Detroit embroidered football tee",
+    color: "blue",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "lions-tie-dye-crew",
+    name: "Detroit Tie-Dye Crewneck",
+    price: 40.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Hand-dyed blue and white Detroit crewneck. Every one is a little different!",
+    image: "assets/photos/detroit-lions-tie-dye-crewnecks.jpg",
+    label: "Detroit tie-dye crewneck",
+    color: "blue",
+    featured: false,
+    badge: "Hand-Dyed",
+    sizes: true
+  },
+  {
+    id: "happy-camper-crew",
+    name: "Happy Camper Embroidered Crewneck",
+    price: 45.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Embroidered mountain scene crewneck for your coziest camping days.",
+    image: "assets/photos/happy-camper-embroidered-crewnecks.jpg",
+    label: "Happy Camper embroidered crewneck",
+    color: "lime",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "sunflower-hoodie",
+    name: "Sunflower Embroidered Hoodie",
+    price: 50.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A tiny embroidered sunflower on a soft pastel hoodie.",
+    image: "assets/photos/sunflower-embroidered-hoodie.jpg",
+    label: "sunflower embroidered hoodie",
+    color: "lime",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "lucky-crew",
+    name: "Lucky Crewneck",
+    price: 40.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Green “Lucky” vinyl (HTV) crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
+    image: "assets/photos/lucky-sweatshirt.jpg",
+    label: "Lucky crewneck",
+    color: "lime",
+    featured: false,
+    badge: "Seasonal",
+    sizes: true
+  },
+  {
+    id: "book-tee",
+    name: "Book Lover Tee",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Flowers blooming from an open book, for every reader you know.",
+    image: "assets/photos/book-t-shirt.jpg",
+    label: "book lover t-shirt",
+    color: "blush",
+    featured: false,
+    badge: "",
     sizes: true
   },
 
@@ -96,7 +194,7 @@ window.PRODUCTS = [
     buyable: false,                      // MADE TO ORDER
     category: "shoes",
     desc: "Fully custom, hand-painted sneakers designed around your idea: team colors, florals, characters, weddings, and more.",
-    image: "",
+    image: "assets/photos/custom-chicago-nikes.jpg",
     label: "custom hand-painted sneakers",
     color: "orange",
     featured: 2,
@@ -138,7 +236,7 @@ window.PRODUCTS = [
       { name: "Crewneck", price: 50.00 },
       { name: "Hoodie",   price: 55.00 }
     ],
-    image: "",
+    image: "assets/photos/beaded-embroidery-custom.jpg",
     label: "custom beaded embroidery piece",
     color: "orange",
     featured: false,
@@ -148,13 +246,13 @@ window.PRODUCTS = [
   /* ================= TUMBLERS ================= */
   {
     id: "tumbler-ready",
-    name: "Tumbler",
+    name: "Engraved Tumbler",
     price: 25.00,
     buyable: true,                       // READY TO BUY
     category: "drink",
-    desc: "Insulated tumbler with one of our ready-made designs.",
-    image: "",
-    label: "ready-made design tumbler",
+    desc: "Insulated tumbler engraved with one of our ready-made designs, like this Red Wings favorite.",
+    image: "assets/photos/engraved-mug-red-wings-or-team.jpg",
+    label: "Red Wings engraved tumbler",
     color: "blue",
     featured: false,
     badge: ""
@@ -166,7 +264,7 @@ window.PRODUCTS = [
     buyable: false,                      // CUSTOM ONLY
     category: "drink",
     desc: "Personalized with a name, team, or design of your choice.",
-    image: "",
+    image: "assets/photos/custom-team-engraved-bulk-tumblers.jpg",
     label: "personalized tumbler",
     color: "lime",
     featured: false,
@@ -181,7 +279,7 @@ window.PRODUCTS = [
     buyable: true,                       // READY TO BUY
     category: "bags",
     desc: "Our standard embroidered bookish design on a sturdy canvas tote. Want an embroidered name or initial tote instead? Same price!",
-    image: "",
+    image: "assets/photos/booked-tote-bag.jpg",
     label: "bookish design canvas tote bag",
     color: "lime",
     featured: false,
@@ -224,7 +322,7 @@ window.PRODUCTS = [
     buyable: false,                      // CUSTOM ONLY
     category: "home",
     desc: "A super-soft throw personalized with a name, photo, or design. The ultimate snuggly gift.",
-    image: "",
+    image: "assets/photos/embroidered-blanket-name.jpg",
     label: "personalized blanket",
     color: "blue",
     featured: false,

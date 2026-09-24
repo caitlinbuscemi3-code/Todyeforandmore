@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shop | To Dye For and More</title>
   <meta name="description" content="Shop ready-made designs and made-to-order gifts: Detroit beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings.">
-  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <!-- Browser tab icon: the small "tdf" logo -->
+  <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -17,11 +19,14 @@
   <main id="main">
 
     <!-- PAGE BANNER -->
-    <section class="page-hero">
+    <section class="page-hero page-hero--media">
       <div class="container">
-        <span class="eyebrow" style="background:#fff">Apparel &amp; Gifts</span>
-        <h1>Shop</h1>
-        <p><strong>Ready-made</strong> designs go straight in your cart. Some are in stock and ship right away, and others are made fresh when you order (about <span data-config="turnaround.apparel">1–2 weeks</span> for apparel, <span data-config="turnaround.handmade">2–4 weeks</span> for shoes, embroidery, and hand-painted items). Love a design but want a different team, name, city, or colors? Customize it for the same price. <strong>Made to order</strong> items are created just for you after you approve a mockup. All sales are final. <a href="faq.html">Questions? See our FAQ</a>.</p>
+        <div>
+          <span class="eyebrow" style="background:#fff">Apparel &amp; Gifts</span>
+          <h1>Shop</h1>
+          <p><strong>Ready-made</strong> designs go straight in your cart. Some are in stock and ship right away, and others are made fresh when you order (about <span data-config="turnaround.apparel">1–2 weeks</span> for apparel, <span data-config="turnaround.handmade">2–4 weeks</span> for shoes, embroidery, and hand-painted items). Love a design but want a different team, name, city, or colors? Customize it for the same price. <strong>Made to order</strong> items are created just for you after you approve a mockup. All sales are final. <a href="faq.html">Questions? See our FAQ</a>.</p>
+        </div>
+        <img class="media-img media-img--portrait page-hero__photo" src="assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg" alt="Smiling boy in a custom embroidered superhero tee" style="object-position:center 35%">
       </div>
     </section>
 
@@ -58,7 +63,11 @@
     <!-- CUSTOM NUDGE -->
     <section class="section section--blue">
       <div class="container split">
-        <div class="ph ph--lime ph--wide" role="img" aria-label="[Photo: before and after of a customized gift item]">[Photo: before and after of a customized gift item]</div>
+        <!-- Before & after: a blank pair of sneakers, then a finished custom pair -->
+        <div class="before-after">
+          <figure><img class="media-img media-img--square" src="assets/photos/blank-shoes-use-for-before-photo.jpg" alt="Plain white sneakers before customizing" loading="lazy"><figcaption>Before</figcaption></figure>
+          <figure><img class="media-img media-img--square" src="assets/photos/custom-chicago-shoes-nike.jpg" alt="The same style of sneakers after custom hand-painting" loading="lazy"><figcaption>After</figcaption></figure>
+        </div>
         <div>
           <span class="eyebrow" style="background:#fff">Don't see it?</span>
           <h2>Love it, but want it your way?</h2>

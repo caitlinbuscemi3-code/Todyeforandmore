@@ -187,9 +187,8 @@
           (p.badge ? '<span class="product-card__badge">' + Site.escape(p.badge) + "</span>" : "") +
         "</div>" +
         '<div class="product-card__body">' +
-          // Little label so shoppers can tell ready-made from made-to-order at a glance
-          '<p class="product-card__type product-card__type--' + (p.buyable ? "ready" : "custom") + '">' +
-            (p.buyable ? "Ready-made" : "Made to order") + "</p>" +
+          // Label only the made-to-order items (ready-made items have no label)
+          (p.buyable ? "" : '<p class="product-card__type product-card__type--custom">Made to order</p>') +
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
           '<p class="product-card__price">' + price + "</p>" +
