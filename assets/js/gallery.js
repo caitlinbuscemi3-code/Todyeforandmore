@@ -548,6 +548,15 @@ window.GALLERY_ITEMS = [
     render();
     box.showModal();
   });
+  // Swipe left/right on phones and tablets to change photos
+  var touchX = null;
+  media.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  media.addEventListener("touchend", function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  });
   prevBtn.addEventListener("click", function () { step(-1); });
   nextBtn.addEventListener("click", function () { step(1); });
   box.addEventListener("keydown", function (e) {

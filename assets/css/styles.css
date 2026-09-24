@@ -730,6 +730,11 @@ fieldset.field { border: none; padding: 0; margin: 0; }
   font-size: 1.4rem; cursor: pointer;
 }
 .lightbox__stage { position: relative; }
+/* show the whole photo in the slideshow (no cropping) */
+.lightbox__stage .media-img {
+  aspect-ratio: auto; width: 100%; height: min(70vh, 640px);
+  object-fit: contain; background: var(--color-bg);
+}
 .lightbox__nav {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 46px; height: 46px; border-radius: 50%;
