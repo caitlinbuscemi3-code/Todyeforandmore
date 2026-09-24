@@ -9,7 +9,7 @@
      • On success, sends the form (if you've set up a form service in
        config.js → forms) and shows a "Thank you!" message
 
-   📬 BACKEND HOOK: form delivery is controlled from config.js → forms.
+   BACKEND HOOK: form delivery is controlled from config.js → forms.
    While those are empty (""), forms work visually but nothing is sent.
    ===================================================================== */
 
@@ -185,7 +185,7 @@
       var list = box.querySelector(".upload__list");
       function refresh() {
         var files = Array.prototype.slice.call(input.files || []);
-        list.innerHTML = files.map(function (f) { return "<li>📎 " + Site.escape(f.name) + "</li>"; }).join("");
+        list.innerHTML = files.map(function (f) { return "<li>" + Site.icon("paperclip") + Site.escape(f.name) + "</li>"; }).join("");
       }
       input.addEventListener("change", refresh);
       ["dragenter", "dragover"].forEach(function (ev) { box.addEventListener(ev, function () { box.classList.add("is-dragover"); }); });
@@ -197,7 +197,7 @@
   /* ---------- Sending the form ---------- */
   function sendForm(form, endpoint) {
     /* ============================================================
-       📬 BACKEND HOOK
+       BACKEND HOOK
        If config.js → forms has a URL for this form, the form data
        (including uploaded photos) is POSTed there. Works out of the
        box with Formspree, Basin, Getform, and similar services.

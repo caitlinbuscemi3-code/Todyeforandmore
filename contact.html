@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
   <header id="site-header"></header>
 
   <main id="main">
@@ -30,7 +30,7 @@
 
         <!-- ==========================================================
              CONTACT FORM
-             📬 BACKEND HOOK: paste your form service URL into
+             BACKEND HOOK: paste your form service URL into
              assets/js/config.js → forms.contact to receive messages
              ========================================================== -->
         <div>
@@ -56,12 +56,12 @@
             </div>
             <div class="form-actions">
               <button class="btn btn--primary" type="submit">Send Message</button>
-              <p class="form-note">Placing an order? The <a href="custom-orders.html#request-form">custom</a> or <a href="team-orders.html#team-form">team</a> forms get you a quote fastest.</p>
+              <p class="form-note">Have a quick question? Check our <a href="faq.html">FAQ</a>. Placing an order? The <a href="custom-orders.html#request-form">custom</a> or <a href="team-orders.html#team-form">team</a> forms get you a quote fastest.</p>
             </div>
           </form>
 
           <div class="form-card form-success" data-success-for="contact-form" tabindex="-1" hidden>
-            <div class="form-success__icon" aria-hidden="true">💌</div>
+            <div class="form-success__icon" data-icon="send"></div>
             <h2 style="font-size:1.6rem">Message sent!</h2>
             <p class="muted">Thanks for reaching out. We'll get back to you within 1–2 business days.</p>
             <button class="btn btn--outline" type="button" data-form-again>Send another message</button>
@@ -69,32 +69,26 @@
         </div>
 
         <!-- ==========================================================
-             CONTACT INFO, HOURS & SOCIAL
+             CONTACT INFO & SOCIAL
              All filled in automatically from assets/js/config.js
              ========================================================== -->
         <aside class="grid" style="gap:20px">
           <div class="card">
             <h2 style="font-size:1.3rem">Get in touch</h2>
             <ul class="info-list">
-              <li><span class="icon" aria-hidden="true">✉️</span>
+              <li><span class="info-list__icon" data-icon="mail"></span>
                 <div><strong>Email</strong><br><a href="#" data-config="contact.email" data-config-link="mailto"></a></div></li>
               <!-- Hidden automatically while config.js → contact.phone is empty -->
-              <li data-hide-if-empty="contact.phone"><span class="icon" aria-hidden="true">📞</span>
+              <li data-hide-if-empty="contact.phone"><span class="info-list__icon" data-icon="phone"></span>
                 <div><strong>Phone</strong><br><a href="#" data-config="contact.phone" data-config-link="tel"></a></div></li>
-              <li><span class="icon" aria-hidden="true">📍</span>
-                <div><strong>Location</strong><br><span data-config="contact.location"></span><br>
-                  <span class="muted" data-config="contact.pickupNote"></span></div></li>
+              <li><span class="info-list__icon" data-icon="pin"></span>
+                <div><strong>Location</strong><br><span data-config="contact.location"></span></div></li>
             </ul>
           </div>
 
           <div class="card">
-            <h2 style="font-size:1.3rem">Business hours</h2>
-            <div data-hours></div>
-          </div>
-
-          <div class="card">
             <h2 style="font-size:1.3rem">Follow along</h2>
-            <p class="muted">See new projects first and get behind-the-scenes peeks!</p>
+            <p class="muted">See new projects first, get behind-the-scenes peeks, and don't miss <strong>exclusive giveaways just for followers</strong>!</p>
             <div data-social></div>
           </div>
         </aside>

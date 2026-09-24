@@ -24,6 +24,11 @@
     { label: "Contact",       href: "contact.html" }
   ];
 
+  /* ---------- Extra links shown only in the footer ---------- */
+  var FOOTER_EXTRA_LINKS = [
+    { label: "FAQ & Policies", href: "faq.html" }
+  ];
+
   /* ---------- Small shared helpers (used by other scripts too) ---------- */
   var Site = (window.Site = window.Site || {});
 
@@ -63,6 +68,44 @@
   };
   Site.icons = ICONS;
 
+  /* ---------- Outlined brand icons ----------
+     Simple line drawings used wherever the site needs a small graphic
+     (steps, contact info, form boxes, etc.). They take the color of
+     the text around them, which is navy by default (see .icon in styles.css).
+     Use one in a page with:  <span class="icon-wrap" data-icon="gift"></span> */
+  var LINE_ICONS = {
+    idea:      '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2v.1h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/>',
+    palette:   '<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H16a5 5 0 0 0 5-5c0-3.9-4-7-9-7z"/><circle cx="7.5" cy="11.5" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/>',
+    check:     '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7 5.8-5.7"/>',
+    clipboard: '<rect x="5" y="4.5" width="14" height="16.5" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M8.5 11.5h7M8.5 15.5h5"/>',
+    camera:    '<path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/>',
+    trophy:    '<path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1.5a3 3 0 0 0 3 3M16 6h3v1.5a3 3 0 0 1-3 3"/><path d="M12 13v4M8.5 20.5h7M10 17h4v3.5h-4z"/>',
+    chat:      '<path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/>',
+    mail:      '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>',
+    phone:     '<path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/>',
+    pin:       '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+    bag:       '<path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/>',
+    card:      '<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/>',
+    sparkle:   '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5v5M16.5 18h5"/>',
+    heart:     '<path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.5 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/>',
+    smile:     '<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/>',
+    scissors:  '<circle cx="6" cy="7" r="2.5"/><circle cx="6" cy="17" r="2.5"/><path d="M8 8.5L20 17M8 15.5L20 7"/>',
+    community: '<path d="M4 10.5L12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M12 17.5s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/>',
+    people:    '<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/>',
+    gift:      '<rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12"/><path d="M12 8s-1.5-4-3.5-4a2 2 0 0 0 0 4M12 8s1.5-4 3.5-4a2 2 0 0 1 0 4"/>',
+    paperclip: '<path d="M20 11.5l-7.8 7.8a5 5 0 0 1-7-7L13 4.5a3.3 3.3 0 0 1 4.7 4.7l-7.8 7.8a1.6 1.6 0 0 1-2.3-2.3l7-7"/>',
+    send:      '<path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/>',
+    truck:     '<path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+    clock:     '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    prev:      '<path d="M15 5l-7 7 7 7"/>',
+    next:      '<path d="M9 5l7 7-7 7"/>'
+  };
+  // Returns the SVG for an outlined icon, e.g. Site.icon("gift")
+  Site.icon = function (name) {
+    return '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + (LINE_ICONS[name] || "") + "</svg>";
+  };
+
   var SOCIAL_NAMES = { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok", pinterest: "Pinterest" };
 
   // Builds the list of social icons from config.js (empty links are skipped)
@@ -82,16 +125,19 @@
   if (currentFile === "") currentFile = "index.html";
 
   /* ---------- Brand (logo + name) ---------- */
-  function brandHTML() {
+  function brandHTML(showTagline) {
     var logo = CONFIG.logo || {};
     var name = CONFIG.businessName || "To Dye For and More";
     // =================================================================
-    // 🖼️ LOGO: the image file comes from config.js → logo.src
+    // LOGO: the image file comes from config.js → logo.src
     //    (default placeholder: assets/images/logo-placeholder.svg)
     // =================================================================
     var img = '<img class="brand__logo" src="' + Site.escape(logo.src || "assets/images/logo-placeholder.svg") +
       '" alt="' + Site.escape(logo.alt || name + " logo") + '" width="52" height="52">';
-    var text = logo.showNameNextToLogo === false ? "" : '<span class="brand__name">' + Site.escape(name) + "</span>";
+    // Header tagline comes from config.js → tagline
+    var tagline = showTagline && CONFIG.tagline ? '<span class="brand__tagline">' + Site.escape(CONFIG.tagline) + "</span>" : "";
+    var text = logo.showNameNextToLogo === false ? tagline :
+      '<span class="brand__text"><span class="brand__name">' + Site.escape(name) + "</span>" + tagline + "</span>";
     return '<a class="brand" href="index.html" aria-label="' + Site.escape(name) + ' home">' + img + text + "</a>";
   }
 
@@ -108,7 +154,7 @@
     header.className = "site-header";
     header.innerHTML =
       '<div class="container site-header__inner">' +
-        brandHTML() +
+        brandHTML(true) +
         '<nav class="nav" id="main-nav" aria-label="Main">' +
           '<ul class="nav__list">' + links + "</ul>" +
         "</nav>" +
@@ -143,9 +189,6 @@
     var footer = document.getElementById("site-footer");
     if (!footer) return;
     var c = CONFIG.contact || {};
-    var hours = (CONFIG.hours || []).map(function (h) {
-      return "<div><span>" + Site.escape(h.days) + "</span><span>" + Site.escape(h.time) + "</span></div>";
-    }).join("");
     var tel = String(c.phone || "").replace(/[^\d+]/g, "");
 
     footer.className = "site-footer";
@@ -156,19 +199,18 @@
             "<p>" + Site.escape(CONFIG.tagline || "") + "</p>" + Site.socialHTML() +
           "</div>" +
           "<div><h4>Explore</h4><ul class=\"footer-links\">" +
-            NAV_LINKS.map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
+            NAV_LINKS.concat(FOOTER_EXTRA_LINKS).map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
           "</ul></div>" +
           "<div><h4>Get in touch</h4><ul class=\"footer-contact\">" +
-            (c.email ? '<li>✉️ <a href="mailto:' + Site.escape(c.email) + '">' + Site.escape(c.email) + "</a></li>" : "") +
-            (c.phone ? '<li>📞 <a href="tel:' + Site.escape(tel) + '">' + Site.escape(c.phone) + "</a></li>" : "") +
-            (c.location ? "<li>📍 " + Site.escape(c.location) + "</li>" : "") +
-            (c.pickupNote ? "<li>🛍️ " + Site.escape(c.pickupNote) + "</li>" : "") +
+            (c.email ? "<li>" + Site.icon("mail") + '<a href="mailto:' + Site.escape(c.email) + '">' + Site.escape(c.email) + "</a></li>" : "") +
+            (c.phone ? "<li>" + Site.icon("phone") + '<a href="tel:' + Site.escape(tel) + '">' + Site.escape(c.phone) + "</a></li>" : "") +
+            (c.location ? "<li>" + Site.icon("pin") + "<span>" + Site.escape(c.location) + "</span></li>" : "") +
           "</ul></div>" +
-          '<div><h4>Hours</h4><div class="footer-hours">' + hours + "</div></div>" +
         "</div>" +
         '<div class="footer-bottom">' +
-          "<span>© " + new Date().getFullYear() + " " + Site.escape(CONFIG.businessName || "") + ". All rights reserved.</span>" +
-          "<span>Made to order with 💖</span>" +
+          // Copyright years: config.js → foundedYear through the current year
+          "<span>© " + (CONFIG.foundedYear || 2020) + "–" + new Date().getFullYear() + " " + Site.escape(CONFIG.businessName || "") + ". All rights reserved.</span>" +
+          "<span>Handmade to order in " + Site.escape(c.location || "Michigan") + "</span>" +
         "</div>" +
       "</div>";
   }
@@ -193,10 +235,9 @@
       if (linkType === "tel") el.setAttribute("href", "tel:" + String(value).replace(/[^\d+]/g, ""));
     });
     document.querySelectorAll("[data-social]").forEach(function (el) { el.innerHTML = Site.socialHTML(); });
-    document.querySelectorAll("[data-hours]").forEach(function (el) {
-      el.innerHTML = '<table class="hours-table"><tbody>' + (CONFIG.hours || []).map(function (h) {
-        return "<tr><td>" + Site.escape(h.days) + "</td><td>" + Site.escape(h.time) + "</td></tr>";
-      }).join("") + "</tbody></table>";
+    // Draw outlined icons: <span data-icon="gift"></span>
+    document.querySelectorAll("[data-icon]").forEach(function (el) {
+      el.innerHTML = Site.icon(el.getAttribute("data-icon"));
     });
   }
 

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Custom Orders | To Dye For and More</title>
-  <meta name="description" content="Request custom hand-painted shoes, HTV and embroidered apparel, painted jean jackets, pet sweatshirts, and wedding items.">
+  <meta name="description" content="Request custom hand-painted shoes, HTV, embroidered and beaded embroidery apparel, painted jean jackets, pet sweatshirts, hand-knit baby sweaters, and baby boxes.">
   <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
   <header id="site-header"></header>
 
   <main id="main">
@@ -39,23 +39,27 @@
         <ol class="steps">
           <li class="step">
             <span class="step__num">1</span>
-            <div class="step__icon" aria-hidden="true">💡</div>
+            <div class="step__icon" data-icon="idea"></div>
             <h3>Describe your idea</h3>
             <p>Fill out the request form below. Inspiration photos are super helpful!</p>
           </li>
           <li class="step">
             <span class="step__num">2</span>
-            <div class="step__icon" aria-hidden="true">🎨</div>
+            <div class="step__icon" data-icon="palette"></div>
             <h3>Get mockups &amp; pricing</h3>
             <p>Within a few days you'll receive design mockup options with pricing for each.</p>
           </li>
           <li class="step">
             <span class="step__num">3</span>
-            <div class="step__icon" aria-hidden="true">✅</div>
+            <div class="step__icon" data-icon="check"></div>
             <h3>Approve &amp; pay deposit</h3>
             <p>Pick your favorite, pay a <span data-config="depositPercent">50</span>% deposit, and we start creating. The balance is due when it's ready.</p>
           </li>
         </ol>
+        <div class="callout" style="max-width:760px;margin:36px auto 0">
+          <span class="callout__icon" data-icon="clock"></span>
+          <p><strong>How long does it take?</strong> Once your mockup is approved and your deposit is in, most orders take about <strong><span data-config="turnaround.apparel">1–2 weeks</span></strong> for apparel and <strong><span data-config="turnaround.handmade">2–4 weeks</span></strong> for shoes, embroidery, and hand-painted items. Need it by a certain date? Tell us in your request.</p>
+        </div>
       </div>
     </section>
 
@@ -74,6 +78,7 @@
             <li>Send us a new pair or we can source them for you</li>
             <li>Great for game days, weddings, birthdays &amp; gifts</li>
           </ul>
+          <p class="price-note">Customization starts at <strong>$75</strong>, plus the cost of the shoes</p>
           <a class="btn btn--primary" href="?type=shoes#request-form">Request Custom Shoes</a>
         </div>
       </div>
@@ -90,39 +95,121 @@
           <p>From everyday tees to once-in-a-lifetime pieces, here's what we love to make.</p>
         </div>
 
-        <div class="grid grid--2">
+        <div class="grid grid--3">
           <article class="card service-card">
             <div class="ph ph--blue ph--wide" role="img" aria-label="[Photo: HTV vinyl shirt and embroidered hoodie]">[Photo: HTV vinyl shirt and embroidered hoodie]</div>
             <span class="tag">HTV &amp; Embroidery</span>
             <h3>Tees, hoodies &amp; more</h3>
+            <p class="price-note">Starting at <strong>$25</strong> (see pricing guide below)</p>
             <p>Crisp heat-transfer vinyl (HTV) designs and classic embroidery on shirts, sweatshirts, hats, and more. Names, monograms, logos, sayings, you name it.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--orange ph--wide" role="img" aria-label="[Photo: beaded embroidery on a sweatshirt, close-up]">[Photo: beaded embroidery on a sweatshirt, close-up]</div>
+            <span class="tag">Beaded Embroidery</span>
+            <h3>Beaded embroidery</h3>
+            <p class="price-note">Starting at <strong>$40</strong></p>
+            <p>Embroidery with hand-sewn beads for texture and sparkle. A dressed-up look for sweatshirts, jackets, and special-occasion pieces.</p>
           </article>
           <article class="card service-card">
             <div class="ph ph--navy ph--wide" role="img" aria-label="[Photo: custom painted jean jacket, back view]">[Photo: custom painted jean jacket, back view]</div>
             <span class="tag">Hand-Painted</span>
             <h3>Painted jean jackets</h3>
+            <p class="price-note">Starting at <strong>$55</strong></p>
             <p>One-of-a-kind denim jackets hand-painted with your design. Florals, portraits, lyrics, team logos, or "Mrs." for the bride-to-be.</p>
           </article>
           <article class="card service-card">
             <div class="ph ph--lime ph--wide" role="img" aria-label="[Photo: sweatshirt featuring a customer's pet]">[Photo: sweatshirt featuring a customer's pet]</div>
             <span class="tag">From Your Photos</span>
-            <h3>Pet sweatshirts</h3>
-            <p>Send us a photo of your furry (or scaly!) best friend and we'll turn it into a cozy sweatshirt you'll never want to take off.</p>
+            <h3>Embroidered pet sweatshirts</h3>
+            <p class="price-note">Starting at <strong>$55</strong></p>
+            <p>Send us a photo of your furry (or scaly!) best friend and we'll embroider it onto a cozy sweatshirt you'll never want to take off.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--blush ph--wide" role="img" aria-label="[Photo: bridal party matching jackets and tees]">[Photo: bridal party matching jackets and tees]</div>
-            <span class="tag">Wedding &amp; Bridal</span>
-            <h3>Wedding &amp; bridal items</h3>
-            <p>Bride jackets, bridal party tees and robes, bachelorette gear, and keepsakes for the big day and every moment around it.</p>
+            <div class="ph ph--blue ph--wide" role="img" aria-label="[Photo: hand-knit baby sweater]">[Photo: hand-knit baby sweater]</div>
+            <span class="tag">Hand-Knit</span>
+            <h3>Hand-knit baby sweaters</h3>
+            <p class="price-note">Starting at <strong>$45</strong></p>
+            <p>Soft, cozy sweaters knit by hand for the littlest ones, in the colors of your choice. A keepsake gift for new arrivals.</p>
           </article>
+          <!-- Wedding & bridal orders live on the Team & Bulk page -->
+          <a class="card service-card service-card--link" href="team-orders.html#wedding">
+            <div class="ph ph--blush ph--wide" role="img" aria-label="[Photo: bridal party matching apparel]">[Photo: bridal party matching apparel]</div>
+            <span class="tag">Wedding &amp; Bridal</span>
+            <h3>Planning a wedding?</h3>
+            <p>Bridal party shirts, makeup bags, accessories, and koozies are handled as group orders. Get a quote on our Team &amp; Bulk page.</p>
+            <span class="arrow">See wedding &amp; bridal party orders</span>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABY BOXES (link target: custom-orders.html#baby-boxes)
+         ============================================================ -->
+    <section id="baby-boxes" class="section section--lime" aria-labelledby="baby-title">
+      <div class="container split split--reverse">
+        <div class="ph ph--blush ph--square" role="img" aria-label="[Photo: personalized baby gift box, open]">[Photo: personalized baby gift box, open]</div>
+        <div>
+          <span class="eyebrow" style="background:#fff">Baby</span>
+          <h2 id="baby-title">Baby boxes</h2>
+          <p>Personalized gift boxes made for welcoming a new little one. Each box is put together around the baby's name, theme, and colors.</p>
+          <ul class="feature-list">
+            <li>Perfect for baby showers, new arrivals, and pregnancy announcements</li>
+            <li>Pair it with a hand-knit baby sweater</li>
+            <li>Tell us your theme, colors, and budget and we'll design the box</li>
+          </ul>
+          <p class="price-note">Starting at <strong>$60</strong></p>
+          <a class="btn btn--primary" href="?type=baby-box#request-form">Request a Baby Box</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRICING GUIDE (link target: custom-orders.html#pricing)
+         Edit prices right here. Team/bulk orders are quoted separately.
+         ============================================================ -->
+    <section id="pricing" class="section" aria-labelledby="pricing-title">
+      <div class="container" style="max-width:900px">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2 id="pricing-title">Pricing guide</h2>
+          <p>Starting prices for individual custom pieces. Your exact price depends on the design, size, and details, and it's always confirmed with your mockup before you pay anything.</p>
+        </div>
+        <div class="price-grid">
+          <div class="card price-card">
+            <h3>Apparel</h3>
+            <dl class="price-list">
+              <div><dt>T-shirts (vinyl / HTV)</dt><dd>$25</dd></div>
+              <div><dt>Embroidered shirts</dt><dd>$30</dd></div>
+              <div><dt>Crewnecks</dt><dd>$40</dd></div>
+              <div><dt>Embroidered or appliqué crewnecks</dt><dd>$45</dd></div>
+              <div><dt>Hoodies</dt><dd>$45</dd></div>
+              <div><dt>Embroidered hoodies</dt><dd>$50</dd></div>
+              <div><dt>Hand-painted jean jackets</dt><dd>from $55</dd></div>
+              <div><dt>Beaded embroidery (t-shirt / crewneck / hoodie)</dt><dd>$40 / $50 / $55</dd></div>
+              <div><dt>Embroidered pet sweatshirts</dt><dd>from $55</dd></div>
+            </dl>
+          </div>
+          <div class="card price-card">
+            <h3>Shoes, gifts &amp; baby</h3>
+            <dl class="price-list">
+              <div><dt>Custom shoes (customization, shoes not included)</dt><dd>from $75</dd></div>
+              <div><dt>Embroidered tote bags</dt><dd>$30</dd></div>
+              <div><dt>Tumblers</dt><dd>$25</dd></div>
+              <div><dt>Baby boxes</dt><dd>from $60</dd></div>
+              <div><dt>Hand-knit baby sweaters</dt><dd>from $45</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="text-center muted" style="margin-top:24px">Apparel comes in sizes XS–XL. Sizes 2X–4X add $3 and may take a little longer.</p>
+        <p class="text-center muted">Ordering for a team or group? Bulk pricing depends on the products and quantity. <a href="team-orders.html#team-form">Request a team quote</a>.</p>
       </div>
     </section>
 
     <!-- ============================================================
          CUSTOM ORDER REQUEST FORM
          Checks: assets/js/forms.js
-         📬 BACKEND HOOK: to receive these by email, paste your form
+         BACKEND HOOK: to receive these by email, paste your form
          service URL into assets/js/config.js → forms.customOrder
          ============================================================ -->
     <section id="request-form" class="section section--navy" aria-labelledby="form-title">
@@ -161,10 +248,12 @@
                 <option>Custom shoes</option>
                 <option>HTV / vinyl apparel</option>
                 <option>Embroidered apparel</option>
+                <option>Beaded embroidery</option>
                 <option>Hand-painted jean jacket</option>
                 <option>Pet sweatshirt (from photo)</option>
-                <option>Wedding / bridal item</option>
-                <option>Customized gift item (mug, tumbler, tote, etc.)</option>
+                <option>Hand-knit baby sweater</option>
+                <option>Baby box</option>
+                <option>Customized gift item (tumbler, tote, blanket, etc.)</option>
                 <option>Something else</option>
               </select>
             </div>
@@ -179,7 +268,7 @@
             <div class="field full">
               <label for="c-files">Reference photos <span class="muted">(optional)</span></label>
               <div class="upload">
-                <div class="upload__icon" aria-hidden="true">📸</div>
+                <div class="upload__icon" data-icon="camera"></div>
                 <p class="upload__text">Drag photos here or tap to upload</p>
                 <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
                 <input id="c-files" name="reference_photos" type="file" multiple
@@ -207,10 +296,10 @@
 
             <!-- Deposit explanation -->
             <div class="full callout">
-              <span class="callout__icon" aria-hidden="true">💬</span>
+              <span class="callout__icon" data-icon="chat"></span>
               <div>
                 <p><strong>No payment today.</strong> Sending this form is free and doesn't commit you to anything.</p>
-                <p>Once you approve a mockup, we'll collect a <strong><span data-config="depositPercent">50</span>% deposit</strong> to begin your order. The remaining balance is due when your piece is ready.</p>
+                <p>Once you approve a mockup, we'll collect a <strong><span data-config="depositPercent">50</span>% deposit</strong> to begin your order. The remaining balance is due when your piece is ready. Because every piece is made just for you, <strong>all sales are final</strong>. See our <a href="faq.html#policies">FAQ &amp; policies</a>.</p>
               </div>
             </div>
 
@@ -218,7 +307,7 @@
               <label class="consent">
                 <input type="checkbox" name="deposit_ack" value="yes" required
                        data-error="Please confirm you understand how deposits work.">
-                <span>I understand a deposit is required after I approve a mockup, before work begins. <span class="req">*</span></span>
+                <span>I understand a deposit is required after I approve a mockup, before work begins, and that all sales are final. <span class="req">*</span></span>
               </label>
             </div>
           </div>
@@ -231,7 +320,7 @@
 
         <!-- Thank-you message (shown after a successful submit) -->
         <div class="form-card form-success" data-success-for="custom-order-form" tabindex="-1" hidden>
-          <div class="form-success__icon" aria-hidden="true">🎨</div>
+          <div class="form-success__icon" data-icon="sparkle"></div>
           <h3 style="font-size:1.6rem">Request received, thank you!</h3>
           <p class="muted">We're already excited about your idea. Look for an email from us within 2–3 business days with mockup options and pricing.</p>
           <div class="btn-row" style="justify-content:center">
@@ -266,10 +355,17 @@
       var desc = document.getElementById("c-desc");
 
       if (item) {
-        select.value = "Customized gift item (mug, tumbler, tote, etc.)";
-        desc.value = 'I\'d like a custom version of the "' + item + '" from your shop. Here\'s what I\'d change: ';
+        select.value = "Customized gift item (tumbler, tote, blanket, etc.)";
+        desc.value = params.get("mode") === "customize"
+          // Came from "Customize This Design" on a ready-made item
+          ? 'I love the "' + item + '" design and would like it customized (for example, a different team, name, city, or colors). Here\'s what I\'d change: '
+          // Came from "Request Custom" on a made-to-order item
+          : 'I\'m interested in the "' + item + '" from your shop. Here\'s what I have in mind: ';
+        if (/beaded/i.test(item)) select.value = "Beaded embroidery";
       }
-      if (type === "shoes") select.value = "Custom shoes";
+      // Buttons like "Request a Baby Box" add ?type=... to pick the product type
+      var TYPES = { "shoes": "Custom shoes", "baby-box": "Baby box" };
+      if (TYPES[type]) select.value = TYPES[type];
     })();
   </script>
 </body>

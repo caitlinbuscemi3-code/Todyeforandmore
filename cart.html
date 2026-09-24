@@ -11,16 +11,16 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
   <header id="site-header"></header>
 
   <!-- ================================================================
        CART & CHECKOUT PAGE
        Three "screens" on one page, switched by assets/js/cart.js:
          1. #cart-view      – items in the cart
-         2. #checkout-view  – contact + shipping/pickup details
+         2. #checkout-view  – contact + shipping details
          3. #confirm-view   – thank-you screen
-       💳 The payment processor (Stripe, Square, etc.) plugs in inside
+       The payment processor (Stripe, Square, etc.) plugs in inside
        assets/js/cart.js. Search for "PAYMENT PROCESSOR HOOK".
        ================================================================ -->
   <main id="main" data-cart-page>
@@ -32,7 +32,7 @@
 
         <!-- Shown when the cart is empty -->
         <div class="card empty-state" data-cart-empty hidden>
-          <div class="empty-state__icon" aria-hidden="true">🛍️</div>
+          <div class="empty-state__icon" data-icon="bag"></div>
           <h2>Your cart is empty</h2>
           <p class="muted">Let's fix that! Browse ready-made gifts or start something custom.</p>
           <div class="btn-row" style="justify-content:center">
@@ -63,7 +63,7 @@
           <form id="checkout-form" class="form-card" data-validate novalidate>
             <!-- Demo notice. It disappears when config.js → payments.demoMode is false -->
             <div class="demo-banner" data-demo-banner>
-              🧪 Demo checkout: no payment is taken yet. (Owner: see "PAYMENT PROCESSOR HOOK" in assets/js/cart.js.)
+              Demo checkout: no payment is taken yet. (Owner: see "PAYMENT PROCESSOR HOOK" in assets/js/cart.js.)
             </div>
             <div class="form-alert" role="alert" hidden></div>
 
@@ -83,37 +83,23 @@
               </div>
             </div>
 
-            <h2 style="font-size:1.3rem;margin-top:28px">Delivery</h2>
-            <fieldset class="field" style="margin-bottom:18px">
-              <legend class="visually-hidden">Delivery method</legend>
-              <div class="choice-row">
-                <label class="check"><input type="radio" name="fulfillment" value="ship" checked> 📦 Ship to me</label>
-                <label class="check" data-pickup-option><input type="radio" name="fulfillment" value="pickup"> 🛍️ Local pickup (free)</label>
-              </div>
-            </fieldset>
-
-            <p id="pickup-note" class="callout" hidden>
-              <span class="callout__icon" aria-hidden="true">📍</span>
-              <span>We'll email you when your order is ready and set up a pickup time.</span>
-            </p>
-
-            <!-- Shipping address (only shown/required when "Ship to me" is picked) -->
+            <h2 style="font-size:1.3rem;margin-top:28px">Shipping address</h2>
             <div id="shipping-fields" class="form-grid">
               <div class="field full">
                 <label for="co-address">Street address <span class="req">*</span></label>
-                <input id="co-address" name="address" type="text" autocomplete="street-address" data-ship-required required>
+                <input id="co-address" name="address" type="text" autocomplete="street-address" required>
               </div>
               <div class="field">
                 <label for="co-city">City <span class="req">*</span></label>
-                <input id="co-city" name="city" type="text" autocomplete="address-level2" data-ship-required required>
+                <input id="co-city" name="city" type="text" autocomplete="address-level2" required>
               </div>
               <div class="field">
                 <label for="co-state">State <span class="req">*</span></label>
-                <input id="co-state" name="state" type="text" autocomplete="address-level1" data-ship-required required>
+                <input id="co-state" name="state" type="text" autocomplete="address-level1" required>
               </div>
               <div class="field">
                 <label for="co-zip">ZIP code <span class="req">*</span></label>
-                <input id="co-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}(-\d{4})?" data-error="Please enter a 5-digit ZIP code." data-ship-required required>
+                <input id="co-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}(-\d{4})?" data-error="Please enter a 5-digit ZIP code." required>
               </div>
             </div>
 
@@ -122,13 +108,22 @@
               <textarea id="co-notes" name="notes" rows="3" style="min-height:90px" placeholder="Gift message, special instructions, etc."></textarea>
             </div>
 
-            <!-- 💳 PAYMENT: in the real version, the processor's secure card
+            <!-- PAYMENT: in the real version, the processor's secure card
                  form or a redirect to its hosted checkout page goes here.
                  Never collect card numbers in your own form fields. -->
             <h2 style="font-size:1.3rem;margin-top:28px">Payment</h2>
             <div class="callout">
-              <span class="callout__icon" aria-hidden="true">💳</span>
+              <span class="callout__icon" data-icon="card"></span>
               <p>Secure payment will be handled by our payment partner (coming soon). Card details are never stored on this site.</p>
+            </div>
+
+            <!-- Final-sale agreement (required) -->
+            <div class="field" style="margin-top:22px">
+              <label class="consent">
+                <input type="checkbox" name="final_sale_ack" value="yes" required
+                       data-error="Please confirm you understand all sales are final.">
+                <span>I understand that all sales are final. See our <a href="faq.html#policies" target="_blank" rel="noopener">FAQ &amp; policies</a>. <span class="req">*</span></span>
+              </label>
             </div>
 
             <div class="form-actions">
@@ -148,10 +143,10 @@
     <section id="confirm-view" class="section" hidden>
       <div class="container" style="max-width:680px">
         <div class="card form-success" tabindex="-1">
-          <div class="form-success__icon" aria-hidden="true">🎉</div>
+          <div class="form-success__icon" data-icon="sparkle"></div>
           <h1 style="font-size:2rem">Thank you for your order!</h1>
           <p>Your order number is <strong data-order-number></strong>.</p>
-          <p class="muted">A confirmation will be sent to <strong data-order-email></strong>. We'll be in touch when it's on its way (or ready for pickup)!</p>
+          <p class="muted">A confirmation will be sent to <strong data-order-email></strong>. We'll be in touch when it's on its way!</p>
           <div class="btn-row" style="justify-content:center">
             <a class="btn btn--primary" href="shop.html">Keep Shopping</a>
             <a class="btn btn--outline" href="index.html">Back to Home</a>
