@@ -72,10 +72,9 @@ window.FEATURED_WORK = [
     story: "A gift for one of his performances: Phoenix Suns colors, a textured basketball detail, and his Flo Rida logo on the back of each shoe.",
     color: "blue",
     photos: [
+      { image: "assets/photos/flo-rida-shoe-1.jpg", label: "Flo Rida with his custom sneakers" },
       { image: "assets/photos/custom-phoenix-suns-nikes.jpg", label: "custom Phoenix Suns sneakers" },
-      { image: "assets/photos/custom-phoenix-suns-shoes.jpg", label: "Flo Rida logo on the heels" },
-      { image: "assets/photos/flo-rida-shoe-1.jpg", label: "the finished pair, boxed and ready" },
-      { image: "", label: "Flo Rida with his custom sneakers" }
+      { image: "assets/photos/custom-phoenix-suns-shoes.jpg", label: "Flo Rida logo on the heels" }
     ]
   }
 ];
