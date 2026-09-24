@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title shown in the browser tab & Google results -->
+  <title>To Dye For and More | Custom Apparel, Shoes & Gifts</title>
+  <meta name="description" content="Custom shoes, apparel, team gear, and personalized gifts, made to order just for you.">
+  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER + NAV: built automatically by assets/js/layout.js on every page.
+       🖼️ Logo file is set in assets/js/config.js → logo.src
+       (placeholder file: assets/images/logo-placeholder.svg) -->
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HERO: the big welcome section at the top of the home page
+         ============================================================ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <span class="eyebrow">Handmade · Made to Order</span>
+          <h1>Custom creations you'll be <span class="highlight">dying</span> to show off.</h1>
+          <p class="hero__lead">
+            Hand-painted shoes, one-of-a-kind apparel, team gear, and personalized gifts,
+            made just for you (or your whole squad).
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="custom-orders.html">Start a Custom Order</a>
+            <a class="btn btn--outline" href="shop.html">Shop Ready-Made Gifts</a>
+          </div>
+          <ul class="hero__badges" aria-label="Highlights">
+            <li>🎨 100% custom</li>
+            <li>🏆 Team &amp; bulk orders</li>
+            <li>🎁 Gifts ready to ship</li>
+          </ul>
+        </div>
+
+        <!-- Hero photos: swap these placeholders for your best 3 photos -->
+        <div class="hero__collage">
+          <div class="ph ph--pink ph--portrait" role="img" aria-label="[Photo: hand-painted custom sneakers, close-up]">[Photo: hand-painted custom sneakers, close-up]</div>
+          <div class="ph ph--teal ph--square" role="img" aria-label="[Photo: custom painted jean jacket]">[Photo: custom painted jean jacket]</div>
+          <div class="ph ph--yellow ph--square" role="img" aria-label="[Photo: team wearing matching custom crewnecks]">[Photo: team wearing matching custom crewnecks]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SHOP BY CATEGORY: 4 big tiles that link to the right page
+         ============================================================ -->
+    <section class="section" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Shop by Category</span>
+          <h2 id="categories-title">What are we making today?</h2>
+          <p>Pick a starting point. Every piece can be personalized.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <a class="category-card" href="custom-orders.html#shoes">
+            <div class="ph ph--pink ph--square" role="img" aria-label="[Photo: pair of custom painted shoes]">[Photo: pair of custom painted shoes]</div>
+            <h3>Shoes</h3>
+            <p>Fully custom, hand-painted kicks designed around your idea.</p>
+            <span class="arrow">Design yours →</span>
+          </a>
+          <a class="category-card" href="custom-orders.html#apparel">
+            <div class="ph ph--teal ph--square" role="img" aria-label="[Photo: embroidered sweatshirt and painted jacket]">[Photo: embroidered sweatshirt and painted jacket]</div>
+            <h3>Apparel</h3>
+            <p>HTV, embroidery, painted jackets, pet sweatshirts &amp; bridal.</p>
+            <span class="arrow">Explore apparel →</span>
+          </a>
+          <a class="category-card" href="shop.html">
+            <div class="ph ph--yellow ph--square" role="img" aria-label="[Photo: gift items: mug, tumbler, tote]">[Photo: gift items: mug, tumbler, tote]</div>
+            <h3>Gifts</h3>
+            <p>Mugs, tumblers, totes, blankets &amp; more, ready to buy now.</p>
+            <span class="arrow">Shop gifts →</span>
+          </a>
+          <a class="category-card" href="team-orders.html">
+            <div class="ph ph--purple ph--square" role="img" aria-label="[Photo: sports team in matching custom gear]">[Photo: sports team in matching custom gear]</div>
+            <h3>Team / Bulk Orders</h3>
+            <p>Matching gear for teams, schools, companies &amp; groups.</p>
+            <span class="arrow">Outfit your team →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BEST SELLERS: filled in automatically from assets/js/products.js
+         (any product marked featured: true, up to 4)
+         ============================================================ -->
+    <section class="section section--pink" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">Fan Favorites</span>
+          <h2 id="featured-title">Best sellers</h2>
+          <p>Ready-made gifts you can order today, or tap "Make This Custom" to put your own spin on one.</p>
+        </div>
+        <div class="grid grid--4" data-featured-grid></div>
+        <p class="text-center" style="margin-top:36px">
+          <a class="btn btn--outline" href="shop.html">See all gifts</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOW CUSTOM ORDERS WORK: 3 simple steps
+         ============================================================ -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How Custom Orders Work</span>
+          <h2 id="how-title">Your idea → your one-of-a-kind piece</h2>
+          <p>No guesswork and no surprise costs. You approve everything before we start.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <div class="step__icon" aria-hidden="true">💡</div>
+            <h3>Describe your idea</h3>
+            <p>Tell us what you're dreaming up and share any inspiration photos.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <div class="step__icon" aria-hidden="true">🎨</div>
+            <h3>Get mockups &amp; pricing</h3>
+            <p>We send you design options with clear pricing so you can pick your favorite.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <div class="step__icon" aria-hidden="true">✅</div>
+            <h3>Approve &amp; pay deposit</h3>
+            <p>Once you love it, a deposit locks in your spot and we get creating!</p>
+          </li>
+        </ol>
+
+        <p class="text-center" style="margin-top:40px">
+          <a class="btn btn--primary" href="custom-orders.html#request-form">Start a Custom Request</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BAND: points teams/groups to the bulk page
+         ============================================================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Got a team, club, or crew?</h2>
+          <p>From appliqué crewnecks to company quarter-zips, we make matching gear for groups of all sizes.</p>
+          <div class="btn-row">
+            <a class="btn btn--light" href="team-orders.html">Get a Team Quote</a>
+            <a class="btn btn--outline-light" href="gallery.html">See Past Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: built automatically by assets/js/layout.js (info comes from config.js) -->
+  <footer id="site-footer"></footer>
+
+  <!-- Scripts (order matters: config first) -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>

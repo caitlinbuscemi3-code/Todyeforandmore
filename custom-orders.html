@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Orders | To Dye For and More</title>
+  <meta name="description" content="Request custom hand-painted shoes, HTV and embroidered apparel, painted jean jackets, pet sweatshirts, and wedding items.">
+  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER + NAV: built by assets/js/layout.js. 🖼️ Logo file: config.js → logo.src -->
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- PAGE BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="background:#fff">Made Just for You</span>
+        <h1>Custom Orders</h1>
+        <p>Every custom piece starts with a conversation. Tell us your idea, we'll design mockups with pricing, and nothing gets made until you love it.</p>
+        <p style="margin-top:24px"><a class="btn btn--primary" href="#request-form">Start Your Request</a></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THE PROCESS: explains there's no instant checkout
+         ============================================================ -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The Process</span>
+          <h2 id="process-title">How it works</h2>
+          <p>Custom work is personal, so there's no "add to cart" here. We work with you one-on-one.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <div class="step__icon" aria-hidden="true">💡</div>
+            <h3>Describe your idea</h3>
+            <p>Fill out the request form below. Inspiration photos are super helpful!</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <div class="step__icon" aria-hidden="true">🎨</div>
+            <h3>Get mockups &amp; pricing</h3>
+            <p>Within a few days you'll receive design mockup options with pricing for each.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <div class="step__icon" aria-hidden="true">✅</div>
+            <h3>Approve &amp; pay deposit</h3>
+            <p>Pick your favorite, pay a <span data-config="depositPercent">50</span>% deposit, and we start creating. The balance is due when it's ready.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SHOES (link target: custom-orders.html#shoes)
+         ============================================================ -->
+    <section id="shoes" class="section section--pink" aria-labelledby="shoes-title">
+      <div class="container split">
+        <div class="ph ph--orange ph--square" role="img" aria-label="[Photo: pair of fully custom hand-painted sneakers]">[Photo: pair of fully custom hand-painted sneakers]</div>
+        <div>
+          <span class="eyebrow" style="background:#fff">Shoes</span>
+          <h2 id="shoes-title">Fully custom shoes</h2>
+          <p>Wearable art for your feet. Every pair is designed from scratch around your idea, whether that's your team colors, a favorite character, a wedding theme, or something totally new.</p>
+          <ul class="feature-list">
+            <li>Describe the look you want, or upload reference photos</li>
+            <li>Send us a new pair or we can source them for you</li>
+            <li>Great for game days, weddings, birthdays &amp; gifts</li>
+          </ul>
+          <a class="btn btn--primary" href="?type=shoes#request-form">Request Custom Shoes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         APPAREL (link target: custom-orders.html#apparel)
+         ============================================================ -->
+    <section id="apparel" class="section" aria-labelledby="apparel-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Apparel</span>
+          <h2 id="apparel-title">Custom apparel</h2>
+          <p>From everyday tees to once-in-a-lifetime pieces, here's what we love to make.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card service-card">
+            <div class="ph ph--teal ph--wide" role="img" aria-label="[Photo: HTV vinyl shirt and embroidered hoodie]">[Photo: HTV vinyl shirt and embroidered hoodie]</div>
+            <span class="tag">HTV &amp; Embroidery</span>
+            <h3>Tees, hoodies &amp; more</h3>
+            <p>Crisp heat-transfer vinyl (HTV) designs and classic embroidery on shirts, sweatshirts, hats, and more. Names, monograms, logos, sayings, you name it.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--purple ph--wide" role="img" aria-label="[Photo: custom painted jean jacket, back view]">[Photo: custom painted jean jacket, back view]</div>
+            <span class="tag">Hand-Painted</span>
+            <h3>Painted jean jackets</h3>
+            <p>One-of-a-kind denim jackets hand-painted with your design. Florals, portraits, lyrics, team logos, or "Mrs." for the bride-to-be.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--yellow ph--wide" role="img" aria-label="[Photo: sweatshirt featuring a customer's pet]">[Photo: sweatshirt featuring a customer's pet]</div>
+            <span class="tag">From Your Photos</span>
+            <h3>Pet sweatshirts</h3>
+            <p>Send us a photo of your furry (or scaly!) best friend and we'll turn it into a cozy sweatshirt you'll never want to take off.</p>
+          </article>
+          <article class="card service-card">
+            <div class="ph ph--pink ph--wide" role="img" aria-label="[Photo: bridal party matching jackets and tees]">[Photo: bridal party matching jackets and tees]</div>
+            <span class="tag">Wedding &amp; Bridal</span>
+            <h3>Wedding &amp; bridal items</h3>
+            <p>Bride jackets, bridal party tees and robes, bachelorette gear, and keepsakes for the big day and every moment around it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CUSTOM ORDER REQUEST FORM
+         Checks: assets/js/forms.js
+         📬 BACKEND HOOK: to receive these by email, paste your form
+         service URL into assets/js/config.js → forms.customOrder
+         ============================================================ -->
+    <section id="request-form" class="section section--purple" aria-labelledby="form-title">
+      <div class="container" style="max-width:860px">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">Let's Create</span>
+          <h2 id="form-title">Custom order request</h2>
+          <p>The more details, the better! We'll reply within 2–3 business days with mockups and pricing.</p>
+        </div>
+
+        <form id="custom-order-form" class="form-card" data-validate data-form="customOrder"
+              action="#" method="post" enctype="multipart/form-data" novalidate>
+          <div class="form-alert" role="alert" hidden></div>
+          <!-- Tells your form service which form this came from -->
+          <input type="hidden" name="_subject" value="New custom order request">
+          <!-- Spam trap: hidden from people, bots fill it in -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="c-name">Your name <span class="req">*</span></label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="c-email">Email <span class="req">*</span></label>
+              <input id="c-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="c-phone">Phone <span class="req">*</span></label>
+              <input id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" required>
+            </div>
+            <div class="field">
+              <label for="c-type">What would you like? <span class="req">*</span></label>
+              <select id="c-type" name="product_type" required>
+                <option value="">Choose a product type…</option>
+                <option>Custom shoes</option>
+                <option>HTV / vinyl apparel</option>
+                <option>Embroidered apparel</option>
+                <option>Hand-painted jean jacket</option>
+                <option>Pet sweatshirt (from photo)</option>
+                <option>Wedding / bridal item</option>
+                <option>Customized gift item (mug, tumbler, tote, etc.)</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="c-desc">Describe your idea <span class="req">*</span></label>
+              <p class="hint">Colors, names/text, sizes, style, the occasion. Anything that helps us picture it!</p>
+              <textarea id="c-desc" name="description" minlength="20" required
+                        placeholder="Example: White high-top sneakers with my daughter's softball number (12) and team colors, navy and gold, with a softball on each heel. Women's size 8."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="c-files">Reference photos <span class="muted">(optional)</span></label>
+              <div class="upload">
+                <div class="upload__icon" aria-hidden="true">📸</div>
+                <p class="upload__text">Drag photos here or tap to upload</p>
+                <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
+                <input id="c-files" name="reference_photos" type="file" multiple
+                       accept="image/*,.heic,.heif,.pdf" data-max-files="5" data-max-mb="10">
+                <ul class="upload__list"></ul>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-budget">Budget range <span class="req">*</span></label>
+              <select id="c-budget" name="budget" required>
+                <option value="">Choose a range…</option>
+                <option>Under $50</option>
+                <option>$50 – $100</option>
+                <option>$100 – $200</option>
+                <option>$200 – $400</option>
+                <option>$400+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-date">Needed by <span class="muted">(optional)</span></label>
+              <input id="c-date" name="needed_by" type="date" data-min-days="0">
+            </div>
+
+            <!-- Deposit explanation -->
+            <div class="full callout">
+              <span class="callout__icon" aria-hidden="true">💬</span>
+              <div>
+                <p><strong>No payment today.</strong> Sending this form is free and doesn't commit you to anything.</p>
+                <p>Once you approve a mockup, we'll collect a <strong><span data-config="depositPercent">50</span>% deposit</strong> to begin your order. The remaining balance is due when your piece is ready.</p>
+              </div>
+            </div>
+
+            <div class="field full">
+              <label class="consent">
+                <input type="checkbox" name="deposit_ack" value="yes" required
+                       data-error="Please confirm you understand how deposits work.">
+                <span>I understand a deposit is required after I approve a mockup, before work begins. <span class="req">*</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Send My Request</button>
+            <p class="form-note">We'll reply within 2–3 business days.</p>
+          </div>
+        </form>
+
+        <!-- Thank-you message (shown after a successful submit) -->
+        <div class="form-card form-success" data-success-for="custom-order-form" tabindex="-1" hidden>
+          <div class="form-success__icon" aria-hidden="true">🎨</div>
+          <h3 style="font-size:1.6rem">Request received, thank you!</h3>
+          <p class="muted">We're already excited about your idea. Look for an email from us within 2–3 business days with mockup options and pricing.</p>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn btn--outline" type="button" data-form-again>Send another request</button>
+            <a class="btn btn--primary" href="gallery.html">Browse the Gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: built by assets/js/layout.js -->
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    /* ------------------------------------------------------------
+       PRE-FILL THE FORM
+       When someone clicks "Make This Custom" on the Shop page, they
+       land here with the product name in the web address
+       (e.g. custom-orders.html?item=Glitter%20Tumbler). This fills
+       in the form for them so they don't have to retype it.
+       ------------------------------------------------------------ */
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var item = params.get("item");
+      var type = params.get("type");
+      var select = document.getElementById("c-type");
+      var desc = document.getElementById("c-desc");
+
+      if (item) {
+        select.value = "Customized gift item (mug, tumbler, tote, etc.)";
+        desc.value = 'I\'d like a custom version of the "' + item + '" from your shop. Here\'s what I\'d change: ';
+      }
+      if (type === "shoes") select.value = "Custom shoes";
+    })();
+  </script>
+</body>
+</html>
