@@ -24,6 +24,11 @@
     { label: "Contact",       href: "contact.html" }
   ];
 
+  /* ---------- Extra links shown only in the footer ---------- */
+  var FOOTER_EXTRA_LINKS = [
+    { label: "FAQ & Policies", href: "faq.html" }
+  ];
+
   /* ---------- Small shared helpers (used by other scripts too) ---------- */
   var Site = (window.Site = window.Site || {});
 
@@ -194,7 +199,7 @@
             "<p>" + Site.escape(CONFIG.tagline || "") + "</p>" + Site.socialHTML() +
           "</div>" +
           "<div><h4>Explore</h4><ul class=\"footer-links\">" +
-            NAV_LINKS.map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
+            NAV_LINKS.concat(FOOTER_EXTRA_LINKS).map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
           "</ul></div>" +
           "<div><h4>Get in touch</h4><ul class=\"footer-contact\">" +
             (c.email ? "<li>" + Site.icon("mail") + '<a href="mailto:' + Site.escape(c.email) + '">' + Site.escape(c.email) + "</a></li>" : "") +

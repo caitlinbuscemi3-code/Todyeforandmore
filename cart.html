@@ -117,6 +117,15 @@
               <p>Secure payment will be handled by our payment partner (coming soon). Card details are never stored on this site.</p>
             </div>
 
+            <!-- Final-sale agreement (required) -->
+            <div class="field" style="margin-top:22px">
+              <label class="consent">
+                <input type="checkbox" name="final_sale_ack" value="yes" required
+                       data-error="Please confirm you understand all sales are final.">
+                <span>I understand that all sales are final. See our <a href="faq.html#policies" target="_blank" rel="noopener">FAQ &amp; policies</a>. <span class="req">*</span></span>
+              </label>
+            </div>
+
             <div class="form-actions">
               <button class="btn btn--primary" type="submit">Place Order</button>
             </div>

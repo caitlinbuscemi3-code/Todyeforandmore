@@ -59,7 +59,13 @@ window.SITE_CONFIG = {
   },
 
   /* ---------- Custom order policy text ---------- */
-  depositPercent: 50, // shown on the Custom & Team order pages
+  depositPercent: 50, // shown on the Custom & Team order pages and the FAQ
+
+  /* ---------- Turnaround times (shown on the Shop, order pages & FAQ) ---------- */
+  turnaround: {
+    apparel:  "1–2 weeks",   // apparel items
+    handmade: "2–4 weeks"    // shoes, embroidery & hand-painted items
+  },
 
   /* ---------- Shop / cart settings ---------- */
   shop: {

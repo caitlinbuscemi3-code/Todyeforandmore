@@ -14,6 +14,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | `gallery.html` | Filterable gallery of past work with "See more" slideshows |
 | `about.html` | Brand story, mission, meet the maker |
 | `contact.html` | Contact form, contact info, social links |
+| `faq.html` | FAQ & Policies (linked in the footer, checkout, and order forms) |
 
 ## Where to change things
 
@@ -24,7 +25,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Business name, tagline, email, phone, social links** | `assets/js/config.js` |
 | **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
-| **Shipping cost, tax, deposit %** | `assets/js/config.js` |
+| **Shipping cost, tax, deposit %, turnaround times** | `assets/js/config.js` |
 | **Apparel sizes & the 2X–4X upcharge** | `assets/js/config.js` (under `shop`) |
 | **Page wording** | The page's `.html` file |
 | **Browser-tab title / Google description** | `<title>` and `<meta name="description">` at the top of each `.html` file |

@@ -26,13 +26,17 @@
                    Leave as "" to show a placeholder box.
      label       – what the placeholder box says (describes the photo to take)
      color       – placeholder box color: blush, blue, lime, navy, orange
-     featured    – true = also show on the Home page "Best Sellers" section
+     featured    – a number (1, 2, 3, 4) = show on the Home page "Best Sellers"
+                   section in that order. false = don't show it there.
      badge       – optional little tag like "Best Seller" or "New" ("" for none)
      customLabel – optional: different text for the custom button
      customItem  – optional: what gets filled into the Custom Orders form
                    (defaults to the product name)
      sizes       – optional: true = shows a size dropdown (XS–4X).
                    The size list and the 2X–4X upcharge are in config.js → shop.
+     formType    – optional: which Custom Orders form option to pick
+                   ("shoes" or "baby-box")
+     priceNote   – optional: small line under the price (e.g. "plus the cost of the shoes")
      styles      – optional: a list of garment styles, each with its own
                    price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
                    "price" above should match the cheapest style.
@@ -45,7 +49,8 @@
 
 window.SHOP_CATEGORIES = [
   { id: "all",     label: "All" },
-  { id: "apparel", label: "Apparel" },          // hidden until you add an apparel product
+  { id: "apparel", label: "Apparel" },
+  { id: "shoes",   label: "Shoes" },
   { id: "beaded",  label: "Beaded Embroidery" },
   { id: "drink",   label: "Tumblers" },
   { id: "bags",    label: "Totes, Bags & Tags" },
@@ -53,6 +58,54 @@ window.SHOP_CATEGORIES = [
 ];
 
 window.PRODUCTS = [
+  /* ================= APPAREL ================= */
+  {
+    id: "lions-applique",
+    name: "Lions Appliqué Crewneck",
+    price: 45.00,
+    buyable: true,                       // READY-MADE
+    category: "apparel",
+    desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
+    image: "",
+    label: "Lions appliqué crewneck",
+    color: "blue",
+    featured: 1,
+    badge: "Best Seller",
+    sizes: true
+  },
+  {
+    id: "lions-tee-blue",
+    name: "Blue Lions Tee",
+    price: 25.00,
+    buyable: true,                       // READY-MADE
+    category: "apparel",
+    desc: "Our blue Lions tee, ready for game day. Want it for a different team? Customize it!",
+    image: "",
+    label: "blue Lions t-shirt",
+    color: "navy",
+    featured: 4,
+    badge: "Game Day",
+    sizes: true
+  },
+
+  /* ================= SHOES ================= */
+  {
+    id: "shoes-custom",
+    name: "Custom Hand-Painted Sneakers",
+    price: 75.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "shoes",
+    desc: "Fully custom, hand-painted sneakers designed around your idea: team colors, florals, characters, weddings, and more.",
+    image: "",
+    label: "custom hand-painted sneakers",
+    color: "orange",
+    featured: 2,
+    badge: "Fan Favorite",
+    priceNote: "Customization price, plus the cost of the shoes.",
+    customLabel: "Design My Shoes",
+    formType: "shoes"
+  },
+
   /* ================= BEADED EMBROIDERY ================= */
   {
     id: "beaded-detroit",
@@ -64,7 +117,7 @@ window.PRODUCTS = [
     image: "",
     label: "Detroit beaded embroidery t-shirt",
     color: "navy",
-    featured: true,
+    featured: 3,
     badge: "Detroit Made",
     sizes: true,
     styles: [
@@ -103,7 +156,7 @@ window.PRODUCTS = [
     image: "",
     label: "ready-made design tumbler",
     color: "blue",
-    featured: true,
+    featured: false,
     badge: ""
   },
   {
@@ -131,7 +184,7 @@ window.PRODUCTS = [
     image: "",
     label: "bookish design canvas tote bag",
     color: "lime",
-    featured: true,
+    featured: false,
     badge: "",
     customLabel: "Personalize It",
     customItem: "Name or Initial Tote"
@@ -174,7 +227,7 @@ window.PRODUCTS = [
     image: "",
     label: "personalized blanket",
     color: "blue",
-    featured: true,
+    featured: false,
     badge: "Best Seller"
   },
   {

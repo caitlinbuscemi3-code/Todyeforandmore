@@ -165,7 +165,8 @@
     // The custom button sends shoppers to the Custom Orders form with this product pre-filled
     // (ready-made items add &mode=customize so the form asks what to change about the design)
     var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
-      (p.buyable && !p.customItem ? "&mode=customize" : "") + "#request-form";
+      (p.buyable && !p.customItem ? "&mode=customize" : "") +
+      (p.formType ? "&type=" + encodeURIComponent(p.formType) : "") + "#request-form";
     var actions = p.buyable
       // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
@@ -192,6 +193,7 @@
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
           '<p class="product-card__price">' + price + "</p>" +
+          (p.priceNote ? '<p class="product-card__note">' + Site.escape(p.priceNote) + "</p>" : "") +
           styleList +
           (p.buyable
             ? '<p class="product-card__note">Want it customized? Same price.</p>'
@@ -269,10 +271,13 @@
     });
   }
 
-  // Home page "Best Sellers" (products with featured: true)
+  // Home page "Best Sellers" (products with featured: 1, 2, 3, 4, shown in that order)
   var featuredGrid = document.querySelector("[data-featured-grid]");
   if (featuredGrid) {
-    featuredGrid.innerHTML = PRODUCTS.filter(function (p) { return p.featured; }).slice(0, 4).map(productCardHTML).join("");
+    featuredGrid.innerHTML = PRODUCTS
+      .filter(function (p) { return p.featured; })
+      .sort(function (a, b) { return (a.featured === true ? 99 : a.featured) - (b.featured === true ? 99 : b.featured); })
+      .slice(0, 4).map(productCardHTML).join("");
   }
 
   // Any "Add to Cart" button on any page
