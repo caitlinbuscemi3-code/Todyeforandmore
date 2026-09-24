@@ -7,7 +7,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | File | Page |
 |---|---|
 | `index.html` | Home: hero, shop-by-category, best sellers, "how custom orders work" |
-| `shop.html` | Gifts: ready-to-buy items (Add to Cart) and custom-only items (Request Custom) |
+| `shop.html` | Shop: ready-made items (Add to Cart, with style/size options) and made-to-order items (Request Custom) |
 | `cart.html` | Cart → checkout → confirmation (payment is in demo mode) |
 | `custom-orders.html` | Shoes, apparel, baby sweaters & baby boxes + custom request form |
 | `team-orders.html` | Team/bulk use cases + team quote form |
@@ -25,6 +25,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
 | **Shipping cost, tax, deposit %** | `assets/js/config.js` |
+| **Apparel sizes & the 2X–4X upcharge** | `assets/js/config.js` (under `shop`) |
 | **Page wording** | The page's `.html` file |
 | **Browser-tab title / Google description** | `<title>` and `<meta name="description">` at the top of each `.html` file |
 

@@ -419,6 +419,11 @@ ul { padding-left: 1.2em; }
 .product-card__type--custom { background: var(--tint-blue); color: var(--color-primary); }
 .product-card__from { font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; color: var(--color-text-muted); }
 .product-card__note { font-size: 0.8rem; color: var(--color-text-muted); margin: -8px 0 12px; }
+.product-card__options { display: grid; gap: 10px; margin: 0 0 12px; }
+.product-card__options .field { gap: 4px; }
+.product-card__options label { font-size: 0.82rem; }
+.product-card__options select { padding: 8px 10px; font-size: 0.92rem; }
+.product-card__hint { font-size: 0.78rem; color: var(--color-text-muted); margin: -4px 0 0; }
 .product-card__actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
 
 /* Filter chips (Shop + Gallery) */
@@ -430,6 +435,8 @@ ul { padding-left: 1.2em; }
   background: var(--color-surface); color: var(--color-text);
   cursor: pointer;
 }
+.filters--sub { margin-top: -24px; }
+.filters--sub .chip { font-size: 0.85rem; padding: 5px 14px; border-width: 1.5px; }
 .chip:hover { border-color: var(--color-soft); color: var(--color-primary); }
 .chip[aria-pressed="true"] { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
 
@@ -624,6 +631,7 @@ fieldset.field { border: none; padding: 0; margin: 0; }
 .cart-item .ph { aspect-ratio: 1; font-size: 0.62rem; padding: 6px; border-radius: var(--radius-sm); }
 .cart-item .ph::before { display: none; }
 .cart-item__name { font-weight: 700; margin: 0; }
+.cart-item__opts { margin: 0; font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
 .cart-item__price { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }
 .cart-item__right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 .qty { display: inline-flex; align-items: center; border: 2px solid var(--color-border); border-radius: 999px; overflow: hidden; }

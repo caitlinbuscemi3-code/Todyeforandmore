@@ -31,17 +31,58 @@
     return null;
   }
 
+  /* ---------- Sizes & styles ----------
+     Size list and the extended-size upcharge live in config.js → shop.
+     Styles (e.g. T-shirt / Crewneck / Hoodie) are set per product in products.js. */
+  var SIZES = SHOP.sizes || [];
+  var EXTENDED = SHOP.extendedSizes || [];
+  var UPCHARGE = Number(SHOP.extendedSizeUpcharge || 0);
+
+  function isExtended(size) { return EXTENDED.indexOf(size) !== -1; }
+
+  function styleFor(p, styleName) {
+    var styles = p.styles || [];
+    for (var i = 0; i < styles.length; i++) if (styles[i].name === styleName) return styles[i];
+    return styles[0] || null;
+  }
+
+  // Price of one item with the chosen style and size
+  function unitPrice(p, styleName, size) {
+    var style = styleFor(p, styleName);
+    return (style ? style.price : p.price) + (size && isExtended(size) ? UPCHARGE : 0);
+  }
+
+  // "Crewneck · Size 2X" (or "" when the product has no options)
+  function optionText(line) {
+    var bits = [];
+    if (line.style) bits.push(line.style);
+    if (line.size) bits.push("Size " + line.size);
+    return bits.join(" · ");
+  }
+
+  // Each different style/size combo is its own cart line
+  function lineKey(line) { return [line.id, line.style || "", line.size || ""].join("|"); }
+
+  // A saved line is still valid only if its product, style and size still exist
+  function validLine(line) {
+    var p = findBuyable(line.id);
+    if (!p || !(line.qty > 0)) return false;
+    if (p.styles && p.styles.length && !styleFor(p, line.style)) return false;
+    if (p.sizes && SIZES.indexOf(line.size) === -1) return false;
+    return true;
+  }
+
   /* =================================================================
      1. CART STORAGE
      ================================================================= */
   var memoryCart = []; // backup if the browser blocks saving
   var Cart = (window.Cart = {
-    // Read the saved cart: a list like [{ id: "tumbler-ready", qty: 2 }]
+    // Read the saved cart: a list like [{ id: "beaded-detroit", style: "Hoodie", size: "M", qty: 1 }]
     items: function () {
       try {
         var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
         // Drop anything that's no longer in products.js
-        return Array.isArray(saved) ? saved.filter(function (i) { return findBuyable(i.id) && i.qty > 0; }) : [];
+        return Array.isArray(saved) ? saved.filter(validLine) : [];
       } catch (e) { return memoryCart; }
     },
     save: function (items) {
@@ -49,23 +90,25 @@
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); } catch (e) { /* private browsing: keep in memory */ }
       document.dispatchEvent(new CustomEvent("cart:updated"));
     },
-    add: function (id, qty) {
+    add: function (newLine) {
       var items = Cart.items();
-      var line = items.filter(function (i) { return i.id === id; })[0];
-      if (line) line.qty = Math.min(line.qty + (qty || 1), 99);
-      else items.push({ id: id, qty: qty || 1 });
+      var key = lineKey(newLine);
+      var line = items.filter(function (i) { return lineKey(i) === key; })[0];
+      if (line) line.qty = Math.min(line.qty + (newLine.qty || 1), 99);
+      else items.push({ id: newLine.id, style: newLine.style || "", size: newLine.size || "", qty: newLine.qty || 1 });
       Cart.save(items);
     },
-    setQty: function (id, qty) {
-      var items = Cart.items().map(function (i) { if (i.id === id) i.qty = Math.max(0, Math.min(qty, 99)); return i; })
+    setQty: function (key, qty) {
+      var items = Cart.items().map(function (i) { if (lineKey(i) === key) i.qty = Math.max(0, Math.min(qty, 99)); return i; })
         .filter(function (i) { return i.qty > 0; });
       Cart.save(items);
     },
-    remove: function (id) { Cart.setQty(id, 0); },
+    remove: function (key) { Cart.setQty(key, 0); },
     clear: function () { Cart.save([]); },
     count: function () { return Cart.items().reduce(function (n, i) { return n + i.qty; }, 0); },
+    linePrice: function (line) { return unitPrice(findProduct(line.id), line.style, line.size); },
     subtotal: function () {
-      return Cart.items().reduce(function (sum, i) { return sum + findProduct(i.id).price * i.qty; }, 0);
+      return Cart.items().reduce(function (sum, i) { return sum + Cart.linePrice(i) * i.qty; }, 0);
     },
     // Works out shipping, tax and total
     totals: function () {
@@ -95,22 +138,49 @@
   /* =================================================================
      2. PRODUCT CARDS (Shop page + Home "Best Sellers")
      ================================================================= */
+  var cardCount = 0; // gives each card's dropdowns a unique id
+
+  // Style & size dropdowns for ready-to-buy apparel
+  function optionsHTML(p) {
+    if (!p.buyable) return "";
+    var n = ++cardCount, html = "";
+    if (p.styles && p.styles.length) {
+      html += '<div class="field"><label for="opt-style-' + n + '">Style</label>' +
+        '<select id="opt-style-' + n + '" data-opt="style">' + p.styles.map(function (st) {
+          return '<option value="' + Site.escape(st.name) + '">' + Site.escape(st.name) + " (" + Site.money(st.price) + ")</option>";
+        }).join("") + "</select></div>";
+    }
+    if (p.sizes) {
+      html += '<div class="field"><label for="opt-size-' + n + '">Size</label>' +
+        '<select id="opt-size-' + n + '" data-opt="size"><option value="">Choose a size</option>' + SIZES.map(function (sz) {
+          return '<option value="' + sz + '">' + sz + (isExtended(sz) && UPCHARGE ? " (+" + Site.money(UPCHARGE) + ")" : "") + "</option>";
+        }).join("") + "</select>" +
+        '<p class="field-error" aria-live="polite"></p></div>';
+      if (EXTENDED.length) html += '<p class="product-card__hint">' + Site.escape(SHOP.extendedSizeNote || "") + "</p>";
+    }
+    return html ? '<div class="product-card__options">' + html + "</div>" : "";
+  }
+
   function productCardHTML(p) {
     // The custom button sends shoppers to the Custom Orders form with this product pre-filled
     // (ready-made items add &mode=customize so the form asks what to change about the design)
     var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
       (p.buyable && !p.customItem ? "&mode=customize" : "") + "#request-form";
     var actions = p.buyable
-      // READY TO BUY: Add to Cart + customize the same design
+      // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
         '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Customize This Design") + "</a>"
-      // CUSTOM ONLY: request button instead of Add to Cart
+      // MADE TO ORDER: request button instead of Add to Cart
       : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";
     var price = p.buyable
-      ? Site.money(p.price)
+      ? '<span data-price>' + Site.money(unitPrice(p)) + "</span>"
       : '<span class="product-card__from">Starting at</span> ' + Site.money(p.price);
+    // e.g. "T-shirt $40 · Crewneck $50 · Hoodie $55" on made-to-order items with styles
+    var styleList = !p.buyable && p.styles && p.styles.length
+      ? '<p class="product-card__note">' + p.styles.map(function (st) { return Site.escape(st.name) + " " + Site.money(st.price); }).join(" · ") + "</p>" : "";
     return (
-      '<article class="product-card" data-category="' + Site.escape(p.category) + '">' +
+      '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-category="' + Site.escape(p.category) +
+        '" data-type="' + (p.buyable ? "ready" : "custom") + '">' +
         '<div class="product-card__media">' +
           Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square" }) +
           (p.badge ? '<span class="product-card__badge">' + Site.escape(p.badge) + "</span>" : "") +
@@ -118,37 +188,85 @@
         '<div class="product-card__body">' +
           // Little label so shoppers can tell ready-made from made-to-order at a glance
           '<p class="product-card__type product-card__type--' + (p.buyable ? "ready" : "custom") + '">' +
-            (p.buyable ? "Ready to ship" : "Made to order") + "</p>" +
+            (p.buyable ? "Ready-made" : "Made to order") + "</p>" +
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
           '<p class="product-card__price">' + price + "</p>" +
-          (p.buyable ? "" : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
+          styleList +
+          (p.buyable
+            ? '<p class="product-card__note">Want it customized? Same price.</p>'
+            : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
+          optionsHTML(p) +
           '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
       "</article>"
     );
   }
 
-  // Shop page grid (with category filter chips)
+  // Read the chosen style/size on a card
+  function cardChoice(card) {
+    var style = card.querySelector('[data-opt="style"]');
+    var size = card.querySelector('[data-opt="size"]');
+    return { style: style ? style.value : "", size: size ? size.value : "", sizeEl: size };
+  }
+
+  // Update the shown price when style or size changes
+  document.addEventListener("change", function (e) {
+    var sel = e.target.closest("[data-opt]");
+    if (!sel) return;
+    var card = sel.closest("[data-product]");
+    var p = findProduct(card.getAttribute("data-product"));
+    var c = cardChoice(card);
+    card.querySelector("[data-price]").textContent = Site.money(unitPrice(p, c.style, c.size));
+    if (c.sizeEl && c.size) {
+      c.sizeEl.removeAttribute("aria-invalid");
+      c.sizeEl.parentNode.querySelector(".field-error").textContent = "";
+    }
+  });
+
+  // Shop page grid (with filter chips)
   var shopGrid = document.querySelector("[data-product-grid]");
   if (shopGrid) {
     shopGrid.innerHTML = PRODUCTS.map(productCardHTML).join("");
 
-    var filterBox = document.querySelector("[data-product-filters]");
-    if (filterBox) {
-      filterBox.innerHTML = (window.SHOP_CATEGORIES || []).map(function (c, i) {
-        return '<button class="chip" type="button" data-filter="' + c.id + '" aria-pressed="' + (i === 0) + '">' + Site.escape(c.label) + "</button>";
+    // Two sets of filters: what it is (category) and how you get it (ready-made / made to order)
+    var state = { cat: "all", type: "all" };
+    var TYPES = [
+      { id: "all", label: "Everything" },
+      { id: "ready", label: "Ready-made" },
+      { id: "custom", label: "Made to order" }
+    ];
+    // Only show categories that actually have products
+    var cats = (window.SHOP_CATEGORIES || []).filter(function (c) {
+      return c.id === "all" || PRODUCTS.some(function (p) { return p.category === c.id; });
+    });
+    function chips(list, group, active) {
+      return list.map(function (c) {
+        return '<button class="chip" type="button" data-group="' + group + '" data-filter="' + c.id + '" aria-pressed="' + (c.id === active) + '">' + Site.escape(c.label) + "</button>";
       }).join("");
-      filterBox.addEventListener("click", function (e) {
+    }
+    function applyFilters() {
+      shopGrid.querySelectorAll(".product-card").forEach(function (card) {
+        card.hidden = (state.cat !== "all" && card.getAttribute("data-category") !== state.cat) ||
+                      (state.type !== "all" && card.getAttribute("data-type") !== state.type);
+      });
+      var empty = document.querySelector("[data-product-empty]");
+      if (empty) empty.hidden = !!shopGrid.querySelector(".product-card:not([hidden])");
+    }
+    var catBox = document.querySelector("[data-product-filters]");
+    var typeBox = document.querySelector("[data-type-filters]");
+    if (catBox) catBox.innerHTML = chips(cats, "cat", "all");
+    if (typeBox) typeBox.innerHTML = chips(TYPES, "type", "all");
+    [catBox, typeBox].forEach(function (box) {
+      if (!box) return;
+      box.addEventListener("click", function (e) {
         var btn = e.target.closest("[data-filter]");
         if (!btn) return;
-        var cat = btn.getAttribute("data-filter");
-        filterBox.querySelectorAll("[data-filter]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
-        shopGrid.querySelectorAll(".product-card").forEach(function (card) {
-          card.hidden = cat !== "all" && card.getAttribute("data-category") !== cat;
-        });
+        state[btn.getAttribute("data-group")] = btn.getAttribute("data-filter");
+        box.querySelectorAll("[data-filter]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+        applyFilters();
       });
-    }
+    });
   }
 
   // Home page "Best Sellers" (products with featured: true)
@@ -163,8 +281,22 @@
     if (!btn) return;
     var product = findBuyable(btn.getAttribute("data-add-to-cart"));
     if (!product) return;
-    Cart.add(product.id, 1);
-    Site.toast(Site.escape(product.name) + ' added to your cart. <a href="cart.html">View cart</a>');
+    var card = btn.closest("[data-product]");
+    var c = card ? cardChoice(card) : { style: "", size: "" };
+    // Apparel needs a size before it can go in the cart
+    if (product.sizes && !c.size) {
+      if (c.sizeEl) {
+        c.sizeEl.setAttribute("aria-invalid", "true");
+        c.sizeEl.parentNode.querySelector(".field-error").textContent = "Please choose a size.";
+        c.sizeEl.focus();
+      }
+      return;
+    }
+    if (product.styles && product.styles.length && !c.style) c.style = product.styles[0].name;
+    var line = { id: product.id, style: c.style, size: c.size, qty: 1 };
+    Cart.add(line);
+    var extra = optionText(line);
+    Site.toast(Site.escape(product.name) + (extra ? " (" + Site.escape(extra) + ")" : "") + ' added to your cart. <a href="cart.html">View cart</a>');
   });
 
   /* =================================================================
@@ -209,21 +341,25 @@
 
     list.innerHTML = items.map(function (line) {
       var p = findProduct(line.id);
+      var key = Site.escape(lineKey(line));
+      var each = Cart.linePrice(line);
+      var extra = optionText(line);
       return (
         '<li class="cart-item">' +
           Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square" }) +
           "<div>" +
             '<p class="cart-item__name">' + Site.escape(p.name) + "</p>" +
-            '<p class="cart-item__price">' + Site.money(p.price) + " each</p>" +
+            (extra ? '<p class="cart-item__opts">' + Site.escape(extra) + "</p>" : "") +
+            '<p class="cart-item__price">' + Site.money(each) + " each</p>" +
           "</div>" +
           '<div class="cart-item__right">' +
             '<div class="qty" role="group" aria-label="Quantity for ' + Site.escape(p.name) + '">' +
-              '<button type="button" data-qty="-1" data-id="' + p.id + '" aria-label="Decrease quantity">−</button>' +
+              '<button type="button" data-qty="-1" data-key="' + key + '" aria-label="Decrease quantity">−</button>' +
               '<span aria-live="polite">' + line.qty + "</span>" +
-              '<button type="button" data-qty="1" data-id="' + p.id + '" aria-label="Increase quantity">+</button>' +
+              '<button type="button" data-qty="1" data-key="' + key + '" aria-label="Increase quantity">+</button>' +
             "</div>" +
-            "<strong>" + Site.money(p.price * line.qty) + "</strong>" +
-            '<button class="link-btn" type="button" data-remove="' + p.id + '">Remove</button>' +
+            "<strong>" + Site.money(each * line.qty) + "</strong>" +
+            '<button class="link-btn" type="button" data-remove="' + key + '">Remove</button>' +
           "</div>" +
         "</li>"
       );
@@ -238,7 +374,9 @@
     if (!box) return;
     var lines = Cart.items().map(function (line) {
       var p = findProduct(line.id);
-      return '<div class="summary__row"><span>' + Site.escape(p.name) + " × " + line.qty + "</span><span>" + Site.money(p.price * line.qty) + "</span></div>";
+      var extra = optionText(line);
+      return '<div class="summary__row"><span>' + Site.escape(p.name) + (extra ? " (" + Site.escape(extra) + ")" : "") + " × " + line.qty +
+        "</span><span>" + Site.money(Cart.linePrice(line) * line.qty) + "</span></div>";
     }).join("");
     box.innerHTML = lines + '<hr style="border:none;border-top:1px solid var(--color-border);margin:8px 0">' + summaryHTML();
   }
@@ -248,9 +386,9 @@
     var qtyBtn = e.target.closest("[data-qty]");
     var removeBtn = e.target.closest("[data-remove]");
     if (qtyBtn) {
-      var id = qtyBtn.getAttribute("data-id");
-      var line = Cart.items().filter(function (i) { return i.id === id; })[0];
-      if (line) Cart.setQty(id, line.qty + Number(qtyBtn.getAttribute("data-qty")));
+      var key = qtyBtn.getAttribute("data-key");
+      var line = Cart.items().filter(function (i) { return lineKey(i) === key; })[0];
+      if (line) Cart.setQty(key, line.qty + Number(qtyBtn.getAttribute("data-qty")));
     }
     if (removeBtn) Cart.remove(removeBtn.getAttribute("data-remove"));
   });
@@ -273,7 +411,10 @@
     if (Cart.count() === 0) { show("cart"); return; }
 
     var order = {
-      items: Cart.items().map(function (l) { var p = findProduct(l.id); return { id: p.id, name: p.name, price: p.price, qty: l.qty }; }),
+      items: Cart.items().map(function (l) {
+        var p = findProduct(l.id);
+        return { id: p.id, name: p.name, style: l.style, size: l.size, price: Cart.linePrice(l), qty: l.qty };
+      }),
       totals: Cart.totals(),
       customer: Object.fromEntries(new FormData(checkoutForm).entries())
     };

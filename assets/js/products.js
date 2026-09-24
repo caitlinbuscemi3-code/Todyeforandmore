@@ -31,10 +31,21 @@
      customLabel – optional: different text for the custom button
      customItem  – optional: what gets filled into the Custom Orders form
                    (defaults to the product name)
+     sizes       – optional: true = shows a size dropdown (XS–4X).
+                   The size list and the 2X–4X upcharge are in config.js → shop.
+     styles      – optional: a list of garment styles, each with its own
+                   price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
+                   "price" above should match the cheapest style.
+
+   ADDING A READY-MADE SHIRT (like a Lions shirt): copy the
+   "Detroit Beaded Embroidery" block, change the id, name, desc, label,
+   price and styles, and set category: "apparel". Customers can still
+   tap "Customize This Design" to get it for a different team.
    ===================================================================== */
 
 window.SHOP_CATEGORIES = [
-  { id: "all",     label: "All Gifts" },
+  { id: "all",     label: "All" },
+  { id: "apparel", label: "Apparel" },          // hidden until you add an apparel product
   { id: "beaded",  label: "Beaded Embroidery" },
   { id: "drink",   label: "Tumblers" },
   { id: "bags",    label: "Totes, Bags & Tags" },
@@ -51,18 +62,29 @@ window.PRODUCTS = [
     category: "beaded",
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or word? Customize it!",
     image: "",
-    label: "Detroit beaded embroidery design",
+    label: "Detroit beaded embroidery t-shirt",
     color: "navy",
     featured: true,
-    badge: "Detroit Made"
+    badge: "Detroit Made",
+    sizes: true,
+    styles: [
+      { name: "T-shirt",  price: 40.00 },
+      { name: "Crewneck", price: 50.00 },
+      { name: "Hoodie",   price: 55.00 }
+    ]
   },
   {
     id: "beaded-custom",
     name: "Custom Beaded Embroidery",
-    price: 35.00,
+    price: 40.00,
     buyable: false,                      // CUSTOM ONLY
     category: "beaded",
     desc: "Your name, team, city, or design in sparkly hand-sewn beaded embroidery.",
+    styles: [
+      { name: "T-shirt",  price: 40.00 },
+      { name: "Crewneck", price: 50.00 },
+      { name: "Hoodie",   price: 55.00 }
+    ],
     image: "",
     label: "custom beaded embroidery piece",
     color: "orange",

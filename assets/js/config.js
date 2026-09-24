@@ -66,7 +66,13 @@ window.SITE_CONFIG = {
     currencySymbol: "$",
     shippingFlatRate: 8.00,      // shipping cost per order
     freeShippingOver: 75.00,     // free shipping at/above this subtotal (set 0 to turn off)
-    salesTaxRate: 0.00           // e.g. 0.07 for 7%. Most payment processors can calculate this for you.
+    salesTaxRate: 0.00,          // e.g. 0.07 for 7%. Most payment processors can calculate this for you.
+
+    // Apparel sizes shown in the size dropdown (for products with sizes: true)
+    sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],
+    extendedSizes: ["2X", "3X", "4X"],   // these sizes cost a little more…
+    extendedSizeUpcharge: 3.00,          // …this much more
+    extendedSizeNote: "Sizes 2X–4X add $3 and may take a little longer."
   },
 
   /* ---------- Payments (BACKEND HOOK) ----------

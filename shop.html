@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shop Gifts | To Dye For and More</title>
-  <meta name="description" content="Personalized gifts: beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings. Ready to buy or made custom.">
+  <title>Shop | To Dye For and More</title>
+  <meta name="description" content="Shop ready-made designs and made-to-order gifts: Detroit beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings.">
   <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -19,9 +19,9 @@
     <!-- PAGE BANNER -->
     <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" style="background:#fff">Gifts</span>
-        <h1>The Gift Shop</h1>
-        <p><strong>Ready to ship</strong> items go straight in your cart, and any ready-made design can be customized with a different team, name, city, or colors. <strong>Made to order</strong> items are created just for you after you approve a mockup.</p>
+        <span class="eyebrow" style="background:#fff">Apparel &amp; Gifts</span>
+        <h1>Shop</h1>
+        <p><strong>Ready-made</strong> designs go straight in your cart. Some are in stock and ship right away, and others are made fresh when you order. Love a design but want a different team, name, city, or colors? Customize it for the same price. <strong>Made to order</strong> items are created just for you after you approve a mockup.</p>
       </div>
     </section>
 
@@ -35,8 +35,11 @@
       <div class="container">
         <!-- Category filter buttons (built from SHOP_CATEGORIES in products.js) -->
         <div class="filters" data-product-filters role="toolbar" aria-label="Filter products by category"></div>
+        <!-- Second row: ready-made vs made to order -->
+        <div class="filters filters--sub" data-type-filters role="toolbar" aria-label="Filter by ready-made or made to order"></div>
 
         <div class="grid grid--4" data-product-grid aria-live="polite"></div>
+        <p class="text-center muted" data-product-empty hidden>Nothing here yet. Try another filter, or <a href="custom-orders.html#request-form">request something custom</a>!</p>
 
         <noscript><p class="text-center">Please turn on JavaScript to view products.</p></noscript>
 
