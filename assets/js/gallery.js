@@ -60,10 +60,8 @@ window.FEATURED_WORK = [
     color: "orange",
     photos: [
       { image: "assets/photos/cassidy-tigers.jpg", label: "Tigers staff member wearing her custom sneakers on the field" },
-      { image: "assets/photos/tigers-featured-shoe.jpg", label: "sneakers with the Detroit skyline and 313" },
-      { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom Detroit sneakers" },
       { image: "assets/photos/custom-tigers-shoes-bulk-order.jpg", label: "the full staff order, ready to go" },
-      { image: "", label: "Tigers game day staff in their custom sneakers" }
+      { image: "assets/photos/tigers-featured-shoe.jpg", label: "close-up of the Detroit skyline and 313 details" }
     ]
   },
   {
@@ -476,7 +474,8 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-ferris-state-shoes.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-adidas-shoes.jpg", label: "custom painted sneakers" }
+      { image: "assets/photos/custom-adidas-shoes.jpg", label: "custom painted sneakers" },
+      { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom painted sneakers" }
     ]
   }
 ];
