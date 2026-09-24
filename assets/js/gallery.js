@@ -35,6 +35,51 @@ window.GALLERY_FILTERS = [
   { id: "gifts",   label: "Gifts" }
 ];
 
+/* ---------- FEATURED WORK (top of the gallery) ----------
+   Standout projects shown above the regular gallery. Same fields as
+   below, plus:
+     name  – who it was for (small label on the card)
+     story – one or two sentences about the project
+   A photo with image: "" shows as a "Coming soon" slide until you add it. */
+window.FEATURED_WORK = [
+  {
+    name: "Mateen Cleaves",
+    caption: "A Championship Tribute",
+    story: "Hand-painted Reebok Questions inspired by the pair he wore leading Michigan State to the 2000 national championship, finished with his signature and his words: “Get your mind right, keep your grind tight” and “If you’re trying to win, tap in.”",
+    color: "lime",
+    photos: [
+      { image: "assets/photos/mateen-with-shoes.jpg", label: "Mateen Cleaves with his custom sneakers" },
+      { image: "assets/photos/custom-msu-shoes-mateen-cleaves.jpg", label: "Michigan State Reebok Questions with his signature and quotes" },
+      { image: "assets/photos/custom-shoes-mateen.jpg", label: "heel details with his sayings" }
+    ]
+  },
+  {
+    name: "Detroit Tigers Game Day Staff",
+    caption: "Game Day Kicks",
+    story: "Custom pairs for the Tigers game day staff, bringing city vibes with the Detroit skyline, 313, and tiger stripes.",
+    color: "orange",
+    photos: [
+      { image: "assets/photos/cassidy-tigers.jpg", label: "Tigers staff member wearing her custom sneakers on the field" },
+      { image: "assets/photos/tigers-featured-shoe.jpg", label: "sneakers with the Detroit skyline and 313" },
+      { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom Detroit sneakers" },
+      { image: "assets/photos/custom-tigers-shoes-bulk-order.jpg", label: "the full staff order, ready to go" },
+      { image: "", label: "Tigers game day staff in their custom sneakers" }
+    ]
+  },
+  {
+    name: "Flo Rida",
+    caption: "Stage-Ready Sneakers",
+    story: "A gift for one of his performances: Phoenix Suns colors, a textured basketball detail, and his Flo Rida logo on the back of each shoe.",
+    color: "blue",
+    photos: [
+      { image: "assets/photos/custom-phoenix-suns-nikes.jpg", label: "custom Phoenix Suns sneakers" },
+      { image: "assets/photos/custom-phoenix-suns-shoes.jpg", label: "Flo Rida logo on the heels" },
+      { image: "assets/photos/flo-rida-shoe-1.jpg", label: "the finished pair, boxed and ready" },
+      { image: "", label: "Flo Rida with his custom sneakers" }
+    ]
+  }
+];
+
 window.GALLERY_ITEMS = [
   {
     category: "baby", caption: "Gia’s First Birthday Jacket", color: "blush",
@@ -155,14 +200,6 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/bachelorette-custom-bridal-tee-bulk.jpg", label: "Bach Club bachelorette tees" },
       { image: "assets/photos/bachelorette-custom-tee-bulk.jpg", label: "Bach Club bachelorette tees" },
       { image: "assets/photos/bridal-bachelorette-tee-custom-bulk.jpg", label: "Bach Club bachelorette tees" }
-    ]
-  },
-  {
-    category: "shoes", caption: "Mateen Cleaves MSU Sneakers", color: "lime",
-    photos: [
-      { image: "assets/photos/mateen-with-shoes.jpg", label: "custom Michigan State sneakers" },
-      { image: "assets/photos/custom-msu-shoes-mateen-cleaves.jpg", label: "custom Michigan State sneakers" },
-      { image: "assets/photos/custom-shoes-mateen.jpg", label: "custom Michigan State sneakers" }
     ]
   },
   {
@@ -437,12 +474,9 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "More Custom Kicks", color: "blue",
     photos: [
       { image: "assets/photos/custom-vegas-shoes.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-phoenix-suns-nikes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-ferris-state-shoes.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-phoenix-suns-shoes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-adidas-shoes.jpg", label: "custom painted sneakers" }
     ]
   }
@@ -454,7 +488,9 @@ window.GALLERY_ITEMS = [
   var grid = document.querySelector("[data-gallery-grid]");
   if (!grid) return;
 
+  var FEATURED = window.FEATURED_WORK || [];
   var ITEMS = window.GALLERY_ITEMS;
+  var ALL = FEATURED.concat(ITEMS); // the slideshow can open either kind
   var filterNames = {};
   window.GALLERY_FILTERS.forEach(function (f) { filterNames[f.id] = f.label; });
 
@@ -464,19 +500,39 @@ window.GALLERY_ITEMS = [
   var FIRST_SHOWN = 16; // how many tiles show before "See all work"
   var showAll = false;
 
+  /* ---------- Featured Work cards ---------- */
+  var featuredBox = document.querySelector("[data-featured-work]");
+  if (featuredBox) {
+    featuredBox.innerHTML = FEATURED.map(function (item, i) {
+      return (
+        '<article class="featured-card">' +
+          '<button class="gallery-item__open" type="button" data-open="' + i + '" aria-label="View photos: ' + Site.escape(item.caption) + '">' +
+            photoHTML(item, item.photos[0], "portrait") +
+            '<span class="featured-card__name">' + Site.escape(item.name) + "</span>" +
+          "</button>" +
+          '<div class="featured-card__body">' +
+            "<h3>" + Site.escape(item.caption) + "</h3>" +
+            "<p>" + Site.escape(item.story) + "</p>" +
+            '<button class="btn btn--primary btn--small" type="button" data-open="' + i + '">See the project</button>' +
+          "</div>" +
+        "</article>"
+      );
+    }).join("");
+  }
+
   /* ---------- Draw the gallery tiles ---------- */
   grid.innerHTML = ITEMS.map(function (item, i) {
     var count = item.photos.length;
     return (
       '<article class="gallery-item" data-category="' + Site.escape(item.category) + '">' +
-        '<button class="gallery-item__open" type="button" data-open="' + i + '" aria-label="View larger: ' + Site.escape(item.caption) + '">' +
+        '<button class="gallery-item__open" type="button" data-open="' + (i + FEATURED.length) + '" aria-label="View larger: ' + Site.escape(item.caption) + '">' +
           photoHTML(item, item.photos[0], "square") +
           (count > 1 ? '<span class="gallery-item__count">' + count + " photos</span>" : "") +
         "</button>" +
         '<p class="gallery-item__caption">' + Site.escape(item.caption) + "</p>" +
         '<p class="gallery-item__cat">' + Site.escape(filterNames[item.category] || item.category) + "</p>" +
         // "See more" only appears when there's more than one photo
-        (count > 1 ? '<button class="btn btn--outline btn--small gallery-item__more" type="button" data-open="' + i + '">See more</button>' : "") +
+        (count > 1 ? '<button class="btn btn--outline btn--small gallery-item__more" type="button" data-open="' + (i + FEATURED.length) + '">See more</button>' : "") +
       "</article>"
     );
   }).join("");
@@ -540,14 +596,16 @@ window.GALLERY_ITEMS = [
     render();
   }
 
-  grid.addEventListener("click", function (e) {
+  function openSlideshow(e) {
     var opener = e.target.closest("[data-open]");
     if (!opener) return;
-    current = ITEMS[Number(opener.getAttribute("data-open"))];
+    current = ALL[Number(opener.getAttribute("data-open"))];
     index = 0;
     render();
     box.showModal();
-  });
+  }
+  grid.addEventListener("click", openSlideshow);
+  if (featuredBox) featuredBox.addEventListener("click", openSlideshow);
   // Swipe left/right on phones and tablets to change photos
   var touchX = null;
   media.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
