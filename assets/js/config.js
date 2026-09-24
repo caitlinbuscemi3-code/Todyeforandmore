@@ -18,13 +18,15 @@ window.SITE_CONFIG = {
   foundedYear: 2020,                 // copyright line reads "© 2020–(this year)"
 
   /* ---------- Logo ----------
-     Put your logo file in assets/images/ and change "src" to its name.
-     Example: "assets/images/my-logo.png"
-     Until then, a labeled placeholder logo is shown. */
+     Logo files live in assets/photos/. These are transparent PNGs made
+     from your "TDF Primary" logos (white background removed).
+     The small "tdf" logo is the browser tab icon (set in each page's <head>). */
   logo: {
-    src: "assets/images/logo-placeholder.svg", // <-- LOGO FILE GOES HERE
+    src:       "assets/photos/tdf-primary-navy.png",       // header (light background)
+    footerSrc: "assets/photos/tdf-primary-chartreuse.png", // footer (navy background)
     alt: "To Dye For and More logo",
-    showNameNextToLogo: true // set to false if your logo already includes the name
+    width: 150, height: 48,
+    showNameNextToLogo: false // the logo already includes the name
   },
 
   /* ---------- Contact info (shown in footer + Contact page) ---------- */

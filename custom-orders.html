@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Custom Orders | To Dye For and More</title>
   <meta name="description" content="Request custom hand-painted shoes, HTV, embroidered and beaded embroidery apparel, painted jean jackets, pet sweatshirts, hand-knit baby sweaters, and baby boxes.">
-  <link rel="icon" href="assets/images/logo-placeholder.svg" type="image/svg+xml">
+  <!-- Browser tab icon: the small "tdf" logo -->
+  <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -17,12 +19,15 @@
   <main id="main">
 
     <!-- PAGE BANNER -->
-    <section class="page-hero">
+    <section class="page-hero page-hero--media">
       <div class="container">
-        <span class="eyebrow" style="background:#fff">Made Just for You</span>
-        <h1>Custom Orders</h1>
-        <p>Every custom piece starts with a conversation. Tell us your idea, we'll design mockups with pricing, and nothing gets made until you love it.</p>
-        <p style="margin-top:24px"><a class="btn btn--primary" href="#request-form">Start Your Request</a></p>
+        <div>
+          <span class="eyebrow" style="background:#fff">Made Just for You</span>
+          <h1>Custom Orders</h1>
+          <p>Every custom piece starts with a conversation. Tell us your idea, we'll design mockups with pricing, and nothing gets made until you love it.</p>
+          <p style="margin-top:24px"><a class="btn btn--primary" href="#request-form">Start Your Request</a></p>
+        </div>
+        <img class="media-img media-img--portrait page-hero__photo" src="assets/photos/hand-painted-jean-jacket-taylor-swift-eras.jpg" alt="Fan at the Eras Tour in a hand-painted jean jacket" style="object-position:center 40%">
       </div>
     </section>
 
@@ -68,7 +73,7 @@
          ============================================================ -->
     <section id="shoes" class="section section--blush" aria-labelledby="shoes-title">
       <div class="container split">
-        <div class="ph ph--orange ph--square" role="img" aria-label="[Photo: pair of fully custom hand-painted sneakers]">[Photo: pair of fully custom hand-painted sneakers]</div>
+        <img class="media-img media-img--square" src="assets/photos/custom-red-wings-high-top-shoes.jpg" alt="Custom hand-painted “Hockey Town” high-top sneakers" loading="lazy">
         <div>
           <span class="eyebrow" style="background:#fff">Shoes</span>
           <h2 id="shoes-title">Fully custom shoes</h2>
@@ -97,35 +102,35 @@
 
         <div class="grid grid--3">
           <article class="card service-card">
-            <div class="ph ph--blue ph--wide" role="img" aria-label="[Photo: HTV vinyl shirt and embroidered hoodie]">[Photo: HTV vinyl shirt and embroidered hoodie]</div>
+            <img class="media-img" src="assets/photos/custom-t-shirt-example.jpg" alt="Custom vinyl “My Grandma Is Wicked” tees" loading="lazy">
             <span class="tag">HTV &amp; Embroidery</span>
             <h3>Tees, hoodies &amp; more</h3>
             <p class="price-note">Starting at <strong>$25</strong> (see pricing guide below)</p>
             <p>Crisp heat-transfer vinyl (HTV) designs and classic embroidery on shirts, sweatshirts, hats, and more. Names, monograms, logos, sayings, you name it.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--orange ph--wide" role="img" aria-label="[Photo: beaded embroidery on a sweatshirt, close-up]">[Photo: beaded embroidery on a sweatshirt, close-up]</div>
+            <img class="media-img" src="assets/photos/beaded-embroidery-custom.jpg" alt="Beaded embroidery tee" loading="lazy" style="object-position:center 65%">
             <span class="tag">Beaded Embroidery</span>
             <h3>Beaded embroidery</h3>
             <p class="price-note">Starting at <strong>$40</strong></p>
             <p>Embroidery with hand-sewn beads for texture and sparkle. A dressed-up look for sweatshirts, jackets, and special-occasion pieces.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--navy ph--wide" role="img" aria-label="[Photo: custom painted jean jacket, back view]">[Photo: custom painted jean jacket, back view]</div>
+            <img class="media-img" src="assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg" alt="Kids hand-painted jean jacket" loading="lazy">
             <span class="tag">Hand-Painted</span>
             <h3>Painted jean jackets</h3>
             <p class="price-note">Starting at <strong>$55</strong></p>
             <p>One-of-a-kind denim jackets hand-painted with your design. Florals, portraits, lyrics, team logos, or "Mrs." for the bride-to-be.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--lime ph--wide" role="img" aria-label="[Photo: sweatshirt featuring a customer's pet]">[Photo: sweatshirt featuring a customer's pet]</div>
+            <img class="media-img" src="assets/photos/custom-embroidered-dog-crewnecks.jpg" alt="Crewneck embroidered with a customer’s dogs" loading="lazy">
             <span class="tag">From Your Photos</span>
             <h3>Embroidered pet sweatshirts</h3>
             <p class="price-note">Starting at <strong>$55</strong></p>
             <p>Send us a photo of your furry (or scaly!) best friend and we'll embroider it onto a cozy sweatshirt you'll never want to take off.</p>
           </article>
           <article class="card service-card">
-            <div class="ph ph--blue ph--wide" role="img" aria-label="[Photo: hand-knit baby sweater]">[Photo: hand-knit baby sweater]</div>
+            <img class="media-img" src="assets/photos/baby-sweaters-hand-embroidered.jpg" alt="Hand-stitched “Malik” name sweater" loading="lazy">
             <span class="tag">Hand-Knit</span>
             <h3>Hand-knit baby sweaters</h3>
             <p class="price-note">Starting at <strong>$45</strong></p>
@@ -133,7 +138,7 @@
           </article>
           <!-- Wedding & bridal orders live on the Team & Bulk page -->
           <a class="card service-card service-card--link" href="team-orders.html#wedding">
-            <div class="ph ph--blush ph--wide" role="img" aria-label="[Photo: bridal party matching apparel]">[Photo: bridal party matching apparel]</div>
+            <img class="media-img" src="assets/photos/bridal-party-embroidered-shirts.jpg" alt="Bridal party in embroidered shirts" loading="lazy">
             <span class="tag">Wedding &amp; Bridal</span>
             <h3>Planning a wedding?</h3>
             <p>Bridal party shirts, makeup bags, accessories, and koozies are handled as group orders. Get a quote on our Team &amp; Bulk page.</p>
@@ -148,7 +153,7 @@
          ============================================================ -->
     <section id="baby-boxes" class="section section--lime" aria-labelledby="baby-title">
       <div class="container split split--reverse">
-        <div class="ph ph--blush ph--square" role="img" aria-label="[Photo: personalized baby gift box, open]">[Photo: personalized baby gift box, open]</div>
+        <img class="media-img media-img--square" src="assets/photos/baby-box-custom-with-shoes.jpg" alt="Custom “Sammy” baby box with sneakers" loading="lazy">
         <div>
           <span class="eyebrow" style="background:#fff">Baby</span>
           <h2 id="baby-title">Baby boxes</h2>

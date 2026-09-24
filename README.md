@@ -21,7 +21,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | I want to change… | Edit this file |
 |---|---|
 | **Colors & fonts** | `assets/css/styles.css`, the **BRAND SETTINGS** block at the top |
-| **Logo** | Put your file in `assets/images/`, then set `logo.src` in `assets/js/config.js` |
+| **Logo** | Logo files are in `assets/photos/` (`tdf-primary-*.png`, `tdf-favicon.png`). Choose which ones are used in `logo` in `assets/js/config.js` |
 | **Business name, tagline, email, phone, social links** | `assets/js/config.js` |
 | **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
@@ -30,10 +30,12 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Page wording** | The page's `.html` file |
 | **Browser-tab title / Google description** | `<title>` and `<meta name="description">` at the top of each `.html` file |
 
-### Swapping placeholder photos
-Every photo spot shows a label like **[Photo: custom painted jean jacket]** that tells you what to put there.
+### Photos
+All photos and logos live in `assets/photos/`. They're already resized, compressed and rotated upright for the web. Items without a photo yet show a **"Coming soon"** box.
 
-- **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/images/tumbler.jpg"`.
+To add a new photo, resize it to about 1200px on the long side first (phones take huge photos that slow the site down).
+
+- **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/photos/booked-tote-bag.jpg"`.
 - **Gallery**: each tile has a `photos` list. Set each photo's `image` field, and add more lines to a tile's list to grow its "See more" slideshow.
 - **Photos written directly in a page**: replace the placeholder
   ```html
@@ -41,7 +43,7 @@ Every photo spot shows a label like **[Photo: custom painted jean jacket]** that
   ```
   with
   ```html
-  <img class="media-img" src="assets/images/jean-jacket.jpg" alt="Hand-painted floral jean jacket">
+  <img class="media-img" src="assets/photos/jean-jacket.jpg" alt="Hand-painted floral jean jacket">
   ```
 
 ## Things to connect later

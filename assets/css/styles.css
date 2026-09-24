@@ -194,7 +194,7 @@ ul { padding-left: 1.2em; }
    to swap in. To replace one with a real photo, change:
      <div class="ph ..." role="img" aria-label="[Photo: X]">...</div>
    to:
-     <img src="assets/images/your-photo.jpg" alt="Describe the photo">
+     <img class="media-img" src="assets/photos/your-photo.jpg" alt="Describe the photo">
    ===================================================================== */
 .ph {
   position: relative;
@@ -226,8 +226,19 @@ ul { padding-left: 1.2em; }
 .ph--lime   { background-color: color-mix(in srgb, var(--brand-lime) 75%, #fff); }
 .ph--navy   { background-color: color-mix(in srgb, var(--brand-navy) 22%, #fff); }
 .ph--orange { background-color: color-mix(in srgb, var(--brand-orange) 30%, #fff); }
-/* Real photos dropped in where placeholders were get the same shape */
-.media-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+/* Real photos: every photo in a section uses the same crop shape */
+.media-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); background: var(--tint-blue); }
+.media-img--square   { aspect-ratio: 1 / 1; }
+.media-img--portrait { aspect-ratio: 4 / 5; }
+.media-img--wide     { aspect-ratio: 16 / 9; }
+
+/* "Coming soon" placeholder for items that don't have a photo yet */
+.ph--soon { flex-direction: column; gap: 4px; }
+.ph__soon {
+  font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--color-primary);
+  background: rgba(255,255,255,0.85); padding: 4px 14px; border-radius: 999px;
+}
+.ph__label { font-size: 0.8rem; font-weight: 600; color: #3E4148; background: rgba(255,255,255,0.7); padding: 2px 10px; border-radius: 999px; }
 
 /* =====================================================================
    HEADER / NAVIGATION (sticky)
@@ -247,7 +258,9 @@ ul { padding-left: 1.2em; }
 }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--color-text); flex-shrink: 0; }
 .brand:hover { color: var(--color-text); }
-.brand__logo { height: 52px; width: auto; }
+.brand__logo { height: 54px; width: auto; }
+.site-header .brand__tagline { padding-left: 12px; border-left: 2px solid var(--color-border); }
+.footer-brand .brand__logo { height: 64px; }
 .brand__name { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; line-height: 1.1; }
 .brand__text { display: flex; flex-direction: column; }
 .brand__tagline { font-size: 0.8rem; font-weight: 500; color: var(--color-secondary); line-height: 1.3; }
@@ -314,7 +327,8 @@ ul { padding-left: 1.2em; }
 }
 @media (max-width: 480px) {
   .brand__name { font-size: 1rem; }
-  .brand__logo { height: 44px; }
+  .brand__logo { height: 42px; }
+  .site-header .brand__tagline { display: none; }
 }
 
 /* =====================================================================
@@ -334,7 +348,7 @@ ul { padding-left: 1.2em; }
 }
 .hero__lead { font-size: 1.2rem; color: var(--color-text-muted); max-width: 520px; margin-bottom: 28px; }
 .hero__collage { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.hero__collage .ph:first-child { grid-row: span 2; aspect-ratio: auto; height: 100%; }
+.hero__collage > :first-child { grid-row: span 2; aspect-ratio: auto; height: 100%; }
 .hero__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding: 0; list-style: none; }
 .hero__badges li .icon { color: var(--color-secondary); margin-right: 6px; font-size: 1.1em; }
 .hero__badges li {
@@ -355,6 +369,26 @@ ul { padding-left: 1.2em; }
     var(--tint-lime);
 }
 .page-hero p { max-width: 640px; margin: 0 auto; font-size: 1.12rem; color: var(--color-text-muted); }
+
+/* Page banner with a photo beside the text */
+.page-hero--media { text-align: left; }
+.page-hero--media .container { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+.page-hero--media p { margin: 0; }
+.page-hero__photo { max-width: 460px; justify-self: end; width: 100%; box-shadow: var(--shadow); }
+@media (max-width: 800px) {
+  .page-hero--media { text-align: center; }
+  .page-hero--media .container { grid-template-columns: 1fr; }
+  .page-hero__photo { justify-self: center; max-width: 420px; }
+}
+
+/* Before & after pair (Shop page) */
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0; }
+.before-after figure { margin: 0; position: relative; }
+.before-after figcaption {
+  position: absolute; left: 12px; top: 12px;
+  background: #fff; color: var(--color-primary); font-weight: 700; font-size: 0.8rem;
+  text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 12px; border-radius: 999px;
+}
 
 /* =====================================================================
    GRIDS & CARDS
@@ -629,7 +663,9 @@ fieldset.field { border: none; padding: 0; margin: 0; }
   border-radius: var(--radius); padding: 12px;
 }
 .cart-item .ph { aspect-ratio: 1; font-size: 0.62rem; padding: 6px; border-radius: var(--radius-sm); }
-.cart-item .ph::before { display: none; }
+.cart-item .ph::before, .cart-item .ph__label { display: none; }
+.cart-item .ph__soon { font-size: 0.6rem; padding: 2px 6px; }
+.cart-item .media-img { border-radius: var(--radius-sm); }
 .cart-item__name { font-weight: 700; margin: 0; }
 .cart-item__opts { margin: 0; font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
 .cart-item__price { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }

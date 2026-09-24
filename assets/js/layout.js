@@ -45,15 +45,19 @@
     return symbol + Number(n || 0).toFixed(2);
   };
 
-  // Returns HTML for a photo. If you've added a real image path it shows
-  // the photo; otherwise it shows a labeled colored placeholder box.
+  // Returns HTML for a photo. If there's a real image path it shows the
+  // photo; otherwise it shows a colored "Coming soon" placeholder box.
+  //   shape: "square", "portrait" or "wide" (keeps crops consistent)
+  //   pos:   optional focus point for the crop, e.g. "center top"
   Site.media = function (opts) {
-    var label = "[Photo: " + opts.label + "]";
     if (opts.image) {
-      return '<img class="media-img" src="' + Site.escape(opts.image) + '" alt="' + Site.escape(opts.alt || opts.label) + '" loading="lazy">';
+      return '<img class="media-img' + (opts.shape ? " media-img--" + opts.shape : "") + '" src="' + Site.escape(opts.image) +
+        '" alt="' + Site.escape(opts.alt || opts.label) + '" loading="lazy"' +
+        (opts.pos ? ' style="object-position:' + Site.escape(opts.pos) + '"' : "") + ">";
     }
-    var cls = "ph ph--" + (opts.color || "blush") + (opts.shape ? " ph--" + opts.shape : "");
-    return '<div class="' + cls + '" role="img" aria-label="' + Site.escape(label) + '">' + Site.escape(label) + "</div>";
+    var cls = "ph ph--soon ph--" + (opts.color || "blush") + (opts.shape ? " ph--" + opts.shape : "");
+    return '<div class="' + cls + '" role="img" aria-label="Photo coming soon: ' + Site.escape(opts.label) + '">' +
+      '<span class="ph__soon">Coming soon</span><span class="ph__label">' + Site.escape(opts.label) + "</span></div>";
   };
 
   /* ---------- Icons (simple inline SVGs) ---------- */
@@ -125,15 +129,16 @@
   if (currentFile === "") currentFile = "index.html";
 
   /* ---------- Brand (logo + name) ---------- */
-  function brandHTML(showTagline) {
+  function brandHTML(showTagline, inFooter) {
     var logo = CONFIG.logo || {};
     var name = CONFIG.businessName || "To Dye For and More";
     // =================================================================
-    // LOGO: the image file comes from config.js → logo.src
-    //    (default placeholder: assets/images/logo-placeholder.svg)
+    // LOGO: the image files come from config.js → logo.src (header)
+    //    and logo.footerSrc (footer, on the navy background)
     // =================================================================
-    var img = '<img class="brand__logo" src="' + Site.escape(logo.src || "assets/images/logo-placeholder.svg") +
-      '" alt="' + Site.escape(logo.alt || name + " logo") + '" width="52" height="52">';
+    var src = inFooter && logo.footerSrc ? logo.footerSrc : logo.src;
+    var img = '<img class="brand__logo" src="' + Site.escape(src) +
+      '" alt="' + Site.escape(logo.alt || name + " logo") + '" width="' + (logo.width || 150) + '" height="' + (logo.height || 48) + '">';
     // Header tagline comes from config.js → tagline
     var tagline = showTagline && CONFIG.tagline ? '<span class="brand__tagline">' + Site.escape(CONFIG.tagline) + "</span>" : "";
     var text = logo.showNameNextToLogo === false ? tagline :
@@ -195,7 +200,7 @@
     footer.innerHTML =
       '<div class="container">' +
         '<div class="footer-grid">' +
-          '<div class="footer-brand">' + brandHTML() +
+          '<div class="footer-brand">' + brandHTML(false, true) +
             "<p>" + Site.escape(CONFIG.tagline || "") + "</p>" + Site.socialHTML() +
           "</div>" +
           "<div><h4>Explore</h4><ul class=\"footer-links\">" +
