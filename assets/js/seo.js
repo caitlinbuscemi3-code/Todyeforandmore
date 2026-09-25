@@ -5,7 +5,7 @@
    details from assets/js/config.js and adds, on every page:
 
      1. A "main address" tag (canonical link), so Google treats
-        shop.html and shop.html?cat=birthday as the same page.
+        shop.html and shop.html?cat=gifts as the same page.
      2. Business details Google can read (name, area served, email,
         social accounts), added on the Home and About pages.
      3. On the FAQ page, the questions and answers in a format search

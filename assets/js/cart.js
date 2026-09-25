@@ -198,10 +198,14 @@
     var noPriceYet = priceSoon(p) && !p.bulk;
     var actions = p.bulk
       // TEAM & BULK: never a price, always a quote
-      ? '<a class="btn btn--primary btn--small" href="team-orders.html#team-form">Request a Quote</a>'
+      // (wedding items open the form with the wedding option picked)
+      ? '<a class="btn btn--primary btn--small" href="team-orders.html' + ((p.tags || []).indexOf("wedding") !== -1 ? "?group=wedding" : "") + '#team-form">Request a Quote</a>'
       : p.buyable && noPriceYet
       // READY-MADE, PRICE COMING SOON: can't go in the cart yet, so ask about it instead
       ? '<a class="btn btn--primary btn--small" href="' + customUrl + '">Ask About This Design</a>'
+      : p.buyable && p.designOnly
+      // AS SHOWN: Add to Cart only (the design can't be changed)
+      ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>'
       : p.buyable
       // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
@@ -217,7 +221,7 @@
     var styleList = !p.buyable && p.styles && p.styles.length
       ? '<p class="product-card__note">' + p.styles.map(function (st) { return Site.escape(st.name) + " " + Site.money(st.price); }).join(" · ") + "</p>" : "";
     return (
-      '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-category="' + Site.escape([p.category].concat(p.alsoIn || []).join(" ")) +
+      '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-tags="' + Site.escape((p.tags || []).join(" ")) +
         '" data-type="' + (p.buyable ? "ready" : "custom") + '">' +
         '<div class="product-card__media">' +
           mediaHTML(p) +
@@ -235,6 +239,8 @@
           (p.bulk ? '<p class="product-card__note" style="margin-top:auto">Every group order gets its own quote.</p>'
             : p.buyable && noPriceYet
             ? '<p class="product-card__note">Ask us about pricing and sizes.</p>'
+            : p.buyable && p.designOnly
+            ? '<p class="product-card__note">This design is available as shown; style options may vary.</p>'
             : p.buyable
             ? '<p class="product-card__note">Want it customized? Same price.</p>'
             : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
@@ -271,27 +277,41 @@
   if (shopGrid) {
     shopGrid.innerHTML = PRODUCTS.map(productCardHTML).join("");
 
-    // Two sets of filters: what it is (category) and how you get it (ready-made / made to order)
-    // A link like shop.html?cat=birthday opens with that filter already chosen
+    // Two sets of filters: the Shop filters (products.js → SHOP_FILTERS) and
+    // how you get it (signature designs / made to order).
+    // A link like shop.html?cat=kids opens with that filter already chosen.
+    var FILTERS = window.SHOP_FILTERS || [{ id: "all", label: "All" }];
+    var ALIASES = { birthday: "gifts" }; // older links
     var wanted = new URLSearchParams(location.search).get("cat");
+    wanted = ALIASES[wanted] || wanted;
     var state = { cat: "all", type: "all" };
     var TYPES = [
       { id: "all", label: "Everything" },
       { id: "ready", label: "Signature Designs" },
       { id: "custom", label: "Made to order" }
     ];
-    // Only show categories that actually have products
-    var cats = (window.SHOP_CATEGORIES || []).filter(function (c) {
-      return c.id === "all" || PRODUCTS.some(function (p) { return p.category === c.id || (p.alsoIn || []).indexOf(c.id) !== -1; });
-    });
+    var cats = FILTERS;
+    var cards = Array.prototype.slice.call(shopGrid.querySelectorAll(".product-card")); // in products.js order
     function chips(list, group, active) {
       return list.map(function (c) {
         return '<button class="chip" type="button" data-group="' + group + '" data-filter="' + c.id + '" aria-pressed="' + (c.id === active) + '">' + Site.escape(c.label) + "</button>";
       }).join("");
     }
+    // Put cards in the chosen filter's order (items in its "order" list first)
+    function sortCards() {
+      var filter = FILTERS.filter(function (f) { return f.id === state.cat; })[0] || {};
+      var order = filter.order || [];
+      cards.slice().sort(function (x, y) {
+        var a = order.indexOf(x.getAttribute("data-product")), b = order.indexOf(y.getAttribute("data-product"));
+        a = a === -1 ? order.length + cards.indexOf(x) : a;
+        b = b === -1 ? order.length + cards.indexOf(y) : b;
+        return a - b;
+      }).forEach(function (card) { shopGrid.appendChild(card); });
+    }
     function applyFilters() {
-      shopGrid.querySelectorAll(".product-card").forEach(function (card) {
-        card.hidden = (state.cat !== "all" && card.getAttribute("data-category").split(" ").indexOf(state.cat) === -1) ||
+      sortCards();
+      cards.forEach(function (card) {
+        card.hidden = (state.cat !== "all" && card.getAttribute("data-tags").split(" ").indexOf(state.cat) === -1) ||
                       (state.type !== "all" && card.getAttribute("data-type") !== state.type);
       });
       var kidsNote = document.querySelector("[data-kids-note]");
