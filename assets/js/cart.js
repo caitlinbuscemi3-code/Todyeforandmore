@@ -156,7 +156,6 @@
           return '<option value="' + sz + '">' + sz + (isExtended(sz) && UPCHARGE ? " (+" + Site.money(UPCHARGE) + ")" : "") + "</option>";
         }).join("") + "</select>" +
         '<p class="field-error" aria-live="polite"></p></div>';
-      if (EXTENDED.length) html += '<p class="product-card__hint">' + Site.escape(SHOP.extendedSizeNote || "") + "</p>";
     }
     return html ? '<div class="product-card__options">' + html + "</div>" : "";
   }
@@ -234,7 +233,7 @@
     var state = { cat: "all", type: "all" };
     var TYPES = [
       { id: "all", label: "Everything" },
-      { id: "ready", label: "Ready-made" },
+      { id: "ready", label: "Signature Designs" },
       { id: "custom", label: "Made to order" }
     ];
     // Only show categories that actually have products

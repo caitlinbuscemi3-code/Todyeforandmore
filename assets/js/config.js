@@ -56,7 +56,7 @@ window.SITE_CONFIG = {
      Tip: pick a service that supports FILE UPLOADS for the order forms. */
   forms: {
     customOrder: "", // Custom Orders page form
-    teamOrder:   "", // Team / Bulk Orders page form
+    teamOrder:   "", // Team & Bulk Orders page form
     contact:     ""  // Contact page form
   },
 
@@ -79,8 +79,7 @@ window.SITE_CONFIG = {
     // Apparel sizes shown in the size dropdown (for products with sizes: true)
     sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],
     extendedSizes: ["2X", "3X", "4X"],   // these sizes cost a little more…
-    extendedSizeUpcharge: 3.00,          // …this much more
-    extendedSizeNote: "Sizes 2X–4X add $3 and may take a little longer."
+    extendedSizeUpcharge: 3.00           // …this much more (shown in the size dropdown, e.g. "2X (+$3.00)")
   },
 
   /* ---------- Payments (BACKEND HOOK) ----------

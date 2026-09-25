@@ -18,7 +18,7 @@
     { label: "Home",          href: "index.html" },
     { label: "Shop",          href: "shop.html" },
     { label: "Custom Orders", href: "custom-orders.html" },
-    { label: "Team & Bulk",   href: "team-orders.html" },
+    { label: "Team & Bulk Orders", href: "team-orders.html" },
     { label: "Gallery",       href: "gallery.html" },
     { label: "About",         href: "about.html" },
     { label: "Contact",       href: "contact.html" }
@@ -215,7 +215,7 @@
         '<div class="footer-bottom">' +
           // Copyright years: config.js → foundedYear through the current year
           "<span>© " + (CONFIG.foundedYear || 2020) + "–" + new Date().getFullYear() + " " + Site.escape(CONFIG.businessName || "") + ". All rights reserved.</span>" +
-          "<span>Handmade to order in " + Site.escape(c.location || "Michigan") + "</span>" +
+          "<span>Handmade to order in " + Site.escape(c.location || "Metro Detroit") + "</span>" +
         "</div>" +
       "</div>";
   }

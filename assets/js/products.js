@@ -33,9 +33,9 @@
      customItem  – optional: what gets filled into the Custom Orders form
                    (defaults to the product name)
      sizes       – optional: true = shows a size dropdown (XS–4X).
-                   The size list and the 2X–4X upcharge are in config.js → shop.
+                   The size list and the extended-size upcharge are in config.js → shop.
      formType    – optional: which Custom Orders form option to pick
-                   ("shoes" or "baby-box")
+                   (e.g. "shoes", "tees", "beaded", "baby-box")
      priceNote   – optional: small line under the price (e.g. "plus the cost of the shoes")
      styles      – optional: a list of garment styles, each with its own
                    price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
@@ -83,7 +83,7 @@ window.PRODUCTS = [
     image: "assets/photos/lions-tee-blue-2.jpg",
     label: "blue Lions t-shirt",
     color: "navy",
-    featured: 4,
+    featured: false,
     badge: "Game Day",
     sizes: true
   },
@@ -163,7 +163,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,
     category: "apparel",
-    desc: "Green “Lucky” vinyl (HTV) crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
+    desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
     image: "assets/photos/lucky-sweatshirt.jpg",
     label: "Lucky crewneck",
     color: "lime",
@@ -184,6 +184,21 @@ window.PRODUCTS = [
     featured: false,
     badge: "",
     sizes: true
+  },
+
+  {
+    id: "group-tees",
+    name: "Custom Family & Group Tees",
+    price: 25.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "apparel",
+    desc: "Matching tees for family reunions, birthdays, trips, and teams, with your names, dates, or design.",
+    image: "assets/photos/custom-bulk-t-shirt-event-tee.jpg",
+    label: "group in matching custom tees",
+    color: "navy",
+    featured: 4,
+    badge: "Group Favorite",
+    formType: "tees"
   },
 
   /* ================= SHOES ================= */
@@ -211,7 +226,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                       // READY TO BUY
     category: "beaded",
-    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or word? Customize it!",
+    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
     image: "",
     label: "Detroit beaded embroidery t-shirt",
     color: "navy",
@@ -250,7 +265,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                       // READY TO BUY
     category: "drink",
-    desc: "Insulated tumbler engraved with one of our ready-made designs, like this Red Wings favorite.",
+    desc: "Insulated tumbler engraved with one of our signature designs, like this Red Wings favorite.",
     image: "assets/photos/engraved-mug-red-wings-or-team.jpg",
     label: "Red Wings engraved tumbler",
     color: "blue",

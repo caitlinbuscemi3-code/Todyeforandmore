@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Custom Orders | To Dye For and More</title>
-  <meta name="description" content="Request custom hand-painted shoes, HTV, embroidered and beaded embroidery apparel, painted jean jackets, pet sweatshirts, hand-knit baby sweaters, and baby boxes.">
+  <meta name="description" content="Request custom hand-painted shoes, custom printed and embroidered apparel, beaded embroidery, painted jean jackets, pet sweatshirts, hand-knit baby sweaters, and baby boxes.">
   <!-- Browser tab icon: the small "tdf" logo -->
   <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
@@ -65,6 +65,7 @@
           <span class="callout__icon" data-icon="clock"></span>
           <p><strong>How long does it take?</strong> Once your mockup is approved and your deposit is in, most orders take about <strong><span data-config="turnaround.apparel">1–2 weeks</span></strong> for apparel and <strong><span data-config="turnaround.handmade">2–4 weeks</span></strong> for shoes, embroidery, and hand-painted items. Need it by a certain date? Tell us in your request.</p>
         </div>
+        <p class="text-center" style="margin-top:32px"><a class="btn btn--primary" href="#request-form">Start a Custom Order</a></p>
       </div>
     </section>
 
@@ -73,7 +74,7 @@
          ============================================================ -->
     <section id="shoes" class="section section--blush" aria-labelledby="shoes-title">
       <div class="container split">
-        <img class="media-img media-img--square" src="assets/photos/custom-red-wings-high-top-shoes.jpg" alt="Custom hand-painted “Hockey Town” high-top sneakers" loading="lazy">
+        <img class="media-img media-img--square" src="assets/photos/disney-custom-kids-shoes-nike-toy-story.jpg" alt="Colorful hand-painted Toy Story sneakers" loading="lazy">
         <div>
           <span class="eyebrow" style="background:#fff">Shoes</span>
           <h2 id="shoes-title">Fully custom shoes</h2>
@@ -84,7 +85,7 @@
             <li>Great for game days, weddings, birthdays &amp; gifts</li>
           </ul>
           <p class="price-note">Customization starts at <strong>$75</strong>, plus the cost of the shoes</p>
-          <a class="btn btn--primary" href="?type=shoes#request-form">Request Custom Shoes</a>
+          <a class="btn btn--primary" href="?type=shoes#request-form" data-prefill="shoes">Start a Custom Order</a>
         </div>
       </div>
     </section>
@@ -101,50 +102,56 @@
         </div>
 
         <div class="grid grid--3">
-          <article class="card service-card">
-            <img class="media-img" src="assets/photos/custom-t-shirt-example.jpg" alt="Custom vinyl “My Grandma Is Wicked” tees" loading="lazy">
-            <span class="tag">HTV &amp; Embroidery</span>
-            <h3>Tees, hoodies &amp; more</h3>
+          <a class="card service-card service-card--link" href="?type=tees#request-form" data-prefill="tees">
+            <img class="media-img" src="assets/photos/happy-camper-embroidered-crewnecks.jpg" alt="Embroidered Happy Camper crewneck" loading="lazy">
+            <span class="tag">Printed &amp; Embroidered</span>
+            <h3>T-shirts, hoodies &amp; crewnecks</h3>
             <p class="price-note">Starting at <strong>$25</strong> (see pricing guide below)</p>
-            <p>Crisp heat-transfer vinyl (HTV) designs and classic embroidery on shirts, sweatshirts, hats, and more. Names, monograms, logos, sayings, you name it.</p>
-          </article>
-          <article class="card service-card">
+            <p>Custom printed designs and classic embroidery on t-shirts, hoodies, crewnecks, hats, and more. Names, monograms, logos, sayings, you name it.</p>
+            <span class="arrow">Start this custom order</span>
+          </a>
+          <a class="card service-card service-card--link" href="?type=beaded#request-form" data-prefill="beaded">
             <img class="media-img" src="assets/photos/beaded-embroidery-custom.jpg" alt="Beaded embroidery tee" loading="lazy" style="object-position:center 65%">
             <span class="tag">Beaded Embroidery</span>
             <h3>Beaded embroidery</h3>
             <p class="price-note">Starting at <strong>$40</strong></p>
             <p>Embroidery with hand-sewn beads for texture and sparkle. A dressed-up look for sweatshirts, jackets, and special-occasion pieces.</p>
-          </article>
-          <article class="card service-card">
-            <img class="media-img" src="assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg" alt="Kids hand-painted jean jacket" loading="lazy">
+            <span class="arrow">Start this custom order</span>
+          </a>
+          <a class="card service-card service-card--link" href="?type=jacket#request-form" data-prefill="jacket">
+            <img class="media-img" src="assets/photos/teacher-hand-painted-jean-jacket-custom.jpg" alt="Hand-painted teacher jean jacket" loading="lazy" style="object-position:center 35%">
             <span class="tag">Hand-Painted</span>
             <h3>Painted jean jackets</h3>
             <p class="price-note">Starting at <strong>$55</strong></p>
             <p>One-of-a-kind denim jackets hand-painted with your design. Florals, portraits, lyrics, team logos, or "Mrs." for the bride-to-be.</p>
-          </article>
-          <article class="card service-card">
+            <span class="arrow">Start this custom order</span>
+          </a>
+          <a class="card service-card service-card--link" href="?type=pet#request-form" data-prefill="pet">
             <img class="media-img" src="assets/photos/custom-embroidered-dog-crewnecks.jpg" alt="Crewneck embroidered with a customer’s dogs" loading="lazy">
             <span class="tag">From Your Photos</span>
             <h3>Embroidered pet sweatshirts</h3>
             <p class="price-note">Starting at <strong>$55</strong></p>
             <p>Send us a photo of your furry (or scaly!) best friend and we'll embroider it onto a cozy sweatshirt you'll never want to take off.</p>
-          </article>
-          <article class="card service-card">
+            <span class="arrow">Start this custom order</span>
+          </a>
+          <a class="card service-card service-card--link" href="?type=sweater#request-form" data-prefill="sweater">
             <img class="media-img" src="assets/photos/baby-sweaters-hand-embroidered.jpg" alt="Hand-stitched “Malik” name sweater" loading="lazy">
             <span class="tag">Hand-Knit</span>
             <h3>Hand-knit baby sweaters</h3>
             <p class="price-note">Starting at <strong>$45</strong></p>
             <p>Soft, cozy sweaters knit by hand for the littlest ones, in the colors of your choice. A keepsake gift for new arrivals.</p>
-          </article>
-          <!-- Wedding & bridal orders live on the Team & Bulk page -->
+            <span class="arrow">Start this custom order</span>
+          </a>
+          <!-- Wedding & bridal orders live on the Team & Bulk Orders page -->
           <a class="card service-card service-card--link" href="team-orders.html#wedding">
             <img class="media-img" src="assets/photos/bridal-party-embroidered-shirts.jpg" alt="Bridal party in embroidered shirts" loading="lazy">
             <span class="tag">Wedding &amp; Bridal</span>
             <h3>Planning a wedding?</h3>
-            <p>Bridal party shirts, makeup bags, accessories, and koozies are handled as group orders. Get a quote on our Team &amp; Bulk page.</p>
+            <p>Bridal party shirts, makeup bags, accessories, and koozies are handled as group orders. Get a quote on our Team &amp; Bulk Orders page.</p>
             <span class="arrow">See wedding &amp; bridal party orders</span>
           </a>
         </div>
+        <p class="text-center" style="margin-top:36px"><a class="btn btn--primary" href="#request-form">Start a Custom Order</a></p>
       </div>
     </section>
 
@@ -157,14 +164,18 @@
         <div>
           <span class="eyebrow" style="background:#fff">Baby</span>
           <h2 id="baby-title">Baby boxes</h2>
-          <p>Personalized gift boxes made for welcoming a new little one. Each box is put together around the baby's name, theme, and colors.</p>
+          <p>Personalized gift boxes made for welcoming a new little one, designed around the baby's name, theme, and colors. Perfect for baby showers, new arrivals, and pregnancy announcements.</p>
+          <p style="margin-bottom:10px"><strong>Every box includes:</strong></p>
           <ul class="feature-list">
-            <li>Perfect for baby showers, new arrivals, and pregnancy announcements</li>
-            <li>Pair it with a hand-knit baby sweater</li>
-            <li>Tell us your theme, colors, and budget and we'll design the box</li>
+            <li>4 personalized onesies</li>
+            <li>A baby blanket</li>
+            <li>A hat or bow</li>
+            <li>Socks</li>
+            <li>A bib</li>
+            <li>Optional: add a pair of custom baby shoes</li>
           </ul>
           <p class="price-note">Starting at <strong>$60</strong></p>
-          <a class="btn btn--primary" href="?type=baby-box#request-form">Request a Baby Box</a>
+          <a class="btn btn--primary" href="?type=baby-box#request-form" data-prefill="baby-box">Start a Custom Order</a>
         </div>
       </div>
     </section>
@@ -184,7 +195,7 @@
           <div class="card price-card">
             <h3>Apparel</h3>
             <dl class="price-list">
-              <div><dt>T-shirts (vinyl / HTV)</dt><dd>$25</dd></div>
+              <div><dt>Printed t-shirts</dt><dd>$25</dd></div>
               <div><dt>Embroidered shirts</dt><dd>$30</dd></div>
               <div><dt>Crewnecks</dt><dd>$40</dd></div>
               <div><dt>Embroidered or appliqué crewnecks</dt><dd>$45</dd></div>
@@ -208,6 +219,7 @@
         </div>
         <p class="text-center muted" style="margin-top:24px">Apparel comes in sizes XS–XL. Sizes 2X–4X add $3 and may take a little longer.</p>
         <p class="text-center muted">Ordering for a team or group? Bulk pricing depends on the products and quantity. <a href="team-orders.html#team-form">Request a team quote</a>.</p>
+        <p class="text-center" style="margin-top:28px"><a class="btn btn--primary" href="#request-form">Start a Custom Order</a></p>
       </div>
     </section>
 
@@ -251,7 +263,7 @@
               <select id="c-type" name="product_type" required>
                 <option value="">Choose a product type…</option>
                 <option>Custom shoes</option>
-                <option>HTV / vinyl apparel</option>
+                <option>Custom printed t-shirts, hoodies &amp; crewnecks</option>
                 <option>Embroidered apparel</option>
                 <option>Beaded embroidery</option>
                 <option>Hand-painted jean jacket</option>
@@ -369,8 +381,30 @@
         if (/beaded/i.test(item)) select.value = "Beaded embroidery";
       }
       // Buttons like "Request a Baby Box" add ?type=... to pick the product type
-      var TYPES = { "shoes": "Custom shoes", "baby-box": "Baby box" };
+      var TYPES = {
+        "shoes": "Custom shoes",
+        "tees": "Custom printed t-shirts, hoodies & crewnecks",
+        "embroidered": "Embroidered apparel",
+        "beaded": "Beaded embroidery",
+        "jacket": "Hand-painted jean jacket",
+        "pet": "Pet sweatshirt (from photo)",
+        "sweater": "Hand-knit baby sweater",
+        "baby-box": "Baby box"
+      };
       if (TYPES[type]) select.value = TYPES[type];
+
+      // Tapping a custom item fills in the form right away (no page reload)
+      document.addEventListener("click", function (e) {
+        var link = e.target.closest("[data-prefill]");
+        if (!link) return;
+        var t = link.getAttribute("data-prefill");
+        if (!TYPES[t]) return;
+        e.preventDefault();
+        select.value = TYPES[t];
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+        document.getElementById("request-form").scrollIntoView({ behavior: "smooth" });
+        setTimeout(function () { desc.focus({ preventScroll: true }); }, 500);
+      });
     })();
   </script>
 </body>
