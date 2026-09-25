@@ -159,7 +159,7 @@
         </div>
 
         <form id="team-order-form" class="form-card" data-validate data-form="teamOrder"
-              action="#" method="post" enctype="multipart/form-data" novalidate>
+              action="#" method="post" novalidate>
           <div class="form-alert" role="alert" hidden></div>
           <input type="hidden" name="_subject" value="New team / bulk order request">
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
@@ -239,15 +239,11 @@
                         placeholder="Example: 3 Youth M, 5 Adult S, 4 Adult M, 3 Adult L"></textarea>
             </div>
 
+            <!-- Photos: our Formspree plan doesn't accept file uploads, so we collect them by email -->
             <div class="field full">
-              <label for="t-files">Logo, inspiration, or size list files <span class="muted">(optional)</span></label>
-              <div class="upload">
-                <div class="upload__icon" data-icon="trophy"></div>
-                <p class="upload__text">Drag your logo or photos here, or tap to upload</p>
-                <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
-                <input id="t-files" name="logo_files" type="file" multiple
-                       accept="image/*,.heic,.heif,.pdf" data-max-files="5" data-max-mb="10">
-                <ul class="upload__list"></ul>
+              <div class="callout">
+                <span class="callout__icon" data-icon="camera"></span>
+                <p>After you submit, we'll email you to collect photos, logos or inspiration.</p>
               </div>
             </div>
 

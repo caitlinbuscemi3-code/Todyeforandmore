@@ -57,7 +57,7 @@
             <span class="step__num">1</span>
             <div class="step__icon" data-icon="idea"></div>
             <h3>Describe your idea</h3>
-            <p>Fill out the request form below. Inspiration photos are super helpful!</p>
+            <p>Fill out the request form below. After you submit, we'll email you to collect any photos or inspiration.</p>
           </li>
           <li class="step">
             <span class="step__num">2</span>
@@ -109,7 +109,7 @@
           <h2 id="shoes-title">Fully custom shoes</h2>
           <p>Wearable art for your feet. Every pair is designed from scratch around your idea, whether that's your team colors, a favorite character, a wedding theme, or something totally new.</p>
           <ul class="feature-list">
-            <li>Describe the look you want, or upload reference photos</li>
+            <li>Describe the look you want, and we'll email you to collect reference photos</li>
             <li>Send us your own pair (we'll share shipping details once your mockup is approved), or we can buy a new pair for you</li>
             <li>Great for game days, weddings, birthdays &amp; gifts</li>
           </ul>
@@ -273,7 +273,7 @@
         </div>
 
         <form id="custom-order-form" class="form-card" data-validate data-form="customOrder"
-              action="#" method="post" enctype="multipart/form-data" novalidate>
+              action="#" method="post" novalidate>
           <div class="form-alert" role="alert" hidden></div>
           <!-- Tells your form service which form this came from -->
           <input type="hidden" name="_subject" value="New custom order request">
@@ -317,15 +317,11 @@
                         placeholder="Example: White high-top sneakers with my daughter's softball number (12) and team colors, navy and gold, with a softball on each heel. Women's size 8."></textarea>
             </div>
 
+            <!-- Photos: our Formspree plan doesn't accept file uploads, so we collect them by email -->
             <div class="field full">
-              <label for="c-files">Reference photos <span class="muted">(optional)</span></label>
-              <div class="upload">
-                <div class="upload__icon" data-icon="camera"></div>
-                <p class="upload__text">Drag photos here or tap to upload</p>
-                <p class="hint">JPG, PNG, HEIC or PDF · up to 5 files · 10 MB each</p>
-                <input id="c-files" name="reference_photos" type="file" multiple
-                       accept="image/*,.heic,.heif,.pdf" data-max-files="5" data-max-mb="10">
-                <ul class="upload__list"></ul>
+              <div class="callout">
+                <span class="callout__icon" data-icon="camera"></span>
+                <p>After you submit, we'll email you to collect photos, logos or inspiration.</p>
               </div>
             </div>
 

@@ -10,9 +10,13 @@ Everything you'll paste goes into **one file: `assets/js/config.js`**.
 
 ## 1. Forms (so requests reach your inbox)
 
-The site has five forms. Right now they check what people type and show a
-thank-you message, but **nothing is sent yet**. [Formspree](https://formspree.io)
-delivers each form to your email.
+The site has five forms. [Formspree](https://formspree.io) delivers each one
+to your email.
+
+**All five forms are connected.** Your Formspree plan doesn't accept file
+uploads, so the forms have no upload boxes. The order forms say "After you
+submit, we'll email you to collect photos, logos or inspiration," and the
+review form asks customers to reply by email with a photo.
 
 | Form | Page | Setting in `config.js` → `forms` |
 |---|---|---|
@@ -59,8 +63,9 @@ delivers each form to your email.
   settings.
 - **Email subject lines** are already set (for example "New customer review"),
   so you can create Gmail filters or labels for each type.
-- **Email sign-ups:** until `newsletter` is set, clicking **Sign Up** opens an
-  email to you so no sign-up is lost. Later you can switch to an email
+- **Email sign-ups** arrive in your inbox like the other forms. If `newsletter`
+  is ever cleared, clicking **Sign Up** opens an email to you instead, so no
+  sign-up is lost. Later you can switch to an email
   marketing tool (Square Marketing, Mailchimp, or Flodesk) to send newsletters.
 
 ---
@@ -157,7 +162,8 @@ me the embed code. I'll put it in that section.
 
 ## 5. Before launch checklist
 
-- [ ] All five forms connected and tested (section 1)
+- [x] All five forms connected (Custom Orders, Team & Bulk, Contact, Leave a Review, email sign-up)
+- [ ] Send a real test from each form and confirm it arrives
 - [ ] Square connected and a test order placed (section 2)
 - [ ] Shippo tracking emails turned on (section 3)
 - [ ] Domain connected, then `siteUrl` in `config.js`, `sitemap.xml`, and
