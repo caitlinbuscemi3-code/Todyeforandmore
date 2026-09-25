@@ -76,7 +76,8 @@ window.SHOP_FILTERS = [
             "tumbler-ready", "tumbler-custom", "blanket"] },        // tumblers & blankets last
   { id: "kids",    label: "Kids" },      // shows the "Any design can also be made in kids' sizes" note
   { id: "sports",  label: "Sports" },
-  { id: "wedding", label: "Wedding" },
+  { id: "wedding", label: "Wedding",
+    order: ["bridal-shoes", "bridal-party", "wedding-favors", "makeup-bag"] },
   { id: "holiday", label: "Holiday" }
 ];
 
@@ -260,7 +261,7 @@ window.PRODUCTS = [
     buyable: true,                         // READY TO BUY
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
-    tags: ["sports", "holiday"],
+    tags: ["sports"],
     desc: "An embroidered football and “’tis the season” script on a warm brown tee, made for football season.",
     image: "assets/photos/tis-the-season-tee-embroidered.jpg",
     label: "brown ’Tis the Season tee",
@@ -632,7 +633,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: false,                        // MADE TO ORDER
     category: "bags",
-    tags: ["gifts", "wedding"],
+    tags: ["gifts"],
     desc: "A sturdy canvas tote embroidered with a name, initials, or a design of your choice.",
     image: "assets/photos/custom-embroidered-name-tote-bag.jpg",
     label: "embroidered name tote bag",
@@ -708,7 +709,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: false,                        // MADE TO ORDER
     category: "drink",
-    tags: ["gifts", "wedding"],
+    tags: ["gifts", "sports"],
     desc: "Personalized with a name, team, or design of your choice.",
     image: "assets/photos/custom-team-engraved-bulk-tumblers.jpg",
     label: "personalized tumbler",
