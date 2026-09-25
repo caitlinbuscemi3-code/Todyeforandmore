@@ -162,7 +162,12 @@
         '<select id="opt-size-' + n + '" data-opt="size"><option value="">Choose a size</option>' + sizesFor(p).map(function (sz) {
           return '<option value="' + sz + '">' + sz + (isExtended(sz) && UPCHARGE ? " (+" + Site.money(UPCHARGE) + ")" : "") + "</option>";
         }).join("") + "</select>" +
-        '<p class="field-error" aria-live="polite"></p></div>';
+        '<p class="field-error" aria-live="polite"></p>' +
+        // Kids sizes: point to a custom request for sizes not in the list
+        (p.sizes === "kids" ? '<p class="product-card__hint">Need a different size? <a href="custom-orders.html?item=' +
+          encodeURIComponent(p.name + " (different size)") + (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") +
+          '#request-form">Submit a custom request</a>.</p>' : "") +
+        "</div>";
     }
     return html ? '<div class="product-card__options">' + html + "</div>" : "";
   }

@@ -500,7 +500,7 @@ window.PRODUCTS = [
   {
     id: "kids-sneakers",
     name: "Custom Kids Sneakers",
-    price: null,                         // PRICE COMING SOON
+    price: 50.00,
     buyable: false,                      // MADE TO ORDER
     category: "shoes",
     desc: "Little kicks, big personality: hand-painted with their favorite characters, colors, or name.",
