@@ -799,6 +799,10 @@ fieldset.field { border: none; padding: 0; margin: 0; }
   opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 .slideshow__slide.is-active { opacity: 1; visibility: visible; }
+/* Smaller arrows when a slideshow sits on a shop card */
+.product-card .slideshow .lightbox__nav { width: 34px; height: 34px; }
+.product-card .slideshow .lightbox__nav svg { width: 16px; height: 16px; }
+.product-card .slideshow__count { font-size: 0.72rem; padding: 2px 9px; right: 8px; bottom: 8px; }
 .slideshow__count {
   position: absolute; right: 12px; bottom: 12px;
   background: var(--color-primary); color: #fff;

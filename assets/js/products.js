@@ -19,6 +19,8 @@
      name        – product name
      price       – number only, no $ sign (e.g. 24.00). For custom-only
                    items this is the "Starting at" price.
+                   Use null to show "Price coming soon" (the item can't be
+                   added to the cart until it has a price).
      buyable     – true = can be added to the cart, false = custom only
      category    – must match one of SHOP_CATEGORIES below
      desc        – short description (one sentence is best)
@@ -33,7 +35,8 @@
      customItem  – optional: what gets filled into the Custom Orders form
                    (defaults to the product name)
      sizes       – optional: true = shows a size dropdown (XS–4X).
-                   The size list and the extended-size upcharge are in config.js → shop.
+                   "kids" = shows the kids size dropdown instead.
+                   The size lists and the extended-size upcharge are in config.js → shop.
      formType    – optional: which Custom Orders form option to pick
                    (e.g. "shoes", "tees", "beaded", "baby-box")
      priceNote   – optional: small line under the price (e.g. "plus the cost of the shoes")
@@ -41,6 +44,9 @@
                    its button says "Request a Quote" and opens the Team & Bulk
                    Orders form.
      alsoIn      – optional: extra filters an item shows up under, e.g. ["birthday"]
+     morePhotos  – optional: extra photos, turning the card photo into a
+                   swipeable slideshow, e.g.
+                   [{ image: "assets/photos/two.jpg", label: "back of the shirt" }]
      styles      – optional: a list of garment styles, each with its own
                    price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
                    "price" above should match the cheapest style.
@@ -55,7 +61,7 @@ window.SHOP_CATEGORIES = [
   { id: "all",     label: "All" },
   { id: "apparel", label: "Apparel" },
   { id: "shoes",   label: "Shoes" },
-  { id: "kids",    label: "Kids & Baby" },
+  { id: "kids",    label: "Kids" },
   { id: "birthday", label: "Birthday Gifts" },   // items join this with alsoIn: ["birthday"]
   { id: "beaded",  label: "Beaded Embroidery" },
   { id: "drink",   label: "Tumblers" },
@@ -221,6 +227,145 @@ window.PRODUCTS = [
   },
 
   {
+    id: "grit-lion",
+    name: "Grit",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A fierce lion head in shades and a “Grit” cap, for Detroit fans with heart.",
+    image: "assets/photos/grit-lion-tee.jpg",
+    label: "Grit lion head design",
+    color: "navy",
+    featured: false,
+    badge: "New",
+    sizes: true,
+    styles: [
+      { name: "T-shirt",  price: 25.00 },
+      { name: "Crewneck", price: 40.00 },
+      { name: "Hoodie",   price: 45.00 }
+    ]
+  },
+  {
+    id: "detroit-octopus",
+    name: "Detroit Octopus",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A playful purple octopus over stacked “Detroit” lettering, a nod to a classic Detroit hockey tradition.",
+    image: "assets/photos/detroit-octopus-tee.jpg",
+    label: "Detroit octopus design",
+    color: "blush",
+    featured: false,
+    badge: "New",
+    sizes: true,
+    styles: [
+      { name: "T-shirt",  price: 25.00 },
+      { name: "Crewneck", price: 40.00 },
+      { name: "Hoodie",   price: 45.00 }
+    ]
+  },
+  {
+    id: "vintage-cream-detroit-football",
+    name: "Vintage Cream Detroit Football",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A throwback Detroit football player charging across a cream design.",
+    image: "assets/photos/vintage-cream-detroit-football-crew.jpg",
+    label: "vintage cream Detroit football design",
+    color: "blue",
+    featured: false,
+    badge: "New",
+    sizes: true,
+    styles: [
+      { name: "T-shirt",  price: 25.00 },
+      { name: "Crewneck", price: 40.00 },
+      { name: "Hoodie",   price: 45.00 }
+    ]
+  },
+  {
+    id: "vintage-detroit-baseball",
+    name: "Vintage Detroit Baseball",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A leaping tiger with classic Detroit baseball lettering, made to feel like a vintage find.",
+    image: "assets/photos/vintage-detroit-baseball-tee.jpg",
+    label: "vintage Detroit baseball design",
+    color: "orange",
+    featured: false,
+    badge: "New",
+    sizes: true,
+    styles: [
+      { name: "T-shirt",  price: 25.00 },
+      { name: "Crewneck", price: 40.00 },
+      { name: "Hoodie",   price: 45.00 }
+    ]
+  },
+  {
+    id: "sunday-social-tee",
+    name: "Sunday Social Tee",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A clean “Sunday Social Club” design with a lion crest, made for game day brunch and beyond.",
+    image: "assets/photos/sunday-social-tee-lions.jpg",
+    label: "Sunday Social tee",
+    color: "blue",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "tis-the-season-tee",
+    name: "’Tis the Season Tee",
+    price: 30.00,
+    buyable: true,
+    category: "apparel",
+    desc: "An embroidered football and “’tis the season” script on a warm brown tee, made for football season.",
+    image: "assets/photos/tis-the-season-tee-embroidered.jpg",
+    label: "brown ’Tis the Season tee",
+    color: "orange",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "vintage-detroit-football-tee",
+    name: "Vintage Detroit Football Tee",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "Big block “Detroit” lettering over a vintage football badge.",
+    image: "assets/photos/vintage-lions-tee.jpg",
+    label: "vintage Detroit football tee",
+    color: "blue",
+    featured: false,
+    badge: "",
+    sizes: true
+  },
+  {
+    id: "embroidered-team-tee",
+    name: "Embroidered Team Tee",
+    price: 30.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A team name embroidered in script on a soft tee. Shown in Detroit football, and we can make it for any team!",
+    image: "assets/photos/detroit-lions-embroidered-tee.jpg",
+    label: "embroidered Detroit football tee",
+    color: "navy",
+    featured: false,
+    badge: "",
+    sizes: true,
+    customLabel: "Request a Different Team",
+    customItem: "Embroidered Team Tee (different team)",
+    morePhotos: [
+      { image: "assets/photos/lions-embroidered-tee.jpg", label: "the Detroit football version" },
+      { image: "assets/photos/custom-embroidered-crewnecks-team-specific.jpg", label: "the same design made for another team, on a crewneck" }
+    ]
+  },
+
+  {
     id: "group-tees",
     name: "Team & Bulk Orders",
     price: 0,
@@ -233,9 +378,61 @@ window.PRODUCTS = [
     color: "navy",
     featured: 4,
     badge: ""
-  },,
+  },
 
-  /* ================= KIDS & BABY (made to order) ================= */
+  /* ================= KIDS ================= */
+  {
+    id: "superhero-tees",
+    name: "Embroidered Superhero Tees",
+    price: 30.00,
+    buyable: true,
+    category: "kids",
+    desc: "Kids’ tees with an embroidered superhero design. Want a different hero or colors? Customize it!",
+    image: "assets/photos/embroidered-superhero-tee-gray.jpg",
+    label: "gray embroidered superhero tee",
+    color: "blue",
+    featured: false,
+    badge: "",
+    sizes: "kids",
+    styles: [
+      { name: "Gray tee",  price: 30.00 },
+      { name: "White tee", price: 30.00 }
+    ],
+    morePhotos: [
+      { image: "assets/photos/embroidered-superhero-tee-white.jpg", label: "white embroidered superhero tee" }
+    ],
+    alsoIn: ["apparel", "birthday"]
+  },
+  {
+    id: "kids-sweater-lion",
+    name: "Hand-Stitched Kids Sweater – Lion",
+    price: 45.00,
+    buyable: true,
+    category: "kids",
+    desc: "A cozy knit sweater hand-stitched with “Lions” in chunky script, ready for game day.",
+    image: "assets/photos/hand-stitched-kids-lions-sweater.jpg",
+    label: "hand-stitched kids Lion sweater",
+    color: "navy",
+    featured: false,
+    badge: "",
+    sizes: "kids",
+    alsoIn: ["birthday"]
+  },
+  {
+    id: "kids-sweater-letter",
+    name: "Hand-Stitched Kids Sweater – Letter",
+    price: 45.00,
+    buyable: true,
+    category: "kids",
+    desc: "A big hand-stitched initial trimmed with little flowers. Add the letter and colors in the order notes at checkout.",
+    image: "assets/photos/custom-hand-stitched-kids-sweater-letter-flower.jpg",
+    label: "hand-stitched kids letter sweater",
+    color: "blush",
+    featured: false,
+    badge: "",
+    sizes: "kids",
+    alsoIn: ["birthday"]
+  },
   {
     id: "name-sweater",
     name: "Hand-Stitched Name Sweater",
@@ -298,6 +495,29 @@ window.PRODUCTS = [
     customLabel: "Design My Shoes",
     formType: "shoes",
     alsoIn: ["birthday"]
+  },
+
+  {
+    id: "kids-sneakers",
+    name: "Custom Kids Sneakers",
+    price: 50.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "shoes",
+    desc: "Little kicks, big personality: hand-painted with their favorite characters, colors, or name.",
+    image: "assets/photos/toy-story-custom-kids-shoes-nike-disney.jpg",
+    label: "custom hand-painted kids sneakers",
+    color: "blue",
+    featured: false,
+    badge: "",
+    priceNote: "Plus the cost of the shoes.",
+    customLabel: "Design Their Shoes",
+    formType: "shoes",
+    morePhotos: [
+      { image: "assets/photos/custom-baby-shoes.jpg", label: "rainbow baby sneakers" },
+      { image: "assets/photos/custom-kids-vans.jpg", label: "checkered kids slip-ons with a name and number" },
+      { image: "assets/photos/kids-custom-shoes-disney-minnie-mouse.jpg", label: "pink polka dot kids sneakers with a name" }
+    ],
+    alsoIn: ["kids", "birthday"]
   },
 
   /* ================= BEADED EMBROIDERY ================= */

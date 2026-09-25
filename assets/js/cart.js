@@ -20,11 +20,14 @@
   var PRODUCTS = window.PRODUCTS || [];
   var STORAGE_KEY = "tdfm-cart-v1";
 
-  // Only "buyable" products can go in the cart (custom-only items can't)
+  // Only "buyable" products with a price can go in the cart (custom-only items can't)
   function findBuyable(id) {
     var p = findProduct(id);
-    return p && p.buyable ? p : null;
+    return p && p.buyable && !priceSoon(p) ? p : null;
   }
+
+  // price: null in products.js = "Price coming soon"
+  function priceSoon(p) { return p.price === null || p.price === undefined; }
 
   function findProduct(id) {
     for (var i = 0; i < PRODUCTS.length; i++) if (PRODUCTS[i].id === id) return PRODUCTS[i];
@@ -35,10 +38,14 @@
      Size list and the extended-size upcharge live in config.js → shop.
      Styles (e.g. T-shirt / Crewneck / Hoodie) are set per product in products.js. */
   var SIZES = SHOP.sizes || [];
+  var KIDS_SIZES = SHOP.kidsSizes || [];
   var EXTENDED = SHOP.extendedSizes || [];
   var UPCHARGE = Number(SHOP.extendedSizeUpcharge || 0);
 
   function isExtended(size) { return EXTENDED.indexOf(size) !== -1; }
+
+  // sizes: true = adult sizes, sizes: "kids" = kids sizes
+  function sizesFor(p) { return p.sizes === "kids" ? KIDS_SIZES : SIZES; }
 
   function styleFor(p, styleName) {
     var styles = p.styles || [];
@@ -68,7 +75,7 @@
     var p = findBuyable(line.id);
     if (!p || !(line.qty > 0)) return false;
     if (p.styles && p.styles.length && !styleFor(p, line.style)) return false;
-    if (p.sizes && SIZES.indexOf(line.size) === -1) return false;
+    if (p.sizes && sizesFor(p).indexOf(line.size) === -1) return false;
     return true;
   }
 
@@ -142,7 +149,7 @@
 
   // Style & size dropdowns for ready-to-buy apparel
   function optionsHTML(p) {
-    if (!p.buyable) return "";
+    if (!findBuyable(p.id)) return "";
     var n = ++cardCount, html = "";
     if (p.styles && p.styles.length) {
       html += '<div class="field"><label for="opt-style-' + n + '">Style</label>' +
@@ -152,10 +159,15 @@
     }
     if (p.sizes) {
       html += '<div class="field"><label for="opt-size-' + n + '">Size</label>' +
-        '<select id="opt-size-' + n + '" data-opt="size"><option value="">Choose a size</option>' + SIZES.map(function (sz) {
+        '<select id="opt-size-' + n + '" data-opt="size"><option value="">Choose a size</option>' + sizesFor(p).map(function (sz) {
           return '<option value="' + sz + '">' + sz + (isExtended(sz) && UPCHARGE ? " (+" + Site.money(UPCHARGE) + ")" : "") + "</option>";
         }).join("") + "</select>" +
-        '<p class="field-error" aria-live="polite"></p></div>';
+        '<p class="field-error" aria-live="polite"></p>' +
+        // Kids sizes: point to a custom request for sizes not in the list
+        (p.sizes === "kids" ? '<p class="product-card__hint">Need a different size? <a href="custom-orders.html?item=' +
+          encodeURIComponent(p.name + " (different size)") + (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") +
+          '#request-form">Submit a custom request</a>.</p>' : "") +
+        "</div>";
     }
     return html ? '<div class="product-card__options">' + html + "</div>" : "";
   }
@@ -166,15 +178,30 @@
     return p.formType || (p.category === "apparel" ? "tees" : "");
   }
 
+  // One photo, or a swipeable slideshow when the product has morePhotos
+  // (the slideshow buttons are added by assets/js/slideshow.js)
+  function mediaHTML(p) {
+    var first = Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square", thumb: true });
+    if (!p.image || !p.morePhotos || !p.morePhotos.length) return first;
+    return '<div class="slideshow" data-slideshow aria-label="' + Site.escape(p.name) + ' photos">' + first +
+      p.morePhotos.map(function (ph) {
+        return Site.media({ image: ph.image, label: ph.label, alt: p.name + ": " + ph.label, color: p.color, shape: "square", thumb: true });
+      }).join("") + "</div>";
+  }
+
   function productCardHTML(p) {
     // The custom button sends shoppers to the Custom Orders form with this product pre-filled
     // (ready-made items add &mode=customize so the form asks what to change about the design)
     var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
       (p.buyable && !p.customItem ? "&mode=customize" : "") +
       (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") + "#request-form";
+    var noPriceYet = priceSoon(p) && !p.bulk;
     var actions = p.bulk
       // TEAM & BULK: never a price, always a quote
       ? '<a class="btn btn--primary btn--small" href="team-orders.html#team-form">Request a Quote</a>'
+      : p.buyable && noPriceYet
+      // READY-MADE, PRICE COMING SOON: can't go in the cart yet, so ask about it instead
+      ? '<a class="btn btn--primary btn--small" href="' + customUrl + '">Ask About This Design</a>'
       : p.buyable
       // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
@@ -182,6 +209,7 @@
       // MADE TO ORDER: request button instead of Add to Cart
       : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";
     var price = p.bulk ? ""
+      : noPriceYet ? '<span class="product-card__from">Price coming soon</span>'
       : p.buyable
       ? '<span data-price>' + Site.money(unitPrice(p)) + "</span>"
       : '<span class="product-card__from">Starting at</span> ' + Site.money(p.price);
@@ -192,7 +220,7 @@
       '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-category="' + Site.escape([p.category].concat(p.alsoIn || []).join(" ")) +
         '" data-type="' + (p.buyable ? "ready" : "custom") + '">' +
         '<div class="product-card__media">' +
-          Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square", thumb: true }) +
+          mediaHTML(p) +
           (p.badge ? '<span class="product-card__badge">' + Site.escape(p.badge) + "</span>" : "") +
         "</div>" +
         '<div class="product-card__body">' +
@@ -205,6 +233,8 @@
           (p.priceNote ? '<p class="product-card__note">' + Site.escape(p.priceNote) + "</p>" : "") +
           styleList +
           (p.bulk ? '<p class="product-card__note" style="margin-top:auto">Every group order gets its own quote.</p>'
+            : p.buyable && noPriceYet
+            ? '<p class="product-card__note">Ask us about pricing and sizes.</p>'
             : p.buyable
             ? '<p class="product-card__note">Want it customized? Same price.</p>'
             : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
@@ -264,6 +294,8 @@
         card.hidden = (state.cat !== "all" && card.getAttribute("data-category").split(" ").indexOf(state.cat) === -1) ||
                       (state.type !== "all" && card.getAttribute("data-type") !== state.type);
       });
+      var kidsNote = document.querySelector("[data-kids-note]");
+      if (kidsNote) kidsNote.hidden = state.cat !== "kids";
       var empty = document.querySelector("[data-product-empty]");
       if (empty) empty.hidden = !!shopGrid.querySelector(".product-card:not([hidden])");
     }

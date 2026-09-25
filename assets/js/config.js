@@ -91,7 +91,10 @@ window.SITE_CONFIG = {
     // Apparel sizes shown in the size dropdown (for products with sizes: true)
     sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],
     extendedSizes: ["2X", "3X", "4X"],   // these sizes cost a little more…
-    extendedSizeUpcharge: 3.00           // …this much more (shown in the size dropdown, e.g. "2X (+$3.00)")
+    extendedSizeUpcharge: 3.00,          // …this much more (shown in the size dropdown, e.g. "2X (+$3.00)")
+
+    // Kids sizes (for products with sizes: "kids"). Change this list to the sizes you offer.
+    kidsSizes: ["12M", "18M", "24M", "2T", "3T", "4T", "5T", "Youth XS", "Youth S", "Youth M", "Youth L", "Youth XL"]
   },
 
   /* ---------- Payments (BACKEND HOOK) ----------
