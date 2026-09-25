@@ -17,6 +17,13 @@ window.SITE_CONFIG = {
   tagline: "Made uniquely yours.",   // shown under the name in the header & footer
   foundedYear: 2020,                 // copyright line reads "© 2020–(this year)"
 
+  /* ---------- Web address ----------
+     Once you have your own domain, put the full address here, e.g.
+     "https://www.todyeforandmore.com" (no slash at the end).
+     Google uses it as each page's main address. Also update the same
+     address in sitemap.xml and robots.txt (both in the main folder). */
+  siteUrl: "",
+
   /* ---------- Logo ----------
      Logo files live in assets/photos/. These are transparent PNGs made
      from your "TDF Primary" logos (white background removed).

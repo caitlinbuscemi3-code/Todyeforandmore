@@ -1,0 +1,8 @@
+# Tells search engines they're welcome to read every page.
+# (The cart page asks not to be listed in results with a tag of its own.)
+User-agent: *
+Allow: /
+
+# Once you have your domain, replace YOUR-DOMAIN.com below with it
+# and remove the # at the start of the next line.
+# Sitemap: https://www.YOUR-DOMAIN.com/sitemap.xml

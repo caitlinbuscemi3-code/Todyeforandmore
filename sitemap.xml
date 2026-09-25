@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PAGE LIST FOR SEARCH ENGINES
+     Once you have your domain, replace every "https://www.YOUR-DOMAIN.com"
+     below with your real address (use find & replace), then submit this file
+     in Google Search Console (search.google.com/search-console).
+     Add a <url> block here whenever you add a new page to the site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.YOUR-DOMAIN.com/</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/shop.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/custom-orders.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/team-orders.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/gallery.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/about.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/contact.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/faq.html</loc></url>
+  <url><loc>https://www.YOUR-DOMAIN.com/reviews.html</loc></url>
+</urlset>
