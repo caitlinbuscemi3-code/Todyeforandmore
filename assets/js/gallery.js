@@ -79,7 +79,7 @@ window.FEATURED_WORK = [
 
 window.GALLERY_ITEMS = [
   {
-    category: "shoes", caption: "More Custom Kicks", color: "blue",
+    category: "shoes", caption: "Custom Kicks", color: "blue",
     photos: [
       { image: "assets/photos/company-shoes-custom-logo.jpg", label: "orange and blue company logo sneakers" },
       { image: "assets/photos/company-logo-shoes-custom.jpg", label: "orange and blue company logo sneakers, back view" },
@@ -197,10 +197,10 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "wedding", caption: "Bach Club Bachelorette Tees", color: "blush",
+    category: "wedding", caption: "Bachelorette Tees", color: "blush",
     photos: [
-      { image: "assets/photos/bachelorette-custom-t-shirts-bulk.jpg", label: "Bach Club bachelorette tees" },
-      { image: "assets/photos/bridal-bachelorette-tee-custom-bulk.jpg", label: "Bach Club bachelorette tees" }
+      { image: "assets/photos/bachelorette-custom-t-shirts-bulk.jpg", label: "custom bachelorette tees" },
+      { image: "assets/photos/bridal-bachelorette-tee-custom-bulk.jpg", label: "custom bachelorette tees" }
     ]
   },
   {
@@ -265,7 +265,7 @@ window.GALLERY_ITEMS = [
     category: "team", caption: "Coaches’ Quarter Zips", color: "navy",
     photos: [
       { image: "assets/photos/custom-team-gear.jpg", label: "embroidered coaches quarter zips" },
-      { image: "assets/photos/coaches-bulk-team-apparel.jpg", label: "embroidered coaches quarter zips" }
+      { image: "assets/photos/coaches-quarter-zips.jpg", label: "embroidered coaches quarter zips" }
     ]
   },
   {

@@ -27,6 +27,12 @@
     slides.forEach(function (img, i) {
       img.classList.add("slideshow__slide");
       if (i > 0) img.loading = "lazy";
+      // Hold back photos further along so the page doesn't download them all at once.
+      // Each one loads just before it's shown (see loadNear below).
+      if (i > 1 && img.getAttribute("src")) {
+        img.setAttribute("data-src", img.getAttribute("src"));
+        img.removeAttribute("src");
+      }
     });
     if (slides.length < 2) { slides[0].classList.add("is-active"); return; }
 
@@ -37,8 +43,18 @@
     var count = box.querySelector(".slideshow__count");
     var current = 0;
 
+    // Load the photo being shown plus the ones on either side of it
+    function loadNear(n) {
+      [n - 1, n, n + 1].forEach(function (k) {
+        var img = slides[(k + slides.length) % slides.length];
+        var src = img.getAttribute("data-src");
+        if (src) { img.setAttribute("src", src); img.removeAttribute("data-src"); }
+      });
+    }
+
     function show(n) {
       current = (n + slides.length) % slides.length;
+      loadNear(current);
       slides.forEach(function (img, i) {
         img.classList.toggle("is-active", i === current);
         img.setAttribute("aria-hidden", String(i !== current));

@@ -117,7 +117,7 @@
         </div>
         <div class="grid grid--4" data-featured-grid></div>
         <p class="text-center" style="margin-top:36px">
-          <a class="btn btn--outline" href="shop.html">See all gifts</a>
+          <a class="btn btn--outline" href="shop.html?cat=gifts">See all gifts</a>
         </p>
       </div>
     </section>
@@ -177,6 +177,21 @@
     </section>
 
     <!-- ============================================================
+         WEDDINGS: points brides to the Weddings page
+         ============================================================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container split">
+        <img class="media-img media-img--square" src="assets/photos/thumbs/custom-bridal-shoes.jpg" alt="White bridal sneakers hand-painted with lace details" loading="lazy">
+        <div>
+          <span class="eyebrow">Weddings</span>
+          <h2>Planning a wedding?</h2>
+          <p>Hand-painted bridal shoes, matching bridal party apparel, and koozie favors for your guests, all designed together with one request.</p>
+          <a class="btn btn--primary" href="wedding.html">Plan Your Wedding Pieces</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          CUSTOMER REVIEWS: approved reviews rotate here.
          Reviews come from assets/js/reviews.js. This section stays
          hidden until at least one review is added there.
@@ -189,6 +204,35 @@
         </div>
         <div class="reviews" data-reviews></div>
         <p class="text-center" style="margin-top:28px"><a class="btn btn--outline" href="reviews.html">Leave a Review</a></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOLLOW ALONG ON INSTAGRAM
+         Six favorite photos that link to the Instagram profile
+         (config.js → social.instagram). To change a photo, swap the
+         file name. A live Instagram feed needs a feed widget service,
+         see SETUP.md.
+         ============================================================ -->
+    <section class="section" aria-labelledby="insta-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Follow Along</span>
+          <h2 id="insta-title">See what's new on Instagram</h2>
+          <p>New projects, behind-the-scenes peeks, and giveaways just for followers.</p>
+        </div>
+        <div class="insta-grid">
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/custom-kids-hand-painted-jean-jacket-design.jpg" alt="Hand-painted kids jean jacket with flowers and a name" loading="lazy"></a>
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/grit-lion-tee.jpg" alt="Lions Grit design" loading="lazy"></a>
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/custom-phoenix-suns-nikes.jpg" alt="Custom hand-painted sneakers" loading="lazy"></a>
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/embroidered-hoodies.jpg" alt="Embroidered sun and sunflower hoodies" loading="lazy"></a>
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/custom-bridal-shoes-toms-2.jpg" alt="Pearl bridal slip-ons with her new name" loading="lazy"></a>
+          <a class="insta-grid__item" data-instagram-link href="gallery.html"><img class="media-img media-img--square" src="assets/photos/thumbs/custom-hand-stitched-kids-sweater-letter-flower.jpg" alt="Hand-stitched kids letter sweater with little flowers" loading="lazy"></a>
+        </div>
+        <div class="btn-row" style="justify-content:center;margin-top:24px">
+          <a class="btn btn--instagram" data-instagram-link href="gallery.html">Follow @_shoptodyefor</a>
+          <a class="btn btn--outline" href="gallery.html">See the Gallery</a>
+        </div>
       </div>
     </section>
 

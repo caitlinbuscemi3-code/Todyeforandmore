@@ -69,7 +69,21 @@ window.SITE_CONFIG = {
     customOrder: "", // Custom Orders page form
     teamOrder:   "", // Team & Bulk Orders page form
     contact:     "", // Contact page form
-    review:      ""  // Leave a Review page form
+    review:      "", // Leave a Review page form
+    newsletter:  ""  // footer "Get new designs first" email sign-up
+                     // (until this is set, signing up opens an email to you instead)
+  },
+
+  /* ---------- Announcement bar (top of every page) ----------
+     A thin banner above the menu, e.g. a holiday order deadline.
+     It shows from showFrom through showUntil (YYYY-MM-DD, leave showFrom ""
+     to start right away). To turn it off, set text: "". */
+  announcement: {
+    text: "Holiday orders: place your order by December 5 for Christmas delivery.",
+    linkText: "Details",
+    link: "faq.html#holiday",
+    showFrom: "",
+    showUntil: "2026-12-05"
   },
 
   /* ---------- Custom order policy text ---------- */

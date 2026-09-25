@@ -40,7 +40,7 @@
           <h2>Your cart is empty</h2>
           <p class="muted">Let's fix that! Browse our signature designs or start something custom.</p>
           <div class="btn-row" style="justify-content:center">
-            <a class="btn btn--primary" href="shop.html">Shop Gifts</a>
+            <a class="btn btn--primary" href="shop.html?cat=gifts">Shop Gifts</a>
             <a class="btn btn--outline" href="custom-orders.html">Start a Custom Order</a>
           </div>
         </div>
@@ -89,6 +89,7 @@
             </div>
 
             <h2 style="font-size:1.3rem;margin-top:28px">Shipping address</h2>
+            <p class="muted" style="font-size:.9rem;margin:-4px 0 12px">We ship within the US only. Sending a gift? Enter their address here.</p>
             <div id="shipping-fields" class="form-grid">
               <div class="field full">
                 <label for="co-address">Street address <span class="req">*</span></label>
@@ -108,9 +109,33 @@
               </div>
             </div>
 
+            <!-- GIFT OPTIONS: the gift fields appear when "This order is a gift" is checked -->
+            <div class="field" style="margin-top:18px">
+              <label class="consent">
+                <input type="checkbox" id="co-gift" name="is_gift" value="yes" data-gift-toggle>
+                <span><strong>This order is a gift</strong></span>
+              </label>
+            </div>
+            <div class="form-grid" data-gift-fields hidden>
+              <div class="field full">
+                <label for="co-gift-to">Recipient's name <span class="muted">(optional)</span></label>
+                <input id="co-gift-to" name="gift_recipient" type="text">
+              </div>
+              <div class="field full">
+                <label for="co-gift-msg">Gift message <span class="muted">(optional)</span></label>
+                <textarea id="co-gift-msg" name="gift_message" rows="3" style="min-height:80px" maxlength="300" placeholder="We'll include this on a note in the package."></textarea>
+              </div>
+              <div class="field full">
+                <label class="consent">
+                  <input type="checkbox" name="gift_no_prices" value="yes" checked>
+                  <span>Leave prices out of the package</span>
+                </label>
+              </div>
+            </div>
+
             <div class="field" style="margin-top:18px">
               <label for="co-notes">Order notes <span class="muted">(optional)</span></label>
-              <textarea id="co-notes" name="notes" rows="3" style="min-height:90px" placeholder="Gift message, special instructions, etc."></textarea>
+              <textarea id="co-notes" name="notes" rows="3" style="min-height:90px" placeholder="Letters or colors for a sweater, special instructions, etc."></textarea>
             </div>
 
             <!-- PAYMENT: in the real version, the processor's secure card
