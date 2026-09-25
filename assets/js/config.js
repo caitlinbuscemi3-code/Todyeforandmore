@@ -4,7 +4,7 @@
    START HERE. This is the one file for your business details.
    Change a value between the quotes, save, and refresh the browser.
    Every page reads from this file (header, footer, contact info,
-   social links, forms, cart settings).
+   social links, forms, shop settings).
 
    COLORS & FONTS live at the very top of: assets/css/styles.css
       (look for the "BRAND SETTINGS" block).
@@ -92,28 +92,21 @@ window.SITE_CONFIG = {
     handmade: "2–4 weeks"    // shoes, embroidery & hand-painted items
   },
 
-  /* ---------- Shop / cart settings ---------- */
+  /* ---------- Shop settings ----------
+     Payments happen on Square: each ready-to-buy item's "Buy Now" button
+     opens its Square payment link (set in assets/js/products.js → squareLink).
+     Square charges the shipping and calculates sales tax; these settings
+     only control what the site SAYS, so keep them matching Square. */
   shop: {
     currencySymbol: "$",
-    shippingFlatRate: 8.00,      // shipping cost per order
-    freeShippingOver: 0,         // free shipping at/above this subtotal (0 = off: flat-rate shipping on every order)
-    salesTaxRate: 0.00,          // e.g. 0.07 for 7%. Most payment processors can calculate this for you.
+    shippingFlatRate: 8.00,      // shown as "Flat $8 shipping" (set the same amount in Square)
 
-    // Apparel sizes shown in the size dropdown (for products with sizes: true)
+    // Apparel sizes shown on product cards (for products with sizes: true)
     sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],
     extendedSizes: ["2X", "3X", "4X"],   // these sizes cost a little more…
-    extendedSizeUpcharge: 3.00,          // …this much more (shown in the size dropdown, e.g. "2X (+$3.00)")
+    extendedSizeUpcharge: 3.00,          // …this much more (shown as "2X–4X +$3.00")
 
     // Kids sizes (for products with sizes: "kids"). Change this list to the sizes you offer.
     kidsSizes: ["12M", "18M", "24M", "2T", "3T", "4T", "5T", "Youth XS", "Youth S", "Youth M", "Youth L", "Youth XL"]
-  },
-
-  /* ---------- Payments (BACKEND HOOK) ----------
-     You haven't picked a payment processor yet, so checkout runs in
-     DEMO MODE (no card is charged). See assets/js/cart.js → search for
-     "PAYMENT PROCESSOR HOOK" for exactly where Stripe / Square / PayPal
-     plugs in. */
-  payments: {
-    demoMode: true
   }
 };

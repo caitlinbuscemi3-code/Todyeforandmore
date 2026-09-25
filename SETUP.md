@@ -82,59 +82,20 @@ review form asks customers to reply by email with a photo.
 3. Set the link to **send customers back to your website after paying**
    (Square calls this a redirect or "after checkout" URL) and use the
    thank-you page address: your site's address + `/thank-you.html`.
-4. Send me the links and I'll connect each item's button to its link.
+4. Paste each link into that item's `squareLink` in `assets/js/products.js`
+   (or send them to me). Items without a link show "Coming soon" instead of
+   "Buy Now".
 
 Payment links charge shipping on each link, so the site now says
 "Flat $8 shipping. Sales tax calculated at checkout." and free shipping over
 $75 is turned off (`config.js → shop.freeShippingOver`).
 
-### Option B (later, optional): one checkout for the whole cart
+### Option B (not in use): one checkout for a whole cart
 
-> **Square or Squarespace?** **Square** is the payment company (card readers,
-> invoices, online checkout). **Squarespace** is a different company that
-> builds websites. This site is its own website, so Squarespace can't be
-> "connected" to it. If you meant Square, follow the steps below. If you
-> were thinking of moving the whole shop to Squarespace, let's talk first,
-> because that would replace this site rather than connect to it.
-
-The site has a full cart and checkout page. To take real payments, the cart
-sends the order to **Square's secure checkout page**, where the customer pays.
-Square then emails them a receipt. Card numbers never touch this site.
-
-### What you do
-
-1. **Create a Square account** at **squareup.com** (free, and you can use the
-   same account for craft fairs with a Square card reader).
-   - Add your bank account so payouts reach you.
-   - Under **Settings → Business**, confirm your business name and address.
-2. **Turn on sales tax:** in the Square Dashboard, go to **Items & orders →
-   Taxes** (or **Settings → Sales taxes**) and add **Michigan 6%**.
-3. **Create the developer app:**
-   1. Go to **developer.squareup.com** and sign in with your Square account.
-   2. Click **+** / **Create an application** and name it `To Dye For website`.
-   3. Open the app and switch the toggle at the top from **Sandbox** to
-      **Production**.
-   4. Copy the **Production Access token** (keep this private, like a
-      password; never paste it into `config.js` or any file on the site).
-   5. Click **Locations** in the left menu and copy your **Location ID**.
-4. **Host the site on Netlify** (free plan). The secret access token needs a
-   safe place to live, and Netlify's settings are that place.
-   1. Sign up at **netlify.com** with your GitHub account.
-   2. Click **Add new site → Import an existing project → GitHub**, then pick
-      the `Todyeforandmore` repository and click **Deploy**.
-   3. Go to **Site configuration → Environment variables** and add:
-      - `SQUARE_ACCESS_TOKEN`: the Production Access token from step 3
-      - `SQUARE_LOCATION_ID`: the Location ID from step 3
-   4. Later, connect your domain under **Domain management**.
-
-### What I do (once you've finished the steps above)
-
-- Add a small secure function that turns the cart into a Square checkout
-  (including sizes, styles, shipping, and Michigan sales tax) and sends the
-  customer to Square's payment page.
-- Switch `payments.demoMode` to `false` in `config.js`, which removes the
-  "Demo checkout" note.
-- Test it with Square's sandbox (fake cards) before any real sale.
+The site used to have a cart. It was removed when we switched to payment
+links, so customers buy one item at a time with **Buy Now**. If you ever
+want a cart back (several items, one payment), it needs a small secure
+server function that talks to Square. Ask me when you're ready.
 
 ### Deposits for custom and team orders
 

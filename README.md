@@ -7,14 +7,14 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | File | Page |
 |---|---|
 | `index.html` | Home: hero, shop-by-category, best sellers, "how custom orders work" |
-| `shop.html` | Shop: ready-made items (Add to Cart, with style/size options) and made-to-order items (Request Custom) |
-| `cart.html` | Cart → checkout → confirmation (payment is in demo mode) |
+| `shop.html` | Shop: ready-made items (Buy Now → Square payment link) and made-to-order items (Request Custom) |
+| `thank-you.html` | Where customers land after paying on Square |
 | `custom-orders.html` | Shoes, apparel, baby sweaters & baby boxes + custom request form |
 | `team-orders.html` | Team/bulk use cases + team quote form |
 | `gallery.html` | Filterable gallery of past work with "See more" slideshows |
 | `about.html` | Brand story, mission, meet the maker |
 | `contact.html` | Contact form, contact info, social links |
-| `faq.html` | FAQ & Policies (linked in the footer, checkout, and order forms) |
+| `faq.html` | FAQ & Policies (linked in the footer, Shop, and order forms) |
 | `reviews.html` | Leave a Review form (approved reviews show on the Home page) |
 | `wedding.html` | Weddings: bridal shoes, bridal party apparel, favors, gifts, and when to order |
 | `privacy.html` | Privacy Policy & Terms of Sale (linked in the footer) |
@@ -63,11 +63,11 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 **Step-by-step instructions are in [SETUP.md](SETUP.md)**: forms (Formspree), payments (Square), shipping (Shippo), and a launch checklist.
 
 1. **Form emails.** All forms validate input and show a thank-you message. To actually receive submissions, sign up for a form service such as [Formspree](https://formspree.io) (pick one that supports file uploads) and paste each form's URL into `forms` in `assets/js/config.js`.
-2. **Payments.** Checkout runs in demo mode, and no card is charged. See the **PAYMENT PROCESSOR HOOK** comment in `assets/js/cart.js` for how Stripe, Square, or PayPal plugs in. Set `payments.demoMode` to `false` in `config.js` once it's live, which hides the "demo" banner.
+2. **Payments.** Ready-to-buy items are paid through **Square payment links**. Paste each item's link into `squareLink` in `assets/js/products.js`; items without a link show "Coming soon." See SETUP.md.
 
 ## Search engines (SEO)
 
-Already built in: page titles and descriptions written with the words people search for, business details Google can read (from `config.js`, added by `assets/js/seo.js`), FAQ questions in a search-readable format, a "main address" tag on every page, and the cart page kept out of search results.
+Already built in: page titles and descriptions written with the words people search for, business details Google can read (from `config.js`, added by `assets/js/seo.js`), FAQ questions in a search-readable format, a "main address" tag on every page, and the thank-you page kept out of search results.
 
 Once the site is live on your own domain:
 

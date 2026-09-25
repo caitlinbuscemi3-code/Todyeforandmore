@@ -34,7 +34,7 @@
 
   /* ---------- Where each color is used ---------- */
   --color-primary:   var(--brand-navy);       /* main buttons, active menu item, links, footer */
-  --color-secondary: var(--brand-orange);     /* prices, cart badge, check marks, highlights */
+  --color-secondary: var(--brand-orange);     /* prices, check marks, highlights */
   --color-accent:    var(--brand-lime);       /* small labels, "Best Seller" badges, footer headings */
   --color-soft:      var(--brand-periwinkle); /* soft blue accents, upload boxes */
 
@@ -182,6 +182,8 @@ ul { padding-left: 1.2em; }
 .btn--light { background: #fff; color: var(--color-text); }
 .btn--light:hover { color: var(--color-primary); }
 .btn--small { padding: 9px 16px; font-size: 0.92rem; }
+/* "Coming soon" in place of Buy Now (no Square link yet) */
+.btn--soon, .btn--soon:hover { background: var(--color-border); border-color: var(--color-border); color: var(--color-text-muted); cursor: default; box-shadow: none; transform: none; }
 /* "Message us on Instagram" button */
 .btn--instagram { background: #fff; color: var(--color-primary); border-color: var(--color-primary); }
 .btn--instagram:hover { background: var(--color-primary); color: #fff; }
@@ -286,23 +288,6 @@ ul { padding-left: 1.2em; }
 .nav__link:hover { background: var(--tint-blue); color: var(--color-primary); }
 .nav__link[aria-current="page"] { background: var(--color-primary); color: #fff; }
 
-.cart-link {
-  position: relative;
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 46px; height: 46px; border-radius: 50%;
-  background: var(--tint-blue); color: var(--color-text);
-  margin-left: 8px; flex-shrink: 0;
-}
-.cart-link:hover { background: var(--color-primary); color: #fff; }
-.cart-link svg { width: 22px; height: 22px; }
-.cart-count {
-  position: absolute; top: -4px; right: -4px;
-  min-width: 22px; height: 22px; padding: 0 6px;
-  border-radius: 999px;
-  background: var(--color-secondary); color: #fff;
-  font-size: 0.75rem; font-weight: 700; line-height: 22px; text-align: center;
-}
-.cart-count[hidden] { display: none; }
 
 .header-actions { display: flex; align-items: center; gap: 6px; }
 .nav-toggle {
@@ -463,7 +448,6 @@ ul { padding-left: 1.2em; }
 .product-card__options label { font-size: 0.82rem; }
 .product-card__options select { padding: 8px 10px; font-size: 0.92rem; }
 .product-card__hint { font-size: 0.78rem; color: var(--color-text-muted); margin: -4px 0 0; }
-.cart-item__ship { font-size: 0.8rem; color: var(--color-text-muted); margin: 2px 0 0; }
 .product-card__actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
 
 /* Filter chips (Shop + Gallery) */
@@ -658,46 +642,6 @@ fieldset.field { border: none; padding: 0; margin: 0; }
   background: #FDE8EC; color: var(--color-error); font-weight: 700;
 }
 .form-alert[hidden] { display: none; }
-
-/* =====================================================================
-   CART / CHECKOUT
-   ===================================================================== */
-.cart-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
-@media (max-width: 900px) { .cart-layout { grid-template-columns: 1fr; } }
-.cart-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.cart-item {
-  display: grid; grid-template-columns: 90px 1fr auto; gap: 16px; align-items: center;
-  background: var(--color-surface); border: 1px solid var(--color-border);
-  border-radius: var(--radius); padding: 12px;
-}
-.cart-item .ph { aspect-ratio: 1; font-size: 0.62rem; padding: 6px; border-radius: var(--radius-sm); }
-.cart-item .ph::before, .cart-item .ph__label { display: none; }
-.cart-item .ph__soon { font-size: 0.6rem; padding: 2px 6px; }
-.cart-item .media-img { border-radius: var(--radius-sm); }
-.cart-item__name { font-weight: 700; margin: 0; }
-.cart-item__opts { margin: 0; font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
-.cart-item__price { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }
-.cart-item__right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-.qty { display: inline-flex; align-items: center; border: 2px solid var(--color-border); border-radius: 999px; overflow: hidden; }
-.qty button { width: 34px; height: 34px; border: none; background: var(--color-bg); cursor: pointer; font-size: 1.1rem; font-weight: 700; color: var(--color-text); }
-.qty button:hover { background: var(--tint-blush); }
-.qty span { min-width: 32px; text-align: center; font-weight: 700; }
-.link-btn { background: none; border: none; color: var(--color-error); font-weight: 700; cursor: pointer; font-size: 0.85rem; padding: 0; text-decoration: underline; }
-@media (max-width: 520px) {
-  .cart-item { grid-template-columns: 70px 1fr; }
-  .cart-item__right { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; }
-}
-
-.summary { position: sticky; top: calc(var(--header-h) + 20px); }
-.summary__row { display: flex; justify-content: space-between; padding: 8px 0; }
-.summary__row--total { border-top: 2px solid var(--color-border); margin-top: 8px; padding-top: 14px; font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; }
-.demo-banner {
-  background: var(--tint-blue); color: var(--color-primary);
-  border-radius: var(--radius-sm); padding: 10px 14px;
-  font-size: 0.88rem; font-weight: 700; margin-bottom: 18px;
-}
-.empty-state { text-align: center; padding: 56px 20px; }
-.empty-state__icon { font-size: 3.4rem; margin-bottom: 8px; color: var(--color-primary); display: inline-flex; }
 
 /* =====================================================================
    GALLERY
@@ -964,7 +908,7 @@ a.chip { text-decoration: none; }
 }
 
 /* =====================================================================
-   TOAST (little pop-up after "Add to Cart")
+   TOAST (little pop-up message)
    ===================================================================== */
 .toast {
   position: fixed; left: 50%; bottom: 24px; z-index: 300;
