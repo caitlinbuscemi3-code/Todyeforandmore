@@ -57,18 +57,15 @@ window.SITE_CONFIG = {
   },
 
   /* ---------- Form delivery (BACKEND HOOK) ----------
-     Right now the forms validate and show a "thank you" message, but the
-     info isn't sent anywhere yet.
-
-     To receive submissions by email, create a free form on a service like
-     Formspree (formspree.io), Basin, or Getform, then paste the URL it
-     gives you below (looks like "https://formspree.io/f/abcd1234").
-     That's it — the forms will start sending to your inbox.
-     Tip: pick a service that supports FILE UPLOADS for the order forms. */
+     Each form sends to its Formspree form (formspree.io), which emails
+     the submission to you. A form left as "" isn't sent anywhere yet
+     (it still shows the thank-you message). See SETUP.md for steps.
+     Our Formspree plan doesn't accept file uploads, so the order forms
+     don't have upload boxes; we email customers to collect photos. */
   forms: {
-    customOrder: "", // Custom Orders page form
-    teamOrder:   "", // Team & Bulk Orders page form
-    contact:     "", // Contact page form
+    customOrder: "https://formspree.io/f/xljdwokl", // Custom Orders page form
+    teamOrder:   "https://formspree.io/f/xeaolpwp", // Team & Bulk Orders page form (also used for weddings)
+    contact:     "https://formspree.io/f/xppwjoen", // Contact page form
     review:      "", // Leave a Review page form
     newsletter:  ""  // footer "Get new designs first" email sign-up
                      // (until this is set, signing up opens an email to you instead)

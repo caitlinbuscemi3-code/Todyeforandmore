@@ -10,9 +10,17 @@ Everything you'll paste goes into **one file: `assets/js/config.js`**.
 
 ## 1. Forms (so requests reach your inbox)
 
-The site has five forms. Right now they check what people type and show a
-thank-you message, but **nothing is sent yet**. [Formspree](https://formspree.io)
-delivers each form to your email.
+The site has five forms. [Formspree](https://formspree.io) delivers each one
+to your email.
+
+**Connected:** Custom Orders, Team & Bulk Orders (also used for weddings), and
+Contact. **Not connected yet:** Leave a Review and the footer email sign-up
+(the sign-up opens an email to you until it's connected).
+
+Your Formspree plan doesn't accept file uploads, so the order forms have no
+upload boxes. They say "After you submit, we'll email you to collect photos,
+logos or inspiration." The Leave a Review form still has a photo upload, so
+remove it (or upgrade) before connecting that form.
 
 | Form | Page | Setting in `config.js` → `forms` |
 |---|---|---|
@@ -157,7 +165,9 @@ me the embed code. I'll put it in that section.
 
 ## 5. Before launch checklist
 
-- [ ] All five forms connected and tested (section 1)
+- [x] Custom Orders, Team & Bulk, and Contact forms connected
+- [ ] Send a real test from each connected form and confirm it arrives
+- [ ] Leave a Review and email sign-up forms connected (section 1)
 - [ ] Square connected and a test order placed (section 2)
 - [ ] Shippo tracking emails turned on (section 3)
 - [ ] Domain connected, then `siteUrl` in `config.js`, `sitemap.xml`, and
