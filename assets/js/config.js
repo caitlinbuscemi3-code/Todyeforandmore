@@ -96,7 +96,7 @@ window.SITE_CONFIG = {
   shop: {
     currencySymbol: "$",
     shippingFlatRate: 8.00,      // shipping cost per order
-    freeShippingOver: 75.00,     // free shipping at/above this subtotal (set 0 to turn off)
+    freeShippingOver: 0,         // free shipping at/above this subtotal (0 = off: flat-rate shipping on every order)
     salesTaxRate: 0.00,          // e.g. 0.07 for 7%. Most payment processors can calculate this for you.
 
     // Apparel sizes shown in the size dropdown (for products with sizes: true)

@@ -412,7 +412,8 @@
     return (
       '<div class="summary__row"><span>Subtotal</span><span>' + Site.money(t.subtotal) + "</span></div>" +
       '<div class="summary__row"><span>Shipping</span><span>' + (t.shipping ? Site.money(t.shipping) : "FREE") + "</span></div>" +
-      (t.tax ? '<div class="summary__row"><span>Estimated tax</span><span>' + Site.money(t.tax) + "</span></div>" : "") +
+      (t.tax ? '<div class="summary__row"><span>Estimated tax</span><span>' + Site.money(t.tax) + "</span></div>"
+             : '<div class="summary__row"><span>Sales tax</span><span>Calculated at checkout</span></div>') +
       '<div class="summary__row summary__row--total"><span>Total</span><span>' + Site.money(t.total) + "</span></div>" + nudge +
       (cartShipTime() ? '<p class="muted" style="font-size:.88rem;margin:8px 0 0">Everything is made when you order. Estimated to ship in about ' +
         Site.escape(cartShipTime()) + ". We ship within the US, and you'll get tracking by email once it's on its way.</p>" : "")
