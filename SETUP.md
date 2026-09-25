@@ -72,6 +72,24 @@ review form asks customers to reply by email with a photo.
 
 ## 2. Payments with Square
 
+### Option A (what we're using now): Square payment links
+
+1. In the Square Dashboard, create a payment link for each ready-to-buy item.
+   The list of items, prices, styles, and sizes is in the pull request that
+   added `thank-you.html`.
+2. In each link's checkout settings, turn on **collect shipping address**
+   and set shipping to a flat **$8**. Let Square **calculate sales tax**.
+3. Set the link to **send customers back to your website after paying**
+   (Square calls this a redirect or "after checkout" URL) and use the
+   thank-you page address: your site's address + `/thank-you.html`.
+4. Send me the links and I'll connect each item's button to its link.
+
+Payment links charge shipping on each link, so the site now says
+"Flat $8 shipping. Sales tax calculated at checkout." and free shipping over
+$75 is turned off (`config.js → shop.freeShippingOver`).
+
+### Option B (later, optional): one checkout for the whole cart
+
 > **Square or Squarespace?** **Square** is the payment company (card readers,
 > invoices, online checkout). **Squarespace** is a different company that
 > builds websites. This site is its own website, so Squarespace can't be
