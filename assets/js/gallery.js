@@ -54,12 +54,12 @@ window.FEATURED_WORK = [
     ]
   },
   {
-    name: "Detroit Baseball Game Day Staff",
+    name: "Detroit Tigers Game Day Staff",
     caption: "Game Day Kicks",
-    story: "Custom pairs for a Detroit baseball team’s game day staff, bringing city vibes with the Detroit skyline, 313, and tiger stripes.",
+    story: "Custom pairs for the Tigers game day staff, bringing city vibes with the Detroit skyline, 313, and tiger stripes.",
     color: "orange",
     photos: [
-      { image: "assets/photos/cassidy-tigers.jpg", label: "game day staff member wearing her custom sneakers on the field" },
+      { image: "assets/photos/cassidy-tigers.jpg", label: "Tigers staff member wearing her custom sneakers on the field" },
       { image: "assets/photos/custom-tigers-shoes-bulk-order.jpg", label: "the full staff order, ready to go" },
       { image: "assets/photos/tigers-featured-shoe.jpg", label: "close-up of the Detroit skyline and 313 details" }
     ]
