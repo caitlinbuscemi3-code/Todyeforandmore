@@ -45,7 +45,7 @@ window.FEATURED_WORK = [
   {
     name: "Mateen Cleaves",
     caption: "A Championship Tribute",
-    story: "Hand-painted Reebok Questions inspired by the pair he wore leading his team to the 2000 national championship, finished with his signature and his words: “Get your mind right, keep your grind tight” and “If you’re trying to win, tap in.”",
+    story: "Hand-painted sneakers inspired by the pair he wore leading his team to the 2000 national championship, finished with his signature and his words: “Get your mind right, keep your grind tight” and “If you’re trying to win, tap in.”",
     color: "lime",
     photos: [
       { image: "assets/photos/mateen-with-shoes.jpg", label: "Mateen Cleaves with his custom sneakers" },
@@ -79,10 +79,28 @@ window.FEATURED_WORK = [
 
 window.GALLERY_ITEMS = [
   {
+    category: "shoes", caption: "More Custom Kicks", color: "blue",
+    photos: [
+      { image: "assets/photos/company-shoes-custom-logo.jpg", label: "orange and blue company logo sneakers" },
+      { image: "assets/photos/company-logo-shoes-custom.jpg", label: "orange and blue company logo sneakers, back view" },
+      { image: "assets/photos/custom-company-logo-shoes.jpg", label: "orange and blue company logo sneakers, side view" },
+      { image: "assets/photos/custom-nikes-company-logo.jpg", label: "green and gold company logo sneakers" },
+      { image: "assets/photos/custom-vegas-shoes.jpg", label: "black and gold hand-painted sneakers" },
+      { image: "assets/photos/custom-ferris-state-shoes.jpg", label: "red and gold college sneakers" },
+      { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "red and gold college sneakers, close-up" },
+      { image: "assets/photos/custom-adidas-shoes.jpg", label: "blue striped sneakers with a paint splatter sole" },
+      { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "blue striped sneakers with a name on the heel" },
+      { image: "assets/photos/custom-detroit-shoes.jpg", label: "Detroit high-tops in two colorways" },
+      { image: "assets/photos/custom-tigers-shoes.jpg", label: "Detroit baseball sneakers" },
+      { image: "assets/photos/custom-nikes.jpg", label: "lime and blue hand-painted sneakers" }
+    ]
+  },
+  {
     category: "baby", caption: "Gia’s First Birthday Jacket", color: "blush",
     photos: [
       { image: "assets/photos/baby-jean-jacket-photo.jpg", label: "hand-painted baby jean jacket" },
-      { image: "assets/photos/baby-jean-jacket.jpg", label: "hand-painted baby jean jacket" }
+      { image: "assets/photos/baby-jean-jacket.jpg", label: "hand-painted baby jean jacket" },
+      { image: "assets/photos/custom-jean-jacket-and-shoes-kids.jpg", label: "hand-painted baby jean jacket with matching sneakers" }
     ]
   },
   {
@@ -90,7 +108,12 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/lions-custom-shoes-123.jpg", label: "hand-painted Lions sneakers" },
       { image: "assets/photos/lions-custom-shoes-2.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/custom-lions-shoes-2.jpg", label: "hand-painted Lions sneakers" }
+      { image: "assets/photos/custom-lions-shoes-2.jpg", label: "hand-painted Lions sneakers" },
+      { image: "assets/photos/custom-lions-shoes-12.jpg", label: "hand-painted Lions sneakers with a splatter sole" },
+      { image: "assets/photos/lions-custom-shoes-22.jpg", label: "hand-painted Lions sneakers, heel view" },
+      { image: "assets/photos/lions-custom-shoes-14.jpg", label: "hand-painted Lions sneakers" },
+      { image: "assets/photos/custom-lions-jordans.jpg", label: "hand-painted Lions sneakers" },
+      { image: "assets/photos/custom-lions-nikes.jpg", label: "hand-painted Lions sneakers" }
     ]
   },
   {
@@ -111,10 +134,10 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "apparel", caption: "Taylor Swift Eras Tour Jacket", color: "blush",
+    category: "apparel", caption: "Concert Tour Jean Jacket", color: "blush",
     photos: [
-      { image: "assets/photos/hand-painted-jean-jacket-taylor-swift-eras.jpg", label: "hand-painted Eras Tour jean jacket" },
-      { image: "assets/photos/hand-painted-jean-jacket-eras-tour-taylor-swift-2.jpg", label: "hand-painted Eras Tour jean jacket" }
+      { image: "assets/photos/hand-painted-jean-jacket-taylor-swift-eras.jpg", label: "hand-painted concert tour jean jacket" },
+      { image: "assets/photos/hand-painted-jean-jacket-eras-tour-taylor-swift-2.jpg", label: "hand-painted concert tour jean jacket" }
     ]
   },
   {
@@ -142,7 +165,9 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-chicago-shoes-nike.jpg", label: "custom Chicago sneakers" },
       { image: "assets/photos/custom-chicago-shoes-close-up.jpg", label: "custom Chicago sneakers" },
-      { image: "assets/photos/custom-chicago-shoes-and-apparel.jpg", label: "custom Chicago sneakers" }
+      { image: "assets/photos/custom-chicago-shoes-and-apparel.jpg", label: "custom Chicago sneakers" },
+      { image: "assets/photos/custom-chicago-nikes.jpg", label: "custom Chicago hockey and basketball sneakers" },
+      { image: "assets/photos/custom-order-shoes-and-apparel-2.jpg", label: "custom sneakers with matching apparel" }
     ]
   },
   {
@@ -179,9 +204,10 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "apparel", caption: "Superhero Kids Tee", color: "blue",
+    category: "apparel", caption: "Embroidered Superhero Tees", color: "blue",
     photos: [
-      { image: "assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg", label: "embroidered superhero kids tee" }
+      { image: "assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg", label: "embroidered superhero kids tee" },
+      { image: "assets/photos/custom-embroidered-nike-tee-super-hero-kids.jpg", label: "embroidered superhero kids tee" }
     ]
   },
   {
@@ -189,13 +215,6 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-bulk-t-shirt-event-tee.jpg", label: "custom event t-shirts" },
       { image: "assets/photos/bulk-event-t-shirts.jpg", label: "custom event t-shirts" }
-    ]
-  },
-  {
-    category: "shoes", caption: "Minnie Mouse Kids Sneakers", color: "blush",
-    photos: [
-      { image: "assets/photos/minnie-mouse-disney-shoe-kids-custom.jpg", label: "Minnie Mouse kids sneakers" },
-      { image: "assets/photos/minnie-mouse-kids-disney-shoe.jpg", label: "Minnie Mouse kids sneakers" }
     ]
   },
   {
@@ -223,7 +242,8 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-red-wings-high-top-shoes.jpg", label: "custom Detroit hockey high-top sneakers" },
       { image: "assets/photos/custom-red-wings-shoes-high-top.jpg", label: "custom Detroit hockey high-top sneakers" },
-      { image: "assets/photos/custom-redwing-shoes.jpg", label: "custom Detroit hockey high-top sneakers" }
+      { image: "assets/photos/custom-redwing-shoes.jpg", label: "custom Detroit hockey high-top sneakers" },
+      { image: "assets/photos/custom-red-wings-high-tops.jpg", label: "custom Detroit hockey high-top sneakers" }
     ]
   },
   {
@@ -237,7 +257,8 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "Hand-Painted Bridal Shoes", color: "blush",
     photos: [
       { image: "assets/photos/custom-bridal-shoes.jpg", label: "hand-painted bridal shoes" },
-      { image: "assets/photos/custom-bridal-shoes-toms.jpg", label: "hand-painted bridal shoes" }
+      { image: "assets/photos/custom-bridal-shoes-toms.jpg", label: "hand-painted bridal shoes" },
+      { image: "assets/photos/custom-bridal-shoes-toms-2.jpg", label: "pearl bridal slip-ons with her new name" }
     ]
   },
   {
@@ -260,18 +281,23 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "team", caption: "Inside Out Halloween Shirts", color: "lime",
+    category: "team", caption: "Group Halloween Costume Shirts", color: "lime",
     photos: [
-      { image: "assets/photos/halloween-shirts-disney-inside-out-photo.jpg", label: "Inside Out group Halloween shirts" },
-      { image: "assets/photos/custom-bulk-halloween-costumes-disney-inside-out.jpg", label: "Inside Out group Halloween shirts" }
+      { image: "assets/photos/halloween-shirts-disney-inside-out-photo.jpg", label: "matching group Halloween costume shirts" },
+      { image: "assets/photos/custom-bulk-halloween-costumes-disney-inside-out.jpg", label: "matching group Halloween costume shirts" }
     ]
   },
   {
-    category: "shoes", caption: "Kids Disney Sneakers", color: "blue",
+    category: "shoes", caption: "Kids Custom Sneakers", color: "blue",
     photos: [
-      { image: "assets/photos/toy-story-custom-kids-shoes-nike-disney.jpg", label: "custom kids Disney sneakers" },
-      { image: "assets/photos/custom-kids-shoes-disney-cars.jpg", label: "custom kids Disney sneakers" },
-      { image: "assets/photos/custom-baby-nike-shoes.jpg", label: "custom kids Disney sneakers" }
+      { image: "assets/photos/toy-story-custom-kids-shoes-nike-disney.jpg", label: "custom kids character sneakers" },
+      { image: "assets/photos/custom-kids-shoes-disney-cars.jpg", label: "custom kids race car sneakers" },
+      { image: "assets/photos/custom-baby-nike-shoes.jpg", label: "custom baby character sneakers" },
+      { image: "assets/photos/custom-baby-shoes.jpg", label: "rainbow baby sneakers" },
+      { image: "assets/photos/custom-kids-vans.jpg", label: "checkered kids slip-ons with a name and number" },
+      { image: "assets/photos/minnie-mouse-disney-shoe-kids-custom.jpg", label: "pink polka dot kids sneakers" },
+      { image: "assets/photos/minnie-mouse-kids-disney-shoe.jpg", label: "pink polka dot kids sneakers" },
+      { image: "assets/photos/kids-custom-shoes-disney-minnie-mouse.jpg", label: "pink polka dot kids sneakers with a name" }
     ]
   },
   {
@@ -282,17 +308,19 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "apparel", caption: "Embroidered Flower Hoodies", color: "lime",
+    category: "apparel", caption: "Embroidered Hoodies", color: "lime",
     photos: [
-      { image: "assets/photos/custom-embroidered-hoodie.jpg", label: "embroidered flower hoodie" }
+      { image: "assets/photos/embroidered-hoodies.jpg", label: "embroidered sun and sunflower hoodies" },
+      { image: "assets/photos/sunflower-embroidered-hoodie.jpg", label: "embroidered sunflower hoodie" },
+      { image: "assets/photos/sunshine-embroidered-hoodie.jpg", label: "embroidered sunshine hoodie" }
     ]
   },
   {
-    category: "wedding", caption: "Wedding & Groomsmen Koozies", color: "navy",
+    category: "wedding", caption: "Wedding & Party Favors", color: "navy",
     photos: [
-      { image: "assets/photos/custom-wedding-coozies-bulk.jpg", label: "custom wedding koozies" },
-      { image: "assets/photos/dscf6663.jpg", label: "custom wedding koozies" },
-      { image: "assets/photos/groomsmen-coozies.jpg", label: "custom wedding koozies" }
+      { image: "assets/photos/custom-wedding-coozies-bulk.jpg", label: "custom wedding koozie favors" },
+      { image: "assets/photos/dscf6663.jpg", label: "custom wedding koozie favors" },
+      { image: "assets/photos/groomsmen-coozies.jpg", label: "custom party koozie favors" }
     ]
   },
   {
@@ -324,7 +352,8 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "Custom Cleats", color: "blue",
     photos: [
       { image: "assets/photos/custom-cleats.jpg", label: "custom football cleats" },
-      { image: "assets/photos/custom-cleats-3.jpg", label: "custom football cleats" }
+      { image: "assets/photos/custom-cleats-3.jpg", label: "custom football cleats" },
+      { image: "assets/photos/custom-cleats-2.jpg", label: "custom blue football cleats with a number" }
     ]
   },
   {
@@ -350,7 +379,8 @@ window.GALLERY_ITEMS = [
     category: "team", caption: "Detroit Hockey Shoes & Crewnecks", color: "orange",
     photos: [
       { image: "assets/photos/custom-detroit-red-wings-shoes-and-crewnecks.jpg", label: "Detroit hockey sneakers and crewnecks" },
-      { image: "assets/photos/red-wings-team-apparel.jpg", label: "Detroit hockey sneakers and crewnecks" }
+      { image: "assets/photos/red-wings-team-apparel.jpg", label: "Detroit hockey sneakers and crewnecks" },
+      { image: "assets/photos/custom-detroit-red-wings-shoes-and-crew.jpg", label: "Detroit hockey sneakers and crewnecks" }
     ]
   },
   {
@@ -372,19 +402,6 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-fanny-pack-birthday-event-bulk.jpg", label: "custom birthday fanny packs and totes" },
       { image: "assets/photos/custom-bags-bulk-birthday-event.jpg", label: "custom birthday fanny packs and totes" }
-    ]
-  },
-  {
-    category: "shoes", caption: "More Custom Kicks", color: "blue",
-    photos: [
-      { image: "assets/photos/company-shoes-custom-logo.jpg", label: "blue and orange company logo sneakers" },
-      { image: "assets/photos/company-logo-shoes-custom.jpg", label: "blue and orange company logo sneakers, back view" },
-      { image: "assets/photos/custom-company-logo-shoes.jpg", label: "blue and orange company logo sneakers, side view" },
-      { image: "assets/photos/custom-nikes-company-logo.jpg", label: "green and gold company logo sneakers" },
-      { image: "assets/photos/custom-vegas-shoes.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom painted sneakers" }
     ]
   }
 ];
