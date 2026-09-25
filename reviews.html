@@ -48,7 +48,7 @@
     <section class="section">
       <div class="container" style="max-width:760px">
         <form id="review-form" class="form-card" data-validate data-form="review"
-              action="#" method="post" enctype="multipart/form-data" novalidate>
+              action="#" method="post" novalidate>
           <h2 style="font-size:1.5rem">Tell us about your order</h2>
           <div class="form-alert" role="alert" hidden></div>
           <input type="hidden" name="_subject" value="New customer review">
@@ -74,14 +74,11 @@
               <textarea id="r-text" name="review" minlength="20" required
                         placeholder="How did it turn out? How was working with us? Who was it for?"></textarea>
             </div>
+            <!-- Photos: our Formspree plan doesn't accept file uploads, so we collect them by email -->
             <div class="field full">
-              <label for="r-photo">Photo of your order <span class="muted">(optional)</span></label>
-              <div class="upload">
-                <div class="upload__icon" data-icon="camera"></div>
-                <p class="upload__text">Drag a photo here or tap to upload</p>
-                <p class="hint">JPG, PNG or HEIC · up to 3 photos · 10 MB each</p>
-                <input id="r-photo" name="photos" type="file" multiple accept="image/*,.heic,.heif" data-max-files="3" data-max-mb="10">
-                <ul class="upload__list"></ul>
+              <div class="callout">
+                <span class="callout__icon" data-icon="camera"></span>
+                <p>Have a photo of your order? After you submit, we'll email you to collect it.</p>
               </div>
             </div>
             <div class="field full">

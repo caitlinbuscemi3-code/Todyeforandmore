@@ -66,9 +66,9 @@ window.SITE_CONFIG = {
     customOrder: "https://formspree.io/f/xljdwokl", // Custom Orders page form
     teamOrder:   "https://formspree.io/f/xeaolpwp", // Team & Bulk Orders page form (also used for weddings)
     contact:     "https://formspree.io/f/xppwjoen", // Contact page form
-    review:      "", // Leave a Review page form
-    newsletter:  ""  // footer "Get new designs first" email sign-up
-                     // (until this is set, signing up opens an email to you instead)
+    review:      "https://formspree.io/f/xjykepng", // Leave a Review page form
+    newsletter:  "https://formspree.io/f/mdeklpqe"  // footer "Get new designs first" email sign-up
+                     // (if this is ever set to "", signing up opens an email to you instead)
   },
 
   /* ---------- Announcement bar (top of every page) ----------
