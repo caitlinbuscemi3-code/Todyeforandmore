@@ -26,8 +26,10 @@
 
   /* ---------- Extra links shown only in the footer ---------- */
   var FOOTER_EXTRA_LINKS = [
+    { label: "Weddings", href: "wedding.html" },
     { label: "FAQ & Policies", href: "faq.html" },
-    { label: "Leave a Review", href: "reviews.html" }
+    { label: "Leave a Review", href: "reviews.html" },
+    { label: "Privacy & Terms", href: "privacy.html" }
   ];
 
   /* ---------- Small shared helpers (used by other scripts too) ---------- */
@@ -209,6 +211,17 @@
           "<div><h4>Explore</h4><ul class=\"footer-links\">" +
             NAV_LINKS.concat(FOOTER_EXTRA_LINKS).map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
           "</ul></div>" +
+          // Email sign-up (config.js → forms.newsletter)
+          '<div class="footer-signup"><h4>Get new designs first</h4>' +
+            "<p>New drops, holiday deadlines, and giveaways. No spam, ever.</p>" +
+            '<form data-newsletter novalidate>' +
+              '<label class="visually-hidden" for="nl-email">Email address</label>' +
+              '<input id="nl-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>' +
+              '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">' +
+              '<button class="btn btn--primary btn--small" type="submit">Sign Up</button>' +
+              '<p class="footer-signup__msg" aria-live="polite"></p>' +
+            "</form>" +
+          "</div>" +
           "<div><h4>Get in touch</h4><ul class=\"footer-contact\">" +
             (c.email ? "<li>" + Site.icon("mail") + '<a href="mailto:' + Site.escape(c.email) + '">' + Site.escape(c.email) + "</a></li>" : "") +
             (c.phone ? "<li>" + Site.icon("phone") + '<a href="tel:' + Site.escape(tel) + '">' + Site.escape(c.phone) + "</a></li>" : "") +
@@ -221,6 +234,61 @@
           "<span>Handmade to order in " + Site.escape(c.location || "Metro Detroit") + "</span>" +
         "</div>" +
       "</div>";
+  }
+
+  /* ---------- Footer email sign-up ----------
+     Sends to config.js → forms.newsletter (e.g. a Formspree form).
+     Until that's set, it opens an email to you so no sign-up is lost. */
+  function setupNewsletter() {
+    var form = document.querySelector("[data-newsletter]");
+    if (!form) return;
+    var input = form.querySelector('input[type="email"]');
+    var msg = form.querySelector(".footer-signup__msg");
+    var endpoint = (CONFIG.forms || {}).newsletter || "";
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        msg.textContent = "Please enter a valid email (like name@example.com).";
+        input.setAttribute("aria-invalid", "true");
+        input.focus();
+        return;
+      }
+      input.removeAttribute("aria-invalid");
+      if (form.querySelector('[name="_gotcha"]').value) return; // spam trap
+      if (!endpoint) {
+        var to = (CONFIG.contact || {}).email || "";
+        location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Add me to your email list") +
+          "&body=" + encodeURIComponent("Please add " + email + " to the To Dye For and More email list.");
+        msg.textContent = "Thanks! Your email app should open. Just hit send.";
+        return;
+      }
+      var data = new FormData(form);
+      data.append("_subject", "New email sign-up");
+      msg.textContent = "Signing you up…";
+      fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
+        .then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          form.reset();
+          msg.textContent = "Thanks! You're on the list.";
+        })
+        .catch(function () { msg.textContent = "Sorry, that didn't go through. Please try again."; });
+    });
+  }
+
+  /* ---------- Announcement bar (config.js → announcement) ---------- */
+  function renderAnnouncement() {
+    var a = CONFIG.announcement || {};
+    if (!a.text) return;
+    var today = new Date().toISOString().slice(0, 10);
+    if ((a.showFrom && today < a.showFrom) || (a.showUntil && today > a.showUntil)) return;
+    var header = document.getElementById("site-header");
+    if (!header) return;
+    var bar = document.createElement("div");
+    bar.className = "announcement";
+    bar.innerHTML = "<p>" + Site.escape(a.text) +
+      (a.link ? ' <a href="' + Site.escape(a.link) + '">' + Site.escape(a.linkText || "Learn more") + "</a>" : "") + "</p>";
+    header.parentNode.insertBefore(bar, header);
   }
 
   /* ---------- Fill in config values anywhere on a page ----------
@@ -243,6 +311,14 @@
       if (linkType === "tel") el.setAttribute("href", "tel:" + String(value).replace(/[^\d+]/g, ""));
     });
     document.querySelectorAll("[data-social]").forEach(function (el) { el.innerHTML = Site.socialHTML(); });
+    // Links to the Instagram profile: <a data-instagram-link>…</a>
+    var ig = (CONFIG.social || {}).instagram;
+    document.querySelectorAll("[data-instagram-link]").forEach(function (el) {
+      if (!ig) { el.hidden = true; return; }
+      el.setAttribute("href", ig);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
     // "Message us on Instagram" buttons: <a data-ig-message>…</a>
     var dm = (CONFIG.social || {}).instagramMessage;
     document.querySelectorAll("[data-ig-message]").forEach(function (el) {
@@ -274,8 +350,22 @@
     toastTimer = setTimeout(function () { toastEl.classList.remove("is-visible"); }, 3500);
   };
 
+  /* ---------- Open a FAQ answer linked directly, e.g. faq.html#sizing ---------- */
+  function openLinkedAnswer() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS") {
+      target.open = true;
+      setTimeout(function () { target.scrollIntoView({ block: "center" }); }, 0);
+    }
+  }
+  window.addEventListener("hashchange", openLinkedAnswer);
+
   /* ---------- Run ---------- */
   renderHeader();
+  renderAnnouncement();
   renderFooter();
+  setupNewsletter();
   fillConfigValues();
+  openLinkedAnswer();
 })();

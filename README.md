@@ -16,6 +16,8 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | `contact.html` | Contact form, contact info, social links |
 | `faq.html` | FAQ & Policies (linked in the footer, checkout, and order forms) |
 | `reviews.html` | Leave a Review form (approved reviews show on the Home page) |
+| `wedding.html` | Weddings: bridal shoes, bridal party apparel, favors, gifts, and when to order |
+| `privacy.html` | Privacy Policy & Terms of Sale (linked in the footer) |
 
 ## Where to change things
 
@@ -57,6 +59,8 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 4. Approved reviews rotate on the Home page. The section stays hidden until the first review is added.
 
 ## Things to connect later
+
+**Step-by-step instructions are in [SETUP.md](SETUP.md)**: forms (Formspree), payments (Square), shipping (Shippo), and a launch checklist.
 
 1. **Form emails.** All forms validate input and show a thank-you message. To actually receive submissions, sign up for a form service such as [Formspree](https://formspree.io) (pick one that supports file uploads) and paste each form's URL into `forms` in `assets/js/config.js`.
 2. **Payments.** Checkout runs in demo mode, and no card is charged. See the **PAYMENT PROCESSOR HOOK** comment in `assets/js/cart.js` for how Stripe, Square, or PayPal plugs in. Set `payments.demoMode` to `false` in `config.js` once it's live, which hides the "demo" banner.

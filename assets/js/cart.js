@@ -44,6 +44,17 @@
 
   function isExtended(size) { return EXTENDED.indexOf(size) !== -1; }
 
+  // How long until a ready-to-buy item ships (products.js → ships, config.js → turnaround)
+  var TURNAROUND = CONFIG.turnaround || {};
+  function shipTime(p) { return TURNAROUND[p.ships || "apparel"] || ""; }
+  // Longest ship time in the cart ("handmade" items take longer)
+  function cartShipTime() {
+    var lines = Cart.items();
+    if (!lines.length) return "";
+    var slow = lines.some(function (l) { var p = findProduct(l.id); return p && p.ships === "handmade"; });
+    return TURNAROUND[slow ? "handmade" : "apparel"] || "";
+  }
+
   // sizes: true = adult sizes, sizes: "kids" = kids sizes
   function sizesFor(p) { return p.sizes === "kids" ? KIDS_SIZES : SIZES; }
 
@@ -166,7 +177,9 @@
         // Kids sizes: point to a custom request for sizes not in the list
         (p.sizes === "kids" ? '<p class="product-card__hint">Need a different size? <a href="custom-orders.html?item=' +
           encodeURIComponent(p.name + " (different size)") + (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") +
-          '#request-form">Submit a custom request</a>.</p>' : "") +
+          '#request-form">Submit a custom request</a>.</p>'
+        // Adult sizes: unisex sizing note
+        : '<p class="product-card__hint">Unisex sizing. <a href="faq.html#sizing">Size help</a></p>') +
         "</div>";
     }
     return html ? '<div class="product-card__options">' + html + "</div>" : "";
@@ -240,10 +253,13 @@
             : p.buyable && noPriceYet
             ? '<p class="product-card__note">Ask us about pricing and sizes.</p>'
             : p.buyable && p.designOnly
-            ? '<p class="product-card__note">This design is available as shown; style options may vary.</p>'
+            ? '<p class="product-card__note">This design is available as shown; style options may vary. <a href="custom-orders.html?item=' +
+              encodeURIComponent(p.name + " (different style)") + '&type=tees#request-form">Ask about another style</a></p>'
             : p.buyable
             ? '<p class="product-card__note">Want it customized? Same price.</p>'
             : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
+          // Ready-to-buy: when it ships
+          (findBuyable(p.id) && shipTime(p) ? '<p class="product-card__note">Made when you order. Ships in about ' + Site.escape(shipTime(p)) + ".</p>" : "") +
           optionsHTML(p) +
           '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
@@ -397,7 +413,9 @@
       '<div class="summary__row"><span>Subtotal</span><span>' + Site.money(t.subtotal) + "</span></div>" +
       '<div class="summary__row"><span>Shipping</span><span>' + (t.shipping ? Site.money(t.shipping) : "FREE") + "</span></div>" +
       (t.tax ? '<div class="summary__row"><span>Estimated tax</span><span>' + Site.money(t.tax) + "</span></div>" : "") +
-      '<div class="summary__row summary__row--total"><span>Total</span><span>' + Site.money(t.total) + "</span></div>" + nudge
+      '<div class="summary__row summary__row--total"><span>Total</span><span>' + Site.money(t.total) + "</span></div>" + nudge +
+      (cartShipTime() ? '<p class="muted" style="font-size:.88rem;margin:8px 0 0">Everything is made when you order. Estimated to ship in about ' +
+        Site.escape(cartShipTime()) + ". We ship within the US, and you'll get tracking by email once it's on its way.</p>" : "")
     );
   }
 
@@ -421,6 +439,7 @@
           "<div>" +
             '<p class="cart-item__name">' + Site.escape(p.name) + "</p>" +
             (extra ? '<p class="cart-item__opts">' + Site.escape(extra) + "</p>" : "") +
+            (shipTime(p) ? '<p class="cart-item__ship">Ships in about ' + Site.escape(shipTime(p)) + "</p>" : "") +
             '<p class="cart-item__price">' + Site.money(each) + " each</p>" +
           "</div>" +
           '<div class="cart-item__right">' +
@@ -464,6 +483,13 @@
     if (removeBtn) Cart.remove(removeBtn.getAttribute("data-remove"));
   });
   document.addEventListener("cart:updated", renderCart);
+
+  // Gift options: show the gift fields when "This order is a gift" is checked
+  var giftToggle = cartPage.querySelector("[data-gift-toggle]");
+  var giftFields = cartPage.querySelector("[data-gift-fields]");
+  if (giftToggle && giftFields) {
+    giftToggle.addEventListener("change", function () { giftFields.hidden = !giftToggle.checked; });
+  }
 
   // Buttons that switch between cart and checkout
   cartPage.addEventListener("click", function (e) {

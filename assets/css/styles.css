@@ -463,6 +463,7 @@ ul { padding-left: 1.2em; }
 .product-card__options label { font-size: 0.82rem; }
 .product-card__options select { padding: 8px 10px; font-size: 0.92rem; }
 .product-card__hint { font-size: 0.78rem; color: var(--color-text-muted); margin: -4px 0 0; }
+.cart-item__ship { font-size: 0.8rem; color: var(--color-text-muted); margin: 2px 0 0; }
 .product-card__actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
 
 /* Filter chips (Shop + Gallery) */
@@ -504,6 +505,8 @@ ul { padding-left: 1.2em; }
   font-family: var(--font-heading); font-weight: 700; line-height: 36px;
 }
 .step p { color: var(--color-text-muted); margin: 0; }
+.steps--4 { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 1000px) { .steps--4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 800px) { .steps { grid-template-columns: 1fr; gap: 36px; } }
 
 /* Split (image + text side by side) */
@@ -854,6 +857,10 @@ fieldset.field { border: none; padding: 0; margin: 0; }
 a.chip { text-decoration: none; }
 .faq-group { margin-top: 48px; }
 .faq-group h2 { font-size: 1.7rem; margin-bottom: 16px; }
+/* Long-form text pages (Privacy & Terms) */
+.prose h3 { font-size: 1.15rem; margin: 26px 0 8px; }
+.prose ul { padding-left: 1.2em; margin: 0 0 12px; }
+.prose li { margin-bottom: 6px; }
 .faq {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -924,7 +931,21 @@ a.chip { text-decoration: none; }
 .site-footer { background: var(--color-footer-bg); color: var(--color-footer-text); padding: 64px 0 28px; margin-top: 0; }
 .site-footer a { color: var(--color-footer-text); text-decoration: none; }
 .site-footer a:hover { color: var(--color-accent); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.3fr; gap: 36px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1.3fr 1.2fr; gap: 36px; }
+/* Footer email sign-up */
+.footer-signup p { margin: 0 0 10px; font-size: 0.92rem; }
+.footer-signup form { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-signup input[type="email"] {
+  flex: 1 1 160px; min-width: 0; padding: 10px 14px; border-radius: 999px;
+  border: 2px solid transparent; font: inherit; font-size: 0.92rem;
+}
+.footer-signup input[aria-invalid="true"] { border-color: var(--color-accent); }
+.footer-signup .btn { background: var(--color-accent); color: var(--color-text); border-color: var(--color-accent); }
+.footer-signup .footer-signup__msg { flex-basis: 100%; margin: 2px 0 0; font-size: 0.85rem; min-height: 1.2em; }
+/* Announcement bar above the menu (config.js → announcement) */
+.announcement { background: var(--color-primary); color: #fff; text-align: center; font-size: 0.9rem; font-weight: 600; }
+.announcement p { margin: 0; padding: 8px 16px; }
+.announcement a { color: var(--color-accent); text-decoration: underline; }
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-brand .brand { color: var(--color-footer-text); margin-bottom: 12px; }
@@ -949,10 +970,12 @@ a.chip { text-decoration: none; }
   position: fixed; left: 50%; bottom: 24px; z-index: 300;
   transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
   background: var(--color-primary); color: #fff;
-  padding: 12px 18px 12px 20px; border-radius: 999px;
+  padding: 12px 18px 12px 20px; border-radius: 24px;
   box-shadow: var(--shadow-lg);
   display: flex; align-items: center; gap: 14px;
   font-weight: 700; max-width: calc(100vw - 32px);
+  /* size to the message, not to the space right of center (which squeezed it into a circle on phones) */
+  width: max-content;
   transition: all 0.25s ease;
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
@@ -962,3 +985,10 @@ a.chip { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* Home page Instagram photo grid */
+.insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.insta-grid__item { display: block; border-radius: var(--radius); overflow: hidden; }
+.insta-grid__item img { transition: transform 0.3s ease; }
+.insta-grid__item:hover img { transform: scale(1.04); }
+@media (max-width: 760px) { .insta-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } }

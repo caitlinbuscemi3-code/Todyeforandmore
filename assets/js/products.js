@@ -28,6 +28,8 @@
                    added to the cart until it has a price).
      buyable     – true = can be added to the cart, false = custom only
      designOnly  – optional: true = sold only as shown, no customizing
+     ships       – ready-to-buy items: how long until it ships, "apparel" or
+                   "handmade" (the times are in config.js → turnaround)
      bulk        – optional: true = a Team & Bulk item. It never shows a price;
                    its button says "Request a Quote" and opens the Team & Bulk
                    Orders form.
@@ -88,6 +90,7 @@ window.PRODUCTS = [
     name: "Lions Appliqué Crewneck",
     price: 45.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "apparel",
     tags: ["sports"],
     desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
@@ -103,6 +106,7 @@ window.PRODUCTS = [
     name: "Blue Lions Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -119,6 +123,7 @@ window.PRODUCTS = [
     name: "Vintage Detroit Lions Graphic Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -135,6 +140,7 @@ window.PRODUCTS = [
     name: "Vintage Detroit Football Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -151,6 +157,7 @@ window.PRODUCTS = [
     name: "Lions Grit",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -172,6 +179,7 @@ window.PRODUCTS = [
     name: "Vintage Cream Detroit Football",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -193,6 +201,7 @@ window.PRODUCTS = [
     name: "Detroit Embroidered Football Tee",
     price: 30.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "apparel",
     tags: ["sports"],
     desc: "Embroidered Detroit football design on a soft black tee.",
@@ -208,6 +217,7 @@ window.PRODUCTS = [
     name: "Detroit Tie-Dye Crewneck",
     price: 40.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "apparel",
     tags: ["sports"],
     desc: "Hand-dyed blue and white Detroit crewneck. Every one is a little different!",
@@ -223,6 +233,7 @@ window.PRODUCTS = [
     name: "Embroidered Team Tee",
     price: 30.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "apparel",
     tags: ["sports"],
     desc: "A team name embroidered in script on a soft tee. Shown in Detroit football, and we can make it for any team!",
@@ -244,6 +255,7 @@ window.PRODUCTS = [
     name: "Sunday Social Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "apparel",
     tags: ["sports"],
     desc: "A clean “Sunday Social Club” design with a lion crest, made for game day brunch and beyond.",
@@ -259,6 +271,7 @@ window.PRODUCTS = [
     name: "’Tis the Season Tee",
     price: 30.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -275,6 +288,7 @@ window.PRODUCTS = [
     name: "Hand-Stitched Kids Sweater – Lions",
     price: 45.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "kids",
     tags: ["kids", "gifts", "sports"],
     desc: "A cozy knit sweater hand-stitched with “Lions” in chunky script, ready for game day.",
@@ -292,6 +306,7 @@ window.PRODUCTS = [
     name: "Detroit Octopus",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -313,6 +328,7 @@ window.PRODUCTS = [
     name: "Detroit Hockey Tie-Dye Crewneck",
     price: 40.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "apparel",
     tags: ["sports"],
     desc: "A bold red hand-dyed crewneck with a classic Detroit hockey design.",
@@ -330,6 +346,7 @@ window.PRODUCTS = [
     name: "Vintage Detroit Basketball Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -348,6 +365,7 @@ window.PRODUCTS = [
     name: "Vintage Detroit Baseball",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -371,6 +389,7 @@ window.PRODUCTS = [
     name: "Happy Camper Embroidered Crewneck",
     price: 45.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "apparel",
     tags: [],
     desc: "Embroidered mountain scene crewneck for your coziest camping days.",
@@ -386,6 +405,7 @@ window.PRODUCTS = [
     name: "Sunflower Embroidered Hoodie",
     price: 50.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "apparel",
     tags: [],
     desc: "A tiny embroidered sunflower on a soft pastel hoodie.",
@@ -401,6 +421,7 @@ window.PRODUCTS = [
     name: "Book Lover Tee",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "apparel",
     tags: ["gifts"],
     desc: "Flowers blooming from an open book, for every reader you know.",
@@ -416,6 +437,7 @@ window.PRODUCTS = [
     name: "Lucky Crewneck",
     price: 40.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "apparel",
     tags: ["holiday"],
     desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
@@ -433,6 +455,7 @@ window.PRODUCTS = [
     name: "Detroit Beaded Embroidery",
     price: 40.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "beaded",
     tags: ["gifts"],
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
@@ -474,6 +497,7 @@ window.PRODUCTS = [
     name: "Hand-Stitched Kids Sweater – Letter",
     price: 45.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A big hand-stitched initial trimmed with little flowers. Add the letter and colors in the order notes at checkout.",
@@ -650,6 +674,7 @@ window.PRODUCTS = [
     name: "Bookish Tote",
     price: 30.00,
     buyable: true,                         // READY TO BUY
+    ships: "handmade",                    // ship time: config.js → turnaround.handmade
     category: "bags",
     tags: ["gifts"],
     desc: "Our embroidered bookish design on a sturdy canvas tote.",
@@ -694,6 +719,7 @@ window.PRODUCTS = [
     name: "Engraved Tumbler",
     price: 25.00,
     buyable: true,                         // READY TO BUY
+    ships: "apparel",                     // ship time: config.js → turnaround.apparel
     category: "drink",
     tags: ["gifts", "sports"],
     desc: "Insulated tumbler engraved with one of our signature designs, like this Detroit hockey favorite.",
