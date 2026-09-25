@@ -172,13 +172,17 @@
     var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
       (p.buyable && !p.customItem ? "&mode=customize" : "") +
       (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") + "#request-form";
-    var actions = p.buyable
+    var actions = p.bulk
+      // TEAM & BULK: never a price, always a quote
+      ? '<a class="btn btn--primary btn--small" href="team-orders.html#team-form">Request a Quote</a>'
+      : p.buyable
       // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
         '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Customize This Design") + "</a>"
       // MADE TO ORDER: request button instead of Add to Cart
       : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";
-    var price = p.buyable
+    var price = p.bulk ? ""
+      : p.buyable
       ? '<span data-price>' + Site.money(unitPrice(p)) + "</span>"
       : '<span class="product-card__from">Starting at</span> ' + Site.money(p.price);
     // e.g. "T-shirt $40 · Crewneck $50 · Hoodie $55" on made-to-order items with styles
@@ -193,13 +197,15 @@
         "</div>" +
         '<div class="product-card__body">' +
           // Label only the made-to-order items (ready-made items have no label)
-          (p.buyable ? "" : '<p class="product-card__type product-card__type--custom">Made to order</p>') +
+          (p.bulk ? '<p class="product-card__type product-card__type--custom">Team &amp; Bulk</p>'
+            : p.buyable ? "" : '<p class="product-card__type product-card__type--custom">Made to order</p>') +
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
-          '<p class="product-card__price">' + price + "</p>" +
+          (price ? '<p class="product-card__price">' + price + "</p>" : "") +
           (p.priceNote ? '<p class="product-card__note">' + Site.escape(p.priceNote) + "</p>" : "") +
           styleList +
-          (p.buyable
+          (p.bulk ? '<p class="product-card__note" style="margin-top:auto">Every group order gets its own quote.</p>'
+            : p.buyable
             ? '<p class="product-card__note">Want it customized? Same price.</p>'
             : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
           optionsHTML(p) +

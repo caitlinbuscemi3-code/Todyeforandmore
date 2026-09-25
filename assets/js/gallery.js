@@ -67,11 +67,11 @@ window.FEATURED_WORK = [
   {
     name: "Flo Rida",
     caption: "Stage-Ready Sneakers",
-    story: "A gift for one of his performances: Phoenix Suns colors, a textured basketball detail, and his Flo Rida logo on the back of each shoe.",
+    story: "A gift for one of his performances: Phoenix basketball colors, a textured basketball detail, and his Flo Rida logo on the back of each shoe.",
     color: "blue",
     photos: [
       { image: "assets/photos/flo-rida-shoe-1.jpg", label: "Flo Rida with his custom sneakers" },
-      { image: "assets/photos/custom-phoenix-suns-nikes.jpg", label: "custom Phoenix Suns sneakers" },
+      { image: "assets/photos/custom-phoenix-suns-nikes.jpg", label: "custom Phoenix basketball sneakers" },
       { image: "assets/photos/custom-phoenix-suns-shoes.jpg", label: "Flo Rida logo on the heels" }
     ]
   }
@@ -207,7 +207,7 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/detroit-lions-embroidered-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-lions-tie-dye-vintage-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-lions-tie-dye-crewnecks.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/lions-tee-blue-2.jpg", label: "Detroit game day apparel" },
+      { image: "assets/photos/lions-tee-blue-original.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/lions-applique-crew-custom-team.jpg", label: "Detroit game day apparel" }
     ]
   },
@@ -219,11 +219,11 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "shoes", caption: "Hockeytown High-Tops", color: "orange",
+    category: "shoes", caption: "Detroit Hockey High-Tops", color: "orange",
     photos: [
-      { image: "assets/photos/custom-red-wings-high-top-shoes.jpg", label: "custom Red Wings high-top sneakers" },
-      { image: "assets/photos/custom-red-wings-shoes-high-top.jpg", label: "custom Red Wings high-top sneakers" },
-      { image: "assets/photos/custom-redwing-shoes.jpg", label: "custom Red Wings high-top sneakers" }
+      { image: "assets/photos/custom-red-wings-high-top-shoes.jpg", label: "custom Detroit hockey high-top sneakers" },
+      { image: "assets/photos/custom-red-wings-shoes-high-top.jpg", label: "custom Detroit hockey high-top sneakers" },
+      { image: "assets/photos/custom-redwing-shoes.jpg", label: "custom Detroit hockey high-top sneakers" }
     ]
   },
   {
@@ -288,14 +288,6 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "shoes", caption: "Company Logo Sneakers", color: "orange",
-    photos: [
-      { image: "assets/photos/company-shoes-custom-logo.jpg", label: "sneakers with a company logo" },
-      { image: "assets/photos/company-logo-shoes-custom.jpg", label: "sneakers with a company logo" },
-      { image: "assets/photos/custom-nikes-company-logo.jpg", label: "sneakers with a company logo" }
-    ]
-  },
-  {
     category: "wedding", caption: "Wedding & Groomsmen Koozies", color: "navy",
     photos: [
       { image: "assets/photos/custom-wedding-coozies-bulk.jpg", label: "custom wedding koozies" },
@@ -355,10 +347,10 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "team", caption: "Red Wings Shoes & Crewnecks", color: "orange",
+    category: "team", caption: "Detroit Hockey Shoes & Crewnecks", color: "orange",
     photos: [
-      { image: "assets/photos/custom-detroit-red-wings-shoes-and-crewnecks.jpg", label: "Red Wings sneakers and crewnecks" },
-      { image: "assets/photos/red-wings-team-apparel.jpg", label: "Red Wings sneakers and crewnecks" }
+      { image: "assets/photos/custom-detroit-red-wings-shoes-and-crewnecks.jpg", label: "Detroit hockey sneakers and crewnecks" },
+      { image: "assets/photos/red-wings-team-apparel.jpg", label: "Detroit hockey sneakers and crewnecks" }
     ]
   },
   {
@@ -385,6 +377,10 @@ window.GALLERY_ITEMS = [
   {
     category: "shoes", caption: "More Custom Kicks", color: "blue",
     photos: [
+      { image: "assets/photos/company-shoes-custom-logo.jpg", label: "blue and orange company logo sneakers" },
+      { image: "assets/photos/company-logo-shoes-custom.jpg", label: "blue and orange company logo sneakers, back view" },
+      { image: "assets/photos/custom-company-logo-shoes.jpg", label: "blue and orange company logo sneakers, side view" },
+      { image: "assets/photos/custom-nikes-company-logo.jpg", label: "green and gold company logo sneakers" },
       { image: "assets/photos/custom-vegas-shoes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "custom painted sneakers" },
