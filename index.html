@@ -6,6 +6,17 @@
   <!-- Page title shown in the browser tab & Google results -->
   <title>To Dye For and More | Custom Apparel, Shoes & Gifts</title>
   <meta name="description" content="Custom shoes, apparel, team gear, and personalized gifts, made to order just for you.">
+  <!-- LINK PREVIEWS: what shows when this page is shared by text or on social media.
+       Once the site has its own web address, change the image to the full address,
+       e.g. https://www.yourdomain.com/assets/photos/og-preview.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="To Dye For and More">
+  <meta property="og:title" content="To Dye For and More | Custom Apparel, Shoes & Gifts">
+  <meta property="og:description" content="Custom shoes, apparel, team gear, and personalized gifts, made to order just for you.">
+  <meta property="og:image" content="assets/photos/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Browser tab icon: the small "tdf" logo -->
   <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
@@ -40,7 +51,7 @@
           <ul class="hero__badges" aria-label="Highlights">
             <li><span data-icon="palette"></span>100% custom</li>
             <li><span data-icon="trophy"></span>Team &amp; bulk orders</li>
-            <li><span data-icon="gift"></span>Ready-made designs</li>
+            <li><span data-icon="gift"></span>Signature designs</li>
           </ul>
         </div>
 
@@ -48,7 +59,7 @@
         <div class="hero__collage">
           <img class="media-img media-img--portrait" src="assets/photos/baby-jean-jacket-photo.jpg" alt="Baby in a hand-painted “Gia” jean jacket at her first birthday">
           <img class="media-img media-img--square" src="assets/photos/lions-custom-shoes-123.jpg" alt="Hand-painted Lions sneakers">
-          <img class="media-img media-img--square" src="assets/photos/team-jerseys-custom.jpg" alt="Dad and son in matching custom team jerseys" style="object-position:center 30%">
+          <img class="media-img media-img--square" src="assets/photos/cassidy-tigers.jpg" alt="Game day staff member on the baseball field in her custom hand-painted sneakers" style="object-position:center 35%">
         </div>
       </div>
     </section>
@@ -66,26 +77,26 @@
 
         <div class="grid grid--4">
           <a class="category-card" href="custom-orders.html#shoes">
-            <img class="media-img media-img--square" src="assets/photos/custom-detroit-shoes.jpg" alt="Custom hand-painted Detroit sneakers" loading="lazy">
+            <img class="media-img media-img--square" src="assets/photos/thumbs/custom-detroit-shoes.jpg" alt="Custom hand-painted Detroit sneakers" loading="lazy">
             <h3>Shoes</h3>
             <p>Fully custom, hand-painted kicks designed around your idea.</p>
             <span class="arrow">Design yours →</span>
           </a>
           <a class="category-card" href="custom-orders.html#apparel">
-            <img class="media-img media-img--square" src="assets/photos/custom-jean-jacket-kids-hand-painted.jpg" alt="Toddler walking in a hand-painted jean jacket" loading="lazy" style="object-position:center 40%">
+            <img class="media-img media-img--square" src="assets/photos/thumbs/custom-jean-jacket-kids-hand-painted.jpg" alt="Toddler walking in a hand-painted jean jacket" loading="lazy" style="object-position:center 40%">
             <h3>Apparel</h3>
-            <p>HTV, embroidery, beaded embroidery, painted jackets &amp; pet sweatshirts.</p>
+            <p>Custom t-shirts, hoodies, embroidery, and hand-painted jean jackets.</p>
             <span class="arrow">Explore apparel →</span>
           </a>
-          <a class="category-card" href="shop.html">
-            <img class="media-img media-img--square" src="assets/photos/custom-embroidered-name-tote-bag.jpg" alt="Embroidered name tote bag" loading="lazy">
+          <a class="category-card" href="shop.html?cat=birthday">
+            <img class="media-img media-img--square" src="assets/photos/thumbs/custom-embroidered-name-tote-bag.jpg" alt="Embroidered name tote bag" loading="lazy">
             <h3>Gifts</h3>
-            <p>Beaded embroidery, tumblers, totes, blankets &amp; more, ready to buy or made custom.</p>
-            <span class="arrow">Shop gifts →</span>
+            <p>Birthday and baby gifts, engraved tumblers, name totes &amp; personalized blankets.</p>
+            <span class="arrow">See gift ideas →</span>
           </a>
           <a class="category-card" href="team-orders.html">
-            <img class="media-img media-img--square" src="assets/photos/custom-bulk-jerseys-bachelor.jpg" alt="Group in matching custom jerseys" loading="lazy">
-            <h3>Team / Bulk Orders</h3>
+            <img class="media-img media-img--square" src="assets/photos/thumbs/custom-bulk-jerseys-bachelor.jpg" alt="Group in matching custom jerseys" loading="lazy">
+            <h3>Team &amp; Bulk Orders</h3>
             <p>Matching gear for teams, schools, companies &amp; groups.</p>
             <span class="arrow">Outfit your team →</span>
           </a>
@@ -102,7 +113,7 @@
         <div class="section-head">
           <span class="eyebrow" style="background:#fff">Fan Favorites</span>
           <h2 id="featured-title">Best sellers</h2>
-          <p>Grab a ready-made favorite today, or request a custom piece made just for you.</p>
+          <p>Grab one of our signature designs today, or request a custom piece made just for you.</p>
         </div>
         <div class="grid grid--4" data-featured-grid></div>
         <p class="text-center" style="margin-top:36px">
@@ -165,6 +176,22 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         CUSTOMER REVIEWS: approved reviews rotate here.
+         Reviews come from assets/js/reviews.js. This section stays
+         hidden until at least one review is added there.
+         ============================================================ -->
+    <section class="section section--blush" aria-labelledby="reviews-title" data-reviews-section hidden>
+      <div class="container" style="max-width:820px">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">Kind Words</span>
+          <h2 id="reviews-title">From our customers</h2>
+        </div>
+        <div class="reviews" data-reviews></div>
+        <p class="text-center" style="margin-top:28px"><a class="btn btn--outline" href="reviews.html">Leave a Review</a></p>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER: built automatically by assets/js/layout.js (info comes from config.js) -->
@@ -175,5 +202,6 @@
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/cart.js"></script>
+  <script src="assets/js/reviews.js"></script>
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave a Review | To Dye For and More</title>
+  <meta name="description" content="Loved your order from To Dye For and More? Tell us about it. Your review helps other customers and means the world to a small business.">
+  <!-- LINK PREVIEWS: what shows when this page is shared by text or on social media.
+       Once the site has its own web address, change the image to the full address,
+       e.g. https://www.yourdomain.com/assets/photos/og-preview.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="To Dye For and More">
+  <meta property="og:title" content="Leave a Review | To Dye For and More">
+  <meta property="og:description" content="Loved your order from To Dye For and More? Tell us about it. Your review helps other customers and means the world to a small business.">
+  <meta property="og:image" content="assets/photos/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Browser tab icon: the small "tdf" logo -->
+  <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER + NAV: built by assets/js/layout.js. Logo file: config.js → logo.src -->
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- PAGE BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="background:#fff">Share the Love</span>
+        <h1>Leave a Review</h1>
+        <p>Loved your order? We'd be so grateful to hear about it. Your words help other customers and mean the world to a small business.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REVIEW FORM
+         BACKEND HOOK: paste your form service URL into
+         assets/js/config.js → forms.review to receive reviews by email.
+         Reviews you approve go in assets/js/reviews.js to show on the
+         Home page.
+         ============================================================ -->
+    <section class="section">
+      <div class="container" style="max-width:760px">
+        <form id="review-form" class="form-card" data-validate data-form="review"
+              action="#" method="post" enctype="multipart/form-data" novalidate>
+          <h2 style="font-size:1.5rem">Tell us about your order</h2>
+          <div class="form-alert" role="alert" hidden></div>
+          <input type="hidden" name="_subject" value="New customer review">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="r-name">Your name <span class="req">*</span></label>
+              <input id="r-name" name="name" type="text" autocomplete="name" required>
+              <p class="hint">We'll only show your first name and last initial.</p>
+            </div>
+            <div class="field">
+              <label for="r-email">Email <span class="req">*</span></label>
+              <input id="r-email" name="email" type="email" autocomplete="email" required>
+              <p class="hint">Never shown on the site.</p>
+            </div>
+            <div class="field full">
+              <label for="r-item">What did you order? <span class="req">*</span></label>
+              <input id="r-item" name="item" type="text" required placeholder="e.g. Custom hand-painted sneakers, team hoodies, a baby box">
+            </div>
+            <div class="field full">
+              <label for="r-text">Your review <span class="req">*</span></label>
+              <textarea id="r-text" name="review" minlength="20" required
+                        placeholder="How did it turn out? How was working with us? Who was it for?"></textarea>
+            </div>
+            <div class="field full">
+              <label for="r-photo">Photo of your order <span class="muted">(optional)</span></label>
+              <div class="upload">
+                <div class="upload__icon" data-icon="camera"></div>
+                <p class="upload__text">Drag a photo here or tap to upload</p>
+                <p class="hint">JPG, PNG or HEIC · up to 3 photos · 10 MB each</p>
+                <input id="r-photo" name="photos" type="file" multiple accept="image/*,.heic,.heif" data-max-files="3" data-max-mb="10">
+                <ul class="upload__list"></ul>
+              </div>
+            </div>
+            <div class="field full">
+              <label class="consent">
+                <input type="checkbox" name="ok_to_share" value="yes" required
+                       data-error="Please let us know it's okay to share your review.">
+                <span>It's okay to share my review, first name, last initial, and photo on the To Dye For and More website and social media. <span class="req">*</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Send My Review</button>
+            <p class="form-note">Reviews are read before they're posted on the site.</p>
+          </div>
+        </form>
+
+        <!-- Thank-you message (shown after a successful submit) -->
+        <div class="form-card form-success" data-success-for="review-form" tabindex="-1" hidden>
+          <div class="form-success__icon" data-icon="heart"></div>
+          <h2 style="font-size:1.6rem">Thank you so much!</h2>
+          <p class="muted">We truly appreciate you taking the time to share your experience.</p>
+          <div class="btn-row" style="justify-content:center">
+            <a class="btn btn--primary" href="index.html">Back to Home</a>
+            <a class="btn btn--outline" href="gallery.html">See More of Our Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: built by assets/js/layout.js -->
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

@@ -45,11 +45,11 @@ window.FEATURED_WORK = [
   {
     name: "Mateen Cleaves",
     caption: "A Championship Tribute",
-    story: "Hand-painted Reebok Questions inspired by the pair he wore leading Michigan State to the 2000 national championship, finished with his signature and his words: “Get your mind right, keep your grind tight” and “If you’re trying to win, tap in.”",
+    story: "Hand-painted Reebok Questions inspired by the pair he wore leading his team to the 2000 national championship, finished with his signature and his words: “Get your mind right, keep your grind tight” and “If you’re trying to win, tap in.”",
     color: "lime",
     photos: [
       { image: "assets/photos/mateen-with-shoes.jpg", label: "Mateen Cleaves with his custom sneakers" },
-      { image: "assets/photos/custom-msu-shoes-mateen-cleaves.jpg", label: "Michigan State Reebok Questions with his signature and quotes" },
+      { image: "assets/photos/custom-championship-shoes-mateen-cleaves.jpg", label: "championship-inspired sneakers with his signature and quotes" },
       { image: "assets/photos/custom-shoes-mateen.jpg", label: "heel details with his sayings" }
     ]
   },
@@ -82,23 +82,15 @@ window.GALLERY_ITEMS = [
     category: "baby", caption: "Gia’s First Birthday Jacket", color: "blush",
     photos: [
       { image: "assets/photos/baby-jean-jacket-photo.jpg", label: "hand-painted baby jean jacket" },
-      { image: "assets/photos/baby-jean-jacket.jpg", label: "hand-painted baby jean jacket" },
-      { image: "assets/photos/custom-hand-painted-jean-jacket-kids.jpg", label: "hand-painted baby jean jacket" },
-      { image: "assets/photos/custom-jean-jacket-and-shoes-kids.jpg", label: "hand-painted baby jean jacket" },
-      { image: "assets/photos/jean-jacket-kids-custom-hand-painted.jpg", label: "hand-painted baby jean jacket" }
+      { image: "assets/photos/baby-jean-jacket.jpg", label: "hand-painted baby jean jacket" }
     ]
   },
   {
     category: "shoes", caption: "Hand-Painted Lions Sneakers", color: "blue",
     photos: [
       { image: "assets/photos/lions-custom-shoes-123.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/lions-custom-shoes-14.jpg", label: "hand-painted Lions sneakers" },
       { image: "assets/photos/lions-custom-shoes-2.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/lions-custom-shoes.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/custom-lions-shoes-12.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/custom-lions-shoes-2.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/custom-lions-shoes.jpg", label: "hand-painted Lions sneakers" },
-      { image: "assets/photos/custom-lions-jordans.jpg", label: "hand-painted Lions sneakers" }
+      { image: "assets/photos/custom-lions-shoes-2.jpg", label: "hand-painted Lions sneakers" }
     ]
   },
   {
@@ -107,8 +99,6 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/custom-jean-jacket-kids-hand-painted.jpg", label: "kids hand-painted jean jacket" },
       { image: "assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg", label: "kids hand-painted jean jacket" },
       { image: "assets/photos/kids-custom-jean-jacket.jpg", label: "kids hand-painted jean jacket" },
-      { image: "assets/photos/custom-jean-jacket-kids-2.jpg", label: "kids hand-painted jean jacket" },
-      { image: "assets/photos/custom-jean-jacket-kids.jpg", label: "kids hand-painted jean jacket" },
       { image: "assets/photos/jean-jacket-kids-hand-painted.jpg", label: "kids hand-painted jean jacket" },
       { image: "assets/photos/custom-kids-hand-painted-jean-jacket-eras-tour.jpg", label: "kids hand-painted jean jacket" }
     ]
@@ -132,34 +122,27 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/baby-sweaters-hand-embroidered.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/hand-stitched-baby-sweater-custom-name.jpg", label: "hand-stitched kids name sweater" },
-      { image: "assets/photos/hand-stitched-baby-sweater-custom.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/custom-baby-hand-stitched-sweater.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/custom-kids-hand-stitched-sweater.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/custom-hand-stitched-kids-sweater-letter-flower.jpg", label: "hand-stitched kids name sweater" },
-      { image: "assets/photos/hand-stitched-kids-lions-sweater.jpg", label: "hand-stitched kids name sweater" },
-      { image: "assets/photos/hand-stitched-kids-sweater-st-patricks-day.jpg", label: "hand-stitched kids name sweater" }
+      { image: "assets/photos/hand-stitched-kids-lions-sweater.jpg", label: "hand-stitched kids name sweater" }
     ]
   },
   {
-    category: "team", caption: "Legacy Team Shirts & Hoodies", color: "lime",
+    category: "team", caption: "Company Apparel", color: "navy",
     photos: [
-      { image: "assets/photos/company-team-t-shirt.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/company-team-t-shirts.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/team-company-bulk-apparel-t-shirt.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/custom-team-company-hoodies-2.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/custom-team-company-hoodies.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/custom-company-hoodies.jpg", label: "green Legacy team shirts and hoodies" },
-      { image: "assets/photos/custom-company-hoodies-2.jpg", label: "green Legacy team shirts and hoodies" }
+      { image: "assets/photos/company-team-t-shirt.jpg", label: "Legacy company tees" },
+      { image: "assets/photos/custom-bulk-apparel-company-custom-order.jpg", label: "River Village restaurant staff shirts" },
+      { image: "assets/photos/custom-bulk-company-order.jpg", label: "electrical company hoodie and crewneck" },
+      { image: "assets/photos/company-logo-embroidered-crewnecks-custom.jpg", label: "LMT Design embroidered crewnecks" }
     ]
   },
   {
     category: "shoes", caption: "Chicago Sneakers & Apparel", color: "orange",
     photos: [
       { image: "assets/photos/custom-chicago-shoes-nike.jpg", label: "custom Chicago sneakers" },
-      { image: "assets/photos/custom-chicago-nikes.jpg", label: "custom Chicago sneakers" },
       { image: "assets/photos/custom-chicago-shoes-close-up.jpg", label: "custom Chicago sneakers" },
-      { image: "assets/photos/custom-chicago-shoes-and-apparel.jpg", label: "custom Chicago sneakers" },
-      { image: "assets/photos/custom-order-shoes-and-apparel-2.jpg", label: "custom Chicago sneakers" }
+      { image: "assets/photos/custom-chicago-shoes-and-apparel.jpg", label: "custom Chicago sneakers" }
     ]
   },
   {
@@ -167,8 +150,6 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/baby-box-custom-with-shoes.jpg", label: "custom baby box" },
       { image: "assets/photos/baby-box-2.jpg", label: "custom baby box" },
-      { image: "assets/photos/baby-box-3.jpg", label: "custom baby box" },
-      { image: "assets/photos/baby-box-with-shoes.jpg", label: "custom baby box" },
       { image: "assets/photos/baby-box-custom-example.jpg", label: "custom baby box" },
       { image: "assets/photos/baby-box-custom.jpg", label: "custom baby box" },
       { image: "assets/photos/baby-box-example-custom.jpg", label: "custom baby box" },
@@ -194,16 +175,13 @@ window.GALLERY_ITEMS = [
     category: "wedding", caption: "Bach Club Bachelorette Tees", color: "blush",
     photos: [
       { image: "assets/photos/bachelorette-custom-t-shirts-bulk.jpg", label: "Bach Club bachelorette tees" },
-      { image: "assets/photos/bachelorette-custom-bridal-tee-bulk.jpg", label: "Bach Club bachelorette tees" },
-      { image: "assets/photos/bachelorette-custom-tee-bulk.jpg", label: "Bach Club bachelorette tees" },
       { image: "assets/photos/bridal-bachelorette-tee-custom-bulk.jpg", label: "Bach Club bachelorette tees" }
     ]
   },
   {
     category: "apparel", caption: "Superhero Kids Tee", color: "blue",
     photos: [
-      { image: "assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg", label: "embroidered superhero kids tee" },
-      { image: "assets/photos/custom-embroidered-nike-tee-super-hero-kids.jpg", label: "embroidered superhero kids tee" }
+      { image: "assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg", label: "embroidered superhero kids tee" }
     ]
   },
   {
@@ -216,8 +194,6 @@ window.GALLERY_ITEMS = [
   {
     category: "shoes", caption: "Minnie Mouse Kids Sneakers", color: "blush",
     photos: [
-      { image: "assets/photos/kids-custom-disney-shoes-minnie-mouse.jpg", label: "Minnie Mouse kids sneakers" },
-      { image: "assets/photos/kids-custom-shoes-disney-minnie-mouse.jpg", label: "Minnie Mouse kids sneakers" },
       { image: "assets/photos/minnie-mouse-disney-shoe-kids-custom.jpg", label: "Minnie Mouse kids sneakers" },
       { image: "assets/photos/minnie-mouse-kids-disney-shoe.jpg", label: "Minnie Mouse kids sneakers" }
     ]
@@ -226,17 +202,12 @@ window.GALLERY_ITEMS = [
     category: "apparel", caption: "Detroit Game Day Collection", color: "navy",
     photos: [
       { image: "assets/photos/lions-graphic-tee-vintage.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/lions-graphic-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-embroidered-football-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/eb1ba2f3-4c30-4912-a48d-3989e41b9429.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-lions-embroidered-tee.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/lions-embroidered-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-lions-tie-dye-vintage-tee.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/detroit-lions-tie-dye-crewnecks.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/vintage-lions-tee.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/sunday-social-tee-lions.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/lions-tee-blue-2.jpg", label: "Detroit game day apparel" },
-      { image: "assets/photos/lions-tee-blue.jpg", label: "Detroit game day apparel" },
       { image: "assets/photos/lions-applique-crew-custom-team.jpg", label: "Detroit game day apparel" }
     ]
   },
@@ -266,16 +237,14 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "Hand-Painted Bridal Shoes", color: "blush",
     photos: [
       { image: "assets/photos/custom-bridal-shoes.jpg", label: "hand-painted bridal shoes" },
-      { image: "assets/photos/custom-bridal-shoes-toms.jpg", label: "hand-painted bridal shoes" },
-      { image: "assets/photos/custom-bridal-shoes-toms-2.jpg", label: "hand-painted bridal shoes" }
+      { image: "assets/photos/custom-bridal-shoes-toms.jpg", label: "hand-painted bridal shoes" }
     ]
   },
   {
     category: "team", caption: "Coaches’ Quarter Zips", color: "navy",
     photos: [
       { image: "assets/photos/custom-team-gear.jpg", label: "embroidered coaches quarter zips" },
-      { image: "assets/photos/coaches-bulk-team-apparel.jpg", label: "embroidered coaches quarter zips" },
-      { image: "assets/photos/custom-team-bulk-gear.jpg", label: "embroidered coaches quarter zips" }
+      { image: "assets/photos/coaches-bulk-team-apparel.jpg", label: "embroidered coaches quarter zips" }
     ]
   },
   {
@@ -301,41 +270,20 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "Kids Disney Sneakers", color: "blue",
     photos: [
       { image: "assets/photos/toy-story-custom-kids-shoes-nike-disney.jpg", label: "custom kids Disney sneakers" },
-      { image: "assets/photos/disney-custom-kids-shoes-nike-toy-story.jpg", label: "custom kids Disney sneakers" },
       { image: "assets/photos/custom-kids-shoes-disney-cars.jpg", label: "custom kids Disney sneakers" },
-      { image: "assets/photos/custom-baby-nike-shoes.jpg", label: "custom kids Disney sneakers" },
-      { image: "assets/photos/custom-baby-shoes.jpg", label: "custom kids Disney sneakers" }
+      { image: "assets/photos/custom-baby-nike-shoes.jpg", label: "custom kids Disney sneakers" }
     ]
   },
   {
-    category: "team", caption: "River Village Restaurant Apparel", color: "navy",
+    category: "shoes", caption: "Team Sneakers & Crewnecks", color: "lime",
     photos: [
-      { image: "assets/photos/restaurant-company-apparel-custom.jpg", label: "restaurant staff apparel" },
-      { image: "assets/photos/restaurant-company-custom-bulk-apparel.jpg", label: "restaurant staff apparel" },
-      { image: "assets/photos/custom-bulk-apparel-company-custom-order.jpg", label: "restaurant staff apparel" },
-      { image: "assets/photos/custom-bulk-apparel-restaurant.jpg", label: "restaurant staff apparel" }
-    ]
-  },
-  {
-    category: "shoes", caption: "Michigan Sneakers & Crewnecks", color: "lime",
-    photos: [
-      { image: "assets/photos/custom-michigan-shoes-and-crewnecks.jpg", label: "custom Michigan sneakers and crewnecks" },
-      { image: "assets/photos/custom-michigan-shoes-nike.jpg", label: "custom Michigan sneakers and crewnecks" }
-    ]
-  },
-  {
-    category: "team", caption: "UWM Company Apparel", color: "navy",
-    photos: [
-      { image: "assets/photos/custom-company-bulk-shirts.jpg", label: "UWM company apparel" },
-      { image: "assets/photos/custom-company-shirts.jpg", label: "UWM company apparel" },
-      { image: "assets/photos/custom-team-jersey.jpg", label: "UWM company apparel" }
+      { image: "assets/photos/custom-team-shoes-and-crewnecks.jpg", label: "custom team sneakers and crewnecks" },
+      { image: "assets/photos/custom-team-shoes-nike.jpg", label: "custom team sneakers and crewnecks" }
     ]
   },
   {
     category: "apparel", caption: "Embroidered Flower Hoodies", color: "lime",
     photos: [
-      { image: "assets/photos/sunflower-embroidered-hoodie.jpg", label: "embroidered flower hoodie" },
-      { image: "assets/photos/sunshine-embroidered-hoodie.jpg", label: "embroidered flower hoodie" },
       { image: "assets/photos/custom-embroidered-hoodie.jpg", label: "embroidered flower hoodie" }
     ]
   },
@@ -344,7 +292,6 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/company-shoes-custom-logo.jpg", label: "sneakers with a company logo" },
       { image: "assets/photos/company-logo-shoes-custom.jpg", label: "sneakers with a company logo" },
-      { image: "assets/photos/custom-company-logo-shoes.jpg", label: "sneakers with a company logo" },
       { image: "assets/photos/custom-nikes-company-logo.jpg", label: "sneakers with a company logo" }
     ]
   },
@@ -353,30 +300,22 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-wedding-coozies-bulk.jpg", label: "custom wedding koozies" },
       { image: "assets/photos/dscf6663.jpg", label: "custom wedding koozies" },
-      { image: "assets/photos/dscf6664.jpg", label: "custom wedding koozies" },
-      { image: "assets/photos/custom-coozies-bulk-2.jpg", label: "custom wedding koozies" },
-      { image: "assets/photos/custom-coozies-bulk-3.jpg", label: "custom wedding koozies" },
       { image: "assets/photos/groomsmen-coozies.jpg", label: "custom wedding koozies" }
     ]
   },
   {
     category: "gifts", caption: "Engraved Tumblers", color: "orange",
     photos: [
-      { image: "assets/photos/custom-bulk-order-engraved-tumblers.jpg", label: "engraved tumblers" },
       { image: "assets/photos/custom-bulk-order-tumblers-team-crewnecks-team.jpg", label: "engraved tumblers" },
       { image: "assets/photos/custom-team-engraved-bulk-tumblers.jpg", label: "engraved tumblers" },
-      { image: "assets/photos/custom-tumbler-team-bulk.jpg", label: "engraved tumblers" },
       { image: "assets/photos/engraved-mug-red-wings-or-team.jpg", label: "engraved tumblers" },
-      { image: "assets/photos/custom-engraved-company-logo.jpg", label: "engraved tumblers" },
-      { image: "assets/photos/happy-camper-engraved-mug.jpg", label: "engraved tumblers" }
+      { image: "assets/photos/custom-engraved-company-logo.jpg", label: "engraved tumblers" }
     ]
   },
   {
     category: "team", caption: "Golf Trip Shirts", color: "lime",
     photos: [
       { image: "assets/photos/bulk-order-custom-golf-trip-event.jpg", label: "custom golf trip shirts" },
-      { image: "assets/photos/custom-golf-trip-bulk-order-event-shirts.jpg", label: "custom golf trip shirts" },
-      { image: "assets/photos/custom-golf-trip-shirts-bulk-order.jpg", label: "custom golf trip shirts" },
       { image: "assets/photos/custom-jerseys.jpg", label: "custom golf trip shirts" }
     ]
   },
@@ -384,10 +323,8 @@ window.GALLERY_ITEMS = [
     category: "gifts", caption: "Embroidered Name & Initial Totes", color: "blush",
     photos: [
       { image: "assets/photos/custom-embroidered-name-tote-bag.jpg", label: "embroidered name tote bag" },
-      { image: "assets/photos/custom-embroidered-name-tote-2.jpg", label: "embroidered name tote bag" },
       { image: "assets/photos/custom-tote-bag-name.jpg", label: "embroidered name tote bag" },
       { image: "assets/photos/embroidered-initial-tote-bag.jpg", label: "embroidered name tote bag" },
-      { image: "assets/photos/custom-initial-tote-bag.jpg", label: "embroidered name tote bag" },
       { image: "assets/photos/initial-tote-bag-custom-embroidery.jpg", label: "embroidered name tote bag" }
     ]
   },
@@ -395,16 +332,14 @@ window.GALLERY_ITEMS = [
     category: "shoes", caption: "Custom Cleats", color: "blue",
     photos: [
       { image: "assets/photos/custom-cleats.jpg", label: "custom football cleats" },
-      { image: "assets/photos/custom-cleats-3.jpg", label: "custom football cleats" },
-      { image: "assets/photos/custom-cleats-2.jpg", label: "custom football cleats" }
+      { image: "assets/photos/custom-cleats-3.jpg", label: "custom football cleats" }
     ]
   },
   {
     category: "team", caption: "Team Crewnecks", color: "navy",
     photos: [
-      { image: "assets/photos/custom-embroidered-crewnecks-team-specific.jpg", label: "custom team crewnecks" },
       { image: "assets/photos/custom-team-crewnecks-team-specific.jpg", label: "custom team crewnecks" },
-      { image: "assets/photos/custom-embroidered-team-hoodie-michigan-state.jpg", label: "custom team crewnecks" },
+      { image: "assets/photos/custom-embroidered-crewnecks-team-specific.jpg", label: "custom team crewnecks" },
       { image: "assets/photos/custom-team-crewnecks.jpg", label: "custom team crewnecks" },
       { image: "assets/photos/custom-team-apparel.jpg", label: "custom team crewnecks" }
     ]
@@ -415,7 +350,6 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/happy-camper-embroidered-crewnecks.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/tis-the-season-tee-embroidered.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/lucky-sweatshirt.jpg", label: "embroidered crewnecks and tees" },
-      { image: "assets/photos/embroidered-harry-potter-shirt.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/custom-t-shirt-example.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/book-t-shirt.jpg", label: "embroidered crewnecks and tees" }
     ]
@@ -424,7 +358,6 @@ window.GALLERY_ITEMS = [
     category: "team", caption: "Red Wings Shoes & Crewnecks", color: "orange",
     photos: [
       { image: "assets/photos/custom-detroit-red-wings-shoes-and-crewnecks.jpg", label: "Red Wings sneakers and crewnecks" },
-      { image: "assets/photos/custom-detroit-red-wings-shoes-and-crew.jpg", label: "Red Wings sneakers and crewnecks" },
       { image: "assets/photos/red-wings-team-apparel.jpg", label: "Red Wings sneakers and crewnecks" }
     ]
   },
@@ -436,16 +369,6 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "team", caption: "Electrical Company Apparel", color: "navy",
-    photos: [
-      { image: "assets/photos/custom-bulk-company-order.jpg", label: "company hoodies and tees" },
-      { image: "assets/photos/bulk-company-order-custom.jpg", label: "company hoodies and tees" },
-      { image: "assets/photos/custom-electrical-company-apparel-bulk.jpg", label: "company hoodies and tees" },
-      { image: "assets/photos/custom-company-hoodie.jpg", label: "company hoodies and tees" },
-      { image: "assets/photos/custom-hoodie-for-company.jpg", label: "company hoodies and tees" }
-    ]
-  },
-  {
     category: "gifts", caption: "Personalized Blankets", color: "blue",
     photos: [
       { image: "assets/photos/embroidered-blanket-name.jpg", label: "embroidered personalized blanket" },
@@ -453,17 +376,9 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "team", caption: "LMT Design Crewnecks", color: "blue",
-    photos: [
-      { image: "assets/photos/company-logo-embroidered-crewnecks-custom.jpg", label: "embroidered company logo crewnecks" },
-      { image: "assets/photos/custom-company-embroidered-crew-neck-company-logo.jpg", label: "embroidered company logo crewnecks" }
-    ]
-  },
-  {
     category: "gifts", caption: "Birthday Fanny Packs & Totes", color: "lime",
     photos: [
       { image: "assets/photos/custom-fanny-pack-birthday-event-bulk.jpg", label: "custom birthday fanny packs and totes" },
-      { image: "assets/photos/custom-bags-birthday-event-1.jpg", label: "custom birthday fanny packs and totes" },
       { image: "assets/photos/custom-bags-bulk-birthday-event.jpg", label: "custom birthday fanny packs and totes" }
     ]
   },
@@ -473,8 +388,6 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/custom-vegas-shoes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-ferris-state-shoes-close-up.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-adidas-shoes-2.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-ferris-state-shoes.jpg", label: "custom painted sneakers" },
-      { image: "assets/photos/custom-adidas-shoes.jpg", label: "custom painted sneakers" },
       { image: "assets/photos/custom-tigers-shoes.jpg", label: "custom painted sneakers" }
     ]
   }
@@ -492,8 +405,8 @@ window.GALLERY_ITEMS = [
   var filterNames = {};
   window.GALLERY_FILTERS.forEach(function (f) { filterNames[f.id] = f.label; });
 
-  function photoHTML(item, photo, shape) {
-    return Site.media({ image: photo.image, label: photo.label, alt: item.caption + ": " + photo.label, color: item.color, shape: shape });
+  function photoHTML(item, photo, shape, thumb) {
+    return Site.media({ image: photo.image, label: photo.label, alt: item.caption + ": " + photo.label, color: item.color, shape: shape, thumb: thumb });
   }
   var FIRST_SHOWN = 16; // how many tiles show before "See all work"
   var showAll = false;
@@ -505,7 +418,7 @@ window.GALLERY_ITEMS = [
       return (
         '<article class="featured-card">' +
           '<button class="gallery-item__open" type="button" data-open="' + i + '" aria-label="View photos: ' + Site.escape(item.caption) + '">' +
-            photoHTML(item, item.photos[0], "portrait") +
+            photoHTML(item, item.photos[0], "portrait", true) +
             '<span class="featured-card__name">' + Site.escape(item.name) + "</span>" +
           "</button>" +
           '<div class="featured-card__body">' +
@@ -524,7 +437,7 @@ window.GALLERY_ITEMS = [
     return (
       '<article class="gallery-item" data-category="' + Site.escape(item.category) + '">' +
         '<button class="gallery-item__open" type="button" data-open="' + (i + FEATURED.length) + '" aria-label="View larger: ' + Site.escape(item.caption) + '">' +
-          photoHTML(item, item.photos[0], "square") +
+          photoHTML(item, item.photos[0], "square", true) +
           (count > 1 ? '<span class="gallery-item__count">' + count + " photos</span>" : "") +
         "</button>" +
         '<p class="gallery-item__caption">' + Site.escape(item.caption) + "</p>" +

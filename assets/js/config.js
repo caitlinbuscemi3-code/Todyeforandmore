@@ -42,7 +42,11 @@ window.SITE_CONFIG = {
     instagram: "https://www.instagram.com/_shoptodyefor",
     facebook:  "https://www.facebook.com/SH0Ptodyefor",
     tiktok:    "https://www.tiktok.com/@_shoptodyefor",
-    pinterest: ""   // no Pinterest yet: paste a link here to show the icon
+    pinterest: "",  // no Pinterest yet: paste a link here to show the icon
+
+    // "Message us on Instagram" buttons open a direct message with this account
+    // (leave "" to hide the buttons)
+    instagramMessage: "https://ig.me/m/_shoptodyefor"
   },
 
   /* ---------- Form delivery (BACKEND HOOK) ----------
@@ -56,8 +60,9 @@ window.SITE_CONFIG = {
      Tip: pick a service that supports FILE UPLOADS for the order forms. */
   forms: {
     customOrder: "", // Custom Orders page form
-    teamOrder:   "", // Team / Bulk Orders page form
-    contact:     ""  // Contact page form
+    teamOrder:   "", // Team & Bulk Orders page form
+    contact:     "", // Contact page form
+    review:      ""  // Leave a Review page form
   },
 
   /* ---------- Custom order policy text ---------- */
@@ -79,8 +84,7 @@ window.SITE_CONFIG = {
     // Apparel sizes shown in the size dropdown (for products with sizes: true)
     sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],
     extendedSizes: ["2X", "3X", "4X"],   // these sizes cost a little more…
-    extendedSizeUpcharge: 3.00,          // …this much more
-    extendedSizeNote: "Sizes 2X–4X add $3 and may take a little longer."
+    extendedSizeUpcharge: 3.00           // …this much more (shown in the size dropdown, e.g. "2X (+$3.00)")
   },
 
   /* ---------- Payments (BACKEND HOOK) ----------

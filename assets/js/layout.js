@@ -18,7 +18,7 @@
     { label: "Home",          href: "index.html" },
     { label: "Shop",          href: "shop.html" },
     { label: "Custom Orders", href: "custom-orders.html" },
-    { label: "Team & Bulk",   href: "team-orders.html" },
+    { label: "Team & Bulk Orders", href: "team-orders.html" },
     { label: "Gallery",       href: "gallery.html" },
     { label: "About",         href: "about.html" },
     { label: "Contact",       href: "contact.html" }
@@ -26,7 +26,8 @@
 
   /* ---------- Extra links shown only in the footer ---------- */
   var FOOTER_EXTRA_LINKS = [
-    { label: "FAQ & Policies", href: "faq.html" }
+    { label: "FAQ & Policies", href: "faq.html" },
+    { label: "Leave a Review", href: "reviews.html" }
   ];
 
   /* ---------- Small shared helpers (used by other scripts too) ---------- */
@@ -49,9 +50,11 @@
   // photo; otherwise it shows a colored "Coming soon" placeholder box.
   //   shape: "square", "portrait" or "wide" (keeps crops consistent)
   //   pos:   optional focus point for the crop, e.g. "center top"
+  //   thumb: true = use the small copy in assets/photos/thumbs/ (for cards and tiles)
   Site.media = function (opts) {
     if (opts.image) {
-      return '<img class="media-img' + (opts.shape ? " media-img--" + opts.shape : "") + '" src="' + Site.escape(opts.image) +
+      var src = opts.thumb ? opts.image.replace("assets/photos/", "assets/photos/thumbs/") : opts.image;
+      return '<img class="media-img' + (opts.shape ? " media-img--" + opts.shape : "") + '" src="' + Site.escape(src) +
         '" alt="' + Site.escape(opts.alt || opts.label) + '" loading="lazy"' +
         (opts.pos ? ' style="object-position:' + Site.escape(opts.pos) + '"' : "") + ">";
     }
@@ -215,7 +218,7 @@
         '<div class="footer-bottom">' +
           // Copyright years: config.js → foundedYear through the current year
           "<span>© " + (CONFIG.foundedYear || 2020) + "–" + new Date().getFullYear() + " " + Site.escape(CONFIG.businessName || "") + ". All rights reserved.</span>" +
-          "<span>Handmade to order in " + Site.escape(c.location || "Michigan") + "</span>" +
+          "<span>Handmade to order in " + Site.escape(c.location || "Metro Detroit") + "</span>" +
         "</div>" +
       "</div>";
   }
@@ -240,6 +243,15 @@
       if (linkType === "tel") el.setAttribute("href", "tel:" + String(value).replace(/[^\d+]/g, ""));
     });
     document.querySelectorAll("[data-social]").forEach(function (el) { el.innerHTML = Site.socialHTML(); });
+    // "Message us on Instagram" buttons: <a data-ig-message>…</a>
+    var dm = (CONFIG.social || {}).instagramMessage;
+    document.querySelectorAll("[data-ig-message]").forEach(function (el) {
+      if (!dm) { el.hidden = true; return; }
+      el.setAttribute("href", dm);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+      el.insertAdjacentHTML("afterbegin", ICONS.instagram);
+    });
     // Draw outlined icons: <span data-icon="gift"></span>
     document.querySelectorAll("[data-icon]").forEach(function (el) {
       el.innerHTML = Site.icon(el.getAttribute("data-icon"));

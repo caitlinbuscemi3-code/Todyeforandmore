@@ -15,6 +15,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | `about.html` | Brand story, mission, meet the maker |
 | `contact.html` | Contact form, contact info, social links |
 | `faq.html` | FAQ & Policies (linked in the footer, checkout, and order forms) |
+| `reviews.html` | Leave a Review form (approved reviews show on the Home page) |
 
 ## Where to change things
 
@@ -35,6 +36,8 @@ All photos and logos live in `assets/photos/`. They're already resized, compress
 
 To add a new photo, resize it to about 1200px on the long side first (phones take huge photos that slow the site down).
 
+Cards and gallery tiles load a smaller copy of each photo from `assets/photos/thumbs/` (same file name, about 640px) so pages load fast. When you add a photo that appears in a card or gallery tile, save a small copy there too. The link-preview image for sharing is `assets/photos/og-preview.jpg`.
+
 - **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/photos/booked-tote-bag.jpg"`.
 - **Gallery**: each tile has a `photos` list. Set each photo's `image` field, and add more lines to a tile's list to grow its "See more" slideshow.
 - **Photos written directly in a page**: replace the placeholder
@@ -45,6 +48,13 @@ To add a new photo, resize it to about 1200px on the long side first (phones tak
   ```html
   <img class="media-img" src="assets/photos/jean-jacket.jpg" alt="Hand-painted floral jean jacket">
   ```
+
+## Customer reviews
+
+1. Customers submit reviews on the **Leave a Review** page (`reviews.html`, linked in the footer and on the order confirmation).
+2. Reviews arrive in your email once a form service URL is added to `forms.review` in `assets/js/config.js`.
+3. To show a review, add it to `assets/js/reviews.js` (there's a copy-and-paste example at the top of that file).
+4. Approved reviews rotate on the Home page. The section stays hidden until the first review is added.
 
 ## Things to connect later
 

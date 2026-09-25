@@ -33,10 +33,11 @@
      customItem  – optional: what gets filled into the Custom Orders form
                    (defaults to the product name)
      sizes       – optional: true = shows a size dropdown (XS–4X).
-                   The size list and the 2X–4X upcharge are in config.js → shop.
+                   The size list and the extended-size upcharge are in config.js → shop.
      formType    – optional: which Custom Orders form option to pick
-                   ("shoes" or "baby-box")
+                   (e.g. "shoes", "tees", "beaded", "baby-box")
      priceNote   – optional: small line under the price (e.g. "plus the cost of the shoes")
+     alsoIn      – optional: extra filters an item shows up under, e.g. ["birthday"]
      styles      – optional: a list of garment styles, each with its own
                    price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
                    "price" above should match the cheapest style.
@@ -51,6 +52,8 @@ window.SHOP_CATEGORIES = [
   { id: "all",     label: "All" },
   { id: "apparel", label: "Apparel" },
   { id: "shoes",   label: "Shoes" },
+  { id: "kids",    label: "Kids & Baby" },
+  { id: "birthday", label: "Birthday Gifts" },   // items join this with alsoIn: ["birthday"]
   { id: "beaded",  label: "Beaded Embroidery" },
   { id: "drink",   label: "Tumblers" },
   { id: "bags",    label: "Totes, Bags & Tags" },
@@ -83,7 +86,7 @@ window.PRODUCTS = [
     image: "assets/photos/lions-tee-blue-2.jpg",
     label: "blue Lions t-shirt",
     color: "navy",
-    featured: 4,
+    featured: false,
     badge: "Game Day",
     sizes: true
   },
@@ -163,7 +166,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,
     category: "apparel",
-    desc: "Green “Lucky” vinyl (HTV) crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
+    desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
     image: "assets/photos/lucky-sweatshirt.jpg",
     label: "Lucky crewneck",
     color: "lime",
@@ -186,6 +189,68 @@ window.PRODUCTS = [
     sizes: true
   },
 
+  {
+    id: "group-tees",
+    name: "Custom Family & Group Tees",
+    price: 25.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "apparel",
+    desc: "Matching tees for family reunions, birthdays, trips, and teams, with your names, dates, or design.",
+    image: "assets/photos/custom-bulk-t-shirt-event-tee.jpg",
+    label: "group in matching custom tees",
+    color: "navy",
+    featured: 4,
+    badge: "Group Favorite",
+    formType: "tees",
+    alsoIn: ["birthday"]
+  },
+
+  /* ================= KIDS & BABY (made to order) ================= */
+  {
+    id: "name-sweater",
+    name: "Hand-Stitched Name Sweater",
+    price: 45.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "kids",
+    desc: "A cozy knit sweater hand-stitched with your little one’s name, in the colors of your choice.",
+    image: "assets/photos/hand-stitched-baby-sweater-custom-name.jpg",
+    label: "hand-stitched name sweater",
+    color: "blush",
+    featured: false,
+    badge: "",
+    formType: "sweater",
+    alsoIn: ["birthday"]
+  },
+  {
+    id: "baby-box",
+    name: "Custom Baby Box",
+    price: 60.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "kids",
+    desc: "4 personalized onesies, a baby blanket, a hat or bow, socks, and a bib, with the option to add shoes.",
+    image: "assets/photos/baby-box-custom-example.jpg",
+    label: "personalized baby box",
+    color: "blush",
+    featured: false,
+    badge: "Baby Shower Favorite",
+    formType: "baby-box"
+  },
+  {
+    id: "kids-jacket",
+    name: "Kids Hand-Painted Jean Jacket",
+    price: 55.00,
+    buyable: false,                      // MADE TO ORDER
+    category: "kids",
+    desc: "A one-of-a-kind denim jacket hand-painted with their name, favorite colors, and things they love.",
+    image: "assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg",
+    label: "kids hand-painted jean jacket",
+    color: "blue",
+    featured: false,
+    badge: "",
+    formType: "jacket",
+    alsoIn: ["birthday"]
+  },
+
   /* ================= SHOES ================= */
   {
     id: "shoes-custom",
@@ -201,7 +266,8 @@ window.PRODUCTS = [
     badge: "Fan Favorite",
     priceNote: "Customization price, plus the cost of the shoes.",
     customLabel: "Design My Shoes",
-    formType: "shoes"
+    formType: "shoes",
+    alsoIn: ["birthday"]
   },
 
   /* ================= BEADED EMBROIDERY ================= */
@@ -211,7 +277,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                       // READY TO BUY
     category: "beaded",
-    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or word? Customize it!",
+    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
     image: "",
     label: "Detroit beaded embroidery t-shirt",
     color: "navy",
@@ -240,7 +306,8 @@ window.PRODUCTS = [
     label: "custom beaded embroidery piece",
     color: "orange",
     featured: false,
-    badge: ""
+    badge: "",
+    alsoIn: ["birthday"]
   },
 
   /* ================= TUMBLERS ================= */
@@ -250,7 +317,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                       // READY TO BUY
     category: "drink",
-    desc: "Insulated tumbler engraved with one of our ready-made designs, like this Red Wings favorite.",
+    desc: "Insulated tumbler engraved with one of our signature designs, like this Red Wings favorite.",
     image: "assets/photos/engraved-mug-red-wings-or-team.jpg",
     label: "Red Wings engraved tumbler",
     color: "blue",
@@ -268,7 +335,8 @@ window.PRODUCTS = [
     label: "personalized tumbler",
     color: "lime",
     featured: false,
-    badge: ""
+    badge: "",
+    alsoIn: ["birthday"]
   },
 
   /* ================= TOTES, BAGS & TAGS ================= */
@@ -285,7 +353,8 @@ window.PRODUCTS = [
     featured: false,
     badge: "",
     customLabel: "Personalize It",
-    customItem: "Name or Initial Tote"
+    customItem: "Name or Initial Tote",
+    alsoIn: ["birthday"]
   },
   {
     id: "makeup-bag",
@@ -326,7 +395,8 @@ window.PRODUCTS = [
     label: "personalized blanket",
     color: "blue",
     featured: false,
-    badge: "Best Seller"
+    badge: "Best Seller",
+    alsoIn: ["birthday"]
   },
   {
     id: "stocking",

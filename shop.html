@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shop | To Dye For and More</title>
-  <meta name="description" content="Shop ready-made designs and made-to-order gifts: Detroit beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings.">
+  <meta name="description" content="Shop our signature designs and made-to-order gifts: Detroit beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings.">
+  <!-- LINK PREVIEWS: what shows when this page is shared by text or on social media.
+       Once the site has its own web address, change the image to the full address,
+       e.g. https://www.yourdomain.com/assets/photos/og-preview.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="To Dye For and More">
+  <meta property="og:title" content="Shop | To Dye For and More">
+  <meta property="og:description" content="Shop our signature designs and made-to-order gifts: Detroit beaded embroidery, tumblers, totes, makeup bags, bag tags, blankets, and stockings.">
+  <meta property="og:image" content="assets/photos/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Browser tab icon: the small "tdf" logo -->
   <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
@@ -24,7 +35,8 @@
         <div>
           <span class="eyebrow" style="background:#fff">Apparel &amp; Gifts</span>
           <h1>Shop</h1>
-          <p><strong>Ready-made</strong> designs go straight in your cart. Some are in stock and ship right away, and others are made fresh when you order (about <span data-config="turnaround.apparel">1–2 weeks</span> for apparel, <span data-config="turnaround.handmade">2–4 weeks</span> for shoes, embroidery, and hand-painted items). Love a design but want a different team, name, city, or colors? Customize it for the same price. <strong>Made to order</strong> items are created just for you after you approve a mockup. All sales are final. <a href="faq.html">Questions? See our FAQ</a>.</p>
+          <p>Shop our <strong>Signature Designs</strong>, or request something made just for you. Love a design but want a different team, name, or color? Customize it for the same price.</p>
+          <p style="margin-top:10px;font-size:0.98rem">All sales are final. <a href="faq.html">Questions? See our FAQ</a>.</p>
         </div>
         <img class="media-img media-img--portrait page-hero__photo" src="assets/photos/custom-embroidered-nike-tee-kids-super-hero.jpg" alt="Smiling boy in a custom embroidered superhero tee" style="object-position:center 35%">
       </div>
@@ -40,8 +52,8 @@
       <div class="container">
         <!-- Category filter buttons (built from SHOP_CATEGORIES in products.js) -->
         <div class="filters" data-product-filters role="toolbar" aria-label="Filter products by category"></div>
-        <!-- Second row: ready-made vs made to order -->
-        <div class="filters filters--sub" data-type-filters role="toolbar" aria-label="Filter by ready-made or made to order"></div>
+        <!-- Second row: signature designs vs made to order -->
+        <div class="filters filters--sub" data-type-filters role="toolbar" aria-label="Filter by signature designs or made to order"></div>
 
         <div class="grid grid--4" data-product-grid aria-live="polite"></div>
         <p class="text-center muted" data-product-empty hidden>Nothing here yet. Try another filter, or <a href="custom-orders.html#request-form">request something custom</a>!</p>
@@ -55,7 +67,10 @@
             <h3>Not sure what to create?</h3>
             <p>Reach out and let's discuss (I&rsquo;m a master gift giver).</p>
           </div>
-          <a class="btn btn--primary" href="contact.html">Let's Talk</a>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html">Let's Talk</a>
+            <a class="btn btn--instagram" data-ig-message href="contact.html">Message us on Instagram</a>
+          </div>
         </aside>
       </div>
     </section>
@@ -65,8 +80,8 @@
       <div class="container split">
         <!-- Before & after: a blank pair of sneakers, then a finished custom pair -->
         <div class="before-after">
-          <figure><img class="media-img media-img--square" src="assets/photos/blank-shoes-use-for-before-photo.jpg" alt="Plain white sneakers before customizing" loading="lazy"><figcaption>Before</figcaption></figure>
-          <figure><img class="media-img media-img--square" src="assets/photos/custom-chicago-shoes-nike.jpg" alt="The same style of sneakers after custom hand-painting" loading="lazy"><figcaption>After</figcaption></figure>
+          <figure><img class="media-img media-img--square" src="assets/photos/thumbs/blank-shoes-use-for-before-photo.jpg" alt="Plain white sneakers before customizing" loading="lazy"><figcaption>Before</figcaption></figure>
+          <figure><img class="media-img media-img--square" src="assets/photos/thumbs/custom-chicago-shoes-nike.jpg" alt="The same style of sneakers after custom hand-painting" loading="lazy"><figcaption>After</figcaption></figure>
         </div>
         <div>
           <span class="eyebrow" style="background:#fff">Don't see it?</span>

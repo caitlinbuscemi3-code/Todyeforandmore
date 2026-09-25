@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | To Dye For and More</title>
   <meta name="description" content="Get in touch with To Dye For and More: questions, custom ideas, and team orders.">
+  <!-- LINK PREVIEWS: what shows when this page is shared by text or on social media.
+       Once the site has its own web address, change the image to the full address,
+       e.g. https://www.yourdomain.com/assets/photos/og-preview.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="To Dye For and More">
+  <meta property="og:title" content="Contact | To Dye For and More">
+  <meta property="og:description" content="Get in touch with To Dye For and More: questions, custom ideas, and team orders.">
+  <meta property="og:image" content="assets/photos/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Browser tab icon: the small "tdf" logo -->
   <link rel="icon" href="assets/photos/tdf-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/photos/tdf-apple-touch-icon.png">
@@ -24,6 +35,7 @@
         <span class="eyebrow" style="background:#fff">Say Hi!</span>
         <h1>Contact Us</h1>
         <p>Questions, ideas, or just want to chat about a project? We'd love to hear from you.</p>
+        <p style="margin-top:10px;font-size:0.98rem">Looking for a quick answer about timing, deposits, or shipping? <a href="faq.html">Check our FAQ</a>.</p>
       </div>
     </section>
 
@@ -75,6 +87,12 @@
              All filled in automatically from assets/js/config.js
              ========================================================== -->
         <aside class="grid" style="gap:20px">
+          <!-- Quick Instagram message option (link set in config.js → social.instagramMessage) -->
+          <div class="card card--dm">
+            <h2 style="font-size:1.3rem">Prefer to DM?</h2>
+            <p class="muted">Send us a message on Instagram with your idea or question. Photos welcome!</p>
+            <a class="btn btn--instagram" data-ig-message href="contact.html">Message us on Instagram</a>
+          </div>
           <div class="card">
             <h2 style="font-size:1.3rem">Get in touch</h2>
             <ul class="info-list">

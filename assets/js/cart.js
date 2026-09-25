@@ -156,9 +156,14 @@
           return '<option value="' + sz + '">' + sz + (isExtended(sz) && UPCHARGE ? " (+" + Site.money(UPCHARGE) + ")" : "") + "</option>";
         }).join("") + "</select>" +
         '<p class="field-error" aria-live="polite"></p></div>';
-      if (EXTENDED.length) html += '<p class="product-card__hint">' + Site.escape(SHOP.extendedSizeNote || "") + "</p>";
     }
     return html ? '<div class="product-card__options">' + html + "</div>" : "";
+  }
+
+  // Which Custom Orders form option a product should pre-select.
+  // Apparel defaults to the t-shirts/hoodies option; products can override with formType.
+  function formType(p) {
+    return p.formType || (p.category === "apparel" ? "tees" : "");
   }
 
   function productCardHTML(p) {
@@ -166,7 +171,7 @@
     // (ready-made items add &mode=customize so the form asks what to change about the design)
     var customUrl = "custom-orders.html?item=" + encodeURIComponent(p.customItem || p.name) +
       (p.buyable && !p.customItem ? "&mode=customize" : "") +
-      (p.formType ? "&type=" + encodeURIComponent(p.formType) : "") + "#request-form";
+      (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") + "#request-form";
     var actions = p.buyable
       // READY-MADE: Add to Cart + customize the same design
       ? '<button class="btn btn--primary btn--small" type="button" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</button>' +
@@ -180,10 +185,10 @@
     var styleList = !p.buyable && p.styles && p.styles.length
       ? '<p class="product-card__note">' + p.styles.map(function (st) { return Site.escape(st.name) + " " + Site.money(st.price); }).join(" · ") + "</p>" : "";
     return (
-      '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-category="' + Site.escape(p.category) +
+      '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-category="' + Site.escape([p.category].concat(p.alsoIn || []).join(" ")) +
         '" data-type="' + (p.buyable ? "ready" : "custom") + '">' +
         '<div class="product-card__media">' +
-          Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square" }) +
+          Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square", thumb: true }) +
           (p.badge ? '<span class="product-card__badge">' + Site.escape(p.badge) + "</span>" : "") +
         "</div>" +
         '<div class="product-card__body">' +
@@ -231,15 +236,17 @@
     shopGrid.innerHTML = PRODUCTS.map(productCardHTML).join("");
 
     // Two sets of filters: what it is (category) and how you get it (ready-made / made to order)
+    // A link like shop.html?cat=birthday opens with that filter already chosen
+    var wanted = new URLSearchParams(location.search).get("cat");
     var state = { cat: "all", type: "all" };
     var TYPES = [
       { id: "all", label: "Everything" },
-      { id: "ready", label: "Ready-made" },
+      { id: "ready", label: "Signature Designs" },
       { id: "custom", label: "Made to order" }
     ];
     // Only show categories that actually have products
     var cats = (window.SHOP_CATEGORIES || []).filter(function (c) {
-      return c.id === "all" || PRODUCTS.some(function (p) { return p.category === c.id; });
+      return c.id === "all" || PRODUCTS.some(function (p) { return p.category === c.id || (p.alsoIn || []).indexOf(c.id) !== -1; });
     });
     function chips(list, group, active) {
       return list.map(function (c) {
@@ -248,7 +255,7 @@
     }
     function applyFilters() {
       shopGrid.querySelectorAll(".product-card").forEach(function (card) {
-        card.hidden = (state.cat !== "all" && card.getAttribute("data-category") !== state.cat) ||
+        card.hidden = (state.cat !== "all" && card.getAttribute("data-category").split(" ").indexOf(state.cat) === -1) ||
                       (state.type !== "all" && card.getAttribute("data-type") !== state.type);
       });
       var empty = document.querySelector("[data-product-empty]");
@@ -256,7 +263,8 @@
     }
     var catBox = document.querySelector("[data-product-filters]");
     var typeBox = document.querySelector("[data-type-filters]");
-    if (catBox) catBox.innerHTML = chips(cats, "cat", "all");
+    if (cats.some(function (c) { return c.id === wanted; })) state.cat = wanted;
+    if (catBox) catBox.innerHTML = chips(cats, "cat", state.cat);
     if (typeBox) typeBox.innerHTML = chips(TYPES, "type", "all");
     [catBox, typeBox].forEach(function (box) {
       if (!box) return;
@@ -268,6 +276,7 @@
         applyFilters();
       });
     });
+    applyFilters();
   }
 
   // Home page "Best Sellers" (products with featured: 1, 2, 3, 4, shown in that order)
@@ -350,7 +359,7 @@
       var extra = optionText(line);
       return (
         '<li class="cart-item">' +
-          Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square" }) +
+          Site.media({ image: p.image, label: p.label, alt: p.name, color: p.color, shape: "square", thumb: true }) +
           "<div>" +
             '<p class="cart-item__name">' + Site.escape(p.name) + "</p>" +
             (extra ? '<p class="cart-item__opts">' + Site.escape(extra) + "</p>" : "") +
