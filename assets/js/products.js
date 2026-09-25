@@ -37,6 +37,9 @@
      formType    – optional: which Custom Orders form option to pick
                    (e.g. "shoes", "tees", "beaded", "baby-box")
      priceNote   – optional: small line under the price (e.g. "plus the cost of the shoes")
+     bulk        – optional: true = a Team & Bulk item. It never shows a price;
+                   its button says "Request a Quote" and opens the Team & Bulk
+                   Orders form.
      alsoIn      – optional: extra filters an item shows up under, e.g. ["birthday"]
      styles      – optional: a list of garment styles, each with its own
                    price, e.g. [{ name: "T-shirt", price: 40 }, { name: "Hoodie", price: 55 }].
@@ -83,7 +86,7 @@ window.PRODUCTS = [
     buyable: true,
     category: "apparel",
     desc: "Our blue Lions tee, ready for game day. Want it for a different team? Customize it!",
-    image: "assets/photos/lions-tee-blue-2.jpg",
+    image: "assets/photos/lions-tee-blue-original.jpg",
     label: "blue Lions t-shirt",
     color: "navy",
     featured: false,
@@ -128,6 +131,34 @@ window.PRODUCTS = [
     image: "assets/photos/detroit-lions-tie-dye-crewnecks.jpg",
     label: "Detroit tie-dye crewneck",
     color: "blue",
+    featured: false,
+    badge: "Hand-Dyed",
+    sizes: true
+  },
+  {
+    id: "vintage-detroit-basketball-tee",
+    name: "Vintage Detroit Basketball Tee",
+    price: 25.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A throwback Detroit basketball design on a hand-dyed teal tie-dye tee.",
+    image: "assets/photos/detroit-lions-tie-dye-vintage-tee.jpg",
+    label: "vintage Detroit basketball tie-dye tee",
+    color: "blue",
+    featured: false,
+    badge: "Vintage",
+    sizes: true
+  },
+  {
+    id: "detroit-hockey-crew",
+    name: "Detroit Hockey Tie-Dye Crewneck",
+    price: 40.00,
+    buyable: true,
+    category: "apparel",
+    desc: "A bold red hand-dyed crewneck with a classic Detroit hockey design.",
+    image: "assets/photos/red-wings-team-apparel.jpg",
+    label: "Detroit hockey tie-dye crewneck",
+    color: "orange",
     featured: false,
     badge: "Hand-Dyed",
     sizes: true
@@ -191,19 +222,18 @@ window.PRODUCTS = [
 
   {
     id: "group-tees",
-    name: "Custom Family & Group Tees",
-    price: 25.00,
-    buyable: false,                      // MADE TO ORDER
+    name: "Team & Bulk Orders",
+    price: 0,
+    buyable: false,
+    bulk: true,                          // TEAM & BULK: no price, "Request a Quote"
     category: "apparel",
-    desc: "Matching tees for family reunions, birthdays, trips, and teams, with your names, dates, or design.",
+    desc: "Matching tees and gear for teams, families, reunions, trips, and events. Tell us about your group and we’ll send a custom quote.",
     image: "assets/photos/custom-bulk-t-shirt-event-tee.jpg",
     label: "group in matching custom tees",
     color: "navy",
     featured: 4,
-    badge: "Group Favorite",
-    formType: "tees",
-    alsoIn: ["birthday"]
-  },
+    badge: ""
+  },,
 
   /* ================= KIDS & BABY (made to order) ================= */
   {
@@ -237,18 +267,18 @@ window.PRODUCTS = [
   },
   {
     id: "kids-jacket",
-    name: "Kids Hand-Painted Jean Jacket",
+    name: "Hand-Painted Jean Jacket",
     price: 55.00,
     buyable: false,                      // MADE TO ORDER
-    category: "kids",
-    desc: "A one-of-a-kind denim jacket hand-painted with their name, favorite colors, and things they love.",
-    image: "assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg",
-    label: "kids hand-painted jean jacket",
+    category: "apparel",
+    desc: "A one-of-a-kind denim jacket hand-painted with a name, favorite colors, and the things they love. Made for kids and grown-ups.",
+    image: "assets/photos/hand-painted-jean-jacket-teacher.jpg",
+    label: "hand-painted Ms. Buscemi teacher jean jacket",
     color: "blue",
     featured: false,
     badge: "",
     formType: "jacket",
-    alsoIn: ["birthday"]
+    alsoIn: ["birthday", "kids"]
   },
 
   /* ================= SHOES ================= */
@@ -259,8 +289,8 @@ window.PRODUCTS = [
     buyable: false,                      // MADE TO ORDER
     category: "shoes",
     desc: "Fully custom, hand-painted sneakers designed around your idea: team colors, florals, characters, weddings, and more.",
-    image: "assets/photos/custom-chicago-nikes.jpg",
-    label: "custom hand-painted sneakers",
+    image: "assets/photos/lions-custom-shoes-2.jpg",
+    label: "custom hand-painted Lions sneakers",
     color: "orange",
     featured: 2,
     badge: "Fan Favorite",
@@ -296,7 +326,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: false,                      // CUSTOM ONLY
     category: "beaded",
-    desc: "Your name, team, city, or design in sparkly hand-sewn beaded embroidery.",
+    desc: "Your name, team, city, or design in hand-sewn beaded embroidery.",
     styles: [
       { name: "T-shirt",  price: 40.00 },
       { name: "Crewneck", price: 50.00 },
@@ -317,9 +347,9 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                       // READY TO BUY
     category: "drink",
-    desc: "Insulated tumbler engraved with one of our signature designs, like this Red Wings favorite.",
+    desc: "Insulated tumbler engraved with one of our signature designs, like this Detroit hockey favorite.",
     image: "assets/photos/engraved-mug-red-wings-or-team.jpg",
-    label: "Red Wings engraved tumbler",
+    label: "Detroit hockey engraved tumbler",
     color: "blue",
     featured: false,
     badge: ""
