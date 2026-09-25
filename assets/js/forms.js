@@ -160,12 +160,28 @@
     return !firstBad;
   }
 
+  // Leaving a field by tapping something else (like a checkbox) fires "blur" while the
+  // finger or mouse is still down. Showing an error message right then pushes the page
+  // down, and the tap lands in the wrong spot. So while a press is in progress, we wait
+  // until it's finished before showing the message.
+  var pressing = false, waiting = [];
+  document.addEventListener("pointerdown", function () { pressing = true; }, true);
+  function finishPress() {
+    pressing = false;
+    var fields = waiting; waiting = [];
+    setTimeout(function () { fields.forEach(validateField); }, 0); // after the click lands
+  }
+  document.addEventListener("pointerup", finishPress, true);
+  document.addEventListener("pointercancel", finishPress, true);
+
   // Re-check a field as soon as the visitor leaves it or fixes it
   function attachLiveValidation(form) {
     form.setAttribute("novalidate", ""); // use our friendly messages instead of the browser's
     form.addEventListener("blur", function (e) {
       var f = e.target;
-      if (f.matches("input, select, textarea") && f.type !== "checkbox" && f.type !== "radio" && f.type !== "file") validateField(f);
+      if (!f.matches("input, select, textarea") || f.type === "checkbox" || f.type === "radio" || f.type === "file") return;
+      if (pressing) { if (waiting.indexOf(f) === -1) waiting.push(f); }
+      else validateField(f);
     }, true);
     form.addEventListener("input", function (e) {
       if (e.target.getAttribute("aria-invalid") === "true") validateField(e.target);
@@ -215,7 +231,10 @@
       body: new FormData(form),
       headers: { Accept: "application/json" }
     }).then(function (res) {
-      if (!res.ok) throw new Error("Form service responded with " + res.status);
+      if (res.ok) return;
+      return res.text().then(function (body) {
+        throw new Error("Form service responded with " + res.status + ": " + body);
+      });
     });
   }
 
@@ -229,9 +248,9 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!validateForm(form)) return;
-      // Spam trap: real people never fill in the hidden "_gotcha" field
-      var trap = form.querySelector('[name="_gotcha"]');
-      if (trap && trap.value) return;
+      // Spam trap: the hidden "_gotcha" field is sent along, and Formspree quietly
+      // discards anything a bot filled in. (We don't stop it here, so a real person
+      // whose browser autofills it by mistake never gets stuck on a button that does nothing.)
 
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending…";
