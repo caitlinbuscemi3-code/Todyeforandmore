@@ -15,6 +15,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | `about.html` | Brand story, mission, meet the maker |
 | `contact.html` | Contact form, contact info, social links |
 | `faq.html` | FAQ & Policies (linked in the footer, checkout, and order forms) |
+| `reviews.html` | Leave a Review form (approved reviews show on the Home page) |
 
 ## Where to change things
 
@@ -47,6 +48,13 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
   ```html
   <img class="media-img" src="assets/photos/jean-jacket.jpg" alt="Hand-painted floral jean jacket">
   ```
+
+## Customer reviews
+
+1. Customers submit reviews on the **Leave a Review** page (`reviews.html`, linked in the footer and on the order confirmation).
+2. Reviews arrive in your email once a form service URL is added to `forms.review` in `assets/js/config.js`.
+3. To show a review, add it to `assets/js/reviews.js` (there's a copy-and-paste example at the top of that file).
+4. Approved reviews rotate on the Home page. The section stays hidden until the first review is added.
 
 ## Things to connect later
 

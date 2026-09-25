@@ -26,7 +26,8 @@
 
   /* ---------- Extra links shown only in the footer ---------- */
   var FOOTER_EXTRA_LINKS = [
-    { label: "FAQ & Policies", href: "faq.html" }
+    { label: "FAQ & Policies", href: "faq.html" },
+    { label: "Leave a Review", href: "reviews.html" }
   ];
 
   /* ---------- Small shared helpers (used by other scripts too) ---------- */
@@ -242,6 +243,15 @@
       if (linkType === "tel") el.setAttribute("href", "tel:" + String(value).replace(/[^\d+]/g, ""));
     });
     document.querySelectorAll("[data-social]").forEach(function (el) { el.innerHTML = Site.socialHTML(); });
+    // "Message us on Instagram" buttons: <a data-ig-message>…</a>
+    var dm = (CONFIG.social || {}).instagramMessage;
+    document.querySelectorAll("[data-ig-message]").forEach(function (el) {
+      if (!dm) { el.hidden = true; return; }
+      el.setAttribute("href", dm);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+      el.insertAdjacentHTML("afterbegin", ICONS.instagram);
+    });
     // Draw outlined icons: <span data-icon="gift"></span>
     document.querySelectorAll("[data-icon]").forEach(function (el) {
       el.innerHTML = Site.icon(el.getAttribute("data-icon"));

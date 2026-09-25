@@ -42,7 +42,11 @@ window.SITE_CONFIG = {
     instagram: "https://www.instagram.com/_shoptodyefor",
     facebook:  "https://www.facebook.com/SH0Ptodyefor",
     tiktok:    "https://www.tiktok.com/@_shoptodyefor",
-    pinterest: ""   // no Pinterest yet: paste a link here to show the icon
+    pinterest: "",  // no Pinterest yet: paste a link here to show the icon
+
+    // "Message us on Instagram" buttons open a direct message with this account
+    // (leave "" to hide the buttons)
+    instagramMessage: "https://ig.me/m/_shoptodyefor"
   },
 
   /* ---------- Form delivery (BACKEND HOOK) ----------
@@ -57,7 +61,8 @@ window.SITE_CONFIG = {
   forms: {
     customOrder: "", // Custom Orders page form
     teamOrder:   "", // Team & Bulk Orders page form
-    contact:     ""  // Contact page form
+    contact:     "", // Contact page form
+    review:      ""  // Leave a Review page form
   },
 
   /* ---------- Custom order policy text ---------- */

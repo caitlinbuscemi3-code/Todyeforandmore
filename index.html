@@ -176,6 +176,22 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         CUSTOMER REVIEWS: approved reviews rotate here.
+         Reviews come from assets/js/reviews.js. This section stays
+         hidden until at least one review is added there.
+         ============================================================ -->
+    <section class="section section--blush" aria-labelledby="reviews-title" data-reviews-section hidden>
+      <div class="container" style="max-width:820px">
+        <div class="section-head">
+          <span class="eyebrow" style="background:#fff">Kind Words</span>
+          <h2 id="reviews-title">From our customers</h2>
+        </div>
+        <div class="reviews" data-reviews></div>
+        <p class="text-center" style="margin-top:28px"><a class="btn btn--outline" href="reviews.html">Leave a Review</a></p>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER: built automatically by assets/js/layout.js (info comes from config.js) -->
@@ -186,5 +202,6 @@
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/cart.js"></script>
+  <script src="assets/js/reviews.js"></script>
 </body>
 </html>
