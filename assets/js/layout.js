@@ -49,9 +49,11 @@
   // photo; otherwise it shows a colored "Coming soon" placeholder box.
   //   shape: "square", "portrait" or "wide" (keeps crops consistent)
   //   pos:   optional focus point for the crop, e.g. "center top"
+  //   thumb: true = use the small copy in assets/photos/thumbs/ (for cards and tiles)
   Site.media = function (opts) {
     if (opts.image) {
-      return '<img class="media-img' + (opts.shape ? " media-img--" + opts.shape : "") + '" src="' + Site.escape(opts.image) +
+      var src = opts.thumb ? opts.image.replace("assets/photos/", "assets/photos/thumbs/") : opts.image;
+      return '<img class="media-img' + (opts.shape ? " media-img--" + opts.shape : "") + '" src="' + Site.escape(src) +
         '" alt="' + Site.escape(opts.alt || opts.label) + '" loading="lazy"' +
         (opts.pos ? ' style="object-position:' + Site.escape(opts.pos) + '"' : "") + ">";
     }

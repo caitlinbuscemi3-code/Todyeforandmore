@@ -35,6 +35,8 @@ All photos and logos live in `assets/photos/`. They're already resized, compress
 
 To add a new photo, resize it to about 1200px on the long side first (phones take huge photos that slow the site down).
 
+Cards and gallery tiles load a smaller copy of each photo from `assets/photos/thumbs/` (same file name, about 640px) so pages load fast. When you add a photo that appears in a card or gallery tile, save a small copy there too. The link-preview image for sharing is `assets/photos/og-preview.jpg`.
+
 - **Shop products**: set the `image` field to your photo path, e.g. `image: "assets/photos/booked-tote-bag.jpg"`.
 - **Gallery**: each tile has a `photos` list. Set each photo's `image` field, and add more lines to a tile's list to grow its "See more" slideshow.
 - **Photos written directly in a page**: replace the placeholder

@@ -405,8 +405,8 @@ window.GALLERY_ITEMS = [
   var filterNames = {};
   window.GALLERY_FILTERS.forEach(function (f) { filterNames[f.id] = f.label; });
 
-  function photoHTML(item, photo, shape) {
-    return Site.media({ image: photo.image, label: photo.label, alt: item.caption + ": " + photo.label, color: item.color, shape: shape });
+  function photoHTML(item, photo, shape, thumb) {
+    return Site.media({ image: photo.image, label: photo.label, alt: item.caption + ": " + photo.label, color: item.color, shape: shape, thumb: thumb });
   }
   var FIRST_SHOWN = 16; // how many tiles show before "See all work"
   var showAll = false;
@@ -418,7 +418,7 @@ window.GALLERY_ITEMS = [
       return (
         '<article class="featured-card">' +
           '<button class="gallery-item__open" type="button" data-open="' + i + '" aria-label="View photos: ' + Site.escape(item.caption) + '">' +
-            photoHTML(item, item.photos[0], "portrait") +
+            photoHTML(item, item.photos[0], "portrait", true) +
             '<span class="featured-card__name">' + Site.escape(item.name) + "</span>" +
           "</button>" +
           '<div class="featured-card__body">' +
@@ -437,7 +437,7 @@ window.GALLERY_ITEMS = [
     return (
       '<article class="gallery-item" data-category="' + Site.escape(item.category) + '">' +
         '<button class="gallery-item__open" type="button" data-open="' + (i + FEATURED.length) + '" aria-label="View larger: ' + Site.escape(item.caption) + '">' +
-          photoHTML(item, item.photos[0], "square") +
+          photoHTML(item, item.photos[0], "square", true) +
           (count > 1 ? '<span class="gallery-item__count">' + count + " photos</span>" : "") +
         "</button>" +
         '<p class="gallery-item__caption">' + Site.escape(item.caption) + "</p>" +
