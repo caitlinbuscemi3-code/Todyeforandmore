@@ -465,7 +465,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["holiday"],
     desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
-    image: "assets/photos/lucky-sweatshirt.jpg",
+    image: "assets/photos/lucky-crewneck-cropped.jpg",
     label: "Lucky crewneck",
     color: "lime",
     featured: false,
@@ -576,7 +576,7 @@ window.PRODUCTS = [
       { image: "assets/photos/custom-bridal-shoes.jpg", label: "white bridal sneakers with lace details" },
       { image: "assets/photos/custom-chicago-shoes-nike.jpg", label: "red and white sneakers with splatter detail" },
       { image: "assets/photos/custom-ferris-state-shoes.jpg", label: "red and gold college sneakers" },
-      { image: "assets/photos/custom-cleats-2.jpg", label: "custom football cleats" },
+      { image: "assets/photos/custom-cleats-2-cropped.jpg", label: "custom football cleats" },
       { image: "assets/photos/tigers-featured-shoe.jpg", label: "Detroit skyline and 313 details" }
     ]
   },
@@ -598,7 +598,7 @@ window.PRODUCTS = [
     priceNote: "Plus the cost of the shoes.",
     morePhotos: [
       { image: "assets/photos/custom-baby-shoes.jpg", label: "rainbow baby sneakers" },
-      { image: "assets/photos/custom-kids-vans.jpg", label: "checkered kids slip-ons with a name and number" },
+      { image: "assets/photos/kids-checkered-slip-ons-cropped.jpg", label: "checkered kids slip-ons with a name and number" },
       { image: "assets/photos/kids-custom-shoes-disney-minnie-mouse.jpg", label: "pink polka dot kids sneakers with a name" }
     ]
   },
@@ -640,7 +640,10 @@ window.PRODUCTS = [
     badge: "",
     formType: "jacket",
     morePhotos: [
-      { image: "assets/photos/custom-jean-jacket-kids-hand-painted.jpg", label: "the ENZO jacket out for a walk" }
+      { image: "assets/photos/custom-jean-jacket-kids-hand-painted.jpg", label: "the ENZO jacket out for a walk" },
+      { image: "assets/photos/custom-kids-hand-painted-jean-jacket-design.jpg", label: "the Everly jacket with flowers and a smiley face" },
+      { image: "assets/photos/kids-custom-jean-jacket.jpg", label: "matching Ayla and Amelia jackets" },
+      { image: "assets/photos/custom-hand-painted-jean-jacket-kids.jpg", label: "the Gia jacket" }
     ]
   },
   {
@@ -656,7 +659,12 @@ window.PRODUCTS = [
     color: "blue",
     featured: false,
     badge: "",
-    formType: "jacket"
+    formType: "jacket",
+    morePhotos: [
+      { image: "assets/photos/hand-painted-jean-jacket-custom-sports.jpg", label: "sports jean jacket with team logos" },
+      { image: "assets/photos/custom-painted-jean-jacket-1.jpg", label: "custom painted jean jacket" },
+      { image: "assets/photos/eras-tour-jean-jacket.jpg", label: "Eras Tour jean jacket" }
+    ]
   },
 
   /* ================= BABY ================= */

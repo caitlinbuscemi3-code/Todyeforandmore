@@ -192,6 +192,9 @@ ul { padding-left: 1.2em; }
 .btn--block { width: 100%; }
 .btn[disabled] { opacity: 0.55; cursor: not-allowed; transform: none; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Buttons that should all be the same width (Home page hero) */
+.btn-row--equal { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.btn-row--equal .btn { width: 100%; justify-content: center; text-align: center; }
 
 /* =====================================================================
    PLACEHOLDER IMAGES
@@ -433,7 +436,7 @@ ul { padding-left: 1.2em; }
 .product-card__body { padding: 14px 6px 4px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
 .product-card__name { font-size: 1.12rem; margin: 0; }
 .product-card__desc { font-size: 0.92rem; color: var(--color-text-muted); margin: 0 0 8px; }
-.product-card__price { font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--color-secondary); margin: auto 0 12px; }
+.product-card__price { font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--color-secondary); margin: 0 0 4px; }
 .product-card__type {
   align-self: flex-start; margin: 0 0 4px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
@@ -448,7 +451,7 @@ ul { padding-left: 1.2em; }
 .product-card__options label { font-size: 0.82rem; }
 .product-card__options select { padding: 8px 10px; font-size: 0.92rem; }
 .product-card__hint { font-size: 0.78rem; color: var(--color-text-muted); margin: -4px 0 0; }
-.product-card__actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.product-card__actions { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: auto; }
 
 /* Filter chips (Shop + Gallery) */
 .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px; }
@@ -936,3 +939,8 @@ a.chip { text-decoration: none; }
 .insta-grid__item img { transition: transform 0.3s ease; }
 .insta-grid__item:hover img { transform: scale(1.04); }
 @media (max-width: 760px) { .insta-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } }
+
+/* Shop page: "Size help" link under the filters, and the small note above the footer */
+.shop-size-help { margin: -6px 0 18px; text-align: right; font-size: 0.9rem; font-weight: 600; }
+.shop-fine-print { padding: 22px 0; text-align: center; }
+.shop-fine-print p { margin: 0; font-size: 0.85rem; color: var(--color-text-muted); }

@@ -11,15 +11,14 @@
    "Request a Quote".
 
    Product details (names, prices, photos, links) live in assets/js/products.js.
-   Sizes, shipping, and turnaround times live in assets/js/config.js.
+   Tiles show only the name, price, short description and button; sizing,
+   shipping and turnaround details are on the FAQ page.
    ===================================================================== */
 
 (function () {
   "use strict";
 
   var Site = window.Site;
-  var CONFIG = window.SITE_CONFIG || {};
-  var SHOP = CONFIG.shop || {};
   var PRODUCTS = window.PRODUCTS || [];
 
   // price: null in products.js = "Price coming soon"
@@ -44,23 +43,6 @@
     });
   })();
 
-  /* ---------- Sizes & ship times (config.js → shop, turnaround) ---------- */
-  var SIZES = SHOP.sizes || [];
-  var KIDS_SIZES = SHOP.kidsSizes || [];
-  var UPCHARGE = Number(SHOP.extendedSizeUpcharge || 0);
-  var EXTENDED = SHOP.extendedSizes || [];
-  var TURNAROUND = CONFIG.turnaround || {};
-  function shipTime(p) { return TURNAROUND[p.ships || "apparel"] || ""; }
-  var SHIPPING_NOTE = "Flat $" + Number(SHOP.shippingFlatRate || 8) + " shipping. Sales tax calculated at checkout.";
-
-  // e.g. "Sizes XS–4X (2X–4X +$3)" or "Kids sizes 12M–Youth XL"
-  function sizeText(p) {
-    if (p.sizes === "kids") return KIDS_SIZES.length ? "Kids sizes " + KIDS_SIZES[0] + "–" + KIDS_SIZES[KIDS_SIZES.length - 1] : "";
-    if (!p.sizes || !SIZES.length) return "";
-    return "Sizes " + SIZES[0] + "–" + SIZES[SIZES.length - 1] +
-      (EXTENDED.length && UPCHARGE ? " (" + EXTENDED[0] + "–" + EXTENDED[EXTENDED.length - 1] + " +" + Site.money(UPCHARGE) + ")" : "");
-  }
-
   // Which Custom Orders form option a product should pre-select.
   // Apparel defaults to the t-shirts/hoodies option; products can override with formType.
   function formType(p) {
@@ -76,12 +58,6 @@
       p.morePhotos.map(function (ph) {
         return Site.media({ image: ph.image, label: ph.label, alt: p.name + ": " + ph.label, color: p.color, shape: "square", thumb: true });
       }).join("") + "</div>";
-  }
-
-  // Style prices, e.g. "T-shirt $25 · Crewneck $40 · Hoodie $45"
-  function styleList(p) {
-    return p.styles && p.styles.length > 1
-      ? '<p class="product-card__note">' + p.styles.map(function (st) { return Site.escape(st.name) + " " + Site.money(st.price); }).join(" · ") + "</p>" : "";
   }
 
   function productCardHTML(p) {
@@ -122,15 +98,6 @@
       : ready ? Site.money(p.price)
       : '<span class="product-card__from">Starting at</span> ' + Site.money(p.price);
 
-    var sizes = ready ? sizeText(p) : "";
-    var sizeNote = sizes
-      ? '<p class="product-card__hint">' + Site.escape(sizes) + ". " +
-        (p.sizes === "kids"
-          ? 'Need a different size? <a href="custom-orders.html?item=' + encodeURIComponent(p.name + " (different size)") +
-            (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") + '#request-form">Submit a custom request</a>.'
-          : 'Unisex sizing. <a href="faq.html#sizing">Size help</a>') +
-        "</p>" : "";
-
     return (
       '<article class="product-card" data-product="' + Site.escape(p.id) + '" data-tags="' + Site.escape((p.tags || []).join(" ")) +
         '" data-type="' + (p.buyable ? "ready" : "custom") + '">' +
@@ -142,26 +109,11 @@
           // Label only the made-to-order items (ready-made items have no label)
           (p.bulk ? '<p class="product-card__type product-card__type--custom">Team &amp; Bulk</p>'
             : p.buyable ? "" : '<p class="product-card__type product-card__type--custom">Made to order</p>') +
+          // Kept simple: name, price, short description, button.
+          // (Sizing, shipping and turnaround details live on the FAQ page.)
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
-          '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" +
           (price ? '<p class="product-card__price">' + price + "</p>" : "") +
-          (p.priceNote ? '<p class="product-card__note">' + Site.escape(p.priceNote) + "</p>" : "") +
-          styleList(p) +
-          (p.bulk ? '<p class="product-card__note" style="margin-top:auto">Every group order gets its own quote.</p>'
-            : p.buyable && noPriceYet
-            ? '<p class="product-card__note">Ask us about pricing and sizes.</p>'
-            : p.buyable && p.designOnly
-            ? '<p class="product-card__note">This design is available as shown; style options may vary. <a href="custom-orders.html?item=' +
-              encodeURIComponent(p.name + " (different style)") + '&type=tees#request-form">Ask about another style</a></p>'
-            : p.buyable
-            ? '<p class="product-card__note">Want it customized? Same price.</p>'
-            : '<p class="product-card__note">Made just for you after you approve a mockup.</p>') +
-          // Ready-to-buy: when it ships, plus shipping & tax before they buy
-          (ready && shipTime(p) ? '<p class="product-card__note">Made when you order. Ships in about ' + Site.escape(shipTime(p)) + ".</p>" : "") +
-          (ready ? '<p class="product-card__note"><strong>' + Site.escape(SHIPPING_NOTE) + "</strong>" +
-            (link && (p.sizes || (p.styles && p.styles.length > 1)) ? " You'll choose your " + (p.styles && p.styles.length > 1 ? "style and size" : "size") + " on the next page." : "") +
-            "</p>" : "") +
-          sizeNote +
+          (p.desc ? '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" : "") +
           '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
       "</article>"

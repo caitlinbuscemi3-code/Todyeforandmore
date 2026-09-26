@@ -134,10 +134,10 @@ window.GALLERY_ITEMS = [
     ]
   },
   {
-    category: "apparel", caption: "Concert Tour Jean Jacket", color: "blush",
+    category: "apparel", caption: "Eras Tour Jean Jacket", color: "blush",
     photos: [
-      { image: "assets/photos/hand-painted-jean-jacket-taylor-swift-eras.jpg", label: "hand-painted concert tour jean jacket" },
-      { image: "assets/photos/hand-painted-jean-jacket-eras-tour-taylor-swift-2.jpg", label: "hand-painted concert tour jean jacket" }
+      { image: "assets/photos/eras-tour-jean-jacket.jpg", label: "hand-painted Eras Tour jean jacket" },
+      { image: "assets/photos/eras-tour-jean-jacket-2.jpg", label: "hand-painted Eras Tour jean jacket" }
     ]
   },
   {
@@ -147,8 +147,19 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/hand-stitched-baby-sweater-custom-name.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/custom-baby-hand-stitched-sweater.jpg", label: "hand-stitched kids name sweater" },
       { image: "assets/photos/custom-kids-hand-stitched-sweater.jpg", label: "hand-stitched kids name sweater" },
-      { image: "assets/photos/custom-hand-stitched-kids-sweater-letter-flower.jpg", label: "hand-stitched kids name sweater" },
-      { image: "assets/photos/hand-stitched-kids-lions-sweater.jpg", label: "hand-stitched kids name sweater" }
+      { image: "assets/photos/hand-stitched-baby-sweater-custom.jpg", label: "hand-stitched kids name sweater" }
+    ]
+  },
+  {
+    category: "baby", caption: "Hand-Stitched Letter Sweater", color: "blush",
+    photos: [
+      { image: "assets/photos/custom-hand-stitched-kids-sweater-letter-flower.jpg", label: "hand-stitched kids letter sweater with flowers" }
+    ]
+  },
+  {
+    category: "baby", caption: "Hand-Stitched Lions Sweater", color: "navy",
+    photos: [
+      { image: "assets/photos/hand-stitched-kids-lions-sweater.jpg", label: "hand-stitched kids Lions sweater" }
     ]
   },
   {
@@ -185,8 +196,7 @@ window.GALLERY_ITEMS = [
     category: "team", caption: "Bachelor Party Jerseys", color: "navy",
     photos: [
       { image: "assets/photos/custom-bulk-jerseys-bachelor.jpg", label: "custom bachelor party jerseys" },
-      { image: "assets/photos/bulk-jerseys-bachelor-party.jpg", label: "custom bachelor party jerseys" },
-      { image: "assets/photos/custom-bachelor-party-jerseys-bulk-birthday.jpg", label: "custom bachelor party jerseys" }
+      { image: "assets/photos/bulk-jerseys-bachelor-party.jpg", label: "custom bachelor party jerseys" }
     ]
   },
   {
@@ -243,7 +253,7 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/custom-red-wings-high-top-shoes.jpg", label: "custom Detroit hockey high-top sneakers" },
       { image: "assets/photos/custom-red-wings-shoes-high-top.jpg", label: "custom Detroit hockey high-top sneakers" },
       { image: "assets/photos/custom-redwing-shoes.jpg", label: "custom Detroit hockey high-top sneakers" },
-      { image: "assets/photos/custom-red-wings-high-tops.jpg", label: "custom Detroit hockey high-top sneakers" }
+      { image: "assets/photos/detroit-hockey-high-tops-cropped.jpg", label: "custom Detroit hockey high-top sneakers" }
     ]
   },
   {
@@ -294,7 +304,7 @@ window.GALLERY_ITEMS = [
       { image: "assets/photos/custom-kids-shoes-disney-cars.jpg", label: "custom kids race car sneakers" },
       { image: "assets/photos/custom-baby-nike-shoes.jpg", label: "custom baby character sneakers" },
       { image: "assets/photos/custom-baby-shoes.jpg", label: "rainbow baby sneakers" },
-      { image: "assets/photos/custom-kids-vans.jpg", label: "checkered kids slip-ons with a name and number" },
+      { image: "assets/photos/kids-checkered-slip-ons-cropped.jpg", label: "checkered kids slip-ons with a name and number" },
       { image: "assets/photos/minnie-mouse-disney-shoe-kids-custom.jpg", label: "pink polka dot kids sneakers" },
       { image: "assets/photos/minnie-mouse-kids-disney-shoe.jpg", label: "pink polka dot kids sneakers" },
       { image: "assets/photos/kids-custom-shoes-disney-minnie-mouse.jpg", label: "pink polka dot kids sneakers with a name" }
@@ -353,7 +363,7 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/custom-cleats.jpg", label: "custom football cleats" },
       { image: "assets/photos/custom-cleats-3.jpg", label: "custom football cleats" },
-      { image: "assets/photos/custom-cleats-2.jpg", label: "custom blue football cleats with a number" }
+      { image: "assets/photos/custom-cleats-2-cropped.jpg", label: "custom blue football cleats with a number" }
     ]
   },
   {
@@ -370,8 +380,8 @@ window.GALLERY_ITEMS = [
     photos: [
       { image: "assets/photos/happy-camper-embroidered-crewnecks.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/tis-the-season-tee-embroidered.jpg", label: "embroidered crewnecks and tees" },
-      { image: "assets/photos/lucky-sweatshirt.jpg", label: "embroidered crewnecks and tees" },
-      { image: "assets/photos/custom-t-shirt-example.jpg", label: "embroidered crewnecks and tees" },
+      { image: "assets/photos/lucky-crewneck-cropped.jpg", label: "embroidered crewnecks and tees" },
+      { image: "assets/photos/grandma-is-wicked-tees-cropped.jpg", label: "embroidered crewnecks and tees" },
       { image: "assets/photos/book-t-shirt.jpg", label: "embroidered crewnecks and tees" }
     ]
   },
@@ -401,7 +411,7 @@ window.GALLERY_ITEMS = [
     category: "gifts", caption: "Birthday Fanny Packs & Totes", color: "lime",
     photos: [
       { image: "assets/photos/custom-fanny-pack-birthday-event-bulk.jpg", label: "custom birthday fanny packs and totes" },
-      { image: "assets/photos/custom-bags-bulk-birthday-event.jpg", label: "custom birthday fanny packs and totes" }
+      { image: "assets/photos/birthday-totes-cropped.jpg", label: "custom birthday fanny packs and totes" }
     ]
   }
 ];
