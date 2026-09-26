@@ -18,11 +18,11 @@ window.SITE_CONFIG = {
   foundedYear: 2020,                 // copyright line reads "© 2020–(this year)"
 
   /* ---------- Web address ----------
-     Once you have your own domain, put the full address here, e.g.
-     "https://www.todyeforandmore.com" (no slash at the end).
-     Google uses it as each page's main address. Also update the same
-     address in sitemap.xml and robots.txt (both in the main folder). */
-  siteUrl: "",
+     The site's full address (no slash at the end). Google uses it as
+     each page's main address. If it ever changes, also update it in
+     sitemap.xml, robots.txt, and the link-preview tags at the top of
+     each page (find & replace the old address). */
+  siteUrl: "https://www.shop-todyefor.com",
 
   /* ---------- Logo ----------
      Logo files live in assets/photos/. These are transparent PNGs made

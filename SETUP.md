@@ -136,8 +136,11 @@ me the embed code. I'll put it in that section.
 - [ ] Send a real test from each form and confirm it arrives
 - [ ] Square connected and a test order placed (section 2)
 - [ ] Shippo tracking emails turned on (section 3)
-- [ ] Domain connected, then `siteUrl` in `config.js`, `sitemap.xml`, and
-      `robots.txt` updated (see README → Search engines)
+- [x] Domain connected (www.shop-todyefor.com), and `siteUrl` in `config.js`,
+      `sitemap.xml`, `robots.txt`, and each page's preview tags updated
+- [ ] In the Square Online store, point any "back to website" or "continue
+      shopping" links to https://www.shop-todyefor.com
+- [ ] Submit the sitemap in Google Search Console (see README → Search engines)
 - [ ] Holiday banner dates checked in `config.js` → `announcement`
 - [ ] "Coming soon" photos replaced (Detroit Beaded Embroidery, makeup bag,
       bag tag, stocking, and your About photo)

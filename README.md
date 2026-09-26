@@ -70,18 +70,19 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 
 Already built in: page titles and descriptions written with the words people search for, business details Google can read (from `config.js`, added by `assets/js/seo.js`), FAQ questions in a search-readable format, and a "main address" tag on every page.
 
-Once the site is live on your own domain:
+The site is live at **https://www.shop-todyefor.com**. That address is set in `siteUrl` in `assets/js/config.js`, `sitemap.xml`, `robots.txt`, and the "main address" and link-preview tags at the top of each page. All other links and photos use relative paths, so they work on any address.
 
-1. Put your address in `siteUrl` in `assets/js/config.js`, e.g. `"https://www.todyeforandmore.com"`.
-2. In `sitemap.xml`, find and replace `https://www.YOUR-DOMAIN.com` with the same address.
-3. In `robots.txt`, do the same on the `Sitemap:` line and remove the `#` in front of it.
-4. Add the site to [Google Search Console](https://search.google.com/search-console) and submit `sitemap.xml`.
-5. Create a free [Google Business Profile](https://www.google.com/business/) (you can list Metro Detroit as a service area without showing an address) and link it to the site.
+Still to do:
 
-If you add a new page, add it to `sitemap.xml` and include `<script src="assets/js/seo.js"></script>` after `layout.js`, like the other pages.
+1. Add the site to [Google Search Console](https://search.google.com/search-console) and submit `https://www.shop-todyefor.com/sitemap.xml`.
+2. Create a free [Google Business Profile](https://www.google.com/business/) (you can list Metro Detroit as a service area without showing an address) and link it to the site.
+
+If the address ever changes, find and replace it in those files. Leave the `CNAME` file alone: GitHub Pages uses it to connect the domain.
+
+If you add a new page, add it to `sitemap.xml`, copy the head tags from another page (changing the `canonical` and `og:url` addresses to the new page), and include `<script src="assets/js/seo.js"></script>` after `layout.js`, like the other pages.
 
 ## Previewing on your computer
 Double-click `index.html` to open it in your browser. Or, for the most accurate preview, run `python3 -m http.server` in this folder and visit http://localhost:8000.
 
 ## Hosting
-Free options include **Netlify** (drag and drop the folder), **GitHub Pages**, or **Cloudflare Pages**.
+The site is hosted on **GitHub Pages** with the custom domain www.shop-todyefor.com (set by the `CNAME` file and in the repository's Settings → Pages).

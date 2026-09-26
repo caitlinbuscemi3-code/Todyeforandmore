@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- PAGE LIST FOR SEARCH ENGINES
-     Once you have your domain, replace every "https://www.YOUR-DOMAIN.com"
-     below with your real address (use find & replace), then submit this file
-     in Google Search Console (search.google.com/search-console).
+     Submit this file in Google Search Console (search.google.com/search-console):
+     https://www.shop-todyefor.com/sitemap.xml
      Add a <url> block here whenever you add a new page to the site. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.YOUR-DOMAIN.com/</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/shop.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/custom-orders.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/team-orders.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/gallery.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/about.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/contact.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/faq.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/reviews.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/wedding.html</loc></url>
-  <url><loc>https://www.YOUR-DOMAIN.com/privacy.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/</loc></url>
+  <url><loc>https://www.shop-todyefor.com/shop.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/custom-orders.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/team-orders.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/gallery.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/about.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/contact.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/faq.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/reviews.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/wedding.html</loc></url>
+  <url><loc>https://www.shop-todyefor.com/privacy.html</loc></url>
 </urlset>
