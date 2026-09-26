@@ -27,6 +27,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Business name, tagline, email, phone, social links** | `assets/js/config.js` |
 | **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
+| **Search** (header search bar) | Each product's hidden `keywords` in `assets/js/products.js`. Custom and team services that aren't Shop products are in `SEARCH_PAGES` in `assets/js/search.js` |
 | **Shipping cost, tax, deposit %, turnaround times** | `assets/js/config.js` |
 | **Apparel sizes & the 2X–4X upcharge** | `assets/js/config.js` (under `shop`) |
 | **Page wording** | The page's `.html` file |

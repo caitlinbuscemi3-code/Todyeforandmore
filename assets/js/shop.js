@@ -115,8 +115,10 @@
           '<h3 class="product-card__name">' + Site.escape(p.name) + "</h3>" +
           (price ? '<p class="product-card__price">' + price + "</p>" : "") +
           (p.desc ? '<p class="product-card__desc">' + Site.escape(p.desc) + "</p>" : "") +
-          '<div class="product-card__actions">' + actions + "</div>" +
         "</div>" +
+        // Buttons sit in their own row so they line up across every tile in a row
+        // (main button first, custom button second, on every tile)
+        '<div class="product-card__actions">' + actions + "</div>" +
       "</article>"
     );
   }
@@ -184,6 +186,27 @@
       });
     });
     applyFilters();
+
+    // Search results link to an item with shop.html#item-<id>: show it and highlight it
+    cards.forEach(function (card) { card.id = "item-" + card.getAttribute("data-product"); });
+    function showLinkedItem() {
+      var card = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!card || !card.classList.contains("product-card")) return;
+      if (card.hidden) {
+        // a filter is hiding it, so go back to showing everything
+        state.cat = "all"; state.type = "all";
+        [catBox, typeBox].forEach(function (box) {
+          if (box) box.querySelectorAll("[data-filter]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === "all")); });
+        });
+        applyFilters();
+      }
+      setTimeout(function () { card.scrollIntoView({ block: "center" }); }, 0);
+      cards.forEach(function (c) { c.classList.remove("is-found"); });
+      card.classList.add("is-found");
+      setTimeout(function () { card.classList.remove("is-found"); }, 2500);
+    }
+    window.addEventListener("hashchange", showLinkedItem);
+    showLinkedItem();
   }
 
   // Home page "Best Sellers" (products with featured: 1, 2, 3, 4, shown in that order)
