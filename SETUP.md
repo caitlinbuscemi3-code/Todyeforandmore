@@ -51,10 +51,9 @@ review form asks customers to reply by email with a photo.
 
 ### Good to know
 
-- **Photo uploads:** the Custom Order, Team & Bulk, and Review forms let
-  people attach photos. Formspree needs a **paid plan for file uploads**, so
-  check their current pricing page. Without it, the text still sends but
-  the photos don't.
+- **Photo uploads:** the forms don't have upload boxes, because Formspree
+  needs a **paid plan for file uploads**. Customers email photos after they
+  submit. If you upgrade later, upload boxes can be added back.
 - **Free plan limits:** Formspree's free plan has a monthly submission limit.
   If you get close, upgrade or move the busiest form (usually Custom Orders)
   to a paid plan.

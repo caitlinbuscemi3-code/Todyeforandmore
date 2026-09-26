@@ -54,7 +54,7 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 ## Customer reviews
 
 1. Customers submit reviews on the **Leave a Review** page (`reviews.html`, linked in the footer and on the order confirmation).
-2. Reviews arrive in your email once a form service URL is added to `forms.review` in `assets/js/config.js`.
+2. Reviews arrive in your email through Formspree (`forms.review` in `assets/js/config.js`).
 3. To show a review, add it to `assets/js/reviews.js` (there's a copy-and-paste example at the top of that file).
 4. Approved reviews rotate on the Home page. The section stays hidden until the first review is added.
 
@@ -62,7 +62,7 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 
 **Step-by-step instructions are in [SETUP.md](SETUP.md)**: forms (Formspree), payments (Square), shipping (Shippo), and a launch checklist.
 
-1. **Form emails.** All forms validate input and show a thank-you message. To actually receive submissions, sign up for a form service such as [Formspree](https://formspree.io) (pick one that supports file uploads) and paste each form's URL into `forms` in `assets/js/config.js`.
+1. **Form emails.** All five forms are connected to [Formspree](https://formspree.io) (the addresses are in `forms` in `assets/js/config.js`). They validate input and show a thank-you message.
 2. **Payments.** Ready-to-buy items are paid through **Square payment links**. Paste each item's link into `squareLink` in `assets/js/products.js`; items without a link show "Coming soon." See SETUP.md.
 
 ## Search engines (SEO)
