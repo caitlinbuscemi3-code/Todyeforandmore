@@ -93,13 +93,13 @@ window.SITE_CONFIG = {
   },
 
   /* ---------- Shop settings ----------
-     Payments happen on Square: each ready-to-buy item's "Buy Now" button
-     opens its Square payment link (set in assets/js/products.js → squareLink).
+     Payments happen in the Square Online store: each ready-to-buy item's
+     "Add to Cart" button opens its store page (assets/js/products.js → storeLink).
      Square charges the shipping and calculates sales tax; these settings
      only control what the site SAYS, so keep them matching Square. */
   shop: {
     currencySymbol: "$",
-    shippingFlatRate: 8.00,      // shown as "Flat $8 shipping" (set the same amount in Square)
+    shippingFlatRate: 8.00,      // shown as "Flat $8 shipping per order" (set the same amount in Square)
 
     // Apparel sizes shown on product cards (for products with sizes: true)
     sizes: ["XS", "S", "M", "L", "XL", "2X", "3X", "4X"],

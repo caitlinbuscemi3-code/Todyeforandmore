@@ -7,8 +7,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | File | Page |
 |---|---|
 | `index.html` | Home: hero, shop-by-category, best sellers, "how custom orders work" |
-| `shop.html` | Shop: ready-made items (Buy Now → Square payment link) and made-to-order items (Request Custom) |
-| `thank-you.html` | Where customers land after paying on Square |
+| `shop.html` | Shop: ready-made items (Add to Cart → the item's page in the Square Online store) and made-to-order items (Request Custom) |
 | `custom-orders.html` | Shoes, apparel, baby sweaters & baby boxes + custom request form |
 | `team-orders.html` | Team/bulk use cases + team quote form |
 | `gallery.html` | Filterable gallery of past work with "See more" slideshows |
@@ -63,11 +62,11 @@ Cards and gallery tiles load a smaller copy of each photo from `assets/photos/th
 **Step-by-step instructions are in [SETUP.md](SETUP.md)**: forms (Formspree), payments (Square), shipping (Shippo), and a launch checklist.
 
 1. **Form emails.** All five forms are connected to [Formspree](https://formspree.io) (the addresses are in `forms` in `assets/js/config.js`). They validate input and show a thank-you message.
-2. **Payments.** Ready-to-buy items are paid through **Square payment links**. Paste each item's link into `squareLink` in `assets/js/products.js`; items without a link show "Coming soon." See SETUP.md.
+2. **Payments.** Ready-to-buy items are sold in the **Square Online store**. Each item's "Add to Cart" button opens its store page, set in `storeLink` in `assets/js/products.js`; items without a link show "Coming soon." See SETUP.md.
 
 ## Search engines (SEO)
 
-Already built in: page titles and descriptions written with the words people search for, business details Google can read (from `config.js`, added by `assets/js/seo.js`), FAQ questions in a search-readable format, a "main address" tag on every page, and the thank-you page kept out of search results.
+Already built in: page titles and descriptions written with the words people search for, business details Google can read (from `config.js`, added by `assets/js/seo.js`), FAQ questions in a search-readable format, and a "main address" tag on every page.
 
 Once the site is live on your own domain:
 
