@@ -17,6 +17,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | `reviews.html` | Leave a Review form (approved reviews show on the Home page) |
 | `wedding.html` | Weddings: bridal shoes, bridal party apparel, favors, gifts, and when to order |
 | `privacy.html` | Privacy Policy & Terms of Sale (linked in the footer) |
+| `search.html` | Search Results: every matching item as Shop tiles (opened from the header search bar, e.g. `search.html?q=red+wings`) |
 
 ## Where to change things
 
@@ -27,7 +28,7 @@ A multi-page website for custom apparel, shoes, team gear, and gifts. It's built
 | **Business name, tagline, email, phone, social links** | `assets/js/config.js` |
 | **Shop products & prices** (and whether each item is ready to buy or custom only) | `assets/js/products.js` |
 | **Gallery photos** | `assets/js/gallery.js` |
-| **Search** (header search bar) | Each product's hidden `keywords` in `assets/js/products.js`. Custom and team services that aren't Shop products are in `SEARCH_PAGES` in `assets/js/search.js` |
+| **Search** (header search bar + results page) | Each product's hidden `keywords` in `assets/js/products.js`. Custom and team services that aren't Shop products are in `SEARCH_SERVICES` in `assets/js/search.js`, and the categories shown when nothing matches are in `POPULAR` there too |
 | **Shipping cost, tax, deposit %, turnaround times** | `assets/js/config.js` |
 | **Apparel sizes & the 2X–4X upcharge** | `assets/js/config.js` (under `shop`) |
 | **Page wording** | The page's `.html` file |
