@@ -205,7 +205,7 @@
           '<div class="footer-brand">' + brandHTML(false, true) +
             "<p>" + Site.escape(CONFIG.tagline || "") + "</p>" + Site.socialHTML() +
           "</div>" +
-          "<div><h4>Explore</h4><ul class=\"footer-links\">" +
+          "<div><h4>Explore</h4><ul class=\"footer-links footer-links--2col\">" +
             NAV_LINKS.concat(FOOTER_EXTRA_LINKS).map(function (l) { return '<li><a href="' + l.href + '">' + l.label + "</a></li>"; }).join("") +
           "</ul></div>" +
           // Email sign-up (config.js → forms.newsletter)

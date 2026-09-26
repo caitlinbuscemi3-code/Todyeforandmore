@@ -42,6 +42,9 @@
      category    – what kind of item it is (apparel, shoes, kids, beaded,
                    drink, bags, home, wedding). Apparel opens the t-shirts &
                    hoodies option on the Custom Orders form.
+     keywords    – search only, never shown: other words people might search for,
+                   like team names and nicknames, colors, occasions, who it's for,
+                   and misspellings (e.g. "red wings redwings hockey tie dye tiedye")
      tags        – which Shop filters it shows under: "gifts", "kids",
                    "sports", "wedding", "holiday" (any number, or [] for none;
                    everything shows under "All")
@@ -101,6 +104,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan crewneck crew neck sweatshirt sweater pullover applique appliqué patch stitched grey gray women men mom dad gift present", // search only (never shown)
     image: "assets/photos/lions-applique-crew-custom-team.jpg",
     label: "Lions appliqué crewneck",
     color: "blue",
@@ -119,6 +123,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Our blue Lions tee, ready for game day.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan t-shirt tshirt t shirt tee top light women men mom dad gift present", // search only (never shown)
     image: "assets/photos/lions-tee-blue-original.jpg",
     label: "blue Lions t-shirt",
     color: "navy",
@@ -137,6 +142,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A vintage-style Detroit Lions football graphic on a black tee.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan t-shirt tshirt t shirt tee top vintage retro throwback graphic skeleton black men dad gift present", // search only (never shown)
     image: "assets/photos/lions-graphic-tee-vintage.jpg",
     label: "vintage Detroit Lions graphic tee",
     color: "navy",
@@ -155,6 +161,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Big block “Detroit” lettering over a vintage football badge.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan t-shirt tshirt t shirt tee top vintage retro throwback grey gray block letters badge men women dad mom gift present", // search only (never shown)
     image: "assets/photos/vintage-lions-tee.jpg",
     label: "vintage Detroit football tee",
     color: "blue",
@@ -173,6 +180,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A fierce lion head in shades and a “Grit” cap, for Detroit fans with heart.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan grit lion head sunglasses shades cap hat t-shirt tshirt t shirt tee top crewneck crew neck sweatshirt sweater pullover hoodie hoody hooded black grey gray men women dad mom gift present", // search only (never shown)
     image: "assets/photos/grit-lion-tee.jpg",
     label: "Lions Grit lion head design",
     color: "navy",
@@ -196,6 +204,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A throwback Detroit football player charging across a cream design.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan vintage retro throwback cream tan beige player t-shirt tshirt t shirt tee top crewneck crew neck sweatshirt sweater pullover hoodie hoody hooded men women dad mom gift present", // search only (never shown)
     image: "assets/photos/vintage-cream-detroit-football-crew.jpg",
     label: "vintage cream Detroit football design",
     color: "blue",
@@ -218,6 +227,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Embroidered Detroit football design on a soft black tee.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan embroidered embroidery stitched t-shirt tshirt t shirt tee top black women men mom dad gift present", // search only (never shown)
     image: "assets/photos/detroit-embroidered-football-tee.jpg",
     label: "Detroit embroidered football tee",
     color: "blue",
@@ -235,6 +245,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Hand-dyed blue and white Detroit crewneck. Every one is a little different!",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan tie-dye tie dye tiedye tye bleach dyed hand-dyed crewneck crew neck sweatshirt sweater pullover white women men mom gift present", // search only (never shown)
     image: "assets/photos/detroit-lions-tie-dye-crewnecks.jpg",
     label: "Detroit tie-dye crewneck",
     color: "blue",
@@ -252,6 +263,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A team name embroidered in script on a soft tee. Shown in Detroit football, and we can make it for any team!",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan any team custom name script embroidered embroidery stitched t-shirt tshirt t shirt tee top black women mom girlfriend wife gift present", // search only (never shown)
     image: "assets/photos/detroit-lions-embroidered-tee.jpg",
     label: "embroidered Detroit football tee",
     color: "navy",
@@ -275,6 +287,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A clean “Sunday Social Club” design with a lion crest, made for game day brunch and beyond.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan sunday social club brunch lion crest t-shirt tshirt t shirt tee top white cream women mom gift present", // search only (never shown)
     image: "assets/photos/sunday-social-tee-lions.jpg",
     label: "Sunday Social tee",
     color: "blue",
@@ -293,6 +306,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "An embroidered football and “’tis the season” script on a warm brown tee, made for football season.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan tis the season fall autumn embroidered embroidery stitched t-shirt tshirt t shirt tee top brown women mom gift present christmas holiday xmas", // search only (never shown)
     image: "assets/photos/tis-the-season-tee-embroidered.jpg",
     label: "brown ’Tis the Season tee",
     color: "orange",
@@ -310,6 +324,7 @@ window.PRODUCTS = [
     category: "kids",
     tags: ["kids", "gifts", "sports"],
     desc: "A cozy knit sweater hand-stitched with “Lions” in chunky script, ready for game day.",
+    keywords: "lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan kids kid child children toddler baby youth boy girl hand-stitched hand stitched handstitched knit sweater chunky black shower gift present christmas holiday xmas", // search only (never shown)
     image: "assets/photos/hand-stitched-kids-lions-sweater.jpg",
     label: "hand-stitched kids Lions sweater",
     color: "navy",
@@ -330,6 +345,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A playful purple octopus over stacked “Detroit” lettering, a nod to a classic Detroit hockey tradition.",
+    keywords: "red wings redwings hockey nhl winged wheel white sports game day fan octopus octopi throw purple pink detroit t-shirt tshirt t shirt tee top crewneck crew neck sweatshirt sweater pullover hoodie hoody hooded men women dad mom gift present", // search only (never shown)
     image: "assets/photos/detroit-octopus-tee.jpg",
     label: "Detroit octopus design",
     color: "blush",
@@ -352,6 +368,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A bold red hand-dyed crewneck with a classic Detroit hockey design.",
+    keywords: "red wings redwings hockey nhl winged wheel white sports game day fan tie-dye tie dye tiedye tye bleach dyed hand-dyed crewneck crew neck sweatshirt sweater pullover women men mom dad gift present", // search only (never shown)
     image: "assets/photos/red-wings-team-apparel.jpg",
     label: "Detroit hockey tie-dye crewneck",
     color: "orange",
@@ -372,6 +389,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A throwback Detroit basketball design on a hand-dyed teal tie-dye tee.",
+    keywords: "pistons basketball nba sports game day fan bad boys vintage retro throwback tie-dye tie dye tiedye tye bleach dyed teal blue t-shirt tshirt t shirt tee top men women dad mom gift present", // search only (never shown)
     image: "assets/photos/detroit-lions-tie-dye-vintage-tee.jpg",
     label: "vintage Detroit basketball tie-dye tee",
     color: "blue",
@@ -392,6 +410,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "A leaping tiger with classic Detroit baseball lettering, made to feel like a vintage find.",
+    keywords: "tigers detroit baseball mlb old english d sports game day fan tiger vintage retro throwback cream orange navy t-shirt tshirt t shirt tee top crewneck crew neck sweatshirt sweater pullover hoodie hoody hooded men women dad mom gift present", // search only (never shown)
     image: "assets/photos/vintage-detroit-baseball-tee.jpg",
     label: "vintage Detroit baseball design",
     color: "orange",
@@ -416,6 +435,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: [],
     desc: "Embroidered mountain scene crewneck for your coziest camping days.",
+    keywords: "happy camper camping camp mountains outdoors hiking nature lake up north embroidered embroidery stitched crewneck crew neck sweatshirt sweater pullover cream tan women men mom grandma gift present", // search only (never shown)
     image: "assets/photos/happy-camper-embroidered-crewnecks.jpg",
     label: "Happy Camper embroidered crewneck",
     color: "lime",
@@ -433,6 +453,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: [],
     desc: "A tiny embroidered sunflower on a soft pastel hoodie.",
+    keywords: "sunflower flower floral yellow pastel embroidered embroidery stitched hoodie hoody hooded sweatshirt women mom grandma teen girl gift present", // search only (never shown)
     image: "assets/photos/sunflower-embroidered-hoodie.jpg",
     label: "sunflower embroidered hoodie",
     color: "lime",
@@ -450,6 +471,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["gifts"],
     desc: "Flowers blooming from an open book, for every reader you know.",
+    keywords: "book lover reader reading bookish books library librarian teacher gift appreciation flowers floral t-shirt tshirt t shirt tee top pink mauve women mom grandma present birthday", // search only (never shown)
     image: "assets/photos/book-t-shirt.jpg",
     label: "book lover t-shirt",
     color: "blush",
@@ -467,6 +489,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["holiday"],
     desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
+    keywords: "lucky shamrock clover st patricks day pattys paddys saint patrick irish green holiday march crewneck crew neck sweatshirt sweater pullover women men mom", // search only (never shown)
     image: "assets/photos/lucky-crewneck-cropped.jpg",
     label: "Lucky crewneck",
     color: "lime",
@@ -486,6 +509,7 @@ window.PRODUCTS = [
     category: "beaded",
     tags: ["gifts"],
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
+    keywords: "beaded beads beadwork bead embroidery embroidered sequins detroit city sparkle bling t-shirt tshirt t shirt tee top women mom gift present", // search only (never shown)
     image: "",
     label: "Detroit beaded embroidery t-shirt",
     color: "navy",
@@ -506,6 +530,7 @@ window.PRODUCTS = [
     category: "beaded",
     tags: ["gifts"],
     desc: "Your name, team, city, or design in hand-sewn beaded embroidery.",
+    keywords: "beaded beads beadwork bead embroidery embroidered sequins sparkle bling custom name team city logo personalized t-shirt tshirt t shirt tee top crewneck crew neck sweatshirt sweater pullover hoodie hoody hooded jacket women mom gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/beaded-embroidery-custom.jpg",
     label: "custom beaded embroidery piece",
     color: "orange",
@@ -529,6 +554,7 @@ window.PRODUCTS = [
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A big hand-stitched initial trimmed with little flowers. After you order, we’ll email you to get the letter and colors.",
+    keywords: "letter initial monogram name flowers floral kids kid child children toddler baby infant girl boy hand-stitched hand stitched handstitched knit sweater pink purple lavender shower newborn keepsake gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/custom-hand-stitched-kids-sweater-letter-flower.jpg",
     label: "hand-stitched kids letter sweater",
     color: "blush",
@@ -544,6 +570,7 @@ window.PRODUCTS = [
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A cozy knit sweater hand-stitched with your little one’s name, in the colors of your choice.",
+    keywords: "name personalized kids kid child children toddler baby infant girl boy hand-stitched hand stitched handstitched knit sweater shower newborn keepsake pink blue gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/hand-stitched-baby-sweater-custom-name.jpg",
     label: "hand-stitched name sweater",
     color: "blush",
@@ -561,6 +588,7 @@ window.PRODUCTS = [
     category: "shoes",
     tags: ["gifts", "sports"],
     desc: "Fully custom, hand-painted sneakers designed around your idea: team colors, company logos, weddings, characters, and more.",
+    keywords: "shoes sneakers kicks custom painted hand-painted hand handpainted air force 1 af1 high tops cleats team lions detroit honolulu blue silver football nfl sports game day gameday tailgate fan red wings redwings hockey nhl winged wheel white tigers baseball mlb old english d wedding company logo characters men women teen coach gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/lions-custom-shoes-2.jpg",
     label: "custom hand-painted Lions sneakers",
     color: "orange",
@@ -590,6 +618,7 @@ window.PRODUCTS = [
     category: "shoes",
     tags: ["kids", "gifts"],
     desc: "Little kicks, big personality: hand-painted with their favorite characters, colors, or name.",
+    keywords: "kids kid child children toddler youth baby boy girl shoes sneakers kicks slip ons custom painted hand-painted hand handpainted characters cartoon toy story name first birthday gift present christmas holiday xmas", // search only (never shown)
     image: "assets/photos/toy-story-custom-kids-shoes-nike-disney.jpg",
     label: "custom hand-painted kids sneakers",
     color: "blue",
@@ -612,6 +641,7 @@ window.PRODUCTS = [
     category: "shoes",
     tags: ["wedding", "gifts"],
     desc: "Sneakers or slip-ons for the bride, painted with lace, pearls, her new name, or your wedding date.",
+    keywords: "bride bridal wedding shoes sneakers slip ons custom painted hand-painted hand handpainted lace pearls white mrs new name date reception engagement shower gift present", // search only (never shown)
     image: "assets/photos/custom-bridal-shoes.jpg",
     label: "hand-painted bridal sneakers",
     color: "blush",
@@ -635,6 +665,7 @@ window.PRODUCTS = [
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A one-of-a-kind denim jacket hand-painted with their name, favorite colors, and the things they love.",
+    keywords: "jean jacket denim jeans custom painted hand-painted hand handpainted kids kid child children toddler youth boy girl name gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/jean-jacket-kids-hand-painted.jpg",
     label: "hand-painted ENZO kids jean jacket",
     color: "blue",
@@ -656,6 +687,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["gifts"],
     desc: "A one-of-a-kind denim jacket hand-painted with a name, a message, or the things you love, like this teacher favorite.",
+    keywords: "jean jacket denim jeans custom painted hand-painted hand handpainted teacher gift appreciation mrs bride concert tour eras women mom present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/hand-painted-jean-jacket-teacher.jpg",
     label: "hand-painted Ms. Buscemi teacher jean jacket",
     color: "blue",
@@ -678,6 +710,7 @@ window.PRODUCTS = [
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "4 personalized onesies, a baby blanket, a hat or bow, socks, and a bib, with the option to add shoes.",
+    keywords: "baby box gift keepsake shower newborn new pregnancy announcement gender reveal onesies onesie blanket bib socks hat bow infant personalized name present", // search only (never shown)
     image: "assets/photos/baby-box-custom-example.jpg",
     label: "personalized baby box",
     color: "blush",
@@ -695,6 +728,7 @@ window.PRODUCTS = [
     category: "bags",
     tags: ["gifts"],
     desc: "A sturdy canvas tote embroidered with a name, initials, or a design of your choice.",
+    keywords: "tote bag canvas beach book personalized name initials monogram embroidered embroidery teacher gift bridesmaid mom grandma present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/custom-embroidered-name-tote-bag.jpg",
     label: "embroidered name tote bag",
     color: "lime",
@@ -714,7 +748,8 @@ window.PRODUCTS = [
     storeLink: "https://todyeforandmore.square.site/product/bookish-tote/KGCT2T3TE3RPYOTRS6D5AULN?cp=true&sa=true&sbIp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "bags",
     tags: ["gifts"],
-    desc: "Our embroidered bookish design on a sturdy canvas tote.",
+    desc: "Our embroidered bookish design on a sturdy canvas tote. Bag tag sold separately.",
+    keywords: "tote bag canvas book bookish books reader reading library librarian booked teacher gift embroidered embroidery women present", // search only (never shown)
     image: "assets/photos/booked-tote-bag.jpg",
     label: "bookish design canvas tote bag",
     color: "lime",
@@ -729,6 +764,7 @@ window.PRODUCTS = [
     category: "bags",
     tags: ["gifts", "wedding"],
     desc: "Personalized zip pouch, perfect for bridesmaids, travel, and gifting.",
+    keywords: "makeup bag make up cosmetic toiletry zip pouch pencil personalized name initials bridesmaid proposal bridal party wedding bachelorette travel women mom gift present birthday christmas holiday xmas", // search only (never shown)
     image: "",
     label: "personalized makeup bag",
     color: "blush",
@@ -743,6 +779,7 @@ window.PRODUCTS = [
     category: "bags",
     tags: ["gifts", "sports"],
     desc: "Custom tags for sports bags, backpacks, and luggage.",
+    keywords: "bag tag luggage backpack name sports team personalized number coach kids school gift present birthday", // search only (never shown)
     image: "",
     label: "personalized bag tag",
     color: "orange",
@@ -761,6 +798,7 @@ window.PRODUCTS = [
     category: "drink",
     tags: ["gifts", "sports"],
     desc: "Insulated tumbler engraved with one of our signature designs, like this Detroit hockey favorite.",
+    keywords: "red wings redwings hockey nhl winged wheel white sports game day fan tumbler cup mug drinkware engraved laser insulated travel stainless men dad coach gift present christmas holiday xmas", // search only (never shown)
     image: "assets/photos/engraved-mug-red-wings-or-team.jpg",
     label: "Detroit hockey engraved tumbler",
     color: "blue",
@@ -775,6 +813,7 @@ window.PRODUCTS = [
     category: "drink",
     tags: ["gifts", "sports"],
     desc: "Personalized with a name, team, or design of your choice.",
+    keywords: "tumbler cup mug drinkware engraved laser insulated travel stainless personalized name team logo coach teacher gift bridesmaid groomsmen dad mom present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/custom-team-engraved-bulk-tumblers.jpg",
     label: "personalized tumbler",
     color: "lime",
@@ -791,6 +830,7 @@ window.PRODUCTS = [
     category: "home",
     tags: ["gifts"],
     desc: "A super-soft throw personalized with a name, photo, or design. The ultimate snuggly gift.",
+    keywords: "blanket throw fleece personalized name photo picture cozy baby home mom grandma gift present birthday christmas holiday xmas", // search only (never shown)
     image: "assets/photos/embroidered-blanket-name.jpg",
     label: "personalized blanket",
     color: "blue",
@@ -805,6 +845,7 @@ window.PRODUCTS = [
     category: "home",
     tags: ["holiday", "gifts"],
     desc: "Plush stocking personalized with a name or design. Hang it with care!",
+    keywords: "christmas stocking holiday stockings personalized name xmas santa family kids gift present", // search only (never shown)
     image: "",
     label: "personalized holiday stocking",
     color: "navy",
@@ -822,6 +863,7 @@ window.PRODUCTS = [
     category: "wedding",
     tags: ["wedding"],
     desc: "Matching embroidered shirts, bachelorette tees, and “just married” crewnecks for the whole bridal party.",
+    keywords: "bride bridal party bridesmaid bridesmaids maid of honor bachelorette bach just married mrs wedding embroidered embroidery shirts tees crewnecks matching group bulk", // search only (never shown)
     image: "assets/photos/bridal-party-embroidered-shirts.jpg",
     label: "embroidered bridal party shirts",
     color: "blush",
@@ -841,6 +883,7 @@ window.PRODUCTS = [
     category: "wedding",
     tags: ["wedding"],
     desc: "Custom koozies and favors for your guests, plus gifts and accessories for the bridal party.",
+    keywords: "wedding favors party koozies koozie coozies can cooler guest gifts groomsmen bridesmaids reception bachelorette bachelor birthday shower bulk", // search only (never shown)
     image: "assets/photos/custom-wedding-coozies-bulk.jpg",
     label: "custom koozie wedding favors",
     color: "navy",
@@ -861,6 +904,7 @@ window.PRODUCTS = [
     category: "apparel",
     tags: ["sports"],
     desc: "Matching tees and gear for teams, families, reunions, trips, and events. Tell us about your group and we’ll send a custom quote.",
+    keywords: "team bulk group matching shirts tees uniforms jerseys coach coaches mom sports league school club family reunion company business staff event fundraiser 5k church bachelorette trip quote", // search only (never shown)
     image: "assets/photos/custom-bulk-t-shirt-event-tee.jpg",
     label: "group in matching custom tees",
     color: "navy",
