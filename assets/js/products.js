@@ -6,9 +6,9 @@
    below), so keep similar items together.
 
    There are three kinds of items:
-     • READY TO BUY (buyable: true): shows "Buy Now", which opens the
-       item's Square payment link (squareLink), plus a "Customize This
-       Design" button. Without a link it shows "Coming soon".
+     • READY TO BUY (buyable: true): shows "Add to Cart", which opens the
+       item's page in the Square Online store (storeLink), plus a "Customize
+       This Design" button. Without a link it shows "Coming soon".
          - add designOnly: true for designs that only come as shown
            (no customize button; shows "This design is available as shown")
      • CUSTOM ONLY (buyable: false): shows a "Request Custom" button
@@ -27,10 +27,12 @@
                    items this is the "Starting at" price.
                    Use null to show "Price coming soon" (the item can't be
                    bought until it has a price).
-     buyable     – true = ready to buy (Buy Now), false = custom only
-     squareLink  – ready-to-buy items: the item's Square payment link, e.g.
-                   "https://square.link/u/AbCdEf12". Leave "" to show "Coming soon".
-                   The customer picks the style and size on Square's page.
+     buyable     – true = ready to buy (Add to Cart), false = custom only
+     storeLink   – ready-to-buy items: the item's page in the Square Online store,
+                   e.g. "https://todyeforandmore.square.site/product/lions-grit/...".
+                   Copy it from the product page in your store. Leave "" to show
+                   "Coming soon". The customer picks the style and size, adds it
+                   to the cart and checks out in the store.
      designOnly  – optional: true = sold only as shown, no customizing
      ships       – ready-to-buy items: how long until it ships, "apparel" or
                    "handmade" (the times are in config.js → turnaround)
@@ -95,7 +97,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/RKOn93cJ",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/lions-appliqu-crewneck/Z22WIPA2F2JUZFBM7GEWKLZN?cs=true&cst=custom", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
@@ -112,7 +114,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/NTwEFj9k",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/blue-lions-tee/LEUPCLAJQQBW2D2TF3BOTFLK?cs=true&cst=custom", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -130,7 +132,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/EhX6Y14D",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/vintage-detroit-lions-graphic-tee/F3S3ZPNJHYP3IBRQFWRCQ5UT?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -148,7 +150,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/v5h5LCa8",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/vintage-detroit-football-tee/JCTWCACNUAQBWKV2VSLSGR3V?cp=true&sa=true&sbp=false&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -166,7 +168,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/Nn1dev7V",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/lions-grit/IJC5IYICK77GBXFST4FL3X4B?cp=true&sa=true&sbp=false&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -189,7 +191,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/vSo0vMgO",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/vintage-cream-detroit-football/FDTUJ65A2253ABJSTW3BOLWX?cp=true&sa=false&sbp=false&q=false&category_id=BRQ7TKFIA2D3EEIPY5YR37BT", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -212,7 +214,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/LPsX5PIR",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/detroit-embroidered-football-tee/ZHH7VHXF7G453EIPGZNT6QXC?cp=true&sa=false&sbp=false&q=false&category_id=BRQ7TKFIA2D3EEIPY5YR37BT", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Embroidered Detroit football design on a soft black tee.",
@@ -229,7 +231,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/YWZ31t00",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/detroit-tie-dye-crewneck/FVM5EBBIUYXO6GS5U4OYLCIA?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Hand-dyed blue and white Detroit crewneck. Every one is a little different!",
@@ -246,7 +248,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/bTvG6TvG",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/embroidered-team-tee/ASXQLZNDXDVSUFDDEHGB355M?cp=true&sa=false&sbp=false&q=false&category_id=BRQ7TKFIA2D3EEIPY5YR37BT", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A team name embroidered in script on a soft tee. Shown in Detroit football, and we can make it for any team!",
@@ -269,7 +271,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/CveoAsib",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/sunday-social-tee/5OVPF3A6G2BE3I3LH6WOZT3L?cp=true&sa=false&sbp=false&q=false&category_id=BRQ7TKFIA2D3EEIPY5YR37BT", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A clean “Sunday Social Club” design with a lion crest, made for game day brunch and beyond.",
@@ -286,7 +288,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/7tEFYMO3",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/-tis-the-season-tee/GPDRHX4ONY2B7PLBZ5A3YZPO?cp=true&sa=false&sbp=false&q=false&category_id=BRQ7TKFIA2D3EEIPY5YR37BT", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -304,7 +306,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/YUDwvgZr",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/hand-stitched-kids-sweater-lions/GFYOXW3IB7CMEZUPYMVS54J7?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "kids",
     tags: ["kids", "gifts", "sports"],
     desc: "A cozy knit sweater hand-stitched with “Lions” in chunky script, ready for game day.",
@@ -323,7 +325,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/NxWgMwDv",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/detroit-octopus/QCUNXF645REVEGLPIDMLKZ7S?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -346,7 +348,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/1ub6ATZz",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/detroit-hockey-tie-dye-crewneck/HIYGZ52K555LAIWETHAJJCOQ?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A bold red hand-dyed crewneck with a classic Detroit hockey design.",
@@ -365,7 +367,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/hUqam47T",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/vintage-detroit-basketball-tee/URYXBQJ4FZWU7A7P7OSXKXPF?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -385,7 +387,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/ZRUFzICW",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/vintage-detroit-baseball/SMTKDY3FRSNMYEJVNBDR3VP7?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -410,7 +412,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/WVYG7DeG",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/happy-camper-embroidered-crewneck/HYSPRDHJYFXT2NMSYLIHHLK2?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: [],
     desc: "Embroidered mountain scene crewneck for your coziest camping days.",
@@ -427,7 +429,7 @@ window.PRODUCTS = [
     price: 50.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/v4aEY0R7",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/sunflower-embroidered-hoodie/5LTAUZJ3ROUDFFA6QQ7Y7PG3?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: [],
     desc: "A tiny embroidered sunflower on a soft pastel hoodie.",
@@ -444,7 +446,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/5kkCfqlu",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/book-lover-tee/4DFDDMY454EB4622BJIQIRZH?si=true", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["gifts"],
     desc: "Flowers blooming from an open book, for every reader you know.",
@@ -461,7 +463,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/ImKpKHSh",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/lucky-crewneck/ALKWEACD4JWYOBNJJZMRHX6C?si=true", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["holiday"],
     desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
@@ -480,7 +482,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/uMNdAfJy",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/detroit-beaded-embroidery/ONV7FLSMWJEM537IIGWJTQXY?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "beaded",
     tags: ["gifts"],
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
@@ -523,7 +525,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/s79K39SN",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/hand-stitched-kids-sweater-letter/3RXTOOVYOGBSQMH43C62C7N7?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A big hand-stitched initial trimmed with little flowers. After you order, we’ll email you to get the letter and colors.",
@@ -709,7 +711,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "https://square.link/u/md9IYBHJ",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/bookish-tote/KGCT2T3TE3RPYOTRS6D5AULN?cp=true&sa=true&sbIp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "bags",
     tags: ["gifts"],
     desc: "Our embroidered bookish design on a sturdy canvas tote.",
@@ -755,7 +757,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "https://square.link/u/1bPSUO9b",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    storeLink: "https://todyeforandmore.square.site/product/engraved-tumbler/TC67PAMALFSCHLAHA4D6VI7Q?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "drink",
     tags: ["gifts", "sports"],
     desc: "Insulated tumbler engraved with one of our signature designs, like this Detroit hockey favorite.",

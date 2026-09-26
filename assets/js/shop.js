@@ -1,12 +1,13 @@
 /* =====================================================================
    SHOP — product cards on the Shop page and the Home "Best Sellers"
    ---------------------------------------------------------------------
-   Ready-to-buy items are paid for through Square payment links:
-   each one's "Buy Now" button opens its link (products.js → squareLink),
-   where the customer picks a style and size, pays, and comes back to
-   thank-you.html. There's no cart or checkout on this site.
+   Ready-to-buy items are sold in the Square Online store: each one's
+   "Add to Cart" button opens that item's store page (products.js → storeLink)
+   in the same tab, where the customer picks a style and size, adds it to the
+   cart and checks out. The store has the cart, checkout and order confirmation,
+   and combines shipping for multi-item orders.
 
-   An item without a Square link shows "Coming soon" instead of "Buy Now".
+   An item without a store link shows "Coming soon" instead of "Add to Cart".
    Made-to-order items show "Request Custom", Team & Bulk items show
    "Request a Quote".
 
@@ -24,21 +25,21 @@
   // price: null in products.js = "Price coming soon"
   function priceSoon(p) { return p.price === null || p.price === undefined; }
 
-  // A real Square payment link (anything else, like "" or a placeholder, counts as no link)
-  var SQUARE_LINK = /^https:\/\/(square\.link|checkout\.square\.site|[a-z0-9-]+\.square\.site)\//i;
+  // A real product page in the Square Online store (anything else, like "" or a placeholder, counts as no link)
+  var STORE_LINK = /^https:\/\/todyeforandmore\.square\.site\/product\//i;
   var PLACEHOLDER = /placeholder|your-?link|example|xxxx|todo|paste/i;
-  function squareLink(p) {
-    var url = String(p.squareLink || "").trim();
-    return p.buyable && !priceSoon(p) && SQUARE_LINK.test(url) && !PLACEHOLDER.test(url) ? url : "";
+  function storeLink(p) {
+    var url = String(p.storeLink || "").trim();
+    return p.buyable && !priceSoon(p) && STORE_LINK.test(url) && !PLACEHOLDER.test(url) ? url : "";
   }
 
   // Two products sharing one link would sell the wrong item, so flag it in the browser console
   (function warnDuplicateLinks() {
     var seen = {};
     PRODUCTS.forEach(function (p) {
-      var url = squareLink(p);
+      var url = storeLink(p);
       if (!url) return;
-      if (seen[url]) console.warn("Two products share the same Square link: " + seen[url] + " and " + p.name + " (" + url + ")");
+      if (seen[url]) console.warn("Two products share the same store link: " + seen[url] + " and " + p.name + " (" + url + ")");
       else seen[url] = p.name;
     });
   })();
@@ -67,15 +68,15 @@
       (p.buyable && !p.customItem ? "&mode=customize" : "") +
       (formType(p) ? "&type=" + encodeURIComponent(formType(p)) : "") + "#request-form";
     var noPriceYet = priceSoon(p) && !p.bulk;
-    var link = squareLink(p);
+    var link = storeLink(p);
     var ready = p.buyable && !noPriceYet;
     var cheapest = p.styles && p.styles.length > 1
       ? Math.min.apply(null, p.styles.map(function (st) { return st.price; })) : p.price;
 
     var buyBtn = link
-      // BUY NOW: opens this item's Square payment link (same tab, so Square can send them back to thank-you.html)
-      ? '<a class="btn btn--primary btn--small" href="' + Site.escape(link) + '" data-buy-now="' + Site.escape(p.id) + '">Buy Now</a>'
-      // No Square link yet
+      // ADD TO CART: opens this item's page in the Square store (same tab)
+      ? '<a class="btn btn--primary btn--small" href="' + Site.escape(link) + '" data-add-to-cart="' + Site.escape(p.id) + '">Add to Cart</a>'
+      // No store link yet
       : '<span class="btn btn--primary btn--small btn--soon" aria-disabled="true">Coming soon</span>';
     var actions = p.bulk
       // TEAM & BULK: never a price, always a quote
@@ -87,7 +88,7 @@
       // AS SHOWN: the design can't be changed
       ? buyBtn
       : p.buyable
-      // READY-MADE: Buy Now + customize the same design
+      // READY-MADE: Add to Cart + customize the same design
       ? buyBtn + '<a class="btn btn--outline btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Customize This Design") + "</a>"
       // MADE TO ORDER
       : '<a class="btn btn--primary btn--small" href="' + customUrl + '">' + Site.escape(p.customLabel || "Request Custom") + "</a>";

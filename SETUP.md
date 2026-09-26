@@ -71,30 +71,22 @@ review form asks customers to reply by email with a photo.
 
 ## 2. Payments with Square
 
-### Option A (what we're using now): Square payment links
+### Ready-to-buy items: the Square Online store
 
-1. In the Square Dashboard, create a payment link for each ready-to-buy item.
-   The list of items, prices, styles, and sizes is in the pull request that
-   added `thank-you.html`.
-2. In each link's checkout settings, turn on **collect shipping address**
-   and set shipping to a flat **$8**. Let Square **calculate sales tax**.
-3. Set the link to **send customers back to your website after paying**
-   (Square calls this a redirect or "after checkout" URL) and use the
-   thank-you page address: your site's address + `/thank-you.html`.
-4. Paste each link into that item's `squareLink` in `assets/js/products.js`
-   (or send them to me). Items without a link show "Coming soon" instead of
-   "Buy Now".
+Ready-to-buy items are sold in your Square Online store
+(`todyeforandmore.square.site`). The store has the cart, checkout, and
+order confirmation, and it combines shipping when someone buys several
+items.
 
-Payment links charge shipping on each link, so the site now says
-"Flat $8 shipping. Sales tax calculated at checkout." and free shipping over
-$75 is turned off (`config.js → shop.freeShippingOver`).
+1. In the store, set shipping to a flat **$8 per order** and let Square
+   **calculate sales tax**.
+2. For each item, open its page in the store and copy the address.
+3. Paste it into that item's `storeLink` in `assets/js/products.js` (or send
+   them to me). The site's **Add to Cart** button opens that page in the same
+   tab. Items without a link show "Coming soon".
 
-### Option B (not in use): one checkout for a whole cart
-
-The site used to have a cart. It was removed when we switched to payment
-links, so customers buy one item at a time with **Buy Now**. If you ever
-want a cart back (several items, one payment), it needs a small secure
-server function that talks to Square. Ask me when you're ready.
+If you change the shipping amount, update `shippingFlatRate` in
+`assets/js/config.js` too, so the site's note matches the store.
 
 ### Deposits for custom and team orders
 
