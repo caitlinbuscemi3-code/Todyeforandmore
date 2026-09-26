@@ -1,7 +1,7 @@
 /* =====================================================================
    FORMS — checks what people type & handles "Submit"
    ---------------------------------------------------------------------
-   Used by: Custom Orders, Team/Bulk Orders, Contact and Checkout forms.
+   Used by: Custom Orders, Team/Bulk Orders, Contact and Leave a Review forms.
 
    What it does:
      • Shows a friendly error under any field that's missing or wrong
@@ -290,7 +290,7 @@
     }
   }
 
-  /* ---------- Share with other scripts (checkout uses these) ---------- */
+  /* ---------- Share with other scripts (the Team & Bulk page uses these) ---------- */
   Site.Forms = { validateForm: validateForm, validateField: validateField };
 
   /* ---------- Turn on for every form on the page ---------- */

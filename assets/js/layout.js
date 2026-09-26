@@ -71,7 +71,6 @@
     facebook:  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H17l.5-4h-4V8.8c0-.5.3-.8.5-.8z"/></svg>',
     tiktok:    '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.2 1.6 3.7 3.8 3.9v3.3c-1.4.1-2.7-.3-3.8-1v6.1c0 3.6-2.6 5.7-5.6 5.7A5.4 5.4 0 0 1 5.5 15.6c0-3.3 2.8-5.9 6.3-5.4v3.4c-1.6-.4-3 .5-3 2 0 1.3 1 2.2 2.2 2.2 1.4 0 2.3-.9 2.3-2.6V3h3.2z"/></svg>',
     pinterest: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M10.5 21l2.2-9.5"/><path d="M9 14.5c-1-1-1.3-2.2-1.1-3.4.4-2.3 2.4-3.8 4.6-3.6 2.3.2 3.8 1.9 3.6 4.1-.2 2.4-1.7 4.1-3.4 4-1.1 0-1.9-.9-1.6-2l.8-2.8"/></svg>',
-    cart:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>',
     menu:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     close:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>'
   };
@@ -169,8 +168,6 @@
           '<ul class="nav__list">' + links + "</ul>" +
         "</nav>" +
         '<div class="header-actions">' +
-          '<a class="cart-link" href="cart.html" aria-label="View cart">' + ICONS.cart +
-            '<span class="cart-count" data-cart-count hidden>0</span></a>' +
           '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">' + ICONS.menu + "</button>" +
         "</div>" +
       "</div>";
