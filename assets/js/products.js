@@ -95,7 +95,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/RKOn93cJ",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Our Lions appliqué crewneck. Want the same design for a different team? Customize it!",
@@ -112,7 +112,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/NTwEFj9k",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -130,7 +130,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/EhX6Y14D",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -148,7 +148,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/v5h5LCa8",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -166,7 +166,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/Nn1dev7V",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -189,7 +189,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/vSo0vMgO",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -212,7 +212,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/LPsX5PIR",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Embroidered Detroit football design on a soft black tee.",
@@ -229,7 +229,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/YWZ31t00",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "Hand-dyed blue and white Detroit crewneck. Every one is a little different!",
@@ -246,7 +246,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/bTvG6TvG",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A team name embroidered in script on a soft tee. Shown in Detroit football, and we can make it for any team!",
@@ -269,7 +269,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/CveoAsib",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A clean “Sunday Social Club” design with a lion crest, made for game day brunch and beyond.",
@@ -286,7 +286,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/7tEFYMO3",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -304,7 +304,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/YUDwvgZr",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "kids",
     tags: ["kids", "gifts", "sports"],
     desc: "A cozy knit sweater hand-stitched with “Lions” in chunky script, ready for game day.",
@@ -323,7 +323,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/NxWgMwDv",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -346,7 +346,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/1ub6ATZz",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["sports"],
     desc: "A bold red hand-dyed crewneck with a classic Detroit hockey design.",
@@ -365,7 +365,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/hUqam47T",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -385,7 +385,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/ZRUFzICW",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     designOnly: true,                      // AS SHOWN: no customize button
     category: "apparel",
     tags: ["sports"],
@@ -410,7 +410,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/WVYG7DeG",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: [],
     desc: "Embroidered mountain scene crewneck for your coziest camping days.",
@@ -427,7 +427,7 @@ window.PRODUCTS = [
     price: 50.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/v4aEY0R7",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: [],
     desc: "A tiny embroidered sunflower on a soft pastel hoodie.",
@@ -444,7 +444,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/5kkCfqlu",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["gifts"],
     desc: "Flowers blooming from an open book, for every reader you know.",
@@ -461,7 +461,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/ImKpKHSh",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "apparel",
     tags: ["holiday"],
     desc: "Green “Lucky” printed crewneck with a shamrock, made for St. Patrick’s Day and beyond.",
@@ -480,7 +480,7 @@ window.PRODUCTS = [
     price: 40.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/uMNdAfJy",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "beaded",
     tags: ["gifts"],
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
@@ -523,7 +523,7 @@ window.PRODUCTS = [
     price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/s79K39SN",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "kids",
     tags: ["kids", "gifts"],
     desc: "A big hand-stitched initial trimmed with little flowers. After you order, we’ll email you to get the letter and colors.",
@@ -701,7 +701,7 @@ window.PRODUCTS = [
     price: 30.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/md9IYBHJ",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "bags",
     tags: ["gifts"],
     desc: "Our embroidered bookish design on a sturdy canvas tote.",
@@ -747,7 +747,7 @@ window.PRODUCTS = [
     price: 25.00,
     buyable: true,                         // READY TO BUY
     ships: "apparel",                     // ship time: config.js → turnaround.apparel
-    squareLink: "",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
+    squareLink: "https://square.link/u/1bPSUO9b",                      // Square payment link for "Buy Now" ("" = shows "Coming soon")
     category: "drink",
     tags: ["gifts", "sports"],
     desc: "Insulated tumbler engraved with one of our signature designs, like this Detroit hockey favorite.",
