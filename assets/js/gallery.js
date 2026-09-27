@@ -281,7 +281,9 @@ window.GALLERY_ITEMS = [
   {
     category: "apparel", caption: "Beaded Embroidery", color: "orange",
     photos: [
-      { image: "assets/photos/beaded-embroidery-custom.jpg", label: "beaded embroidery tee" }
+      { image: "assets/photos/beaded-embroidery-custom.jpg", label: "beaded embroidery tee" },
+      { image: "assets/photos/detroit-beaded-embroidery-tee.jpg", label: "Detroit beaded embroidery tee" },
+      { image: "assets/photos/detroit-beaded-embroidery-closeup.jpg", label: "close-up of the beaded Detroit script and football" }
     ]
   },
   {
