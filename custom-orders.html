@@ -140,14 +140,19 @@
             <p>Custom printed designs and classic embroidery on t-shirts, hoodies, crewnecks, and more. Names, monograms, logos, sayings, you name it.</p>
             <span class="arrow">Start this custom order</span>
           </a>
-          <a id="custom-beaded" class="card service-card service-card--link" href="?type=beaded#request-form" data-prefill="beaded">
-            <img class="media-img" src="assets/photos/thumbs/beaded-embroidery-custom.jpg" alt="Beaded embroidery tee" loading="lazy" style="object-position:center 65%">
+          <!-- This card has a swipeable slideshow, so only the "Start this custom order" link is clickable -->
+          <article id="custom-beaded" class="card service-card">
+            <div class="slideshow slideshow--card" data-slideshow aria-label="Beaded embroidery photos">
+              <img src="assets/photos/thumbs/detroit-beaded-embroidery-tee.jpg" alt="Detroit beaded embroidery tee">
+              <img src="assets/photos/thumbs/detroit-beaded-embroidery-closeup.jpg" alt="Close-up of the beaded Detroit script and football">
+              <img src="assets/photos/thumbs/beaded-embroidery-custom.jpg" alt="Custom beaded sailboat on a white tee">
+            </div>
             <span class="tag">Beaded Embroidery</span>
             <h3>Beaded embroidery</h3>
             <p class="price-note">Starting at <strong>$40</strong></p>
             <p>Embroidery with hand-sewn beads for texture and dimension. A dressed-up look for sweatshirts, jackets, and special-occasion pieces.</p>
-            <span class="arrow">Start this custom order</span>
-          </a>
+            <a class="arrow arrow--bottom" href="?type=beaded#request-form" data-prefill="beaded">Start this custom order</a>
+          </article>
           <a id="custom-jackets" class="card service-card service-card--link" href="?type=jacket#request-form" data-prefill="jacket">
             <img class="media-img" src="assets/photos/thumbs/teacher-hand-painted-jean-jacket-custom.jpg" alt="Hand-painted teacher jean jacket" loading="lazy" style="object-position:center 35%">
             <span class="tag">Hand-Painted</span>

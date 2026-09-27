@@ -593,6 +593,8 @@ ul { padding-left: 1.2em; }
 .service-card--link { text-decoration: none; color: var(--color-text); transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .service-card--link:hover { color: var(--color-text); transform: translateY(-4px); box-shadow: var(--shadow); }
 .service-card--link .arrow { margin-top: auto; font-weight: 700; color: var(--color-primary); }
+.service-card .arrow--bottom { margin-top: auto; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+.service-card .arrow--bottom:hover { text-decoration: underline; }
 .tag {
   display: inline-block; align-self: flex-start;
   font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
@@ -820,6 +822,11 @@ fieldset.field { border: none; padding: 0; margin: 0; }
 .product-card .slideshow .lightbox__nav { width: 34px; height: 34px; }
 .product-card .slideshow .lightbox__nav svg { width: 16px; height: 16px; }
 .product-card .slideshow__count { font-size: 0.72rem; padding: 2px 9px; right: 8px; bottom: 8px; }
+/* Slideshow inside a Custom Orders card: same 4:3 shape as the other card photos */
+.slideshow--card { aspect-ratio: 4 / 3; }
+.slideshow--card .lightbox__nav { width: 34px; height: 34px; }
+.slideshow--card .lightbox__nav svg { width: 16px; height: 16px; }
+.slideshow--card .slideshow__count { font-size: 0.72rem; padding: 2px 9px; right: 8px; bottom: 8px; }
 .slideshow__count {
   position: absolute; right: 12px; bottom: 12px;
   background: var(--color-primary); color: #fff;

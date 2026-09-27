@@ -509,9 +509,12 @@ window.PRODUCTS = [
     category: "beaded",
     tags: ["gifts"],
     desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
-    keywords: "beaded beads beadwork bead embroidery embroidered sequins detroit city sparkle bling t-shirt tshirt t shirt tee top women mom gift present", // search only (never shown)
-    image: "",
+    keywords: "beaded beads beadwork bead embroidery embroidered sequins detroit city football game day sparkle bling t-shirt tshirt t shirt tee top women mom gift present", // search only (never shown)
+    image: "assets/photos/detroit-beaded-embroidery-tee.jpg",
     label: "Detroit beaded embroidery t-shirt",
+    morePhotos: [
+      { image: "assets/photos/detroit-beaded-embroidery-closeup.jpg", label: "close-up of the beaded Detroit script and football" }
+    ],
     color: "navy",
     featured: 3,
     badge: "Detroit Made",

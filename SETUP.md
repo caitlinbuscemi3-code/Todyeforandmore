@@ -142,5 +142,4 @@ me the embed code. I'll put it in that section.
       shopping" links to https://www.shop-todyefor.com
 - [ ] Submit the sitemap in Google Search Console (see README → Search engines)
 - [ ] Holiday banner dates checked in `config.js` → `announcement`
-- [ ] "Coming soon" photos replaced (Detroit Beaded Embroidery, makeup bag,
-      bag tag, stocking, and your About photo)
+- [ ] "Coming soon" photos replaced (makeup bag, bag tag, and stocking)
