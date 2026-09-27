@@ -502,13 +502,13 @@ window.PRODUCTS = [
   {
     id: "beaded-detroit",
     name: "Detroit Beaded Embroidery",
-    price: 40.00,
+    price: 45.00,
     buyable: true,                         // READY TO BUY
     ships: "handmade",                    // ship time: config.js → turnaround.handmade
     storeLink: "https://todyeforandmore.square.site/product/detroit-beaded-embroidery/ONV7FLSMWJEM537IIGWJTQXY?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "beaded",
     tags: ["gifts"],
-    desc: "Our Detroit design in hand-sewn beaded embroidery. Love it but want a different city, team, or image? Customize it!",
+    desc: "Our Detroit design in hand-sewn beaded embroidery on a fitted tee. Love it but want a different city, team, or image? Customize it!",
     keywords: "beaded beads beadwork bead embroidery embroidered sequins detroit city football game day sparkle bling t-shirt tshirt t shirt tee top women mom gift present", // search only (never shown)
     image: "assets/photos/detroit-beaded-embroidery-tee.jpg",
     label: "Detroit beaded embroidery t-shirt",
@@ -520,9 +520,9 @@ window.PRODUCTS = [
     badge: "Detroit Made",
     sizes: true,
     styles: [
-      { name: "T-shirt", price: 40.00 },
-      { name: "Crewneck", price: 50.00 },
-      { name: "Hoodie", price: 55.00 }
+      { name: "T-shirt", price: 45.00 },
+      { name: "Crewneck", price: 55.00 },
+      { name: "Hoodie", price: 60.00 }
     ]
   },
   {
