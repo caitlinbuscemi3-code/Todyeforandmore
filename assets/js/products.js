@@ -508,7 +508,7 @@ window.PRODUCTS = [
     storeLink: "https://todyeforandmore.square.site/product/detroit-beaded-embroidery/ONV7FLSMWJEM537IIGWJTQXY?cp=true&sa=true&sbp=true&q=false", // Square store page for "Add to Cart" ("" = shows "Coming soon")
     category: "beaded",
     tags: ["gifts"],
-    desc: "Our Detroit design in hand-sewn beaded embroidery on a fitted tee. Love it but want a different city, team, or image? Customize it!",
+    desc: "Our Detroit design in hand-sewn beaded embroidery, shown on a fitted tee. Love it but want a different city, team, or image? Customize it!",
     keywords: "beaded beads beadwork bead embroidery embroidered sequins detroit city football game day sparkle bling t-shirt tshirt t shirt tee top women mom gift present", // search only (never shown)
     image: "assets/photos/detroit-beaded-embroidery-tee.jpg",
     label: "Detroit beaded embroidery t-shirt",
